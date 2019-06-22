@@ -94,7 +94,7 @@ $(function(){
               <th>ID</th>
               <th>Содержание</th>
               <th>Категории</th>
-              <th class="span2">采集/发布时间</th>
+              <th class="span2">Дата и время парсинга/Публикации</th>
               <th>appid</th>
               <th>ID контента</th>
               <th>Статус / релиз</th>
@@ -126,7 +126,7 @@ $(function(){
 <?php if($_GET['perpage']<500){?>
                 <a href="<?php echo __ADMINCP__; ?>=files&indexid=<?php echo $rs[$i]['indexid'] ; ?>&method=database" class="tip-bottom" title="查看内容使用的图片" target="_blank"><i class="fa fa-picture-o"></i></a>
                 <a href="<?php echo __ADMINCP__; ?>=spider_project&do=add&pid=<?php echo $rs[$i]['pid'] ; ?>" class="btn btn-small" target="_blank"><i class="fa fa-edit"></i> Изменить схему</a>
-                <a href="<?php echo __ADMINCP__; ?>=spider_rule&do=add&rid=<?php echo $rs[$i]['rid'] ; ?>" class="btn btn-small" target="_blank"><i class="fa fa-edit"></i> 编辑规则</a>
+                <a href="<?php echo __ADMINCP__; ?>=spider_rule&do=add&rid=<?php echo $rs[$i]['rid'] ; ?>" class="btn btn-small" target="_blank"><i class="fa fa-edit"></i> Редактировать правила</a>
                 <?php if($rs[$i]['indexid']){?>
                 <a href="<?php echo __ADMINCP__; ?>=article&do=add&id=<?php echo $rs[$i]['indexid'] ; ?>" class="btn btn-small"><i class="fa fa-edit"></i> 编辑内容</a>
                   <?php if(empty($rs[$i]['publish'])){?>

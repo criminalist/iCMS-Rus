@@ -20,7 +20,7 @@ admincp::head();
         <input type="hidden" name="do" value="createArticle" />
         <input type="hidden" name="frame" value="iPHP" />
         <div id="html-add" class="tab-content">
-          <div class="input-prepend input-append"> <span class="add-on">按栏目</span>
+          <div class="input-prepend input-append"> <span class="add-on">Категории</span>
             <select name="cid[]" multiple="multiple" class="span3" size="15">
               <option value="all">Все категории</option>
               <optgroup label="======================================"></optgroup>

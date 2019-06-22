@@ -108,11 +108,10 @@ if(in_array($ext, $exts)){
             }
         }
     }
-    //文章类自定义链接
+    //Проверка пользовательских ссылок
     if(empty($REQUEST_URI)){
         if(preg_match('@'.$dir.'.*?'.preg_quote($ext).'@', $path)){
             $clink = '['.ltrim($path,'/').']';
-            //如果太多请求 可以把检测移移出以免影响性能
             $check = article::check($clink,0,'clink');
             $check && $REQUEST_URI = 'article.php?clink='.$clink;
         }
@@ -127,7 +126,7 @@ if(in_array($ext, $exts)){
             iCMS::run($name);
     }else{
         if(iPHP_DEBUG && iPHP_TPL_DEBUG){
-            trigger_error("未找到与链接<b>{$path}</b>相匹配的规则.",E_USER_ERROR);
+            trigger_error("Ссылки не найдены <b>{$path}</b>.",E_USER_ERROR);
         }else{
             iPHP::http_status(404, $path.',rewrite 404');
         }

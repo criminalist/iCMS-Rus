@@ -191,9 +191,9 @@ $(function(){
             </select>
           </div>
           <div class="clearfloat mb10"></div>
-          <div class="input-prepend"> <span class="add-on">发布模块</span>
+          <div class="input-prepend"> <span class="add-on">Правила публикации</span>
             <select name="poid" id="poid" class="chosen-select span3">
-              <option value="0"> == 请选择发布模块 == </option>
+              <option value="0"> ==Выберите Правила публикации== </option>
               <?php echo $post_option;?>
             </select>
           </div>
@@ -219,29 +219,29 @@ $(function(){
             </select>
           </div>
           <hr />
-          <div class="input-prepend"><span class="add-on">自动采集</span>
+          <div class="input-prepend"><span class="add-on">Автоматический режим</span>
             <div class="switch">
               <input type="checkbox" data-type="switch" name="auto" id="auto" <?php echo $rs['auto']?'checked':''; ?>/>
             </div>
           </div>
-          <span class="help-inline">此选项只作标识,如果要实现自动采集功能 需要在服务器上部署计划任务</span>
+          <span class="help-inline">Эта опция предназначена только для идентификации. Если вы хотите реализовать автоматический сбор, вам необходимо развернуть запланированные задачи на сервере.</span>
           <div class="clearfloat mb10"></div>
-          <div class="input-prepend input-append"><span class="add-on">单条间隔</span>
+          <div class="input-prepend input-append"><span class="add-on">Интервал</span>
             <input type="text" name="config[sleep]" class="span1" id="sleep" value="<?php echo $rs['config']['sleep']; ?>"/>
-            <span class="add-on">毫秒</span>
+            <span class="add-on">Миллисекунды</span>
           </div>
-          <span class="help-inline">单条数据采集的间隔 (自动采集)</span>
+          <span class="help-inline">单条数据采集的间隔 (автоматический режим)</span>
           <div class="clearfloat mb10"></div>
-          <div class="input-prepend input-append"><span class="add-on">方案间隔</span>
+          <div class="input-prepend input-append"><span class="add-on">Интервал схемы</span>
             <input type="text" name="config[psleep]" class="span1" id="psleep" value="<?php echo $rs['config']['psleep']; ?>"/>
             <span class="add-on">сек.</span>
           </div>
-          <span class="help-inline">本方案下次采集的间隔 (自动采集)</span>
+          <span class="help-inline">本方案下次采集的间隔 (автоматический режим)</span>
           <div class="clearfloat mb10"></div>
           <div class="input-prepend"> <span class="add-on">完成时间</span>
             <input id="lastupdate" class="span3" value="<?php echo $rs['lastupdate']?get_date($rs['lastupdate'],'Y-m-d H:i:s'):'' ; ?>"  name="lastupdate" type="text" style="width:230px"/>
           </div>
-          <span class="help-inline">本方案上次采集完成时间 (自动采集)</span>
+          <span class="help-inline">本方案上次采集完成时间 (автоматический режим)</span>
           <div class="clearfloat mb10"></div>
         </div>
         <div class="form-actions">

@@ -69,7 +69,7 @@ $(function() {
 
       if(!length) length=0;
       if(act=='dataclean'){
-        var div = '<?php processing_item("'+name+'",array('helper'=>"'+act+'",'dataclean'=>true),"'+length+'",'规则采集后数据整理');?>';
+        var div = '<?php processing_item("'+name+'",array('helper'=>"'+act+'",'dataclean'=>true),"'+length+'",' 规则采集后数据整理');?>';
       }else{
         var div = '<?php processing_item("'+name+'",array('helper'=>"'+act+'"),"'+length+'","'+title+'");?>';
       }
@@ -227,17 +227,17 @@ function select_sort_value(a, e, p) {
               <input type="text" name="rule[curl][cookie]" class="span6" id="CURLOPT_COOKIE" value="<?php echo $rule['curl']['cookie'] ; ?>"/>
             </div>
             <div class="clearfloat mb10"></div>
-            <div class="input-prepend"><span class="add-on">客户端解码</span>
+            <div class="input-prepend"><span class="add-on">Декодирование (gzip,deflate)</span>
               <input type="text" name="rule[curl][encoding]" class="span6" id="CURLOPT_ENCODING" value="<?php echo $rule['curl']['encoding'] ; ?>"/>
             </div>
-            <span class="help-inline"><span class="label label-important">CURL设置 为客户端解码 默认为空,如果采集乱码可以填上gzip,deflate</span></span>
+            <span class="help-inline"><span class="label label-important">Настройка распаковки сжатого контента при помощи gzip,deflate, по умолчанию пусто, если вы собираете сжатый контент используйте эту настройку.</span></span>
             <div class="clearfloat mb10"></div>
-            <div class="input-prepend"><span class="add-on">来路页</span>
+            <div class="input-prepend"><span class="add-on">Реферальный URL</span>
               <input type="text" name="rule[curl][referer]" class="span6" id="CURLOPT_REFERER" value="<?php echo $rule['curl']['referer'] ; ?>"/>
             </div>
-            <span class="help-inline"><span class="label label-important">CURL伪造来路页 默认为空,如果网站限制来路可填上相关来路</span></span>
+            <span class="help-inline"><span class="label label-important">По умолчанию пусто, если вам потребуется использовать реферальный адрес, вы можете ввести необходимый URL.</span></span>
             <div class="clearfloat mb10"></div>
-            <div class="input-prepend input-append"> <span class="add-on">Кодирование веб-страниц</span><span class="add-on">
+            <div class="input-prepend input-append"> <span class="add-on">Кодировка страниц</span><span class="add-on">
               <label class="radio">
                 <input type="radio" name="rule[charset]" value="utf-8"<?php if($rule['charset']=="utf-8"){ echo ' checked="true"';};?>>
                 UTF-8 </label>
@@ -253,18 +253,18 @@ function select_sort_value(a, e, p) {
                 Автоматическая идентификация</label>
               </span> </div>
             <div class="clearfloat mb10"></div>
-            <div class="input-prepend input-append"> <span class="add-on">采集顺序</span><span class="add-on">
+            <div class="input-prepend input-append"> <span class="add-on">Последовательность</span><span class="add-on">
               <label class="radio">
                 <input type="radio" name="rule[sort]" value="1"<?php if($rule['sort']=="1"){ echo ' checked="true"';};?>>
-                自上向下 </label>
+                Сверху вниз </label>
               </span><span class="add-on">
               <label class="radio">
                 <input type="radio" name="rule[sort]" value="2"<?php if($rule['sort']=="2"){ echo ' checked="true"';};?>>
-                自下向上 </label>
+                Снизу вверх </label>
               </span><span class="add-on">
               <label class="radio">
                 <input type="radio" name="rule[sort]" value="3"<?php if($rule['sort']=="3"){ echo ' checked="true"';};?>>
-                随机乱序 </label>
+                Случайное </label>
               </span></div>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend input-append"> <span class="add-on">Режим сбора</span><span class="add-on">

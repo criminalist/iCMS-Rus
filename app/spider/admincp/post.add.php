@@ -11,7 +11,7 @@ $(function(){
     $("#fun").val(fun);
     var tipMap ={
       'forms':'Настраиваемая форма form_id',
-      'content':'Пользовательские приложения 需要填写 appid'
+      'content':'Для пользовательского приложения необходимо заполнить appid'
     }
     var tip = tipMap[params['selected']]||'';
     $(".post-tip").addClass('hide').removeClass('hide').html(tip);
@@ -23,7 +23,7 @@ $(function(){
 <div class="iCMS-container">
   <div class="widget-box">
     <div class="widget-title"> <span class="icon"> <i class="fa fa-plus-square"></i> </span>
-      <h5><?php echo empty($this->poid)?'Добавить':'Изменить' ; ?> 发布模块</h5>
+      <h5><?php echo empty($this->poid)?'Добавить':'Изменить' ; ?> правила публикации</h5>
     </div>
     <div class="widget-content nopadding">
       <form action="<?php echo APP_FURI; ?>&do=save" method="post" class="form-inline" id="iCMS-spider-post" target="iPHP_FRAME">
@@ -43,11 +43,11 @@ $(function(){
             </select>
           </div>
           <div class="clearfloat mb10"></div>
-          <div class="input-prepend"><span class="add-on"> Имя </span>
+          <div class="input-prepend"><span class="add-on">Имя</span>
             <input type="text" name="name" class="span6" id="name" value="<?php echo $rs['name']; ?>"/>
           </div>
           <div class="clearfloat mb10"></div>
-          <div class="input-prepend"><span class="add-on">接口</span>
+          <div class="input-prepend"><span class="add-on">интерфейс</span>
             <input type="text" name="fun" class="span6" id="fun" value="<?php echo $rs['fun']?$rs['fun']:'do_save'; ?>"/>
           </div>
           <span class="help-inline">Может быть удаленно опубликован с помощью URL</span>

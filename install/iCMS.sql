@@ -33,7 +33,7 @@ CREATE TABLE `icms_access_log` (
 /*Table structure for table `icms_apps` */
 
 CREATE TABLE `icms_apps` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '应用ID appid',
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID приложения appid',
   `app` varchar(100) NOT NULL DEFAULT '' COMMENT '应用标识',
   `name` varchar(100) NOT NULL DEFAULT '' COMMENT '应用名',
   `title` varchar(100) NOT NULL DEFAULT '' COMMENT '应用标题',

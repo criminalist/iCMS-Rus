@@ -2298,7 +2298,7 @@ INSERT INTO `icms_access_log` (`id`, `uid`, `username`, `app`, `uri`, `useragent
 --
 
 CREATE TABLE `icms_apps` (
-  `id` int(10) UNSIGNED NOT NULL COMMENT '应用ID appid',
+  `id` int(10) UNSIGNED NOT NULL COMMENT 'ID приложения appid',
   `app` varchar(100) NOT NULL DEFAULT '' COMMENT '应用标识',
   `name` varchar(100) NOT NULL DEFAULT '' COMMENT '应用名',
   `title` varchar(100) NOT NULL DEFAULT '' COMMENT '应用标题',
@@ -4299,7 +4299,7 @@ ALTER TABLE `icms_access_log`
 -- AUTO_INCREMENT для таблицы `icms_apps`
 --
 ALTER TABLE `icms_apps`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '应用ID appid', AUTO_INCREMENT=103;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID приложения appid', AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT для таблицы `icms_apps_store`
