@@ -8,10 +8,10 @@ if($rs['table'])foreach ($rs['table'] as $key => $tval) {
     <thead>
       <tr>
         <th style="width:100px;">Поле</th>
-        <th>数据类型</th>
-        <th>长度</th>
-        <th> Первичный ключ </th>
-        <th>非空</th>
+        <th>Тип поля</th>
+        <th>Длина</th>
+        <th>Первичный ключ</th>
+        <th>NULL</th>
         <th>Unsigned</th>
         <th>自增</th>
         <th>核对</th>

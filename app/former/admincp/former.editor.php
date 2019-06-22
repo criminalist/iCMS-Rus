@@ -23,17 +23,17 @@
           <option value='MEDIUMTEXT'>Текстовое поле (MEDIUMTEXT)</option>
           <option value='LONGTEXT'>Текстовое поле (LONGTEXT)</option>
         </optgroup>
-        <optgroup label="Целое">
-          <option value='TINYINT'>小整数(TINYINT)</option>
-          <option value='SMALLINT'>大整数(SMALLINT)</option>
-          <option value='MEDIUMINT'>大整数(MEDIUMINT)</option>
-          <option value='INT'>大整数(INT)</option>
-          <option value='BIGINT'>极大整数(BIGINT)</option>
+        <optgroup label="Целые числа">
+          <option value='TINYINT'>Очень маленькое (TINYINT)</option>
+          <option value='SMALLINT'>Маленькое (SMALLINT)</option>
+          <option value='MEDIUMINT'>Среднее (MEDIUMINT)</option>
+          <option value='INT'>Целое число (INT)</option>
+          <option value='BIGINT'>Большое (BIGINT)</option>
         </optgroup>
         <optgroup label="Число с плавающей запятой">
-          <option value='DECIMAL'>Малое (DECIMAL)</option>
-          <option value='FLOAT'>Точность(FLOAT)</option>
-          <option value='DOUBLE'>Двойная точность(DOUBLE)</option>
+          <option value='DECIMAL'>Распакованное число с плавающей запятой (DECIMAL)</option>
+          <option value='FLOAT'>Малое (одинарной точности) число с плавающей запятой. (FLOAT)</option>
+          <option value='DOUBLE'>Нормальное (двойной точности) число с плавающей запятой (DOUBLE)</option>
         </optgroup>
       </select>
     </div>
@@ -41,7 +41,7 @@
     <div class="clearfix"></div>
     <div class="unsigned-wrap hide">
       <div class="input-prepend input-append">
-        <span class="add-on">Целое</span>
+        <span class="add-on">Целые числа</span>
         <span class="add-on">Unsigned
           <input type="radio" name="unsigned" class="uniform" id="iFormer-unsigned-1" value="1"/>
         </span>
@@ -78,7 +78,7 @@
         <span class="add-on">Список опций</span>
         <textarea type="text" name="option" class="span3" id="iFormer-option" disabled/></textarea>
       </div>
-      <span class="help-inline">*Обязательно Формат: опция = значение;<br />
+      <span class="help-inline">*Обязательно | Формат: опция = значение;<br />
           Компьютер=pc;<br />
           Мобильный телефон=phone;<br />
           iPad;
@@ -110,7 +110,7 @@
           <div class="clearfix"></div>
           <div id="iFormer-label-after-wrap" class="hide">
             <div class="input-prepend">
-              <span class="add-on">扩展信息</span>
+              <span class="add-on">Расширенная информация</span>
               <input type="text" name="label-after" class="span3" id="iFormer-label-after" value=""/>
             </div>
             <span class="help-inline">Необязательные</span>
@@ -120,12 +120,12 @@
           <div class="input-prepend">
             <span class="add-on">Параметры UI интерфейса</span>
             <select id="iFormer-ui" class="chosen-select" style="width:360px;" data-placeholder="Выберите ..." multiple="multiple">
-              <optgroup label="管理员">
-                <option value='admincp-list'>列表显示</option>
+              <optgroup label="Администратор">
+                <option value='admincp-list'> Отображение списка</option>
               </optgroup>
               <optgroup label="Пользователь">
-                <option value='usercp-list'>列表显示</option>
-                <option value='usercp-input'>可填写</option>
+                <option value='usercp-list'> Отображение списка</option>
+                <option value='usercp-input'>Поле для заполнения</option>
               </optgroup>
             </select>
             <select multiple="multiple" class="hide" name="ui[]" id="sort-ui"></select>
