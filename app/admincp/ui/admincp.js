@@ -6,9 +6,9 @@ var chosen_config = {
     allow_single_deselect: true,
     search_contains: true,
     disable_search_threshold: 20,
-    no_results_text: '没找到相关结果',
+    no_results_text: 'Результатов не найдено',
     placeholder_text_single: 'Выберите ...',
-    placeholder_text_multiple: '请选择(несколько вариантов)...'
+    placeholder_text_multiple: 'Пожалуйста, выберите (возможно несколько элементов)...'
 }
 $(function() {
     var _iCMS = {
@@ -38,7 +38,7 @@ $(function() {
             $.uniform.update(el);
         },
     };
-    iCMS = $.extend(iCMS, _iCMS); //扩展 or 替换 iCMS属性
+    iCMS = $.extend(iCMS, _iCMS);
     var doc = $(document);
     //iCMS.modal();
     doc.on("click", '[data-toggle=dropdown]', function(e) {
@@ -146,7 +146,7 @@ $(function() {
         }
         return false;
     });
-    //元属性操作
+    
     doc.on("click", ".del_meta", function() {
         $(this).parent().parent().find('td').remove();
     });
@@ -334,7 +334,7 @@ function modal_icms(el, a) {
                         delete im._elemBack;
                     };
                     // artDialog 5.0.4
-                    // 让传入的元素在对话框关闭后可以返回到原来的地方
+                    
                     var display = content.style.display;
                     var prev = content.previousSibling;
                     var next = content.nextSibling;
@@ -381,7 +381,7 @@ function modal_icms(el, a) {
                 var ow = m.width();
                 var oh = m.height();
                 var left = (ww - ow) / 2 + dl;
-                var top = (wh - oh) * 382 / 1000 + dt; // 黄金比例
+                var top = (wh - oh) * 382 / 1000 + dt;
                 var style = m[0].style;
                 style.position = 'absolute';
                 style.left = Math.max(parseInt(left), dl) + 'px';
@@ -431,7 +431,7 @@ function modal_icms(el, a) {
         });
     }
 })(jQuery);
-//批量操作
+
 (function($) {
     $.fn.extend({
         batch: function(opt) {
@@ -466,7 +466,7 @@ function modal_icms(el, a) {
             $('[data-toggle="batch"]').click(function() {
                 var checkbox = $("input[name]:checkbox:checked", im);
                 if (checkbox.length == 0) {
-                    iCMS.alert("请选择要操作项目!");
+                    iCMS.alert("Выберите по крайней мере один элемент!");
                     return true;
                 }
 

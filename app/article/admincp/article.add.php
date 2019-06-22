@@ -563,11 +563,11 @@ function _modal_dialog(cancel_text){
             <div class="input-prepend input-append">
               <span class="add-on">В избранном</span>
               <input type="text" name="favorite" class="span1" id="favorite" value="<?php echo $rs['favorite']?$rs['favorite']:'0'; ?>"/>
-              <span class="add-on">ID комментария</span>
+              <span class="add-on">Комментариев</span>
               <input type="text" name="comments" class="span1" id="comments" value="<?php echo $rs['comments']?$rs['comments']:'0'; ?>"/>
-              <span class="add-on">点赞数</span>
+              <span class="add-on">Понравилось</span>
               <input type="text" name="good" class="span1" id="good" value="<?php echo $rs['good']?$rs['good']:'0'; ?>"/>
-              <span class="add-on">点踩数</span>
+              <span class="add-on">Не понравилось</span>
               <input type="text" name="bad" class="span1" id="bad" value="<?php echo $rs['bad']?$rs['bad']:'0'; ?>"/>
             </div>
             <div class="clearfloat mb10"></div>
@@ -579,7 +579,7 @@ function _modal_dialog(cancel_text){
             <div class="input-prepend"> <span class="add-on">Пользовательский URL</span>
               <input type="text" name="clink" class="span6" id="clink" value="<?php echo $rs['clink'] ; ?>"/>
             </div>
-            <span class="help-inline">以[]方式填写优先级最高,如:[about.html],否则将以文章规则是否设置{LINK}为准</span>
+            <span class="help-inline">Для того чтобы использовать пользовательскую ссылку необходимо в правилах формирования URL страницы включить переменную {LINK}, либо принудительно указать что URL является пользовательским с помощью квадратных скобок [], пример: [пользовательский-URL.html]</span>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend"> <span class="add-on"> Внешняя ссылка </span>
               <input type="text" name="url" class="span6 tip" title="Примечание: содержимое в редакторе не будет сохранено после того, как установлена внешняя ссылка!" id="url" value="<?php echo $rs['url'] ; ?>"/>

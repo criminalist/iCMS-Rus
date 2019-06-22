@@ -488,7 +488,7 @@ function processing_item($name,$item=array(),$length=0,$title=''){
                   <textarea name="rule[page_area_rule]" id="page_area_rule" class="span6"><?php echo $rule['page_area_rule'] ; ?></textarea>
                   <div class="btn-group btn-group-vertical"> <a class="btn" href="<%content%>" data-toggle="insertContent" data-target="#page_area_rule">Контент</a> <a class="btn" href="<%var%>" data-toggle="insertContent" data-target="#page_area_rule"> Идентификация переменной </a> </div>
                 </div>
-                <span class="help-inline">支持phpQuery,格式DOM::选择器</span>
+                <span class="help-inline">Поддержка phpQuery, формат DOM :: selector</span>
                 <div class="clearfloat mb10"></div>
                 <div class="input-prepend input-sp"><span class="add-on">分页链接规则</span>
                   <textarea name="rule[page_url_rule]" id="page_url_rule" class="span6"><?php echo $rule['page_url_rule'] ; ?></textarea>

@@ -241,7 +241,7 @@ $(function(){
           <div class="input-prepend"> <span class="add-on">完成时间</span>
             <input id="lastupdate" class="span3" value="<?php echo $rs['lastupdate']?get_date($rs['lastupdate'],'Y-m-d H:i:s'):'' ; ?>"  name="lastupdate" type="text" style="width:230px"/>
           </div>
-          <span class="help-inline">本方案上次采集完成时间 (автоматический режим)</span>
+          <span class="help-inline">Время завершения выполнения  (автоматический режим)</span>
           <div class="clearfloat mb10"></div>
         </div>
         <div class="form-actions">

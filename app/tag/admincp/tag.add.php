@@ -192,9 +192,9 @@ $(function(){
               <input type="text" name="favorite" class="span1" id="favorite" value="<?php echo $rs['favorite']?$rs['favorite']:'0'; ?>"/>
               <span class="add-on">ID комментария</span>
               <input type="text" name="comments" class="span1" id="comments" value="<?php echo $rs['comments']?$rs['comments']:'0'; ?>"/>
-              <span class="add-on">点赞数</span>
+              <span class="add-on">Понравилось</span>
               <input type="text" name="good" class="span1" id="good" value="<?php echo $rs['good']?$rs['good']:'0'; ?>"/>
-              <span class="add-on">点踩数</span>
+              <span class="add-on">Не понравилось</span>
               <input type="text" name="bad" class="span1" id="bad" value="<?php echo $rs['bad']?$rs['bad']:'0'; ?>"/>
             </div>
             <div class="clearfloat mb10"></div>
