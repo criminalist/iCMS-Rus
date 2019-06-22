@@ -10,4 +10,5 @@
 /cache/iCMS/*
 /res/*
 /html/*
+config.php
 node_modules

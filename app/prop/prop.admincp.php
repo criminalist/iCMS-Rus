@@ -30,8 +30,8 @@ class propAdmincp{
         $sortnum = (int)$_POST['sortnum'];
         $name    = iSecurity::escapeStr($_POST['name']);
 
-        $field OR iUI::alert('属性字段不能为空!');
-        $name OR iUI::alert('属性名称不能为空!');
+        $field OR iUI::alert('Поля свойств не может быть пустым!');
+        $name OR iUI::alert('Имя свойства не может быть пустым!');
         // $app OR iUI::alert('所属应用不能为空!');
 
         $fields = array('rootid','cid','field','app','appid','sortnum', 'name', 'val', 'info');
@@ -39,7 +39,7 @@ class propAdmincp{
 
 		if($pid){
             if ($field=='pid'&& !is_numeric($data['val'])){
-                iUI::alert('pid字段的值只能用数字');
+                iUI::alert('Значение поля pid может быть только числовым');
             }
             $field=='pid' && $data['val'] = (int)$data['val'];
 
@@ -61,7 +61,7 @@ class propAdmincp{
                     $data['sortnum'] = $nkey;
 
                     if ($field=='pid'&& !is_numeric($data['val'])){
-                        iUI::alert('pid字段的值只能用数字');
+                        iUI::alert('Значение поля pid может быть только числовым');
                     }
                     $check = iDB::value("
                         SELECT `pid` FROM `#iCMS@__prop`
@@ -86,7 +86,7 @@ class propAdmincp{
                     $data['name'] = $data['val'] = $data['name'];
                 }
                 if ($field=='pid'&& !is_numeric($data['val'])){
-                    iUI::alert('pid字段的值只能用数字');
+                    iUI::alert('Значение поля pid может быть только числовым');
                 }
                 iDB::value("
                     SELECT `pid` FROM `#iCMS@__prop`

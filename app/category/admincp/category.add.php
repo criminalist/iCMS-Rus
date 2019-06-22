@@ -85,16 +85,16 @@ $(function(){
             <div class="clearfloat mb10"></div>
             <div class="input-prepend input-append"> <span class="add-on">Свойства</span>
               <select name="pid[]" id="pid" class="chosen-select span6" data-placeholder="Выберите свойства..." multiple="multiple">
-                <option value="0">普通 [pid='0']</option>
+                <option value="0">Общие [pid='0']</option>
                 <?php echo propAdmincp::app('category')->get("pid") ; ?>
               </select>
               <?php echo propAdmincp::btn_add('Добавить общие свойства');?>
             </div>
             <div class="clearfloat mb10"></div>
             <?php if($this->appid===null){?>
-            <div class="input-prepend"> <span class="add-on">所属应用</span>
-              <select name="appid" id="appid" class="chosen-select span6" data-placeholder="请选择<?php echo $this->category_name;?>所属应用...">
-                <option value="0">无应用[appid='0']</option>
+            <div class="input-prepend"> <span class="add-on">Привязка к приложению</span>
+              <select name="appid" id="appid" class="chosen-select span6" data-placeholder="Выберите приложение ... <?php echo $this->category_name;?>">
+                <option value="0">Без привязки [appid='0']</option>
               <?php foreach (apps::get_array(array("!table"=>0)) as $key => $value) {?>
               <option value="<?php echo $value['id'];?>"><?php echo $value['app'];?>:<?php echo $value['name'];?> [appid=<?php echo $value['id'];?>]</option>
               <?php }?>

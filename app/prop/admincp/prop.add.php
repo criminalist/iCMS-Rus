@@ -30,7 +30,7 @@ $(function(){
           </div>
           <span class="help-inline">本属性所属的栏目</span>
           <div class="clearfloat mb10"></div>
-          <div class="input-prepend"> <span class="add-on">所属应用</span>
+          <div class="input-prepend"> <span class="add-on">Привязка к приложению</span>
             <select name="app" id="prop-app" class="span4 chosen-select">
               <option value="">所有应用</option>
               <?php
