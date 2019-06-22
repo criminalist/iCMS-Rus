@@ -1,0 +1,28 @@
+    <div class="foot" id="jzkow.">
+      <p>法律声明：本站内容均为网友上传，网站举办方负责审核和监督，如存在版权或非法内容，欢迎举报，我们将尽快予以删除.</p>
+      <p>CopyRight &copy; 2019 <!--{$site.name}-->, All Rights Reserved. Powered by<a href="https://www.icmsdev.com/" target="_blank">iCMS <!--{$iCMS.CONST.iCMS_VERSION}--></a></p>
+	  <p style="display:none;"><!--{$site.code|htmlspecialchars_decode}--></p>
+	  <p>Themes by<a href="https://www.reteng.org/" target="_blank">ReTeng</a></p>
+    </div>
+    <script type="text/javascript" src="<!--{$site.urls.tpl}-->/static/js/gototop.js"></script>
+    <script type="text/javascript">$(function() {
+        $(".backToTop").goToTop();
+        $(window).bind('scroll resize',
+        function() {
+          $(".backToTop").goToTop({
+            pageWidth: 1100,
+            duration: 0
+          });
+        });
+      });
+	</script>
+	<script type="text/javascript">
+    $("#navbar_c0").removeClass("home");
+    <!--{if $category.rootid}-->
+    $("#navbar_c<!--{$category.rootid}-->").addClass("home");
+    <!--{elseif $category.cid}-->
+    $("#navbar_c<!--{$category.cid}-->").addClass("home");
+    <!--{else}-->
+    $("#navbar_c0").addClass("home");
+    <!--{/if}-->
+    </script>

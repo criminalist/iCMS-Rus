@@ -1,0 +1,55 @@
+    <div class="top">
+      <div class="wrap">
+        <div class="txl fl">欢迎来到<!--{$site.name}-->！</div>
+        <ul id="txr" class="txr fr clearfix">
+          <li class="nLi">
+            <span>
+              <a href="<!--{$site.url}-->/sitemap/all/index.xml" class="a1" target="_blank">网站地图</a></span>
+          </li>
+          <li class="nLi">
+            <span>
+              <a href="#" class="a1">广告投放</a></span>
+          </li>
+          <li class="nLi">
+            <span>
+              <a href="#" class="a1">联系我们</a></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="head">
+      <div class="logo">
+        <a href="<!--{$site.url}-->">
+          <img src="<!--{$site.urls.tpl}-->/static/images/logo.png" alt="<!--{$site.name}-->"></a>
+      </div>
+      <div class="ban_468">
+	  <!--{iCMS:marker:html key="header_ad_middle"}-->
+      </div>
+      <ul class="ban_280 clearfix">
+      <!--{iCMS:marker:html key="header_ad_right"}-->
+      </ul>
+    </div>
+    <div class="nav">
+      <ul id="navMenu" class="clearfix">
+        <li>
+          <a href="<!--{$site.url}-->" id="navbar_c0" title="首页" class="home">首页</a></li>
+		  <!--{iCMS:category:list loop="true" stype='top' row="8"}-->
+        <li>
+          <a href="<!--{$category_list.url}-->" id="navbar_c<!--{$category_list.cid}-->" title="<!--{$category_list.name}-->"><!--{$category_list.name}--></a></li>
+		  <!--{/iCMS}-->
+      </ul>
+	  <!--{iCMS:category:list loop="true" stype='top' row="13"}-->
+	  <!--{if $category_list.child}-->
+      <div class="sub">
+        <p>
+		<!--{iCMS:category:list as="subcate" loop="true" stype='sub' row="50" cid="$category_list.cid"}-->
+          <a href="<!--{$subcate.url}-->" title="<!--{$subcate.name}-->"><!--{$subcate.name}--></a>
+		  <!--{/iCMS}-->
+		 </p>
+      </div>
+	  <!--{/if}-->
+	  <!--{/iCMS}-->
+    </div>
+    <div class="ban_1100">
+     <!--{iCMS:marker:html key="header_ad_banner"}-->
+    </div>

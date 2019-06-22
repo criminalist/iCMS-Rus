@@ -1,0 +1,82 @@
+<div id="top" class="clearfix">
+    <div class="top-wrap">
+        <div class="sitename fl">
+            <!--{$site.name}-->
+        </div>
+        <div i="login" class="user-login fr">
+            <ul class="ul">
+                <!--{if $iCMS.CONFIG.user.open.QQ.enable }-->
+                <li><a href="<!--{iCMS:router url='user:login:qq'}-->" class="login_qq">QQ登录</a></li>
+                <!--{/if}-->
+                <!--{if $iCMS.CONFIG.user.open.WB.enable }-->
+                <li><a href="<!--{iCMS:router url='user:login:wb'}-->" class="login_wb">Weibo</a></li>
+                <!--{/if}-->
+                <!--{if $iCMS.CONFIG.user.open.WX.enable }-->
+                <li><a href="<!--{iCMS:router url='user:login:wx'}-->" class="login_wx">WeChat</a></li>
+                <!--{/if}-->
+                <li><a href="<!--{iCMS:router url='user:login'}-->" title="Войти">Войти</a></li>
+                <li class="last"><a href="<!--{iCMS:router url='user:register'}-->" target="_blank"> Регистрация </a></li>
+            </ul>
+        </div>
+        <div i="profile" class="user-profile fr hide">
+            <span class="profile">
+            <!--{include file="iCMS://user/profile.menu.htm"}-->
+            </span>
+            <ul class="ul">
+                <li><a href="<!--{iCMS:router url='user:publish'}-->" target="_blank"><i class="fa fa-edit"></i>Добавить новость</a></li>
+                <li><a href="<!--{iCMS:router url='user:profile'}-->" target="_blank"><i class="fa fa-cog"></i>Настройки аккаунта</a></li>
+                <li class="last">
+                    <a i="logout" class="logout" href="<!--{iCMS:router url='user:logout'}-->"><i class="fa fa-edit"></i> Выход </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="header clearfix">
+    <div class="header-wrap">
+        <div class="logo">
+            <a target="_self" title="<!--{$site.url}-->" href="<!--{$site.url}-->"></a>
+        </div>
+        <div class="search">
+            <form id="search-form" action="<!--{iCMS:router url='api'}-->" method="get">
+                <div class="search-wrap">
+                    <input name="app" type="hidden" value="search" />
+                    <input type="text" class="search-query" name="q" placeholder="Поиск..." value="<!--{$search.title}-->"><button type="submit" class="search-btn"><i class="fa fa-search"></i>Поиск</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="navbar category_navbar">
+    <ul class="navbar-wrap">
+        <li id="navbar_c0" class="active"><a target="_self" href="<!--{$site.url}-->"> Главная </a></li>
+        <!--{iCMS:category:list loop="true" stype='top' row="13"}-->
+        <!--{if $category_list.child}-->
+        <li id="navbar_c<!--{$category_list.cid}-->" class="dropdown">
+            <a data-toggle="dropdown" href="<!--{$category_list.url}-->">
+                <span class="caret"></span> <!--{$category_list.name}-->
+            </a>
+            <ul class="dropdown-menu">
+                <!--{iCMS:category:list as="subcate" loop="true" stype='sub' row="50" cid="$category_list.cid"}-->
+                <li><a href="<!--{$subcate.url}-->"><!--{$subcate.name}--></a></li>
+                <!--{/iCMS}-->
+            </ul>
+        </li>
+        <!--{else}-->
+        <li id="navbar_c<!--{$category_list.cid}-->"><a href="<!--{$category_list.url}-->" ><!--{$category_list.name}--></a></li>
+        <!--{/if}-->
+        <!--{/iCMS}-->
+    </ul>
+    <script type="text/javascript">
+    $("#navbar_c0").removeClass("active");
+    <!--{if $category.rootid}-->
+    $("#navbar_c<!--{$category.rootid}-->").addClass("active");
+    <!--{elseif $category.cid}-->
+    $("#navbar_c<!--{$category.cid}-->").addClass("active");
+    <!--{else}-->
+    $("#navbar_c0").addClass("active");
+    <!--{/if}-->
+    </script>
+    <div class="clearfix"></div>
+</div>

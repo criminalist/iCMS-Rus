@@ -1,0 +1,34 @@
+<div class="home-article">
+    <ul>
+        <!--{iCMS:article:list loop="true" page="true" row="10" call="user" userid="$user.uid" ucid="$user.category.cid"}-->
+        <li>
+            <div class="list_top">
+                <div class="rep_num">
+                    <!--{$article_list.hits.count}-->
+                </div>
+                <h3 class="title"> <a href="<!--{$article_list.url}-->" target="_blank" class="i_th_tit"><!--{$article_list.title}--></a> </h3>
+                <div class="info"> <span class="date"><!--{$article_list.pubdate|date:'Y-m-d'}--></span> </div>
+            </div>
+            <div class="list_detail">
+                <div class="text">
+                    <!--{$article_list.description|nl2br}-->
+                </div>
+                <!--{if $article_list.pic.url}-->
+                <div class="pic">
+                    <img class="lazy" data-src="<!--{$article_list.pic.url}-->" src="<!--{$site.urls.ui}-->/img-default.png" onload="imgFix(this,550,150);">
+                </div>
+                <!--{/if}-->
+            </div>
+            <div class="clearfix"></div>
+            <div class="article_action" data-param='<!--{$article_list.param|json_encode}-->'>
+                <a i="vote:article:good" href="javascript:;" title="Понравилось"><i class="z-icon-thumbs-up"></i>Понравилось (<span i="vote_good_num"><!--{$article_list.good}--></span>)</a>
+                <a i="comment:article" href="javascript:;" title="Комментариев"><i class="z-icon-comment"></i>Комментариев (<span i="comment_num"><!--{$article_list.comments}--></span>)</a>
+                <a i="favorite:article" href="javascript:;" title="Добавили в избранное"><i class="z-icon-collect"></i>В избранном (<span i="favorite_num"><!--{$article_list.favorite}--></span>)</a>
+            </div>
+        </li>
+        <div class="clearfix"></div>
+        <!--{iCMSelse}-->
+        <li>Нет соответствующего контента</li>
+        <!--{/iCMS}-->
+    </ul>
+</div>

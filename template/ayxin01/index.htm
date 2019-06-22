@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="utf-8">
+    <title><!--{$site.title}-->_
+        <!--{$site.seotitle}--></title>
+    <meta name="keywords" content="<!--{$site.keywords}-->" />
+    <meta name="description" content="<!--{$site.description}-->" />
+    <meta name="mobile-agent" content="format=xhtml;url=<!--{$site.urls.mobile}-->">
+    <meta name="mobile-agent" content="format=html5;url=<!--{$site.urls.mobile}-->">
+	<meta http-equiv="Cache-Control" content="no-transform" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="alternate" media="only screen and(max-width: 640px)" href="<!--{$site.urls.mobile}-->">
+	<!--{include file="./pubui-ui.htm"}-->
+	</head>
+  <body>
+<!--{include file="./a-header.htm"}-->
+    <div class="g_box1">
+      <div class="txtop fl">
+        <div class="bd">
+          <ul class="infoList">
+		  <marquee behavior="scroll" direction="up" scrolldelay="300">
+            <!--{iCMS:marker:html key="index_notice_words"}-->
+			</marquee>
+		</ul>
+        </div>
+      </div>
+      <div class="search fr">
+        <div class="txt fl">
+          <a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=nK_qr6uqqKupqtzt7bL-8-E" style="text-decoration:none;">
+            <i class="i-4"></i>建议</a>
+        </div>
+        <div class="so fr">
+          <form action="<!--{iCMS:router url='api'}-->" method="get" target="_blank">
+		  <input name="app" type="hidden" value="search" />
+            <input type="text" name="q" class="search-keyword fl" value="<!--{$search.title}-->"/>
+            <input type="submit" name="submit" value="" class="search-submit fl"></form>
+        </div>
+      </div>
+    </div>
+    <div class="idxv7_r1">
+      <div class="idxv7_area_l">
+        <div class="idxv7_bn">
+          <div id="demo1" class="slideBox">
+            <ul class="items">
+			<!--{iCMS:article:list loop="true" pic="true" row="5" orderby="week"}-->
+              <li>
+                <a href="<!--{$article_list.url}-->" title="<!--{$article_list.title}-->" target="_blank">
+                  <img src="<!--{$article_list.pic.url|thumb:310:226}-->" alt="<!--{$article_list.title}-->" width="310" height="226" title="<!--{$article_list.title}-->"></a>
+              </li>
+			<!--{/iCMS}-->
+            </ul>
+          </div>
+        </div>
+        <div class="idxv7_area_title">
+          <h4>一周热点</h4></div>
+        <ul class="idxv7_area_l_ul">
+		<!--{iCMS:article:list loop="true" pic="true" row="10" orderby="week" start="5"}-->
+			<li><a href="<!--{$article_list.url}-->" title="<!--{$article_list.title}-->" target="_blank"><!--{$article_list.title|cut:20:'...'}--></a></li>
+		<!--{/iCMS}-->
+        </ul>
+      </div>
+      <div class="idxv7_area_c">
+        <div class="idxv7_area_title">
+          <h4>近期更新</h4></div>
+        <ul class="index_area_c_cl">
+		<!--{iCMS:article:list loop="true" tags="true" sub="all" row="5"}-->
+          <li>
+            <a href="<!--{$article_list.url}-->" title="<!--{$article_list.title}-->" target="_blank"><!--{$article_list.title}--></a>
+            <br>
+            <div style="height:45px;overflow:hidden"><!--{$article_list.description|cut:100:'......'}--></div></li>
+		 <!--{/iCMS}-->
+        </ul>
+      </div>
+      <div class="idxv7_area_r">
+        <div class="idxv7_area_title">
+          <h4>本月热门</h4></div>
+        <ul class="idxv7_zlbn">
+		<!--{iCMS:article:list loop="true" pic="true" row="4" sub="all" orderby="month"}-->
+          <li>
+            <a href="<!--{$article_list.url}-->" title="<!--{$article_list.title}-->" target="_blank">
+			 <!--{if $article_list.pic.url}-->
+              <img src="<!--{$article_list.pic.url}-->" alt="<!--{$article_list.title}-->" width="95" height="90" align="left" title="<!--{$article_list.title}-->"><!--{/if}--></a>
+            <a href="<!--{$article_list.url}-->" title="<!--{$article_list.title}-->"><!--{$article_list.title}--></a>
+            <br>
+            <div style="height:45px;overflow:hidden">　<!--{$article_list.description|cut:100:'......'}--></div></li>
+		<!--{/iCMS}-->
+        </ul>
+      </div>
+    </div>
+    <div class="ban_1100">
+	<!--{iCMS:marker:html key="index_ad_middle"}-->
+    </div>
+    <div class="main1">
+      <div class="wrap clearfix">
+<!--{iCMS:category:list loop="true" stype='top' row="9"}-->
+        <div class="g_box3">
+          <div class="t_1">
+            <h3><!--{$category_list.name}--></h3>
+            <span>
+              <a href="<!--{$category_list.url}-->">更多>></a></span>
+          </div>
+          <ul class="b_box2">
+		  <!--{iCMS:article:list loop="true" row="10" sub='true' cid="$category_list.cid"}-->
+            <li>
+              <span><!--{$article_list.pubdate|date:'m-d'}--></span>
+              <a href="<!--{$article_list.url}-->" title="<!--{$article_list.title}-->" target="_blank"><!--{$article_list.title}--></a></li>
+		 <!--{/iCMS}-->
+          </ul>
+      </div>
+<!--{/iCMS}-->
+	 </div>
+      <div class="g_box2">
+        <div class="t_1">
+          <h3>图文推荐</h3>
+        </div>
+        <ul class="b_box3">
+		<!--{iCMS:article:list loop="true" pic="true" row="16" start="4" sub="all" orderby="hot" startdate="-180 day"}-->
+          <li>
+            <a href="<!--{$article_list.url}-->" title="<!--{$article_list.title}-->" target="_blank">
+              <img src="<!--{$article_list.pic.url}-->" alt="<!--{$article_list.title}-->" title="<!--{$article_list.title}-->">
+              <p><!--{$article_list.title}--></p>
+            </a>
+          </li>
+		 <!--{/iCMS}-->
+        </ul>
+      </div>
+	</div>
+    <div class="ban_1100">
+	<!--{iCMS:marker:html key="index_ad_bottom"}-->
+    </div>
+    <div class="link">
+      <div class="tit">
+        <span>友情链接</span></div>
+      <ul class="clearfix">
+		<!--{iCMS:links:list loop='true'}-->
+        <li>
+          <a href="<!--{$links_list.url}-->" target="_blank" title="<!--{$links_list.name}-->"><!--{$links_list.name}--></a>
+		</li>
+		<!--{/iCMS}-->
+      </ul>
+    </div>
+<!--{include file="./a-footer.htm"}-->
+</body>
+</html>

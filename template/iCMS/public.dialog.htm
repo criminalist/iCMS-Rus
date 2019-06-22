@@ -1,0 +1,111 @@
+<!-- PM сообщения -->
+<div id="iCMS-PM-DIALOG" style="display:none;">
+  <div class="iCMS_PM_DIALOG">
+    <dl>
+      <dt><label>Кому:</label></dt>
+      <dd><a class="pm_inbox" href="javascript:;">私信记录»</a><p class="pm_uname"></p></dd>
+      <div class="clearfix mt10"></div>
+      <dt><label>Содержание</label></dt>
+      <dd><textarea class="pm_content form-control" name="content"></textarea></dd>
+      <div class="clearfix mt10"></div>
+      <dd class="pm_warnmsg">Введите сообщение</dd>
+    </dl>
+    <div class="clearfix"></div>
+    <div class="buttons">
+      <a class="cancel">Отменить</a>
+      <button type="button" name="send" class="btn btn-primary">Отправить</button>
+    </div>
+  </div>
+</div>
+<!-- Модальное окно рапорт -->
+<div id="iCMS-REPORT-DIALOG" style="display:none;">
+  <div class="iCMS_REPORT_DIALOG">
+    <div class="report_header">Выберите причину</div>
+    <div class="clearfix"></div>
+    <ul class="options">
+      <li>
+        <label><input value="1" name="reason" type="radio">Недружественный контент</label>
+      </li>
+      <li>
+        <label><input value="2" name="reason" type="radio">Реклама спам</label>
+      </li>
+      <li>
+        <label><input value="3" name="reason" type="radio">Нарушение закона</label>
+      </li>
+      <li>
+        <label><input value="4" name="reason" type="radio">Политический контент</label>
+      </li>
+      <li>
+        <label><input value="0" name="reason" type="radio">Другое (можно заполнить самостоятельно)</label>
+        <p class="input-container visible-if-checked">
+          <input placeholder="Расскажите более подробно" type="text" name="content" class="reason-text form-control">
+        </p>
+      </li>
+    </ul>
+    <div class="clearfix"></div>
+    <div class="buttons">
+      <a class="cancel">Отменить</a>
+      <button type="button" name="ok" class="btn btn-primary">Отправить</button>
+    </div>
+  </div>
+</div>
+
+<div id="iCMS-FAVORITE-DIALOG" style="display:none;">
+  <div class="iCMS_FAVORITE_DIALOG">
+    <div class="favorite_list">
+      <div class="favorite_list_content">
+        <img data-src="<!--{$site.urls.ui}-->/loading.gif" /> Идет загрузка, пожалуйста подождите ...
+      </div>
+      <div class="clearfix mt15"></div>
+      <div class="buttons">
+        <a class="create fl" href="javascript:;">В избранное</a>
+        <button type="button" name="favorite" class="cancel btn btn-primary">Отменить</button>
+      </div>
+    </div>
+    <div class="favorite_create hid">
+      <div class="favorite_create_content form-horizontal">
+        <div class="form-group">
+          <label for="f_title" class="col-sm-2 control-label">Название</label>
+          <div class="col-sm-10">
+            <input type="text" id="f_title" name="title" class="form-control" placeholder="Введите название не более 20 символов">
+          </div>
+        </div>
+        <div class="favorite_create_error">Поле обязательно к заполнению</div>
+        <div class="form-group">
+          <label for="f_title" class="col-sm-2 control-label">Описание</label>
+          <div class="col-sm-10">
+            <textarea name="description" class="form-control" placeholder="Необязательное, введите не более 255 символов" style="height: 66px;"></textarea>
+          </div>
+        </div>
+        <div class="clearfix mt10"></div>
+        <div class="form-group">
+          <label class="radio col-sm-offset-3">
+            <input type="radio" name="mode" value="1" checked>
+            <b> 公开 </b><span class="gray">公开后不能设置为私密</span>
+          </label>
+          <label class="radio col-sm-offset-3">
+            <input type="radio" name="mode" value="0">
+            <b> 私密 </b><span class="gray">只有你可以查看这个收藏夹</span>
+          </label>
+        </div>
+      </div>
+      <div class="clearfix mt15"></div>
+      <div class="buttons">
+        <a class="cancel_create mr20" href="javascript:;">Отменить</a>
+        <button type="button" name="create" class="btn btn-primary">Создать</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script id="iCMS-FAVORITE-TPL" type="text/plain"
+data-title="Добавили в избранное"
+data-create-title="Создать новую коллекцию">
+  <a class="favo-list-item-link r5 <%if(favorited){%>active<%}%> " href="javascript:;" data-fid="<%=id%>">
+    <span class="favo-list-item-title"><%=title%></span>
+    <span class="meta gray">
+    <span class="num"><%=count%></span> Материалов
+    <span class="bull">•</span> <%=follow%> Подписчики
+    </span>
+  </a>
+  <div class="clearfix mt10"></div>
+</script>

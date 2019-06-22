@@ -1,0 +1,44 @@
+<div class="commentApp-item" data-id="<%=id%>">
+    <a title="<%=user.name%>" i="ucard:<%=userid%>" class="comment-link-avatar" href="<%=user.url%>">
+        <img src="<%=user.avatar%>" class="comment-img-avatar" onerror="iUSER.NOAVATAR(this);">
+    </a>
+    <div class="comment-content-wrap">
+        <div class="comment-content-hd">
+            <a i="ucard:<%=userid%>" href="<%=user.url%>" target="_blank" class="zg-link">
+                <%=user.name%>
+            </a>
+            <%if(suid == userid){%>
+            <span class="desc"> (Автор) </span>
+            <%};%>
+            <%if(typeof(reply)!=="undefined"){%>
+            <span class="desc"> ответил </span>
+            <a i="ucard:<%=reply.uid%>" href="<%=reply.url%>" target="_blank" class="zg-link">
+                <%=reply.name%>
+            </a>
+            <%}%>
+            <span class="text-num" id="<%=lou%>">
+                <em>#<%=lou%></em>
+            </span>
+        </div>
+        <div class="comment-content">
+            <%=content%>
+        </div>
+        <div class="comment-content-ft" data-param='{"iid":"<%=param.iid%>","id":"<%=param.id%>","userid":"<%=param.userid%>","name":"<%=param.name%>"}'>
+            <span class="comment-date"><%=addtime%></span>
+            <span i="comment_up_label" class="label label-info <%if(up == "0"){%>hide<%}%>">
+                <i class="fa fa-thumbs-up"></i>
+                <em i="comment_up_num"><%=up%></em>
+                <em>Нравиться</em>
+            </span>
+            <a href="javascript:;" i="comment_reply" class="comment-op-link">
+                <i class="ui-icon ui-reply-icon"></i> Ответить
+            </a>
+            <a href="javascript:;" i="comment_like" class="comment-op-link">
+                <i class="ui-icon ui-like-icon"></i>Понравилось
+            </a>
+            <a href="javascript:;" i="report" class="comment-op-link" data-param='{"appid":"<%=param.sappid%>","iid":"<%=id%>"}'>
+                <i class="ui-icon ui-report-icon"></i>Пожаловаться
+            </a>
+        </div>
+    </div>
+</div>

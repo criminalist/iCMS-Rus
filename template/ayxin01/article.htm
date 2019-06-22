@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><!--{if $article.chapter && $article.subtitle}-->
+        <!--{$article.subtitle}-->_
+        <!--{/if}-->
+        <!--{$article.title}-->_
+        <!--{$category.name}-->_
+        <!--{$site.title}-->_
+        <!--{$site.seotitle}--></title>
+    <meta name="keywords" content="<!--{$article.keywords}-->" />
+    <meta name="description" content="<!--{$article.description}-->" />
+    <meta name="mobile-agent" content="format=xhtml;url=<!--{$article.iurl.mobile.url}-->">
+    <meta name="mobile-agent" content="format=html5;url=<!--{$article.iurl.mobile.url}-->">
+	<meta http-equiv="Cache-Control" content="no-transform" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="alternate" media="only screen and(max-width: 640px)" href="<!--{$article.iurl.mobile.url}-->">
+<!--{include file="./pubui-ui.htm"}-->
+  </head>
+  <body>
+  <!--{include file="./a-header.htm"}-->
+    <div class="g_box1 u_1">
+      <div class="weizhi fl">
+        <h3><!--{$category.name}--></h3>当前位置：
+        <a href="<!--{$site.url}-->">首页</a> / 
+		<!--{foreach value="catenav" from="$category.navArray"}-->
+        <a href="<!--{$catenav.url}-->"><!--{$catenav.name}--></a> / 
+		<!--{/foreach}-->
+        <!--{$article.link}--> </div>
+      <div class="search fr">
+        <div class="so fr">
+          <form action="<!--{iCMS:router url='api'}-->" method="get">
+		  <input name="app" type="hidden" value="search" />
+            <input type="text" name="q" class="search-keyword fl" value="<!--{$search.title}-->">
+            <input type="submit" name="submit" value="" class="search-submit fl"></form>
+        </div>
+      </div>
+    </div>
+    <div class="main1 clearfix">
+      <div class="left_2">
+        <div class="g_con1">
+          <h1><!--{$article.title}--></h1>
+          <div class="info">时间：<!--{$article.pubdate|date:"Y-m-d"}-->
+            <em>|</em>栏目：
+            <a href='<!--{$catenav.url}-->'><!--{$catenav.name}--></a>
+            <em>|</em>点击：<span id="view"><!--{$article.hits.count}--></span>次</div>
+          <ul class="ban_838_2 clearfix">
+          <!--{iCMS:marker:html key="article_body_ad"}-->
+          </ul>
+          <div class="con">
+            <div class="news_content<!--{if $article.markdown}--> markdown<!--{/if}-->">
+               <!--{$article.body}-->
+            </div>
+          </div>
+          <div class="pagebreak"><!--{if $article.page.end}-->
+                        <!--{/if}--></div>
+        </div>
+        <div class="b_box5">
+          <p>上一篇：
+		  <!--{iCMS:article:prev cid="$article.cid" id="$article.id"}-->
+          <!--{if $article_prev}-->
+            <a disabled="true" href="<!--{$article_prev.url}-->"><!--{$article_prev.title}--></a><!--{else}-->没有了<!--{/if}--></p>
+          <p>栏&nbsp;&nbsp;&nbsp;目：
+            <a href="<!--{$category.url}-->"><!--{$category.name}--></a></p>
+          <p>下一篇：
+		  <!--{iCMS:article:next cid="$article.cid" id="$article.id"}-->
+          <!--{if $article_next}-->
+            <a disabled="true" href="<!--{$article_next.url}-->"><!--{$article_next.title}--></a><!--{else}-->没有了<!--{/if}--></p>
+          <p>本文标题：<!--{$article.link}--></p>
+          <p>本文地址：<span id="url"></span></p>
+        </div>
+        <script>$("#url").html(window.location.href);</script>
+        <div class="b_box6">
+          <a href="<!--{$category.url}-->">更多<!--{$category.name}--></a></div>
+        <div class="b_box7"></div>
+        <div class="g_box2">
+          <div class="t_1">
+            <h3>您可能感兴趣的文章</h3></div>
+          <ul class="b_box4 clearfix">
+		   <!--{iCMS:article:list loop='true' row='8' cid="$category.cid"}-->
+            <li>
+              <span><!--{$article_list.pubdate|date:'m-d'}--></span>
+              <a href="<!--{$article_list.url}-->" title="<!--{$article_list.title}-->"><!--{$article_list.title}--></a></li>
+			  <!--{/iCMS}-->
+          </ul>
+        </div>
+      </div>
+      <div class="right_2">
+        <div class="ban_300">
+		<!--{iCMS:marker:html key="right_side_ad"}-->
+        </div>
+        <div class="g_box2">
+          <div class="t_1">
+            <h3>阅读排行</h3></div>
+          <ul class="b_box1">
+		   <!--{iCMS:article:list loop="true" row="10" sub="all" orderby="week" cid="$category.cid"}-->
+            <li>
+              <span><!--{$article_list.rownum}--></span>
+              <a href="<!--{$article_list.url}-->" target="_blank" title="<!--{$article_list.title}-->"><!--{$article_list.title}--></a></li>
+			<!--{/iCMS}-->
+          </ul>
+        </div>
+        <div class="g_box2">
+          <div class="t_1">
+            <h3>热门推荐</h3></div>
+          <ul class="b_box2">
+			<!--{iCMS:article:list loop="true" row="10" sub="all" orderby="month" cid="$category.cid"}-->
+            <li>
+              <span><!--{$article_list.pubdate|date:'m-d'}--></span>
+              <a href="<!--{$article_list.url}-->" target="_blank" title="<!--{$article_list.title}-->"><!--{$article_list.title}--></a></li>
+			<!--{/iCMS}-->
+          </ul>
+        </div>
+      </div>
+    </div>
+<!--{include file="./a-footer.htm"}-->
+<!----- <div class='toolbar'><a href='javascript:scroll(0,0)' class='toolbar-item toolbar-item-top'></a></div> ----->
+<script src="<!--{$article.hits.script}-->"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Сброс пароля</title>
+    <meta name="keywords" content="<!--{$site.keywords}-->" />
+    <meta name="description" content="<!--{$site.description}-->"/>
+    <meta name="mobile-agent" content="format=xhtml;url=<!--{$site.urls.mobile}-->">
+    <meta name="mobile-agent" content="format=html5;url=<!--{$site.urls.mobile}-->"/>
+    <!--{iCMS:public:ui}-->
+    <!--{include file="iCMS://user.css.htm"}-->
+    <script>
+    $(function() {
+        var resetpwd = $("#resetpwd-box");
+        $("#resetpwd-submit").click(function(event) {
+            event.preventDefault();
+            $(".tip-error").hide();
+            var param = {
+                seccode: $("#seccode", resetpwd).val(),
+                password: $("#password", resetpwd).val(),
+                rstpassword: $("#rstpassword", resetpwd).val(),
+                auth: '<!--{$auth}-->',
+                uid: '<!--{$user.uid}-->'
+            }
+
+            if (param.password.length < 6) {
+                tip({
+                    forward: 'password',
+                    msg: 'Новый пароль слишком короткий, должно быть не менее 6 символов!'
+                });
+                return false;
+            }
+            if (param.rstpassword.length < 6) {
+                tip({
+                    forward: 'rstpassword',
+                    msg: 'Пароль слишком короткий, должно быть не менее 6 символов!'
+                });
+                return false;
+            }
+            if (param.password != param.rstpassword) {
+                tip({
+                    forward: 'rstpassword',
+                    msg: 'Пароли не совпадают !'
+                });
+                return false
+            }
+            if (param.seccode == "") {
+                tip({
+                    forward: 'seccode',
+                    msg: 'Введите защитный код'
+                });
+                return false
+            }
+            iCMS.run('passport', function($PASSPORT) {
+                
+                $PASSPORT.SUCCESS = function(s) {
+                  iCMS.UI.alert(s.msg);
+                  window.top.location.href = "<!--{iCMS:router url='user:login'}-->";
+                }
+               
+                $PASSPORT.FAIL = function(f) {
+                  tip(f);
+                }
+                
+                $PASSPORT.FINDPWD(param);
+            });
+        });
+      
+      function tip(ret) {
+          iCMS.UI.seccode(".seccode-img", resetpwd);
+          var tip = $('.tip-' + ret.forward);
+          tip.text(ret.msg).show();
+      }
+    })
+    </script>
+
+  </head>
+<body class="userApp passport">
+  <!--{include file="./user.header.htm" import="true"}-->
+  <div class="resetpwd-wrap">
+    <div class="passport-wrap">
+      <div class="passport-main" style="width: auto;">
+        <h1>Сброс пароля</h1>
+        <div id="resetpwd-box" class="passport-form form-horizontal">
+          <div class="form-group">
+            <label for="uname" class="control-label">Электронная почта:</label>
+            <div class="form-control" style="padding: 10px;"><!--{$user.username}--></div>
+          </div>
+          <div class="form-group">
+            <label for="uname" class="control-label">Имя пользователя:</label>
+            <div class="form-control" style="padding: 10px;"><!--{$user.nickname}--></div>
+          </div>
+          <div class="form-group">
+            <label for="password" class="control-label"> Новый пароль:</label>
+            <input type="password" name="password" class="form-control" id="password" placeholder="Пожалуйста, введите ваш пароль">
+            <p class="help-block tip-error tip-password">Пожалуйста, введите ваш пароль</p>
+          </div>
+          <div class="form-group">
+            <label for="rstpassword" class="control-label">Подтвердите пароль:</label>
+            <input type="password" name="rstpassword" class="form-control" id="rstpassword" placeholder="Введите пароль еще раз">
+            <p class="help-block tip-error tip-rstpassword">Введите пароль еще раз</p>
+          </div>
+          <div class="form-group">
+            <label for="seccode" class="control-label">Защитный код:</label>
+            <input type="text" maxlength="4" name="seccode" class="seccode form-control" id="seccode" placeholder="Введите защитный код">
+            <!--{iCMS:public:seccode}-->
+            <p class="help-block tip-error tip-seccode">Введите защитный код</p>
+          </div>
+          <div class="form-group submit">
+            <button class="btn btn-large btn-primary" id="resetpwd-submit" type="button">Сброс пароля</button>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <!--{include file="iCMS://footer.htm"}-->
+</body>
+</html>

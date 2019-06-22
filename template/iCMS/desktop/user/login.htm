@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <!--{if $user}-->Привязать существующий профиль
+        <!--{else}-->Имя пользователя
+        <!--{/if}-->
+        <!--{$site.title}-->
+    </title>
+    <meta name="keywords" content="<!--{$site.keywords}-->" />
+    <meta name="description" content="<!--{$site.description}-->" />
+    <meta name="mobile-agent" content="format=html5;url=<!--{$site.url}-->" />
+    <!--{iCMS:public:ui}-->
+    <!--{include file="iCMS://user.css.htm"}-->
+    <script>
+    
+    $(function() {
+        var login = $("#login-box");
+        $("#login-submit").click(function(event) {
+            event.preventDefault();
+            $(".tip-error").hide();
+            var param = {
+                uname: $("#uname", login).val(),
+                pass: $("#pass", login).val(),
+                seccode: $("#seccode", login).val(),
+                remember: $('input[name="remember"]', login).val()
+            }
+            if (param.uname == "") {
+                tip({
+                    forward: 'uname',
+                    msg: 'Пожалуйста, введите имя пользователя'
+                });
+                return false
+            }
+            if (param.pass == "") {
+                tip({
+                    forward: 'pass',
+                    msg: 'Пожалуйста, введите ваш пароль'
+                });
+                return false
+            }
+            <!--{if $iCMS.CONFIG.user.login.seccode }-->
+            
+            param.login_seccode = true;
+            if (param.login_seccode) {
+                if (param.seccode == "") {
+                    tip({
+                        forward: 'seccode',
+                        msg: 'Введите защитный код'
+                    });
+                    return false
+                }
+            }
+            <!--{/if}-->
+
+            <!--{if $user.openid}-->
+            
+            param.openid = "<!--{$user.openid}-->";
+            <!--{/if}-->
+            
+            iCMS.run('passport', function($PASSPORT) {
+                
+                $PASSPORT.SUCCESS = function(s) {
+                    window.top.location.href = "<!--{$forward}-->";
+                }
+                
+                $PASSPORT.FAIL = function(f) {
+                    tip(f);
+                }
+                
+                $PASSPORT.LOGIN(param);
+            });
+            
+            function tip(ret) {
+                iCMS.UI.seccode(".seccode-img", login);
+                var tip = $('.tip-' + ret.forward);
+                tip.text(ret.msg).show();
+            }
+        });
+    })
+    </script>
+</head>
+
+<body class="userApp passport">
+    <div class="login-wrap">
+        <!--{include file="./user.header.htm" import="true"}-->
+        <div class="passport-wrap">
+            <div class="passport-main">
+                <h1>
+                <!--{if $user}-->Привязать существующий профиль
+                <!--{else}-->Имя пользователя
+                <!--{/if}-->
+                </h1>
+                <div id="login-box" class="passport-form form-horizontal">
+                    <div class="form-group">
+                        <label for="uname" class="control-label">Имя пользователя:</label>
+                        <input type="text" name="uname" class="form-control" id="uname" placeholder="Электронная почта или логин">
+                        <p class="help-block tip-error tip-uname">Пожалуйста, введите ваш логин</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="pass" class="control-label">Пароль:</label>
+                        <input type="password" name="pass" class="form-control" id="pass" placeholder="Пожалуйста, введите ваш пароль">
+                        <p class="help-block tip-error tip-pass">Пожалуйста, введите ваш пароль</p>
+                    </div>
+                    <!--{if $iCMS.CONFIG.user.login.seccode }-->
+                    <div class="form-group">
+                        <label for="seccode" class="control-label">Защитный код:</label>
+                        <input type="text" maxlength="4" name="seccode" class="seccode form-control" id="seccode" placeholder="Введите защитный код">
+                        <!--{iCMS:public:seccode}-->
+                        <p class="help-block tip-error tip-seccode">Введите защитный код</p>
+                    </div>
+                    <!--{/if}-->
+                    <div class="form-group opt">
+                        <label for="remember">
+                            <input type="checkbox" value="1" name="remember" class="check" checked="checked"> Запомнить меня </label>
+                            <a class="findpwd" href="<!--{iCMS:router url='user:findpwd'}-->">Забыли пароль?</a>
+                        </div>
+                        <div class="form-group submit">
+                            <a href="javascript:;" id="login-submit" class="btn btn-success btn-lg"> Войти </a>
+                        </div>
+                        <div class="platform">
+                            <span>Авторизация при помощи соц сетей:</span>
+                            <div class="platform-btn">
+                                <!--{if $iCMS.CONFIG.user.open.QQ.enable }-->
+                                <a href="<!--{iCMS:router url='user:login:qq'}-->" class="login_qq"></a>
+                                <!--{/if}-->
+                                <!--{if $iCMS.CONFIG.user.open.WB.enable }-->
+                                <a href="<!--{iCMS:router url='user:login:wb'}-->" class="login_wb"></a>
+                                <!--{/if}-->
+                                <!--{if $iCMS.CONFIG.user.open.WX.enable }-->
+                                <a href="<!--{iCMS:router url='user:login:wx'}-->" class="login_wx"></a>
+                                <!--{/if}-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="passport-right">
+                    <div class="right-wrap">
+                        <h2>Регистрация</h2>
+                        <p>У вас еще нет аккаунта?</p>
+                        <a class="btn btn-primary" href="<!--{iCMS:router url='user:register'}-->">Быстрая регистрация</a>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!--{include file="iCMS://footer.htm"}-->
+    </body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <!--{$content.title}-->
+        <!--{$category.name}-->
+        <!--{$site.title}-->
+        <!--{$site.seotitle}-->
+    </title>
+    <meta name="keywords" content="<!--{$content.keywords}-->" />
+    <meta name="description" content="<!--{$content.description}-->" />
+    <meta name="mobile-agent" content="format=xhtml;url=<!--{$content.iurl.mobile.url}-->">
+    <meta name="mobile-agent" content="format=html5;url=<!--{$content.iurl.mobile.url}-->">
+    <link rel="alternate" media="only screen and(max-width: 640px)" href="<!--{$content.iurl.mobile.url}-->">
+    <!--{iCMS:public:ui}-->
+</head>
+
+<body class="contentApp" i="<!--{$iCMS.APP.NAME}-->">
+    <!--{include file="./header.htm"}-->
+    <div class="body clearfix">
+        <div class="body-wrap r5" style="padding-top: 0px;">
+            <div class="main-col">
+                <ul class="breadcrumb">
+                    <li><a href="<!--{$site.url}-->">Главная</a></li>
+                    <!--{foreach value="catenav" from="$category.navArray"}-->
+                    <li>
+                        <a href='<!--{$catenav.url}-->'>
+                            <!--{$catenav.name}-->
+                        </a>
+                    </li>
+                    <!--{/foreach}-->
+                    <li class="active">
+                        <!--{$content.link}-->
+                    </li>
+                </ul>
+                <div class="content-wrap">
+                    <h1><!--{$content.title}--></h1>
+                    <div class="info">
+                        <span><a href="<!--{$site.url}-->"><!--{$site.name}--></a> <!--{$site.url}--></span>
+                        <span class="pubdate"><!--{$content.pubdate|date:"Y-m-d H:i"}--></span>
+                        <!--{if $content.source}-->
+                        <span class="source">Источник:<!--{$content.source|default:'Не указан'}--> </span>
+                        <!--{/if}-->
+                        <!--{if $content.author}-->
+                        <span class="author">Автор:<!--{$content.author}--></span>
+                        <!--{/if}-->
+                        <span class="editor">Редактор:<!--{$content.user.at}--></span>
+                        <span id="cmt_count" class="cmt_count"></span>
+                    </div>
+                    <div class="clearfix"></div>
+                    <article class="text-body">
+                                <!--{foreach value="cvalue" key="ckey" from="$content"}-->
+                                <p>
+                                    <b>&lt;!--{$content.<!--{$ckey}-->}--&gt;</b>
+                                    <!--{$cvalue|print_R}-->
+                                </p>
+                                <!--{/foreach}-->
+                    </article>
+
+                    <div class="clearfix mb10"></div>
+                    
+                    <div class="APP-like" data-param='<!--{$content.param|json_encode}-->'>
+                        <div i="vote:<!--{$APP.app}-->:good" class="btn btn-success btn-sm" title="Понравилось!">
+                            <i class="fa fa-thumbs-up"></i>
+                            <span i="vote_good_num" class="like-num"><!--{$content.good}--></span>
+                        </div>
+                        <div i="vote:<!--{$APP.app}-->:bad" class="btn btn-danger btn-sm" title="Не понравилось">
+                            <i class="fa fa-thumbs-down"></i>
+                            <span i="vote_bad_num" class="like-num"><!--{$content.bad}--></span>
+                        </div>
+                        <div i="favorite:<!--{$APP.app}-->" class="btn btn-primary btn-sm" title="非常棒!收藏起来">
+                            <i class="fa fa-heart"></i>
+                            <span i="favorite_num" class="favorite-num"><!--{$content.favorite}--></span>
+                        </div>
+                    </div>
+                    <div class="clearfix mt20"></div>
+                    <div class="prev-next">
+                        <p class="prev">
+                            <b>Назад:</b>
+                            <!--{iCMS:content:prev cid="$content.cid" id="$content.id"}-->
+                            <!--{if $content_prev}-->
+                            <a href="<!--{$content_prev.url}-->" class="prev" target="_self">
+                                <!--{$content_prev.title}-->
+                            </a>
+                            <!--{else}-->
+                            нет записей
+                            <!--{/if}-->
+                        </p>
+                        <p class="next">
+                            <!--{iCMS:content:next cid="$content.cid" id="$content.id"}-->
+                            <!--{if $content_next}-->
+                            <a href="<!--{$content_next.url}-->" class="next" target="_self">
+                                <!--{$content_next.title}-->
+                            </a>
+                            <!--{else}-->
+                            нет записей
+                            <!--{/if}-->
+                            <b>:Вперед</b>
+                        </p>
+                        <p class="clearfix"></p>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="related">
+                    <h3><i class="line"></i> Подробнее<b><!--{$category.link}--></b>По теме<!--{$APP.name}-->:</h3>
+                    <div class="related-left">
+                        <ul>
+                            <!--{iCMS:content:list loop='true' row='9' cid="$category.cid"}-->
+                            <li>
+                                <a href="<!--{$content_list.url}-->">
+                                    <!--{$content_list.title}-->
+                                </a>
+                            </li>
+                            <!--{/iCMS}-->
+                        </ul>
+                    </div>
+                    
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix mb10"></div>
+                <div class="mod-box comment">
+                    <div class="mod-title">
+                        <h3 class="mod-txt"><i class="icon-comments"></i> Лучшие комментарии</h3>
+                    </div>
+                    <div class="mod-content">
+                        <div id="comment-list">
+                            <!--{iCMS:comment:list display="default"}-->
+                        </div>
+                        <div class="clearfix"></div>
+                        <div id="comment-form">
+                            <!--{iCMS:comment:form display="default"}-->
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="side-col">
+                <div class="mod-box rank">
+                    <div class="mod-title">
+                        <ul>
+                            <li class="active"><a href="javascript:;" data-target="#rank-week" data-toggle="tab">Топ просмотров за неделю</a></li>
+                            <li><a href="javascript:;" data-target="#rank-momth" data-toggle="tab">Топ просмотров за месяц</a></li>
+                        </ul>
+                    </div>
+                    <div class="mod-content">
+                        <ul class="rank-list" id="rank-week">
+                            <!--{iCMS:content:list loop="true" row="10" sub="all" orderby="week" cid="$category.cid"}-->
+                            <li>
+                                <em class="no<!--{$content_list.rownum}-->"><!--{$content_list.rownum}--></em>
+                                <a href="<!--{$content_list.url}-->" target="_blank">
+                                    <!--{$content_list.title}-->
+                                </a>
+                            </li>
+                            <!--{/iCMS}-->
+                        </ul>
+                        <ul class="rank-list hide" id="rank-momth">
+                            <!--{iCMS:content:list loop="true" row="10" sub="all" orderby="comment" startdate="-7 day" cid="$category.cid"}-->
+                            <li>
+                                <em class="no<!--{$content_list.rownum}-->"><!--{$content_list.rownum}--></em>
+                                <a href="<!--{$content_list.url}-->" target="_blank">
+                                    <!--{$content_list.title}-->
+                                </a>
+                            </li>
+                            <!--{/iCMS}-->
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="mod-box hot-tags">
+                    <div class="mod-title">
+                        <h3 class="mod-txt">Популярные теги</h3>
+                    </div>
+                    <div class="mod-content">
+                        <ul>
+                            <!--{iCMS:tag:list loop="true" row="15" sub="all" orderby="hot" cid="$category.cid"}-->
+                            <li>
+                                <a href="<!--{$tag_list.url}-->" target="_blank" class="btn">
+                                    <!--{$tag_list.name}-->
+                                </a>
+                            </li>
+                            <!--{/iCMS}-->
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="mod-box pictxt">
+                    <div class="mod-title">
+                        <h3 class="mod-txt">Рекомендуем изображения</h3>
+                    </div>
+                    <div class="mod-content">
+                        <!--{iCMS:content:list loop="true" pic="true" sub="all" row="8" cid="$category.cid"}-->
+                        <div class="pictxt-list <!--{cycle values='fl,fr'}-->">
+                            <a href="<!--{$content_list.url}-->" target="_blank">
+                                <span class="pictxt-img">
+                                    <img src="<!--{$content_list.pic.url}-->" alt="<!--{$content_list.title}-->">
+                                </span>
+                                <p class="pictxt-text">
+                                    <!--{$content_list.title}-->
+                                </p>
+                            </a>
+                        </div>
+                        <!--{/iCMS}-->
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix mb10"></div>
+        </div>
+        <div class="clearfix mb20"></div>
+    </div>
+    <!--{include file="./footer.htm"}-->
+    <script src="<!--{$content.hits.script}-->">
+    </script>
+</body>
+</html>
