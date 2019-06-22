@@ -397,34 +397,30 @@ class spider_tools {
     }
     public static function charsetTrans($html,$content_charset,$encode, $out = 'UTF-8') {
         if (spider::$dataTest || spider::$ruleTest) {
-            echo '<b>规则设置编码:</b>'.$encode . '<br />';
+            echo '<b>Кодировка:</b>'.$encode . '<br />';
         }
 
         $encode == 'auto' && $encode = null;
-        /**
-         * 检测http返回的编码
-         */
+       
         if($content_charset){
             $content_charset = rtrim($content_charset,';');
             if(empty($encode)||strtoupper($encode)!=strtoupper($content_charset)){
                 $encode = $content_charset;
             }
             if (spider::$dataTest || spider::$ruleTest) {
-                echo '<b>检测http编码:</b>'.$encode . '<br />';
+                echo '<b>Определить кодировку:</b>'.$encode . '<br />';
             }
             if(strtoupper($encode)==$out){
                 return $html;
             }
         }
-        /**
-         * 检测页面编码
-         */
+        
         preg_match('/<meta[^>]*?charset=(["\']?)([a-zA-z0-9\-\_]+)(\1)[^>]*?>/is', $html, $charset);
         $meta_encode = str_replace(array('"',"'"),'', trim($charset[2]));
         if(empty($encode)){
             $meta_encode && $encode = $meta_encode;
             if (spider::$dataTest || spider::$ruleTest) {
-                echo '<b>检测页面编码:</b>'.$meta_encode . '<br />';
+                echo '<b>Определить кодировку страницы:</b>'.$meta_encode . '<br />';
             }
         }
         preg_match('/<meta[^>]*?http-equiv=(["\']?)content-language(\1)[^>]*?content=(["\']?)([a-zA-z0-9\-\_]+)(\3)[^>]*?>/is', $html, $language);
@@ -432,7 +428,7 @@ class spider_tools {
         if(empty($encode)){
             $lang_encode && $encode = $lang_encode;
             if (spider::$dataTest || spider::$ruleTest) {
-                echo '<b>检测页面meta编码声明:</b>'.$lang_encode . '<br />';
+                echo '<b>Определение языка страницы (meta content-language):</b>'.$lang_encode . '<br />';
             }
         }
         if($content_charset && $meta_encode && strtoupper($meta_encode)!=strtoupper($content_charset)){
@@ -450,21 +446,21 @@ class spider_tools {
         }
 
         if(function_exists('mb_detect_encoding') && empty($encode)) {
-            $detect_encode = mb_detect_encoding($html, array("ASCII","UTF-8","GB2312","GBK","BIG5"));
+            $detect_encode = mb_detect_encoding($html, array("ASCII","UTF-8","windows-1251","GBK","BIG5"));
             $detect_encode && $encode = $detect_encode;
             if (spider::$dataTest || spider::$ruleTest) {
-                echo '<b>程序自动识别页面编码:</b>'.$detect_encode . '<br />';
+                echo '<b>Программа автоматически распознала кодировку страницы:</b>'.$detect_encode . '<br />';
             }
         }
 
         if(strtoupper($encode)==$out){
             return $html;
         }
-        if(strtoupper($encode)=='GB2312'){
-            $encode = 'GBK';
+        if(strtoupper($encode)=='windows-1251'){
+            $encode = 'utf-8';
         }
         if (spider::$dataTest || spider::$ruleTest) {
-            echo '<b>页面编码不一致,进行转码['.$encode.'=>'.$out.']</b><br />';
+            echo '<b>Неправильная кодировка страницы ['.$encode.'=>'.$out.']</b><br />';
         }
         $html = preg_replace('/(<meta[^>]*?charset=(["\']?))[a-zA-z0-9\-\_]*(\2[^>]*?>)/is', "\\1$out\\3", $html,1);
 

@@ -1,7 +1,7 @@
 <?php
 
 defined('iPHP') OR exit('Oops, something went wrong');
-configAdmincp::head("标签系统设置");
+configAdmincp::head("Настройка тегов");
 ?>
 <!-- <div class="input-prepend">
   <span class="add-on">标签URL</span>
@@ -31,10 +31,10 @@ configAdmincp::head("标签系统设置");
     </ul>
   </div>
 </div>
-<div class="help-inline">Правило обязательно должно включать в себя одну из переменных<span class="label label-important">{ID}</span>或<span class="label label-important">{NAME}</span>或<span class="label label-important">{EN_EN}</span>或<span class="label label-important">{TKEY}</span></div>
+<div class="help-inline">Правило обязательно должно включать в себя одну из переменных <span class="label label-important">{ID}</span> , <span class="label label-important">{NAME}</span> , <span class="label label-important">{EN_EN}</span> , <span class="label label-important">{TKEY}</span></div>
 <!-- <div class="clearfloat mb10"></div>
 <div class="input-prepend">
-  <span class="add-on">标签目录</span>
+  <span class="add-on">Каталог</span>
   <input type="text" name="config[dir]" class="span4" id="dir" value="<?php echo $config['dir'] ; ?>"/>
 </div>
 <span class="help-inline">存放标签静态页面目录,相对于app目录.可用../表示上级目录</span>
@@ -45,7 +45,7 @@ configAdmincp::head("标签系统设置");
   <?php echo filesAdmincp::modal_btn('Шаблон','tpl');?>
 </div>
 <div class="clearfloat mb10"></div>
-<div class="input-prepend"> <span class="add-on">TKEY分割符</span>
+<div class="input-prepend"> <span class="add-on">Разделитель TKEY</span>
   <input type="text" name="config[tkey]" class="span4" id="tkey" value="<?php echo $config['tkey'] ; ?>"/>
 </div>
 <span class="help-inline">留空,按紧凑型生成(Транслит)</span>
@@ -53,6 +53,6 @@ configAdmincp::head("标签系统设置");
 <div class="alert alert-block">
   此配置为标签的URL默认配置<br />
   标签规则优先级
-  标签自定义链接 > 标签分类 > 标签所属栏目 > 标签系统设置
+  标签自定义链接 > 标签分类 > 标签所属栏目 > Настройка тегов
 </div>
 <?php configAdmincp::foot();?>

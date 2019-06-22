@@ -83,7 +83,7 @@ $(function() { iCMS.select('watermark_pos', "<?php echo (int)$config['watermark'
 <span class="help-inline">字体文件</span>
 <div class="clearfloat mb10"></div>
 <div class="input-prepend">
-    <span class="add-on">水印文字字体大小</span>
+    <span class="add-on">Размер шрифта</span>
     <input type="text" name="config[watermark][fontsize]" class="span3" id="watermark_fontsize" value="<?php echo $config['watermark']['fontsize'] ; ?>" />
 </div>
 <div class="clearfloat mb10"></div>
