@@ -46,7 +46,7 @@ $(function(){
 
         <div id="push-add" class="tab-content">
           <div id="push-add-base" class="tab-pane active">
-            <div class="input-prepend"> <span class="add-on">所属栏目</span>
+            <div class="input-prepend"> <span class="add-on">Привязка к категории</span>
               <select name="cid" id="cid" class="chosen-select span6" multiple="multiple" data-placeholder="请选择栏目(可多选)...">
                 <option value="0"> ==== 默认栏目 ==== </option>
                 <?php echo category::priv('ca')->select($rs['cid'],0,1,true);?>

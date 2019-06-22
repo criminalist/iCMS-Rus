@@ -22,9 +22,9 @@ $(function(){
       <form action="<?php echo APP_FURI; ?>&do=save" method="post" class="form-inline" id="iCMS-prop" target="iPHP_FRAME">
         <input name="pid" type="hidden" value="<?php echo $this->pid ; ?>" />
         <div id="<?php echo APP_BOXID;?>" class="tab-content">
-          <div class="input-prepend"> <span class="add-on">所属栏目</span>
+          <div class="input-prepend"> <span class="add-on">Привязка к категории</span>
             <select name="cid" id="cid" class="span4 chosen-select">
-              <option value="0"> ==== 暂无所属栏目 ==== </option>
+              <option value="0"> ==== Нет привязки к категории ==== </option>
               <?php echo category::priv('ca')->select($rs['cid'],0,1,true);?>
             </select>
           </div>

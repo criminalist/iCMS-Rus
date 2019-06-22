@@ -54,7 +54,7 @@ $(function(){
             <span class="help-inline">本标签所属的标签分类</span>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend">
-              <span class="add-on">所属栏目</span>
+              <span class="add-on">Привязка к категории</span>
               <select name="cid" id="cid" class="chosen-select span6" data-placeholder="请选择栏目...">
                 <option> ==== 无所属栏目 ==== </option>
                 <?php echo category::appid(0,'ca')->select($rs['cid'],0,1,true);?>
