@@ -82,7 +82,7 @@ class spider_projectAdmincp {
 		list($orderby,$orderby_option) = get_orderby();
 		$maxperpage = $_GET['perpage'] > 0 ? (int) $_GET['perpage'] : 20;
 		$total = iPagination::totalCache( "SELECT count(*) FROM `#iCMS@__spider_project` {$sql}", "G");
-		iUI::pagenav($total, $maxperpage, "个方案");
+		iUI::pagenav($total, $maxperpage, "");
 		$rs = iDB::all("SELECT * FROM `#iCMS@__spider_project` {$sql} order by {$orderby} LIMIT " . iPagination::$offset . " , {$maxperpage}");
 		$_count = count($rs);
 		include admincp::view("project.manage");

@@ -40,7 +40,7 @@ $(function(){
         </div>
         <div class="input-prepend input-append">
           <input type="text" name="days" id="days" value="<?php echo $_GET['days'] ? $_GET['days'] : 7; ?>" style="width:36px;"/>
-          <span class="add-on">天内</span>
+          <span class="add-on">Дней</span>
         </div>
         <div class="input-prepend input-append">
           <span class="add-on">На страницу</span>

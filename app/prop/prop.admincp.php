@@ -111,13 +111,13 @@ class propAdmincp{
     }
     public function do_del($id = null,$dialog=true){
     	$id===null && $id=$this->pid;
-    	$id OR iUI::alert('请选择要删除的属性!');
+    	$id OR iUI::alert('Выберите свойства, которые необходимо удалить!');
         $this->del($id);
     	$this->cache();
-    	$dialog && iUI::success("已经删除!",'url:'.APP_URI);
+    	$dialog && iUI::success("Успешно удалено!",'url:'.APP_URI);
     }
     public function do_batch(){
-        list($idArray,$ids,$batch) = iUI::get_batch_args("请选择要操作的属性");
+        list($idArray,$ids,$batch) = iUI::get_batch_args("Выберите свойства");
     	switch($batch){
     		case 'dels':
 				iUI::$break	= false;
@@ -125,11 +125,11 @@ class propAdmincp{
 	    			$this->do_del($id,false);
 	    		}
 	    		iUI::$break	= true;
-				iUI::success('属性全部删除完成!','js:1');
+				iUI::success('Все свойства успешно удалены!','js:1');
     		break;
     		case 'refresh':
     			$this->cache();
-    			iUI::success('属性缓存全部更新完成!','js:1');
+    			iUI::success('Кеш успешно обновлен!','js:1');
     		break;
 		}
 	}

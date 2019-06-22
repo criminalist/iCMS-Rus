@@ -69,7 +69,7 @@ $(function(){
         </div>
         <div class="input-prepend"> <span class="add-on">Правила публикации</span>
           <select name="poid" id="poid" class="span3 chosen-select">
-            <option value="0">所有发布规则</option>
+            <option value="0">Все правила</option>
             <?php foreach ((array)$postArray as $poid => $poname) {
               echo '<option value="'.$poid.'">'.$poname.'</option>';
             }?>
@@ -83,11 +83,11 @@ $(function(){
           <span class="add-on"><i class="fa fa-calendar"></i></span>
         </div>
         <div class="input-prepend input-append">
-          <span class="add-on">是否为自动采集</span>
-          <span class="add-on">是
+          <span class="add-on">Автоматический режим</span>
+          <span class="add-on">Да
             <input type="radio" name="auto" class="radio" value="1"/>
           </span>
-          <span class="add-on">否
+          <span class="add-on">Нет
             <input type="radio" name="auto" class="radio" value="0"/>
           </span>
         </div>
@@ -106,7 +106,7 @@ $(function(){
     <div class="widget-title"> <span class="icon">
       <input type="checkbox" class="checkAll" data-target="#<?php echo APP_BOXID;?>" />
       </span>
-      <h5>方案列表</h5>
+      <h5>Список схем</h5>
     </div>
     <div class="widget-content nopadding">
       <form action="<?php echo APP_FURI; ?>&do=batch" method="post" class="form-inline" id="<?php echo APP_FORMID;?>" target="iPHP_FRAME">
@@ -115,10 +115,10 @@ $(function(){
             <tr>
               <th><i class="fa fa-arrows-v"></i></th>
               <th>ID</th>
-              <th> Имя </th>
-              <th> Правила </th>
+              <th>Имя</th>
+              <th>Правила</th>
               <th>Категории</th>
-              <th>发布</th>
+              <th>Публикация</th>
               <th>Операции</th>
             </tr>
           </thead>
