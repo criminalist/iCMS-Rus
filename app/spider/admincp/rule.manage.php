@@ -74,7 +74,7 @@ $(function(){
                 <a href="<?php echo APP_FURI; ?>&do=export&rid=<?php echo $rs[$i]['id'] ; ?>" class="btn btn-small" target="iPHP_FRAME"><i class="fa fa-download"></i> Экспорт </a>
                 <a href="<?php echo __ADMINCP__; ?>=spider_project&do=export&rid=<?php echo $rs[$i]['id'] ; ?>" class="btn btn-small" target="iPHP_FRAME"><i class="fa fa-download"></i> Экспорт схемы</a>
                 <a href="<?php echo APP_FURI; ?>&do=copy&rid=<?php echo $rs[$i]['id'] ; ?>" class="btn btn-small" target="iPHP_FRAME"><i class="fa fa-clipboard"></i> Копировать</a>
-                <a href="<?php echo APP_URI; ?>&do=test&rid=<?php echo $rs[$i]['id'] ; ?>" class="btn btn-small btn-inverse" data-toggle="modal" title="测试规则"><i class="fa fa-keyboard-o"></i> Тестировать</a>
+                <a href="<?php echo APP_URI; ?>&do=test&rid=<?php echo $rs[$i]['id'] ; ?>" class="btn btn-small btn-inverse" data-toggle="modal" title="Тестировать правило"><i class="fa fa-keyboard-o"></i> Тестировать</a>
                 <a href="<?php echo APP_URI; ?>&do=add&rid=<?php echo $rs[$i]['id'] ; ?>" class="btn btn-small" target="_blank"><i class="fa fa-edit"></i> Изменить </a>
                 <a href="<?php echo APP_FURI; ?>&do=del&rid=<?php echo $rs[$i]['id'] ; ?>" target="iPHP_FRAME" class="del btn btn-small" title='Удалить навсегда'  onclick="return confirm('Вы уверены, что хотите удалить?');"/><i class="fa fa-trash-o"></i> Удалить</a></td>
             </tr>

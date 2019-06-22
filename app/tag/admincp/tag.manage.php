@@ -74,9 +74,9 @@ $(function(){
           <span class="add-on">
           <input type="checkbox" name="sub" id="sub"/>
           Подкатегории</span> </div>
-        <div class="input-prepend input-append"> <span class="add-on">分类</span>
+        <div class="input-prepend input-append"> <span class="add-on">Категории</span>
           <select name="tcid" id="tcid" class="chosen-select">
-            <option value="0">所有分类</option>
+            <option value="0"> Все категории </option>
             <?php echo $tcid_select = category::appid($this->appid,'cs')->select() ;?>
           </select>
           <span class="add-on">
@@ -136,8 +136,8 @@ $(function(){
             <th>Теги</th>
             <th>来源字段</th>
             <th>Категории</th>
-            <th>分类</th>
-            <th>属性</th>
+            <th>Категории</th>
+            <th> Свойства </th>
             <th style="width:48px;">统计</th>
             <th class="span2"><a class="fa fa-clock-o tip-top" title="更新时间/创建时间"></a></th>
             <th>Операции</th>
@@ -263,14 +263,14 @@ $(function(){
       </select>
     </div>
     <div class="clearfloat mb10"></div>
-    <div class="input-prepend"> <span class="add-on">分类</span>
+    <div class="input-prepend"> <span class="add-on">Категории</span>
       <select name="tcid" class="span3 chosen-select" multiple="multiple" data-placeholder="请选择分类(несколько вариантов)...">
         <option value="0">默认分类</option>
         <?php echo $tcid_select; ?>
       </select>
     </div>
     <div class="clearfloat mb10"></div>
-    <div class="input-prepend"> <span class="add-on">属性</span>
+    <div class="input-prepend"> <span class="add-on"> Свойства </span>
       <select name="pid" class="span3 chosen-select" multiple="multiple" data-placeholder="请选择属性(несколько вариантов)...">
         <option value="0">默认属性</option>
         <?php echo $pid_select ; ?>

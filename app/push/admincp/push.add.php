@@ -62,7 +62,7 @@ $(function(){
             </div>
             <span class="help-inline">本推荐所属的标签分类</span>
             <div class="clearfloat mb10"></div>
-            <div class="input-prepend"> <span class="add-on">属性</span>
+            <div class="input-prepend"> <span class="add-on"> Свойства </span>
               <select name="pid[]" id="pid" class="chosen-select span6" multiple="multiple" data-placeholder="请选择标签属性(可多选)...">
                 <option value="0">普通标签[pid='0']</option>
                 <?php echo propAdmincp::get("pid") ; ?>
@@ -77,7 +77,7 @@ $(function(){
               <input id="pubdate" class="<?php echo $readonly?'':'ui-datepicker'; ?>" value="<?php echo $rs['pubdate']?$rs['pubdate']:get_date(0,'Y-m-d H:i:s') ; ?>"  name="pubdate" type="text" style="width:230px" <?php echo $readonly ; ?>/>
             </div>
             <div class="clearfloat mb10"></div>
-            <div class="input-prepend"> <span class="add-on">排序</span>
+            <div class="input-prepend"> <span class="add-on"> Сортировка </span>
               <input id="sortnum" class="span3" value="<?php echo $rs['sortnum']?$rs['sortnum']:time() ; ?>" name="sortnum" type="text"/>
             </div>
             <fieldset>

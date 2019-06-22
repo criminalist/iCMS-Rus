@@ -57,9 +57,9 @@ hr { border-bottom:none; margin:4px 0px; }
           </select>
           <span class="add-on">
           <input type="checkbox" name="sub" id="sub"/>Подкатегории</span> </div>
-        <div class="input-prepend input-append"> <span class="add-on">分类</span>
+        <div class="input-prepend input-append"> <span class="add-on">Категории</span>
           <select name="pcid" id="pcid" class="chosen-select">
-            <option value="0">所有分类</option>
+            <option value="0"> Все категории </option>
             <?php echo $pcid_select = category::appid($this->appid,'cs')->select() ;?>
           </select>
           <span class="add-on">
@@ -84,7 +84,7 @@ hr { border-bottom:none; margin:4px 0px; }
     <div class="widget-title"> <span class="icon">
       <input type="checkbox" class="checkAll" data-target="#<?php echo APP_BOXID;?>" />
       </span>
-      <h5>文章列表</h5>
+      <h5>Список материалов</h5>
     </div>
     <div class="widget-content nopadding">
       <form action="<?php echo APP_FURI; ?>&do=batch" method="post" class="form-inline" id="<?php echo APP_FORMID;?>" target="iPHP_FRAME">
@@ -92,12 +92,12 @@ hr { border-bottom:none; margin:4px 0px; }
           <thead>
             <tr>
               <th><i class="fa fa-arrows-v"></i></th>
-              <th>排序</th>
+              <th> Сортировка </th>
               <th class="span6">标题</th>
               <th>Категории</th>
-              <th>分类</th>
+              <th>Категории</th>
               <th> Изменить </th>
-              <th>日期</th>
+              <th>Дата</th>
               <th>Операции</th>
             </tr>
           </thead>

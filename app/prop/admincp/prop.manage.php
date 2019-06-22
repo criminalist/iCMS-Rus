@@ -14,6 +14,7 @@ $(function(){
     <div class="widget-title"> <span class="icon"> <i class="fa fa-search"></i> </span>
       <h5SEO Заголовок/h5>
       <div class="pull-right">
+		<a style="margin: 10px;" class="btn btn-success btn-mini" href="<?php echo APP_FURI; ?>&do=add" target="iPHP_FRAME">Добавить свойство</a>
         <a style="margin: 10px;" class="btn btn-success btn-mini" href="<?php echo APP_FURI; ?>&do=cache" target="iPHP_FRAME"><i class="fa fa-refresh"></i>Обновить кэш</a>
       </div>
     </div>

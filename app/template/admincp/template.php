@@ -26,7 +26,7 @@ $(function(){
           ok: function () {
               var a = $("#newdirname"),n = a.val(),d=this;
               if(n==""){
-                iCMS.alert("请输入目录名称!");
+                iCMS.alert("Введите имя каталога!");
                 a.focus();
                 return false;
               }else{
@@ -108,7 +108,7 @@ $(function(){
           	$parentShow	= true;
           ?>
             <tr>
-              <td style="padding:3px;2px;1px;2px;"><span class="label label-info">选择</span></td>
+              <td style="padding:3px;2px;1px;2px;"><span class="label label-info"> Выбрать </span></td>
               <td colspan="2"><a href="<?php echo $URI.$parent; ?>"><i class="fa fa-angle-double-up"></i> Вернуться на уровень выше</a></td>
             </tr>
             <?php }  ?>
@@ -133,7 +133,7 @@ $(function(){
                 <input type="checkbox" class="checkAll" data-target="#files-explorer" />
                 </span></th>
               <th style="width:320px;">Имя файла <span class="label label-important">Подсказка: вы можете выбрать несколько элементов одновременно</span></th>
-              <th>类型</th>
+              <th> Тип </th>
               <th>Размер</th>
               <th style="width:130px;">Последнее изменение</th>
               <th>Операции</th>
@@ -174,6 +174,6 @@ $(function(){
 </div>
 <?php } ?>
 <div id="mkdir-box">
-  <input class="span2" id="newdirname" type="text" placeholder="请输入目录名称">
+  <input class="span2" id="newdirname" type="text" placeholder="Введите имя каталога">
 </div>
 <?php admincp::foot();?>

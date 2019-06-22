@@ -46,7 +46,7 @@ if($rs['table'])foreach ($rs['table'] as $key => $tval) {
     <table class="table table-bordered bordered">
       <thead>
         <tr>
-          <th colspan="2">索引</th>
+          <th colspan="2"> Индекс </th>
         </tr>
       </thead>
       <tbody>
@@ -66,7 +66,7 @@ if($rs['table'])foreach ($rs['table'] as $key => $tval) {
     <table class="table table-bordered bordered">
       <thead>
         <tr>
-          <th colspan="2">表信息</th>
+          <th colspan="2">Информационная таблица</th>
         </tr>
       </thead>
       <tbody>
@@ -84,7 +84,7 @@ if($rs['table'])foreach ($rs['table'] as $key => $tval) {
   </div>
 <?php
   }else{
-    echo '<div class="alert alert-error">'.$tbn.' 表不存在</div>';
+    echo '<div class="alert alert-error">Таблица '.$tbn.' не существует</div>';
   }
 ?>
 </div>

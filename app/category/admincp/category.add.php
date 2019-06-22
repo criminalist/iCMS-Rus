@@ -81,7 +81,7 @@ $(function(){
               <input readonly="true" value="<?php echo category::get($rootid)->name ; ?>" type="text" class="txt" />
               <?php } ?>
             </div>
-            <span class="help-inline">Выбрать родительский раздел</span>
+            <span class="help-inline">Родительская категория</span>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend input-append"> <span class="add-on">Свойства</span>
               <select name="pid[]" id="pid" class="chosen-select span6" data-placeholder="Выберите свойства..." multiple="multiple">

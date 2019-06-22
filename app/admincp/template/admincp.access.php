@@ -38,7 +38,7 @@ $(function(){
           <thead>
             <tr>
               <th><i class="fa fa-arrows-v"></i></th>
-              <th style="width:60px;">用户ID</th>
+              <th style="width:60px;"> ID пользователя </th>
               <th style="width:60px;">Имя пользователя</th>
               <th style="width:60px;">Приложение</th>
               <th>访问链接/时间</th>

@@ -22,7 +22,7 @@ admincp::head(false);
           <?php echo $value['url'];?>(<?php echo $value['ct'];?>)
           <br />
           <a href="<?php echo __ADMINCP__; ?>=spider_project&do=test&url=<?php echo urlencode($value['url']);?>&rid=<?php echo $value['rid'];?>&pid=<?php echo $value['pid'];?>" class="btn btn-small" target="_blank">测试网址</a>
-          <a href="<?php echo __ADMINCP__; ?>=spider_rule&do=test&rid=<?php echo $value['rid']; ?>" class="btn btn-small" data-toggle="modal" title="测试规则"><i class="fa fa-keyboard-o"></i> 测试规则</a>
+          <a href="<?php echo __ADMINCP__; ?>=spider_rule&do=test&rid=<?php echo $value['rid']; ?>" class="btn btn-small" data-toggle="modal" title="Тестировать правило"><i class="fa fa-keyboard-o"></i> Тестировать правило</a>
           <a href="<?php echo __ADMINCP__; ?>=spider_rule&do=add&rid=<?php echo $value['rid']; ?>" class="btn btn-small" target="_blank"><i class="fa fa-edit"></i> Редактировать правила</a>
         </td>
         <td><?php echo str_replace(',', '<br />', $value['msg']);?></td>

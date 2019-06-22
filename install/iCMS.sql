@@ -34,7 +34,7 @@ CREATE TABLE `icms_access_log` (
 
 CREATE TABLE `icms_apps` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID приложения appid',
-  `app` varchar(100) NOT NULL DEFAULT '' COMMENT '应用标识',
+  `app` varchar(100) NOT NULL DEFAULT '' COMMENT 'Идентификатор приложения',
   `name` varchar(100) NOT NULL DEFAULT '' COMMENT '应用名',
   `title` varchar(100) NOT NULL DEFAULT '' COMMENT '应用标题',
   `apptype` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '类型 0官方 1本地 2自定义',

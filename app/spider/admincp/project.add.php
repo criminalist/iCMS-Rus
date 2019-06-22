@@ -267,30 +267,30 @@ $(function(){
     <input type="text" class="span1" name="begin" value="1"/>
     <span class="add-on">项数</span>
     <input type="text" class="span1" name="num" value="5"/>
-    <span class="add-on"> Размер шага </span>
+    <span class="add-on">Шаг</span>
     <input type="text" class="span1" name="step" value="1"/>
     <span class="add-on">
     <input type="checkbox" name="zeroize"/>
     补零</span>
     <span class="add-on">
     <input type="checkbox" name="reverse"/>
-    倒序</span>
+    Обратный порядок</span>
   </div>
   <hr>
   <div class="input-prepend input-append">
-    <span class="add-on"><input type="radio" name="format" value="1"/> 等比数列</span>
+    <span class="add-on"><input type="radio" name="format" value="1"/> Геометрическая</span>
     <span class="add-on"> Начальное значение </span>
     <input type="text" class="span1" name="begin" value="1"/>
     <span class="add-on">项数</span>
     <input type="text" class="span1" name="num" value="5"/>
-    <span class="add-on">比值</span>
+    <span class="add-on">Шаг</span>
     <input type="text" class="span1" name="step" value="2"/>
     <span class="add-on">
     <input type="checkbox" name="zeroize"/>
     补零</span>
     <span class="add-on">
     <input type="checkbox" name="reverse"/>
-    倒序</span>
+    Обратный порядок</span>
   </div>
   <hr>
   <div class="input-prepend input-append">
@@ -299,10 +299,10 @@ $(function(){
     <input type="text" class="span1" name="begin" value="a" maxlength="1"/>
     <span class="add-on">到</span>
     <input type="text" class="span1" name="num" value="z" maxlength="1"/>
-    (区分大小写)
+    (с учетом регистра)
     <span class="add-on">
     <input type="checkbox" name="reverse"/>
-    倒序</span>
+   Обратный порядок</span>
   </div>
   <div class="well" id="preview">
   </div>

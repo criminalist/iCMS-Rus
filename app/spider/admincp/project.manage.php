@@ -136,7 +136,7 @@ $(function(){
                 <div class="action mb10">
                   <a href="<?php echo APP_URI; ?>&do=copy&pid=<?php echo $rs[$i]['id']; ?>" class="btn mt10" target="iPHP_FRAME"><i class="fa fa-copy"></i> Копировать</a>
                   <a href="<?php echo APP_URI; ?>&do=add&pid=<?php echo $rs[$i]['id']; ?>" class="btn mt10"><i class="fa fa-edit"></i> Изменить </a>
-                  <a href="<?php echo __ADMINCP__; ?>=spider_rule&do=test&rid=<?php echo $rs[$i]['rid']; ?>" class="btn mt10" data-toggle="modal" title="测试规则"><i class="fa fa-keyboard-o"></i> 测试规则</a>
+                  <a href="<?php echo __ADMINCP__; ?>=spider_rule&do=test&rid=<?php echo $rs[$i]['rid']; ?>" class="btn mt10" data-toggle="modal" title="Тестировать правило"><i class="fa fa-keyboard-o"></i> Тестировать правило</a>
                   <a href="<?php echo __ADMINCP__; ?>=spider_rule&do=test&pid=<?php echo $rs[$i]['id']; ?>" class="btn mt10" data-toggle="modal" title="测试方案"><i class="fa fa-keyboard-o"></i> 测试方案</a>
                   <a href="<?php echo __ADMINCP__; ?>=spider&do=listpub&pid=<?php echo $rs[$i]['id']; ?>" class="btn mt10 btn-primary" data-toggle="modal" title="采集列表,手动发布"><i class="fa fa-hand-o-up"></i> В ручном режиме</a>
                   <a href="<?php echo __ADMINCP__; ?>=spider&do=start&pid=<?php echo $rs[$i]['id']; ?>" class="btn mt10 btn-success tip" target="iPHP_FRAME" title="Автоматически собирать и публиковать "><i class="fa fa-play"></i> Запустить парсинг</a>
@@ -153,10 +153,10 @@ $(function(){
                 <a href="<?php echo __ADMINCP__; ?>=spider_post&do=add&poid=<?php echo $rs[$i]['poid']; ?>" target="_blank"><i class="fa fa-edit"></i></a>
               </td>
               <td style="text-align: right;">
-                <a href="<?php echo __ADMINCP__; ?>=spider&do=dropurl&pid=<?php echo $rs[$i]['id']; ?>&type=all" class="btn mt10 btn-warning" target="iPHP_FRAME"  onclick="return confirm('确定要清空数据?');"><i class="fa fa-trash-o"></i> 清空数据</a>
+                <a href="<?php echo __ADMINCP__; ?>=spider&do=dropurl&pid=<?php echo $rs[$i]['id']; ?>&type=all" class="btn mt10 btn-warning" target="iPHP_FRAME"  onclick="return confirm('Вы уверены, что хотите очистить данные?');"><i class="fa fa-trash-o"></i> Очистить данные</a>
                 <a href="<?php echo __ADMINCP__; ?>=spider&do=dropurl&pid=<?php echo $rs[$i]['id']; ?>&type=0" class="btn mt10 btn-warning" target="iPHP_FRAME"  onclick="return confirm('Вы уверены, что хотите удалить неопубликованные данные?');"><i class="fa fa-inbox"></i> Очистить неопубликованные</a>
-                <a href="<?php echo __ADMINCP__; ?>=spider&do=dropdata&pid=<?php echo $rs[$i]['id']; ?>" class="btn mt10 btn-danger" target="iPHP_FRAME"  onclick="return confirm('确定要删除采集数据,此操作会删除本方案的采集数据,并删除内容?');"><i class="fa fa-trash"></i> 删除所有采集数据&内容</a>
-                <a href="<?php echo APP_FURI; ?>&do=del&pid=<?php echo $rs[$i]['id']; ?>" target="iPHP_FRAME" class="del btn mt10 btn-danger" title='删除本方案'  onclick="return confirm('确定要删除方案?');"/><i class="fa fa-trash"></i> Удалить схему</a>
+                <a href="<?php echo __ADMINCP__; ?>=spider&do=dropdata&pid=<?php echo $rs[$i]['id']; ?>" class="btn mt10 btn-danger" target="iPHP_FRAME"  onclick="return confirm('Вы уверены, что хотите удалить собранные данные, эта операция удалит собранные данные и удалит содержание?');"><i class="fa fa-trash"></i> Удалить все собранные данные и контент</a>
+                <a href="<?php echo APP_FURI; ?>&do=del&pid=<?php echo $rs[$i]['id']; ?>" target="iPHP_FRAME" class="del btn mt10 btn-danger" title='Удалить схему'  onclick="return confirm('Вы уверены, что хотите удалить схему?');"/><i class="fa fa-trash"></i> Удалить схему</a>
 		          </td>
 	          </tr>
             <?php } ?>

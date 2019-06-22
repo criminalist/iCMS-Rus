@@ -217,7 +217,7 @@ iCMS.select('rootid',"<?php echo $_GET['rootid'] ; ?>");
               </td>
               <td><input type="text" class="span1" name="sortnum[<?php echo $rs[$i]['cid'] ; ?>]" value="<?php echo $rs[$i]['sortnum'] ; ?>" /></td>
               <td><input type="text" class="span3" name="dir[<?php echo $rs[$i]['cid'] ; ?>]" value="<?php echo $rs[$i]['dir'] ; ?>" /></td>
-              <td><a href="<?php echo APP_DOURI; ?>&rootid=<?php echo $rs[$i]['rootid'] ; ?>"><?php echo  $root?$root->name:'顶级'.$this->category_name ; ?></a></td>
+              <td><a href="<?php echo APP_DOURI; ?>&rootid=<?php echo $rs[$i]['rootid'] ; ?>"><?php echo  $root?$root->name:'Корневая категория' ?></a></td>
               <?php if(admincp::$APP_NAME=='category'){?>
               <td><a href="<?php echo APP_DOURI; ?>&appid=<?php echo $rs[$i]['appid'] ; ?>"><?php echo $rs[$i]['appid'] ; ?></a></td>
               <?php } ?>

@@ -371,7 +371,7 @@ $lock_file = iPATH.'cache/install.lock';
 						<tr>
 							<th>#</th>
 							<th>项目</th>
-							<th>路径</th>
+							<th>Путь</th>
 							<th>检查结果</th>
 						</tr>
 					</thead>

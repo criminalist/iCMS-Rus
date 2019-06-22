@@ -165,7 +165,7 @@ $(function(){
             <option value=""></option>
             <option value="all">Все статусы</option>
             <option value="0"> Черновик [status='0']</option>
-            <option value="1"selected='selected'> Нормальный [status='1']</option>
+            <option value="1"selected='selected'> Опубликован [status='1']</option>
             <option value="2"> Корзина [status='2']</option>
             <option value="3"> На рассмотрении [status='3']</option>
             <option value="4"> Отказано [status='4']</option>
@@ -275,7 +275,7 @@ $(function(){
                   <?php if(apps::check('push')){ ?>
                   <a href="<?php echo __ADMINCP__; ?>=push&do=add&title=<?php echo $value['title'] ; ?>&pic=<?php echo $value['pic'] ; ?>&url=<?php echo $value['url'] ; ?>" class="tip-bottom" title="推送此文章"><i class="fa fa-thumb-tack"></i></a>
                   <?php } ?>
-                  <a href="<?php echo APP_URI; ?>&do=update&id=<?php echo $value['id']; ?>&_args=status:0" class="tip-bottom" target="iPHP_FRAME" title="转为草稿"><i class="fa fa-inbox"></i></a>
+                  <a href="<?php echo APP_URI; ?>&do=update&id=<?php echo $value['id']; ?>&_args=status:0" class="tip-bottom" target="iPHP_FRAME" title="Отправить в черновик"><i class="fa fa-inbox"></i></a>
                   <a href="<?php echo APP_URI; ?>&do=update&id=<?php echo $value['id']; ?>&_args=pubdate:now" class="tip-bottom" target="iPHP_FRAME" title="更新文章时间"><i class="fa fa-clock-o"></i></a>
                   <?php } ?>
                   <?php if($value['status']!="1"){ ?>
@@ -365,18 +365,18 @@ $(function(){
                       <li><a data-toggle="batch" data-action="pubdate:now"><i class="fa fa-clock-o"></i> Изменить время публикации</a></li>
                       <?php if($stype=="inbox"||$stype=="trash"){ ?>
                       <li><a data-toggle="batch" data-action="status:1"><i class="fa fa-share"></i> Опубликовать</a></li>
-                      <li><a data-toggle="batch" data-action="status:1,pubdate:now"><i class="fa fa-clock-o"></i> 发布并更新时间</a></li>
+                      <li><a data-toggle="batch" data-action="status:1,pubdate:now"><i class="fa fa-clock-o"></i> Время публикации и обновления</a></li>
                       <?php } ?>
-                      <li><a data-toggle="batch" data-action="status:0"><i class="fa fa-inbox"></i> 转为草稿</a></li>
+                      <li><a data-toggle="batch" data-action="status:0"><i class="fa fa-inbox"></i> Отправить в черновик</a></li>
                       <li class="divider"></li>
                       <li><a data-toggle="batch" data-action="prop"><i class="fa fa-puzzle-piece"></i> Свойства</a></li>
                       <li><a data-toggle="batch" data-action="move"><i class="fa fa-fighter-jet"></i> Переместить</a></li>
                       <li><a data-toggle="batch" data-action="scid"><i class="fa fa-code-fork"></i> Настройки подкатегорий</a></li>
                       <li><a data-toggle="batch" data-action="thumb"><i class="fa fa-picture-o"></i> Сделать первую картинку эскизом</a></li>
-                      <li><a data-toggle="batch" data-action="weight"><i class="fa fa-cog"></i> 设置置顶权重</a></li>
+                      <li><a data-toggle="batch" data-action="weight"><i class="fa fa-cog"></i> Установка веса</a></li>
                       <li><a data-toggle="batch" data-action="keyword"><i class="fa fa-star"></i> 设置关键字</a></li>
                       <li><a data-toggle="batch" data-action="tag"><i class="fa fa-tags"></i> 设置标签</a></li>
-                      <li><a data-toggle="batch" data-action="meta"><i class="fa fa-sitemap"></i> 设置动态属性</a></li>
+                      <li><a data-toggle="batch" data-action="meta"><i class="fa fa-sitemap"></i> Установка динамических свойств</a></li>
                       <li><a data-toggle="batch" data-action="status"><i class="fa fa-cog"></i> 设置状态</a></li>
                       <li><a data-toggle="batch" data-action="postype"><i class="fa fa-cog"></i> 设置发布类型</a></li>
                       <li class="divider"></li>
@@ -437,7 +437,7 @@ $(function(){
       <span class="add-on"> Статус </span>
       <select name="mstatus" id="mstatus" class="span3" data-placeholder="Выберите статус">
         <option value="0"> Черновик [status='0']</option>
-        <option value="1"selected='selected'> Нормальный [status='1']</option>
+        <option value="1"selected='selected'> Опубликован [status='1']</option>
         <option value="2"> Корзина [status='2']</option>
         <option value="3"> На рассмотрении [status='3']</option>
         <option value="4"> Отказано [status='4']</option>

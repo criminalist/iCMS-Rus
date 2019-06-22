@@ -16,7 +16,7 @@ admincp::head();
         <input name="id" type="hidden" value="<?php echo $this->id; ?>" />
         <div class="tab-content">
           <div id="-add-base" class="tab-pane active">
-            <div class="input-prepend"> <span class="add-on">分类</span>
+            <div class="input-prepend"> <span class="add-on">Категории</span>
               <input type="text" name="cid" class="span1" id="cid" value="<?php echo $rs['cid'] ; ?>"/>
             </div>
             <div class="clearfloat mb10"></div>

@@ -550,7 +550,7 @@ function processing_item($name,$item=array(),$length=0,$title=''){
             </div>
             <span class="help-inline"><span class="label label-important">默认为3秒,连接超时时间</span></span>
             <div class="clearfloat mb10"></div>
-            <div class="input-prepend input-append"> <span class="add-on">水印设置</span><span class="add-on">
+            <div class="input-prepend input-append"> <span class="add-on">Параметры водяного знака</span><span class="add-on">
               <label class="radio">
                 <input type="radio" name="rule[watermark_mode]" id="watermark_mode0" value="0"<?php if($rule['watermark_mode']=="0"){ echo ' checked="true"';};?>>
                 系统全局 </label>
@@ -594,24 +594,24 @@ function processing_item($name,$item=array(),$length=0,$title=''){
             <div class="input-prepend"> <span class="add-on">Изображения водяного знака</span>
               <input type="text" name="rule[watermark][img]" class="span3" id="watermark_img" value="<?php echo $rule['watermark']['img'] ; ?>"/>
             </div>
-            <span class="help-inline">水印图片存放路径:conf/iCMS/watermark.png, 如果水印图片不存在,则使用文字水印</span>
+            <span class="help-inline">Путь хранения изображения водяного знака: conf/iCMS/watermark.png, если изображение не существует, используйте текст</span>
             <div class="clearfloat mb10"></div>
           </div>
           <div id="spider-proxy" class="tab-pane">
-            <div class="input-prepend"><span class="add-on">代理IP</span>
+            <div class="input-prepend"><span class="add-on">IP Прокси сервера</span>
               <textarea name="rule[proxy]" id="rule_proxy" class="span6" style="height:150px;"><?php echo $rule['proxy'] ; ?></textarea>
             </div>
             <span class="help-inline">
               По одному на строку<br />
-              socks5格式:socks5://127.0.0.1:1080@username:password<br />
-              http格式:http://127.0.0.1:1080@username:password<br />
-              Пример:127.0.0.1:1080 (默认为http模式 无验证信息)
+              Формат socks5:socks5://127.0.0.1:1080@username:password<br />
+              Формат http:http://127.0.0.1:1080@username:password<br />
+              Пример:127.0.0.1:1080 (По умолчанию используется режим http. Информация об аутентификации отсутствует.)
             </span>
           </div>
         </div>
         <div class="form-actions">
           <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>Отправить</button>
-          <a id="test" href="<?php echo APP_URI; ?>&do=test&rid=<?php echo $this->rid ; ?>" class="btn btn-inverse" data-toggle="modal" title="测试规则"><i class="fa fa-keyboard-o"></i> Тестировать</a>
+          <a id="test" href="<?php echo APP_URI; ?>&do=test&rid=<?php echo $this->rid ; ?>" class="btn btn-inverse" data-toggle="modal" title="Тестировать правило"><i class="fa fa-keyboard-o"></i> Тестировать</a>
           <a href="<?php echo APP_URI; ?>&do=manage&rid=<?php echo $this->rid ; ?>" class="btn btn-success" target="_blank"><i class="fa fa-list-alt"></i>Правила парсера</a>
           <a href="<?php echo __ADMINCP__; ?>=spider_project&do=manage&rid=<?php echo $this->rid ; ?>" class="btn btn-info" target="_blank"><i class="fa fa-magnet"></i> Схема </a>
         </div>

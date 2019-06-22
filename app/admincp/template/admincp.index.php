@@ -38,20 +38,20 @@ admincp::head();
         </div>
         <div class="span3">
           <ul class="site-stats">
-            <li><a href="<?php echo __ADMINCP__;?>=article&do=manage"><i class="fa fa-file-text"></i> <strong id="counts_ac">0</strong> <small>文章总数</small></a></li>
-            <li><a href="<?php echo __ADMINCP__;?>=article&do=inbox"><i class="fa fa-file"></i> <strong id="counts_ac0">0</strong> <small>草稿</small></a></li>
-            <li><a href="<?php echo __ADMINCP__;?>=article&do=trash"><i class="fa fa-file-o"></i> <strong id="counts_ac2">0</strong> <small>回收站</small></a></li>
+            <li><a href="<?php echo __ADMINCP__;?>=article&do=manage"><i class="fa fa-file-text"></i> <strong id="counts_ac">0</strong> <small>Общее количество материалов</small></a></li>
+            <li><a href="<?php echo __ADMINCP__;?>=article&do=inbox"><i class="fa fa-file"></i> <strong id="counts_ac0">0</strong> <small>Черновиков</small></a></li>
+            <li><a href="<?php echo __ADMINCP__;?>=article&do=trash"><i class="fa fa-file-o"></i> <strong id="counts_ac2">0</strong> <small>В корзине</small></a></li>
             <li class="divider"></li>
-            <li><a href="<?php echo __ADMINCP__;?>=links"><i class="fa fa-heart"></i> <strong id="counts_lc">0</strong> <small>友链</small></a></li>
+            <li><a href="<?php echo __ADMINCP__;?>=links"><i class="fa fa-heart"></i> <strong id="counts_lc">0</strong> <small>Ссылки друзей</small></a></li>
           </ul>
         </div>
         <div class="span3">
           <ul class="site-stats">
             <li><a href="<?php echo __ADMINCP__;?>=tag"><i class="fa fa-tag"></i> <strong id="counts_tc">0</strong> <small>Теги</small></a></li>
             <li><a href="<?php echo __ADMINCP__;?>=comment"><i class="fa fa-comment"></i> <strong id="counts_cc">0</strong> <small>Комментарии (вкл/выкл)</small></a></li>
-            <li><a href="<?php echo __ADMINCP__;?>=keywords"><i class="fa fa-paperclip"></i> <strong id="counts_kc">0</strong> <small>内链</small></a></li>
+            <li><a href="<?php echo __ADMINCP__;?>=keywords"><i class="fa fa-paperclip"></i> <strong id="counts_kc">0</strong> <small>Хотлинки</small></a></li>
             <li class="divider"></li>
-            <li><a href="<?php echo __ADMINCP__;?>=prop"><i class="fa fa-thumb-tack"></i> <strong id="counts_pc">0</strong> <small>属性</small></a></li>
+            <li><a href="<?php echo __ADMINCP__;?>=prop"><i class="fa fa-thumb-tack"></i> <strong id="counts_pc">0</strong> <small> Свойства </small></a></li>
           </ul>
         </div>
         <div class="span3">
@@ -179,7 +179,7 @@ admincp::head();
     <div class="span4">
       <div class="widget-box">
         <div class="widget-title"> <span class="icon"> <i class="fa fa-bug"></i> </span>
-          <h5>BUG提交</h5>
+          <h5>Сообщение об ошибке</h5>
         </div>
         <div class="widget-content nopadding">
           <form action="https://www.icmsdev.com/cms/bugs.php" method="post" class="form-inline" id="iCMS-feedback" target="iPHP_FRAME">

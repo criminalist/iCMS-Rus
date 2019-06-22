@@ -149,7 +149,7 @@ $(function(){
               <span class="add-on"> Статус </span>
               <select name="status" id="status" class="chosen-select span3">
                 <option value="0"> Черновик [status='0']</option>
-                <option value="1"> Нормальный [status='1']</option>
+                <option value="1"> Опубликован [status='1']</option>
                 <option value="2"> Корзина [status='2']</option>
                 <option value="3"> На рассмотрении [status='3']</option>
                 <option value="4"> Отказано [status='4']</option>

@@ -48,7 +48,7 @@ $(function(){
           <span class="add-on">-</span>
           <input type="text" class="ui-datepicker" name="endtime" value="<?php echo $_GET['endtime'] ; ?>" placeholder="Время окончания" />
           <span class="add-on"><i class="fa fa-calendar"></i></span> </div>
-        <div class="input-prepend"> <span class="add-on">类型</span>
+        <div class="input-prepend"> <span class="add-on"> Тип </span>
           <select name="type" id="type" class="span2 chosen-select">
             <option value="-1">Все </option>
             <option value="0">上传</option>
@@ -69,11 +69,11 @@ $(function(){
           <select name="st" id="st" class="span2 chosen-select">
             <option value="filename">Имя файла</option>
             <option value="indexid">关联ID</option>
-            <option value="userid">用户ID</option>
-            <option value="ofilename">源文件</option>
-            <option value="size">文件大小</option>
-            <option value="path">路径</option>
-            <option value="ext">后缀名</option>
+            <option value="userid"> ID пользователя </option>
+            <option value="ofilename"> Исходный файл </option>
+            <option value="size"> Размер файла </option>
+            <option value="path">Путь</option>
+            <option value="ext"> Расширение </option>
           </select>
         </div>
         <div class="input-prepend input-append"> <span class="add-on">Ключевое слово</span>
@@ -81,7 +81,7 @@ $(function(){
           <span class="add-on">На страницу</span>
           <input type="text" name="perpage" id="perpage" value="<?php echo $maxperpage ; ?>" style="width:36px;"/>
           <span class="add-on">записей</span>
-          <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i>поиск</button>
+          <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i>Поиск</button>
         </div>
       </form>
     </div>
@@ -105,7 +105,7 @@ $(function(){
               <?php if($widget['uid']){?>
               <th style="width:30px;">UID</th>
               <?php }?>
-              <th>路径</th>
+              <th>Путь</th>
               <th style="width:60px;">Размер</th>
               <th style="width:120px;">Даты и время</th>
               <th>Операции</th>

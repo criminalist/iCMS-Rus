@@ -41,7 +41,7 @@ $(function(){
               <th><i class="fa fa-arrows-v"></i></th>
               <th>ID</th>
               <th>Имя</th>
-              <th>类型</th>
+              <th> Тип </th>
               <th>Операции</th>
             </tr>
           </thead>

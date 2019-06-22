@@ -39,7 +39,7 @@ $(function(){
           <thead>
             <tr>
               <th><i class="fa fa-arrows-v"></i></th>
-              <th class="span1">分类</th>
+              <th class="span1">Категории</th>
               <th class="span3">网站</th>
               <th class="span6">链接</th>
               <th>Операции</th>
