@@ -30,7 +30,7 @@ class content_categoryAdmincp extends categoryAdmincp {
             'tag'       => array('Тег','/{CDIR}/t-{TKEY}{EXT}','{ID},{0xID},{TKEY},{NAME},{EN_EN},{Hash@ID},{Hash@0xID}')
         );
         /**
-         *  URL规则选项
+         *  Параметры формирования URL
          */
         // $this->category_rule_list+= array(
 

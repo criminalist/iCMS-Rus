@@ -19,9 +19,9 @@ defined('iPHP') OR exit('Oops, something went wrong');
       <li class="dropdown-submenu">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $cname;?></a>
         <ul class="dropdown-menu">
-        <li><a href="{CDIR}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-important">{CDIR}</span> <?php echo $cname;?> Каталог </a></li>
-        <li><a href="{CID}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-important">{CID}</span> <?php echo $cname;?>CID</a></li>
-        <li><a href="{0xCID}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-important">{0xCID}</span> <?php echo $cname;?>CID补零(8位)</a></li>
+        <li><a href="{CDIR}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-important">{CDIR}</span> Каталог <?php echo $cname;?> </a></li>
+        <li><a href="{CID}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-important">{CID}</span> CID <?php echo $cname;?></a></li>
+        <li><a href="{0xCID}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-important">{0xCID}</span> <?php echo $cname;?>CID补零(8 бит)</a></li>
         <li class="divider"></li>
         <li><a href="{Hash@CID}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-important">{Hash@CID}</span>  <?php echo $cname;?>CID Hash</a></li>
         <li><a href="{Hash@0xCID}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-important">{Hash@0xCID}</span> <?php echo $cname;?>CID Hash</a></li>
@@ -56,16 +56,16 @@ defined('iPHP') OR exit('Oops, something went wrong');
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Дата и время</a>
         <ul class="dropdown-menu">
           <li><a href="{YYYY}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-inverse">{YYYY}</span> Год (например /res/2019/)</a></li>
-          <li><a href="{YY}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-inverse">{YY}</span> 2位数年份12</a></li>
-          <li><a href="{MM}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-inverse">{MM}</span> 月份 01-12月份</a></li>
-          <li><a href="{M}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-inverse">{M}</span> 月份 1-12 月份</a></li>
-          <li><a href="{DD}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-inverse">{DD}</span> 日期 01-31</a></li>
-          <li><a href="{D}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-inverse">{D}</span> 日期1-31</a></li>
-          <li><a href="{TIME}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-inverse">{TIME}</span> 文章发布时间戳</a></li>
+          <li><a href="{YY}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-inverse">{YY}</span> Номер года, 2 цифры</a></li>
+          <li><a href="{MM}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-inverse">{MM}</span> Порядковый номер месяца с ведущими нулями От 01 до 12</a></li>
+          <li><a href="{M}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-inverse">{M}</span> Сокращенное наименование месяца, 3 символа От Jan до Dec</a></li>
+          <li><a href="{DD}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-inverse">{DD}</span> Дата 01-31</a></li>
+          <li><a href="{D}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-inverse">{D}</span> Дата 1-31</a></li>
+          <li><a href="{TIME}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-inverse">{TIME}</span> Время</a></li>
         </ul>
       </li>
       <li class="divider"></li>
-      <li><a href="{MD5}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-inverse">{MD5}</span> ID MD5(16位)</a></li>
+      <li><a href="{MD5}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-inverse">{MD5}</span> ID MD5(16 бит)</a></li>
       <li><a href="{P}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-inverse">{P}</span> Номер страницы </a></li>
       <li><a href="{EXT}" data-toggle="insertContent" data-target="#<?php echo $rule_id;?>"><span class="label label-inverse">{EXT}</span> Суффикс</a></li>
       <li class="divider"></li>

@@ -22,7 +22,7 @@ class categoryAdmincp {
         'list'    => array('Список','/{CDIR}/index_{P}{EXT}','{CID},{0xCID},{CDIR},{Hash@CID},{Hash@0xCID}'),
     );
     /**
-     *  URL规则选项
+     *  Параметры формирования URL
      */
     protected $category_rule_list = array(
         'tag' => array(

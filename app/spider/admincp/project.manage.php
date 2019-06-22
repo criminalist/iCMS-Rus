@@ -156,7 +156,7 @@ $(function(){
                 <a href="<?php echo __ADMINCP__; ?>=spider&do=dropurl&pid=<?php echo $rs[$i]['id']; ?>&type=all" class="btn mt10 btn-warning" target="iPHP_FRAME"  onclick="return confirm('确定要清空数据?');"><i class="fa fa-trash-o"></i> 清空数据</a>
                 <a href="<?php echo __ADMINCP__; ?>=spider&do=dropurl&pid=<?php echo $rs[$i]['id']; ?>&type=0" class="btn mt10 btn-warning" target="iPHP_FRAME"  onclick="return confirm('Вы уверены, что хотите удалить неопубликованные данные?');"><i class="fa fa-inbox"></i> Очистить неопубликованные</a>
                 <a href="<?php echo __ADMINCP__; ?>=spider&do=dropdata&pid=<?php echo $rs[$i]['id']; ?>" class="btn mt10 btn-danger" target="iPHP_FRAME"  onclick="return confirm('确定要删除采集数据,此操作会删除本方案的采集数据,并删除内容?');"><i class="fa fa-trash"></i> 删除所有采集数据&内容</a>
-                <a href="<?php echo APP_FURI; ?>&do=del&pid=<?php echo $rs[$i]['id']; ?>" target="iPHP_FRAME" class="del btn mt10 btn-danger" title='删除本方案'  onclick="return confirm('确定要删除方案?');"/><i class="fa fa-trash"></i> 删除方案</a>
+                <a href="<?php echo APP_FURI; ?>&do=del&pid=<?php echo $rs[$i]['id']; ?>" target="iPHP_FRAME" class="del btn mt10 btn-danger" title='删除本方案'  onclick="return confirm('确定要删除方案?');"/><i class="fa fa-trash"></i> Удалить схему</a>
 		          </td>
 	          </tr>
             <?php } ?>
@@ -169,16 +169,16 @@ $(function(){
                   </span>
                   <div class="btn-group dropup" id="iCMS-batch"> <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i>Пакетная операция</a><a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"> <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a data-toggle="batch" data-action="auto:1"><i class="fa fa-check-square"></i> 标识自动采集</a></li>
-                      <li><a data-toggle="batch" data-action="auto:0"><i class="fa fa-circle-o"></i> 取消自动采集</a></li>
+                      <li><a data-toggle="batch" data-action="auto:1"><i class="fa fa-check-square"></i> Активация автоматического режима</a></li>
+                      <li><a data-toggle="batch" data-action="auto:0"><i class="fa fa-circle-o"></i> Отключение автоматического режима</a></li>
                       <li class="divider"></li>
-                      <li><a data-toggle="batch" data-action="lastupdate:0"><i class="fa fa-calendar"></i> 重置最后采集时间</a></li>
+                      <li><a data-toggle="batch" data-action="lastupdate:0"><i class="fa fa-calendar"></i> Сброс времени последнего сбора</a></li>
                       <li class="divider"></li>
-                      <li><a data-toggle="batch" data-action="move"><i class="fa fa-fighter-jet"></i> 设置发布栏目</a></li>
+                      <li><a data-toggle="batch" data-action="move"><i class="fa fa-fighter-jet"></i> Установка категории</a></li>
                       <li class="divider"></li>
-                      <li><a data-toggle="batch" data-action="poid"><i class="fa fa-magnet"></i> 设置发布规则</a></li>
+                      <li><a data-toggle="batch" data-action="poid"><i class="fa fa-magnet"></i> Установка правил публикации</a></li>
                       <li class="divider"></li>
-                      <li><a data-toggle="batch" data-action="rid"><i class="fa fa-magnet"></i> 设置采集规则</a></li>
+                      <li><a data-toggle="batch" data-action="rid"><i class="fa fa-magnet"></i> Установка правил</a></li>
                       <li class="divider"></li>
                       <li><a data-toggle="batch" data-action="del"><i class="fa fa-trash-o"></i> Удалить</a></li>
                     </ul>
@@ -221,7 +221,7 @@ $(function(){
       Импортировать (только TXT)
     </div>
     <div class="clearfloat mb10"></div>
-    <a id="local" class="btn btn-primary btn-large btn-block"><i class="fa fa-upload"></i> 请选择要导入的方案</a>
+    <a id="local" class="btn btn-primary btn-large btn-block"><i class="fa fa-upload"></i> Загрузить правила</a>
     <input id="localfile" name="upfile" type="file" class="hide"/>
     <div class="clearfloat mb10"></div>
   </form>

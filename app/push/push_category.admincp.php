@@ -24,7 +24,7 @@ class push_categoryAdmincp extends categoryAdmincp {
        //      'push' => array('推荐','/{CDIR}/{TKEY}{EXT}','{ID},{0xID}')
        //  );
        //  /**
-       //   *  URL规则选项
+       //   *  Параметры формирования URL
        //   */
        //  $this->category_rule_list+= array(
        //      'tag' => array(
