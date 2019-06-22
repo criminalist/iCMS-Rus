@@ -67,7 +67,7 @@ $(function(){
         </div>
         <div class="input-prepend"> <span class="add-on">Искать по </span>
           <select name="st" id="st" class="span2 chosen-select">
-            <option value="filename">文件名</option>
+            <option value="filename">Имя файла</option>
             <option value="indexid">关联ID</option>
             <option value="userid">用户ID</option>
             <option value="ofilename">源文件</option>

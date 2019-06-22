@@ -67,7 +67,7 @@ $(function(){
             }?>
           </select>
         </div>
-        <div class="input-prepend"> <span class="add-on">发布规则</span>
+        <div class="input-prepend"> <span class="add-on">Правила публикации</span>
           <select name="poid" id="poid" class="span3 chosen-select">
             <option value="0">所有发布规则</option>
             <?php foreach ((array)$postArray as $poid => $poname) {
@@ -194,7 +194,7 @@ $(function(){
 <div class='iCMS-batch'>
   <div id="poidBatch" style="width: 330px;">
     <div class="input-prepend">
-        <span class="add-on">发布规则</span>
+        <span class="add-on">Правила публикации</span>
         <select name="poid" id="poid" class="span3 chosen-select">
           <option value="0">Неизвестно</option>
           <?php foreach ((array)$postArray as $poid => $poname) {

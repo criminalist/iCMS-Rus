@@ -83,13 +83,13 @@ $(function(){
             <tr>
               <th><i class="fa fa-arrows-v"></i></th>
               <th style="width:300px;"></th>
-              <th>操作</th>
+              <th>Операции</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td></td>
-              <td colspan="2"><a href="<?php echo $URI.$parent; ?>"><i class="fa fa-angle-double-up"></i> 返回上级</a></td>
+              <td colspan="2"><a href="<?php echo $URI.$parent; ?>"><i class="fa fa-angle-double-up"></i> Вернуться на уровень выше</a></td>
             </tr>
           </tbody>
         </table>
@@ -99,8 +99,8 @@ $(function(){
           <thead>
             <tr>
               <th><i class="fa fa-arrows-v"></i></th>
-              <th style="width:320px;">目录</th>
-              <th>操作</th>
+              <th style="width:320px;">Каталог</th>
+              <th>Операции</th>
             </tr>
           </thead>
           <tbody>
@@ -109,7 +109,7 @@ $(function(){
           ?>
             <tr>
               <td style="padding:3px;2px;1px;2px;"><span class="label label-info">选择</span></td>
-              <td colspan="2"><a href="<?php echo $URI.$parent; ?>"><i class="fa fa-angle-double-up"></i> 返回上级</a></td>
+              <td colspan="2"><a href="<?php echo $URI.$parent; ?>"><i class="fa fa-angle-double-up"></i> Вернуться на уровень выше</a></td>
             </tr>
             <?php }  ?>
             <?php
@@ -119,7 +119,7 @@ $(function(){
             <tr>
               <td><input type="checkbox" value="<?php echo $dirRs[$i]['path'] ; ?>" data-click="dir"/></td>
               <td><a href="<?php echo $dirRs[$i]['url']; ?>" class="dirname"><?php echo $dirRs[$i]['name'] ; ?></a></td>
-              <td class="op"><a class="btn btn-small mvr"><i class="fa fa-edit"></i> 重命名</a> <a href="<?php echo APP_URI; ?>&do=add&from=modal" class="btn btn-small" data-toggle="modal" data-meta='{"width":"600px","height":"360px"}' title="上传"><i class="fa fa-upload"></i> 上传</a> <a href="<?php echo APP_FURI; ?>&do=del&id=<?php echo $rs[$i]['id'] ; ?>&indexid=<?php echo $rs[$i]['indexid'] ; ?>" target="iPHP_FRAME" class="del btn btn-small" title='永久删除'  onclick="return confirm('确定要删除?');"/><i class="fa fa-trash-o"></i> Удалить</a></td>
+              <td class="op"><a class="btn btn-small mvr"><i class="fa fa-edit"></i> 重命名</a> <a href="<?php echo APP_URI; ?>&do=add&from=modal" class="btn btn-small" data-toggle="modal" data-meta='{"width":"600px","height":"360px"}' title="Загрузить"><i class="fa fa-upload"></i> Загрузить</a> <a href="<?php echo APP_FURI; ?>&do=del&id=<?php echo $rs[$i]['id'] ; ?>&indexid=<?php echo $rs[$i]['indexid'] ; ?>" target="iPHP_FRAME" class="del btn btn-small" title='永久删除'  onclick="return confirm('Вы уверены, что хотите удалить?');"/><i class="fa fa-trash-o"></i> Удалить</a></td>
             </tr>
             <?php }  ?>
           </tbody>
@@ -132,18 +132,18 @@ $(function(){
               <th><span class="icon">
                 <input type="checkbox" class="checkAll" data-target="#files-explorer" />
                 </span></th>
-              <th style="width:320px;">文件名 <span class="label label-important">提示:点击多选框可选择</span></th>
+              <th style="width:320px;">Имя файла <span class="label label-important">Подсказка: вы можете выбрать несколько элементов одновременно</span></th>
               <th>类型</th>
               <th>Размер</th>
               <th style="width:130px;">Последнее изменение</th>
-              <th>操作</th>
+              <th>Операции</th>
             </tr>
           </thead>
           <tbody>
             <?php if($parent && !$parentShow){ ?>
             <tr>
               <td></td>
-              <td colspan="7"><a href="<?php echo $URI.$parent; ?>"><i class="fa fa-angle-double-up"></i> 返回上级</a></td>
+              <td colspan="7"><a href="<?php echo $URI.$parent; ?>"><i class="fa fa-angle-double-up"></i> Вернуться на уровень выше</a></td>
             </tr>
             <?php }  ?>
             <?php
@@ -161,7 +161,7 @@ $(function(){
               <td><?php echo $fileRs[$i]['ext'] ; ?></td>
               <td><?php echo $fileRs[$i]['size'] ; ?></td>
               <td><?php echo $fileRs[$i]['modified'] ; ?></td>
-              <td class="op"><a class="btn btn-small" href="<?php echo $href; ?>" data-toggle="modal" title="Просмотр"><i class="fa fa-eye"></i> Посмотреть </a> <a class="btn btn-small" href="<?php echo $href; ?>" data-toggle="modal" title="Просмотр"><i class="fa fa-upload"></i> 上传</a> <a class="btn btn-small" href="<?php echo $href; ?>" data-toggle="modal" title="Просмотр"><i class="fa fa-trash-o"></i> Удалить</a></td>
+              <td class="op"><a class="btn btn-small" href="<?php echo $href; ?>" data-toggle="modal" title="Просмотр"><i class="fa fa-eye"></i> Посмотреть </a> <a class="btn btn-small" href="<?php echo $href; ?>" data-toggle="modal" title="Просмотр"><i class="fa fa-upload"></i> Загрузить</a> <a class="btn btn-small" href="<?php echo $href; ?>" data-toggle="modal" title="Просмотр"><i class="fa fa-trash-o"></i> Удалить</a></td>
             </tr>
             <?php }  ?>
           </tbody>

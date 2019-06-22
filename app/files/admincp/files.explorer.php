@@ -160,7 +160,7 @@ $(function(){
               <th><span class="icon">
                 <input type="checkbox" class="checkAll" data-target="#files-explorer" />
                 </span></th>
-              <th style="width:320px;">文件名 <span class="label label-important">Подсказка: щелкните поле с несколькими вариантами выбора, чтобы выбрать</span></th>
+              <th style="width:320px;">Имя файла <span class="label label-important">Подсказка: щелкните поле с несколькими вариантами выбора, чтобы выбрать</span></th>
               <th>类型</th>
               <th>Размер</th>
               <th style="width:130px;">Последнее изменение</th>

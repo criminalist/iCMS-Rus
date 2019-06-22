@@ -98,7 +98,7 @@ hr { border-bottom:none; margin:4px 0px; }
               <th>分类</th>
               <th> Изменить </th>
               <th>日期</th>
-              <th>操作</th>
+              <th>Операции</th>
             </tr>
           </thead>
           <tbody>
