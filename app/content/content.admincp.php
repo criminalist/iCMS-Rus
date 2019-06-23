@@ -239,11 +239,11 @@ class contentAdmincp{
         $pid = $_GET['pid'];
         //$stype OR $stype = admincp::$APP_DO;
         $stype_map = array(
-            'inbox'   =>'0',//草稿
-            'normal'  =>'1',//正常
-            'trash'   =>'2',//回收站
-            'examine' =>'3',//待审核
-            'off'     =>'4',//未通过
+            'inbox'   =>'0',//Входящие публикации
+            'normal'  =>'1',//Опубликован
+            'trash'   =>'2',//Корзина
+            'examine' =>'3',//В ожидании
+            'off'     =>'4',//Отказ
         );
         $map_where = array();
         //status:[0:草稿][1:正常][2:回收][3:待审核][4:不合格]

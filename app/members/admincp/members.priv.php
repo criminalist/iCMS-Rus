@@ -18,7 +18,7 @@ defined('iPHP') OR exit('Oops, something went wrong');
     <span class="add-on"><input type="checkbox" name="config[cpriv][]" value="{{cid}}:d" /> Удалить</span>
 </div>
 <div class="input-prepend input-append">
-    <span class="add-on">内容权限</span>
+    <span class="add-on">Права на контент</span>
     <span class="add-on"><input type="checkbox" name="config[cpriv][]" value="{{cid}}:cs" /> 查询</span>
     <span class="add-on"><input type="checkbox" name="config[cpriv][]" value="{{cid}}:ca" />Добавить</span>
     <span class="add-on"><input type="checkbox" name="config[cpriv][]" value="{{cid}}:ce" /> Редактировать </span>
@@ -29,7 +29,7 @@ defined('iPHP') OR exit('Oops, something went wrong');
 <div class="input-prepend input-append">
   <span class="add-on"><input type="checkbox" name="config[mpriv][]" value="{{priv}}"></span>
   {{if caption=='-'}}
-  <span class="add-on tip" title="分隔符权限,仅为UI美观">────────────</span>
+  <span class="add-on tip" title="Разделитель разрешений, только интерфейс красивый">────────────</span>
   {{else}}
   <span class="add-on">{{caption}}</span>
   {{/if}}

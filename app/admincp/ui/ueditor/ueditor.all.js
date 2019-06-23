@@ -21141,7 +21141,7 @@ UE.plugins['table'] = function () {
                 return;
             }
         }
-        //正常状态下的mouseup
+        //Опубликован状态下的mouseup
         if (!startTd) {
             var target = domUtils.findParentByTagName(evt.target || evt.srcElement, "td", true);
             if (!target) target = domUtils.findParentByTagName(evt.target || evt.srcElement, "th", true);

@@ -43,22 +43,22 @@ class pushAdmincp{
         $pcid        = (int)$_GET['pcid'];
         $sql        = " where ";
         switch($doType){ //status:[0:草稿][1:正常][2:回收][3:审核][4:不合格]
-        	case 'inbox'://草稿
+        	case 'inbox'://Входящие публикации
         		$sql.="`status` ='0'";
         		// if(members::$data->gid!=1){
         		// 	$sql.=" AND `userid`='".members::$userid."'";
         		// }
         		$position="草稿";
         	break;
-         	case 'trash'://回收站
+         	case 'trash'://Корзина
         		$sql.="`status` ='2'";
-        		$position="回收站";
+        		$position="Корзина";
         	break;
          	case 'examine'://审核
         		$sql.="`status` ='3'";
         		$position="已审核";
         	break;
-         	case 'off'://未通过
+         	case 'off'://Отказ
         		$sql.="`status` ='4'";
         		$position="未通过";
         	break;

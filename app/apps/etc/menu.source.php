@@ -14,29 +14,29 @@ return '[{
     }, {
         "caption": "-"
     }, {
-        "caption": "栏目管理",
+        "caption": "Управление категориями",
         "href": "{app}_category",
         "icon": "list-alt"
     }, {
-        "caption": "添加栏目",
+        "caption": "Добавить категорию",
         "href": "{app}_category&do=add",
         "icon": "edit"
     }, {
         "caption": "-"
     }, {
-        "caption": "添加{title}",
+        "caption": "Добавить {title}",
         "href": "{app}&do=add",
         "icon": "edit"
     }, {
-        "caption": "{title}管理",
+        "caption": "Управление {title}",
         "href": "{app}&do=manage",
         "icon": "list-alt"
     }, {
-        "caption": "草稿箱",
+        "caption": "Пользовательские публикации",
         "href": "{app}&do=inbox",
         "icon": "inbox"
     }, {
-        "caption": "回收站",
+        "caption": "Корзина",
         "href": "{app}&do=trash",
         "icon": "trash-o"
     }, {

@@ -31,7 +31,7 @@ class apps_storeAdmincp extends appsAdmincp {
         iFS::rmdir($dir);
       }
       $sid && apps_store::del($sid,'sid');
-      iUI::success('模板已删除','js:1');
+      iUI::success('Шаблон удален','js:1');
     }
     /**
      * [从模板市场安装模板]
@@ -49,20 +49,20 @@ class apps_storeAdmincp extends appsAdmincp {
     }
     public function do_plugin(){
         admincp::$APP_DO = 'store';
-        $this->store_view(2,'plugin','插件');
+        $this->store_view(2,'plugin','Плагин');
     }
     /**
      * [应用市场]
      * @return [type] [description]
      */
     public function do_store(){
-      $this->store_view(0,'app','应用');
+      $this->store_view(0,'app','Приложение');
     }
     public function do_store_uninstall(){
       $this->store_uninstall();
     }
 
-    public function do_store_update($type='app',$title='应用'){
+    public function do_store_update($type='app',$title='Приложение'){
       $sid   = (int)$_GET['sid'];
       $data  = apps_store::get($sid);
       $store = apps_store::remote_update($data);
@@ -71,16 +71,16 @@ class apps_storeAdmincp extends appsAdmincp {
       apps_store::setup($store['url'],$store,$data);
     }
     /**
-     * [从应用市场安装应用]
+     * [Установка приложений с маркета]
      * @return [type] [description]
      */
-    public function do_store_install($type='app',$title='应用',$update=false){
+    public function do_store_install($type='app',$title='Приложение',$update=false){
       $sid   = (int)$_GET['sid'];
       $store = apps_store::remote_send($sid);
       apps_store::check_must($store);
       $bak = '_bak_'.get_date(0,"YmdHi");
       $force = $_GET['force'];
-      $store['force'] && $forceBtn = ' <a href="'.iPHP_REQUEST_URL.'&force=true" target="iPHP_FRAME" class="install-btn btn btn-inverse">备份原有,强制安装</a>';
+      $store['force'] && $forceBtn = ' <a href="'.iPHP_REQUEST_URL.'&force=true" target="iPHP_FRAME" class="install-btn btn btn-inverse">Резервное копирование оригинала, принудительная установка</a>';
       if($type=='app'){
           $ag = apps::get($store['app'],'app');
           if($ag){
@@ -140,7 +140,7 @@ class apps_storeAdmincp extends appsAdmincp {
       }
     }
     /**
-     * [付费安装]
+     * [Платная установка приложений]
      * @return [type] [description]
      */
     public function do_store_premium_install($type='app'){
@@ -155,7 +155,7 @@ class apps_storeAdmincp extends appsAdmincp {
       $sid            = $_GET['sid'];
       $order_id       = $_GET['order_id'];
       $authkey        = $_GET['authkey'];
-      empty($transaction_id) && iUI::alert("请输入微信支付订单号");
+      empty($transaction_id) && iUI::alert("Пожалуйста, введите номер платежного поручения WeChat");
       $ret = apps_store::remote_send($sid,'restore',compact(array('transaction_id','sid','order_id','authkey')));
       if(!$ret['code']){
         iUI::alert($ret['msg']);

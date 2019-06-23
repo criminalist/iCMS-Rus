@@ -6,12 +6,10 @@
         <!--{$article.subtitle}-->
         <!--{/if}-->
         <!--{$article.title}-->
-        <!--{$category.name}-->
-        <!--{$site.title}-->
-        <!--{$site.seotitle}-->
-    </title>
-    <meta name="keywords" content="<!--{$article.keywords}-->" />
-    <meta name="description" content="<!--{$article.description}-->" />
+	</title>
+	<!--{if $article.keywords}--><meta name="keywords" content="<!--{$article.keywords}-->" /><!--{/if}-->
+    <meta name="description" content="<!--{$article.description}-->"/>
+	<link rel="canonical" href="<!--{$article.iurl.desktop.url}-->" />
     <meta name="mobile-agent" content="format=xhtml;url=<!--{$article.iurl.mobile.url}-->">
     <meta name="mobile-agent" content="format=html5;url=<!--{$article.iurl.mobile.url}-->">
     <link rel="alternate" media="only screen and(max-width: 640px)" href="<!--{$article.iurl.mobile.url}-->">
@@ -151,7 +149,7 @@
                                 <!--{$article_next.title}-->
                             </a>
                             <!--{else}-->
-                            нет записей
+                            Нет соответствующих записей
                             <!--{/if}-->
                             <b>:Вперед</b>
                         </p>

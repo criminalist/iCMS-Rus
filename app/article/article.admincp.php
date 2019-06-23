@@ -465,11 +465,11 @@ class articleAdmincp{
         $pid = $_GET['pid'];
         //$stype OR $stype = admincp::$APP_DO;
         $stype_map = array(
-            'inbox'   =>'0',//草稿
-            'normal'  =>'1',//正常
-            'trash'   =>'2',//回收站
-            'examine' =>'3',//待审核
-            'off'     =>'4',//未通过
+            'inbox'   =>'0',//Входящие публикации
+            'normal'  =>'1',//Опубликован
+            'trash'   =>'2',//Корзина
+            'examine' =>'3',//В ожидании
+            'off'     =>'4',//Отказ
         );
         $map_where = array();
         //status:[0:草稿][1:正常][2:回收][3:待审核][4:不合格]
@@ -502,7 +502,7 @@ class articleAdmincp{
             }
         }
 
-        $cp_cids = category::check_priv('CIDS','cs');//取得所有有权限的栏目ID
+        $cp_cids = category::check_priv('CIDS','cs');//Получить все привилегированные id категорий
 
         if($cp_cids) {
             if(is_array($cp_cids)){
@@ -895,7 +895,7 @@ class articleAdmincp{
 //      }
         $filename   = iFS::info($pic)->filename;
         article::del_filedata($filename,'filename');
-        $msg.= $this->del_msg($pic.'数据删除');
+        $msg.= $this->del_msg($pic.'Данные удалены');
         return $msg;
     }
     public static function del_art($id,$uid='0',$postype='1') {
@@ -903,7 +903,7 @@ class articleAdmincp{
         $id OR iUI::alert("请选择要删除的文章");
         article::del($id);
         article::del_data($id);
-        $msg.= self::del_msg($id.' 文章删除');
+        $msg.= self::del_msg($id.' Публикация удалена');
         return $msg;
     }
     public static function del($id,$uid='0',$postype='1') {
@@ -920,7 +920,6 @@ class articleAdmincp{
         $msg.= self::del_msg('相关文件数据删除');
 
         if($art['tags']){
-            //只删除关联数据 不删除标签
             tag::$remove = false;
             $msg.= tag::del($art['tags'],'name',$id);
         }
@@ -933,9 +932,9 @@ class articleAdmincp{
         article::del($id);
 
         article::del_data($id);
-        $msg.= self::del_msg($id.' 文章删除');
+        $msg.= self::del_msg($id.' Публикация удалена');
         categoryAdmincp::update_count($art['cid'],'-');
-        $msg.= self::del_msg('栏目数据更新');
+        $msg.= self::del_msg('Данные категории обновлены');
         $msg.= self::del_msg('Успешно удалено');
         return $msg;
     }
