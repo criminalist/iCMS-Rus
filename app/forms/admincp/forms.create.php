@@ -43,7 +43,7 @@ $(function(){
   <div class="widget-box">
     <div class="widget-title">
       <span class="icon"> <i class="fa fa-pencil"></i> </span>
-      <h5 class="brs"><?php echo empty($this->id)?'Создать':'Изменить' ; ?> форму</h5>
+      <h5 class="brs"><?php echo empty($this->id)?'Создать':'Редактировать' ; ?> форму</h5>
       <ul class="nav nav-tabs" id="apps-add-tab">
         <li class="active"><a href="#apps-add-base" data-toggle="tab"><i class="fa fa-info-circle"></i> Основная информация</a></li>
         <?php if($rs['table'])foreach ($rs['table'] as $key => $tval) {?>
@@ -52,7 +52,7 @@ $(function(){
         <?php if(!$rs['table']){?>
         <li><a href="#apps-add-field" data-toggle="tab"><i class="fa fa-cog"></i> Базовое поле</a></li>
         <?php }?>
-        <li><a href="#apps-add-custom" data-toggle="tab"><i class="fa fa-cog"></i>Редактор полей</a></li>
+        <li><a href="#apps-add-custom" data-toggle="tab"><i class="fa fa-cog"></i>Конструктор полей</a></li>
       </ul>
     </div>
     <div class="widget-content nopadding">

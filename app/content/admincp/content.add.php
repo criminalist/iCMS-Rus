@@ -11,7 +11,7 @@ admincp::head(!$preview);
       <?php if($preview){?>
             <h5 class="brs">预览表单</h5>
       <?php }else{ ?>
-            <h5 class="brs"><?php echo ($this->id?'Изменить':'Добавить'); ?><?php echo $app['title'];?></h5>
+            <h5 class="brs"><?php echo ($this->id?'Редактировать':'Добавить'); ?><?php echo $app['title'];?></h5>
       <?php } ?>
       <ul class="nav nav-tabs" id="-add-tab">
         <li class="active"><a href="#-add-base" data-toggle="tab"><i class="fa fa-info-circle"></i> Основная информация</a></li>
@@ -39,7 +39,7 @@ admincp::head(!$preview);
         <?php }else{ ?>
         <?php }?>
         <div class="form-actions">
-          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>Отправить</button>
+          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
         </div>
       </form>
     </div>

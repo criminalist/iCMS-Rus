@@ -113,7 +113,7 @@ var iFormer = {
                     var div_after = function () {
                         var btngroup = iFormer.widget('btngroup');
                         $div.addClass('input-append');
-                        $div.append(btngroup('选择','search'));
+                        $div.append(btngroup('Выбрать','search'));
                     }
                 break;
                 case 'multi_image':

@@ -20,7 +20,7 @@ $(function(){
         <?php if(admincp::$APP_DO=='profile'){ ?>
        Персональная информация
         <?php }else{?>
-        <?php echo empty($this->uid)?'Добавить':'Изменить' ; ?> администратора
+        <?php echo empty($this->uid)?'Добавить':'Редактировать' ; ?> администратора
         <?php }?>
       </h5>
       <ul class="nav nav-tabs" id="members-tab">
@@ -153,7 +153,7 @@ $(function(){
           <?php }?>
         </div>
         <div class="form-actions">
-          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>Отправить</button>
+          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
         </div>
       </form>
     </div>

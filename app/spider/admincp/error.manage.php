@@ -76,12 +76,12 @@ $(function(){
           <tr>
             <td><?php echo $value['pid'] ; ?>
               <a href="<?php echo __ADMINCP__; ?>=spider_rule&do=test&pid=<?php echo $value['pid']; ?>" class="btn btn-small" data-toggle="modal" title="测试方案"><i class="fa fa-keyboard-o"></i> 测试方案</a>
-              <a href="<?php echo __ADMINCP__; ?>=spider_project&do=add&pid=<?php echo $value['pid']; ?>" class="btn btn-small" target="_blank"><i class="fa fa-edit"></i>Изменить схему</a>
+              <a href="<?php echo __ADMINCP__; ?>=spider_project&do=add&pid=<?php echo $value['pid']; ?>" class="btn btn-small" target="_blank"><i class="fa fa-edit"></i>Редактировать схему</a>
             </td>
             <td>
               <a href="<?php echo __ADMINCP__; ?>=spider_error&do=manage&rid=<?php echo $value['rid']; ?>" class="btn btn-small"><i class="fa fa-eye"></i> <?php echo $ruleArray[$value['rid']]; ?>[<?php echo $value['rid'] ; ?>]</a>
               <a href="<?php echo __ADMINCP__; ?>=spider_rule&do=test&rid=<?php echo $value['rid']; ?>" class="btn btn-small" data-toggle="modal" title="测试<?php echo $ruleArray[$value['rid']]; ?>规则"><i class="fa fa-keyboard-o"></i> Тестировать</a>
-              <a href="<?php echo __ADMINCP__; ?>=spider_rule&do=add&rid=<?php echo $value['rid']; ?>" class="btn btn-small" target="_blank"><i class="fa fa-edit"></i> Изменить </a>
+              <a href="<?php echo __ADMINCP__; ?>=spider_rule&do=add&rid=<?php echo $value['rid']; ?>" class="btn btn-small" target="_blank"><i class="fa fa-edit"></i> Редактировать </a>
               <a href="<?php echo __ADMINCP__; ?>=spider_project&do=manage&rid=<?php echo $value['rid']; ?>" class="btn btn-small" target="_blank"><i class="fa fa-list"></i> Проекты</a>
             </td>
             <td>

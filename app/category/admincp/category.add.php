@@ -51,7 +51,7 @@ $(function(){
 <div class="iCMS-container">
   <div class="widget-box">
     <div class="widget-title"> <span class="icon"> <i class="fa fa-plus-square"></i> </span>
-      <h5 class="brs"><?php echo empty($this->cid)?'Добавить':'Изменить' ; ?> <?php echo $this->category_name;?></h5>
+      <h5 class="brs"><?php echo empty($this->cid)?'Добавить':'Редактировать' ; ?> <?php echo $this->category_name;?></h5>
       <ul class="nav nav-tabs" id="category-add-tab">
         <li class="active"><a href="#category-add-base" data-toggle="tab"><i class="fa fa-info-circle"></i> Основная информация</a></li>
         <li><a href="#category-add-url" data-toggle="tab"><i class="fa fa-link"></i> Правила формирования URL</a></li>
@@ -255,7 +255,7 @@ $(function(){
           </div>
         </div>
         <div class="form-actions">
-          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>Отправить</button>
+          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
         </div>
       </form>
     </div>

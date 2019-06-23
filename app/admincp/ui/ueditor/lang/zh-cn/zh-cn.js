@@ -201,7 +201,7 @@ UE.I18N['zh-cn'] = {
     'themeColor':'主题颜色',
     'property':'Свойства',
     'default':'По умолчанию ',
-    'modify':'Изменить',
+    'modify':'Редактировать',
     'justifyleft':'左对齐',
     'justifyright':'右对齐',
     'justifycenter':'居中',

@@ -293,7 +293,7 @@ function _modal_dialog(cancel_text){
 <div class="iCMS-container">
   <div class="widget-box">
     <div class="widget-title"> <span class="icon"> <i class="fa fa-pencil"></i> </span>
-      <h5 class="brs"><?php echo empty($this->id)?'Добавить':'Изменить' ; ?> документ</h5>
+      <h5 class="brs"><?php echo empty($this->id)?'Добавить':'Редактировать' ; ?> документ</h5>
       <ul class="nav nav-tabs" id="article-add-tab">
         <li class="active"><a href="#article-add-base" data-toggle="tab"><i class="fa fa-info-circle"></i>Основная информация</a></li>
         <li><a href="#article-add-publish" data-toggle="tab"><i class="fa fa-rocket"></i> Настройки публикации</a></li>
@@ -370,7 +370,7 @@ function _modal_dialog(cancel_text){
             </div>
             <div class="input-prepend input-append"> <span class="add-on">Редактор</span>
               <input type="text" name="editor" class="span2" id="editor" value="<?php echo $rs['editor'] ; ?>"/>
-              <a class="btn tip-right" href="<?php echo __ADMINCP__; ?>=members&do=profile" target="_blank" title="Изменить"><i class="fa fa-pencil-square-o"></i></a>
+              <a class="btn tip-right" href="<?php echo __ADMINCP__; ?>=members&do=profile" target="_blank" title="Редактировать"><i class="fa fa-pencil-square-o"></i></a>
             </div>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend input-append"> <span class="add-on">Иконка</span>
@@ -432,7 +432,7 @@ function _modal_dialog(cancel_text){
               </div>
               <div class="clearfloat mb10"></div>
             </div>
-              <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>Отправить</button>
+              <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
               <div class="input-prepend">
                 <span class="add-on"><i class="fa fa-building-o"></i> Содержание</span>
                 <select class="editor-page chosen-select">
@@ -594,7 +594,7 @@ function _modal_dialog(cancel_text){
           </div>
         </div>
         <div class="form-actions">
-          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>Отправить</button>
+          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
         </div>
       </form>
     </div>

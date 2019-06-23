@@ -223,7 +223,7 @@ $(function(){
 <?php if($maxperpage<1000){?>
               <th class="span2">Дата</th>
               <th>Категории</th>
-              <th>Изменить</th>
+              <th>Редактировать</th>
               <th class="span3">Просмотры/Комментарии</th>
               <th class="span3">Операции</th>
 <?php } ?>
@@ -340,7 +340,7 @@ $(function(){
                 <?php } ?>
                 <!-- <a href="<?php echo APP_URI; ?>&do=add&id=<?php echo $value['id']; ?>" class="btn btn-primary btn-mini">+章节</a> -->
                 <?php if(category::check_priv($value['cid'],'ce')){ ?>
-                <a href="<?php echo APP_URI; ?>&do=add&id=<?php echo $value['id']; ?>" class="btn btn-primary btn-mini"> Изменить </a>
+                <a href="<?php echo APP_URI; ?>&do=add&id=<?php echo $value['id']; ?>" class="btn btn-primary btn-mini"> Редактировать </a>
                 <?php } ?>
                 <?php if(in_array($value['status'],array("1","0")) && category::check_priv($value['cid'],'cd')){ ?>
                 <a href="<?php echo APP_FURI; ?>&do=update&id=<?php echo $value['id']; ?>&_args=status:2" target="iPHP_FRAME" class="del btn btn-danger btn-mini" title="Переместить пост в корзину" /> В корзину</a>
@@ -362,7 +362,7 @@ $(function(){
                   </span>
                   <div class="btn-group dropup" id="iCMS-batch"> <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i> Пакетные операции</a><a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"> <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a data-toggle="batch" data-action="pubdate:now"><i class="fa fa-clock-o"></i> Изменить время публикации</a></li>
+                      <li><a data-toggle="batch" data-action="pubdate:now"><i class="fa fa-clock-o"></i> Редактировать время публикации</a></li>
                       <?php if($stype=="inbox"||$stype=="trash"){ ?>
                       <li><a data-toggle="batch" data-action="status:1"><i class="fa fa-share"></i> Опубликовать</a></li>
                       <li><a data-toggle="batch" data-action="status:1,pubdate:now"><i class="fa fa-clock-o"></i> Время публикации и обновления</a></li>
@@ -374,7 +374,7 @@ $(function(){
                       <li><a data-toggle="batch" data-action="scid"><i class="fa fa-code-fork"></i> Настройки подкатегорий</a></li>
                       <li><a data-toggle="batch" data-action="thumb"><i class="fa fa-picture-o"></i> Сделать первую картинку эскизом</a></li>
                       <li><a data-toggle="batch" data-action="weight"><i class="fa fa-cog"></i> Установка веса</a></li>
-                      <li><a data-toggle="batch" data-action="keyword"><i class="fa fa-star"></i> 设置关键字</a></li>
+                      <li><a data-toggle="batch" data-action="keyword"><i class="fa fa-star"></i> Установка ключевых слов</a></li>
                       <li><a data-toggle="batch" data-action="tag"><i class="fa fa-tags"></i> 设置标签</a></li>
                       <li><a data-toggle="batch" data-action="meta"><i class="fa fa-sitemap"></i> Установка динамических свойств</a></li>
                       <li><a data-toggle="batch" data-action="status"><i class="fa fa-cog"></i> 设置状态</a></li>

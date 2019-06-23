@@ -3,7 +3,7 @@
 defined('iPHP') OR exit('Oops, something went wrong');
 ?>
             <div class="form-actions">
-              <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>Отправить</button>
+              <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
             </div>
           </div>
         </div>

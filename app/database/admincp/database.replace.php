@@ -28,7 +28,7 @@ admincp::head();
             </select>
           </div>
           <div class="clearfloat mb10"></div>
-          <div class="input-prepend" style="width:100%;"><span class="add-on">查找</span>
+          <div class="input-prepend" style="width:100%;"><span class="add-on">Искать</span>
             <textarea name="pattern" id="pattern" class="span6" style="height: 150px;"></textarea>
           </div>
           <div class="clearfloat mb10"></div>

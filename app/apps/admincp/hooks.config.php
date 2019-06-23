@@ -106,7 +106,7 @@ $(function(){
 </script>
 <div class="clearfloat mb10"></div>
         <div class="form-actions">
-          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>Отправить</button>
+          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
         </div>
       </form>
     </div>

@@ -157,7 +157,7 @@ $(function(){
 <div class="iCMS-container">
   <div class="widget-box">
     <div class="widget-title"> <span class="icon"> <i class="fa fa-plus-square"></i> </span>
-      <h5><?php echo empty($this->pid)?'Добавить':'Изменить' ; ?> Схема </h5>
+      <h5><?php echo empty($this->pid)?'Добавить':'Редактировать' ; ?> Схема </h5>
     </div>
     <div class="widget-content nopadding">
       <form action="<?php echo APP_FURI; ?>&do=save" method="post" class="form-inline" id="iCMS-spider" target="iPHP_FRAME">
@@ -245,7 +245,7 @@ $(function(){
           <div class="clearfloat mb10"></div>
         </div>
         <div class="form-actions">
-          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>Отправить</button>
+          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
           <?php if($this->pid){?>
           <a href="<?php echo __ADMINCP__; ?>=spider_rule&do=test&pid=<?php echo $this->pid; ?>" class="btn" data-toggle="modal" title="测试方案"><i class="fa fa-keyboard-o"></i> Тестировать</a>
           <?php }?>

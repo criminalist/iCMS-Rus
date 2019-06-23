@@ -114,7 +114,7 @@ $(function(){
                   </tbody>
                 </table>
                 <div class="clearfloat mb5"></div>
-                <a href="<?php echo APP_URI; ?>&do=submit&fid=<?php echo $this->fid ; ?>&id=<?php echo $id ; ?>" class="btn btn-small"><i class="fa fa-edit"></i> Изменить </a>
+                <a href="<?php echo APP_URI; ?>&do=submit&fid=<?php echo $this->fid ; ?>&id=<?php echo $id ; ?>" class="btn btn-small"><i class="fa fa-edit"></i> Редактировать </a>
                 <a href="<?php echo APP_FURI; ?>&do=delete&fid=<?php echo $this->fid ; ?>&id=<?php echo $id ; ?>" target="iPHP_FRAME" class="del btn btn-small btn-danger" title='Удалить навсегда'  onclick="return confirm('Вы уверены, что хотите удалить?');"/><i class="fa fa-trash-o"></i> Удалить</a>
               </td>
             </tr>

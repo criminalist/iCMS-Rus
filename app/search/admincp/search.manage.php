@@ -102,7 +102,7 @@ $(function(){
         </div>
         <span class="help-inline">По одному в строке</span>
         <div class="form-actions">
-          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>Отправить</button>
+          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
         </div>
   </form>
 </div>

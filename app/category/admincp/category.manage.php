@@ -47,7 +47,7 @@ admincp::head();
         <a href="<?php echo __ADMINCP__;?>=<?php echo $this->_app;?>&<?php echo $this->_app_cid;?>={{cid}}&sub=on" class="btn btn-small"><i class="fa fa-list-alt"></i> <?php echo $this->_app_name;?></a>
         {{if CP_EDIT}}
         <a href="<?php echo $this->category_uri;?>&do=copy&cid={{cid}}" target="iPHP_FRAME"  class="btn btn-small"><i class="fa fa-clipboard"></i> Копировать</a>
-        <a href="<?php echo $this->category_uri;?>&do=add&cid={{cid}}" title="Изменить настройки"  class="btn btn-small"><i class="fa fa-edit"></i> Изменить </a>
+        <a href="<?php echo $this->category_uri;?>&do=add&cid={{cid}}" title="Редактировать настройки"  class="btn btn-small"><i class="fa fa-edit"></i> Редактировать </a>
         {{/if}}
         {{if CP_DEL}}
         <a href="<?php echo $this->category_furi;?>&do=del&cid={{cid}}" class="btn btn-small" onClick="return confirm(\'Вы уверены, что хотите удалить <?php echo $this->category_name;?>?\');" target="iPHP_FRAME"><i class="fa fa-trash-o"></i> Удалить</a>
@@ -168,7 +168,7 @@ iCMS.select('rootid',"<?php echo $_GET['rootid'] ; ?>");
           </div>
         </div>
         <div class="form-actions">
-          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>Отправить</button>
+          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
           <div id="treecontrol">
             <a href="javascript:;" class="btn btn-info"><i class="fa fa-angle-double-up"></i> Свернуть все</a>
             <a href="javascript:;" class="btn btn-info"><i class="fa fa-angle-double-down"></i> Развернуть все</a>
@@ -234,7 +234,7 @@ iCMS.select('rootid',"<?php echo $_GET['rootid'] ; ?>");
                 <?php } ?>
                 <?php if(category::check_priv($rs[$i]['cid'],'e') ){?>
                 <a href="<?php echo $this->category_uri; ?>&do=copy&cid=<?php echo $rs[$i]['cid'] ; ?>" target="iPHP_FRAME" class="btn btn-small"><i class="fa fa-clipboard"></i> Копировать</a>
-                <a href="<?php echo $this->category_uri; ?>&do=add&cid=<?php echo $rs[$i]['cid'] ; ?>" class="btn btn-small"><i class="fa fa-edit"></i> Изменить </a>
+                <a href="<?php echo $this->category_uri; ?>&do=add&cid=<?php echo $rs[$i]['cid'] ; ?>" class="btn btn-small"><i class="fa fa-edit"></i> Редактировать </a>
                 <?php } ?>
                 <?php if(category::check_priv($rs[$i]['cid'],'d') ){?>
                 <a href="<?php echo $this->category_furi; ?>&do=del&cid=<?php echo $rs[$i]['cid'] ; ?>" target="iPHP_FRAME" class="del btn btn-small" title='Удалить навсегда'  onclick="return confirm('Вы уверены, что хотите удалить?');"/><i class="fa fa-trash-o"></i> Удалить</a></td>
@@ -253,11 +253,11 @@ iCMS.select('rootid',"<?php echo $_GET['rootid'] ; ?>");
                       <li><a data-toggle="batch" data-action="merge"><i class="fa fa-random"></i>Объединить <?php echo $this->category_name;?></a></li>
                       <li><a data-toggle="batch" data-action="move"><i class="fa fa-fighter-jet"></i>Переместить <?php echo $this->category_name;?></a></li>
                       <?php if(admincp::$APP_NAME=='category'){?>
-                      <li><a data-toggle="batch" data-action="appid"><i class="fa fa-gavel"></i> Изменить</a></li>
+                      <li><a data-toggle="batch" data-action="appid"><i class="fa fa-gavel"></i> Редактировать</a></li>
                       <?php } ?>
                       <li><a data-toggle="batch" data-action="recount"><i class="fa fa-refresh"></i> Обновить количества записей</a></li>
                       <li><a data-toggle="batch" data-action="mkdir"><i class="fa fa-gavel"></i> Перестроить каталог</a></li>
-                      <li><a data-toggle="batch" data-action="dir"><i class="fa fa-gavel"></i> Изменить каталог</a></li>
+                      <li><a data-toggle="batch" data-action="dir"><i class="fa fa-gavel"></i> Редактировать каталог</a></li>
                       <li><a data-toggle="batch" data-action="status"><i class="fa fa-square"></i> Статус <?php echo $this->category_name;?></a></li>
                       <?php echo $this->batchbtn();?>
                       <li class="divider"></li>

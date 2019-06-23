@@ -96,7 +96,7 @@ hr { border-bottom:none; margin:4px 0px; }
               <th class="span6">标题</th>
               <th>Категории</th>
               <th>Категории</th>
-              <th> Изменить </th>
+              <th> Редактировать </th>
               <th>Дата</th>
               <th>Операции</th>
             </tr>
@@ -131,7 +131,7 @@ hr { border-bottom:none; margin:4px 0px; }
               <td><a href="<?php echo APP_DOURI; ?>&pcid=<?php echo $rs[$i]['pcid'] ; ?><?php echo $uri ; ?>"><?php echo $PC['name'] ; ?></a></td>
               <td><a href="<?php echo APP_DOURI; ?>&userid=<?php echo $rs[$i]['userid'] ; ?><?php echo $uri ; ?>"><?php echo $rs[$i]['editor'] ; ?></a></td>
               <td><?php echo get_date($rs[$i]['addtime'],'Y-m-d H:i');?></td>
-              <td><a href="<?php echo $rs[$i]['url']; ?>" class="btn btn-small" target="_blank"><i class="fa fa-eye"></i> Посмотреть </a> <a href="<?php echo APP_URI; ?>&do=add&id=<?php echo $rs[$i]['id'] ; ?>" class="btn btn-small"><i class="fa fa-edit"></i> Изменить </a> <a href="<?php echo APP_FURI; ?>&do=del&id=<?php echo $rs[$i]['id'] ; ?>" target="iPHP_FRAME" class="del btn btn-small" title='移动此推荐到回收站' /><i class="fa fa-trash-o"></i> Удалить</a></td>
+              <td><a href="<?php echo $rs[$i]['url']; ?>" class="btn btn-small" target="_blank"><i class="fa fa-eye"></i> Посмотреть </a> <a href="<?php echo APP_URI; ?>&do=add&id=<?php echo $rs[$i]['id'] ; ?>" class="btn btn-small"><i class="fa fa-edit"></i> Редактировать </a> <a href="<?php echo APP_FURI; ?>&do=del&id=<?php echo $rs[$i]['id'] ; ?>" target="iPHP_FRAME" class="del btn btn-small" title='移动此推荐到回收站' /><i class="fa fa-trash-o"></i> Удалить</a></td>
             </tr>
             <?php }  ?>
           </tbody>
@@ -144,7 +144,7 @@ hr { border-bottom:none; margin:4px 0px; }
                   <div class="btn-group dropup" id="iCMS-batch"> <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i> Пакетные операции</a><a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"> <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                     <li><a data-toggle="batch" data-action="move"><i class="fa fa-fighter-jet"></i> Переместить</a></li>
-                    <li><a data-toggle="batch" data-action="mvpcid"><i class="fa fa-fighter-jet"></i> 移动分类</a></li>
+                    <li><a data-toggle="batch" data-action="mvpcid"><i class="fa fa-fighter-jet"></i>  Переместить категории</a></li>
                     <li><a data-toggle="batch" data-action="prop"><i class="fa fa-puzzle-piece"></i> Настройка свойств</a></li>
                     <li class="divider"></li>
                     <li><a data-toggle="batch" data-action="dels"><i class="fa fa-trash-o"></i> Удалить</a></li>

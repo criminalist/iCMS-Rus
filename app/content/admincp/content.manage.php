@@ -171,7 +171,7 @@ $(function(){
               <th>Название</th>
               <th class="span2">Дата</th>
               <th style="width:80px;">Категории</th>
-              <th style="width:60px;"> Изменить </th>
+              <th style="width:60px;"> Редактировать </th>
               <th class="span1">Просмотры/Комментарии</th>
               <th style="width:120px;">Операции</th>
             </tr>
@@ -269,7 +269,7 @@ $(function(){
                 <?php if($value['status']=="1"){ ?>
                 <a href="<?php echo $value['url']; ?>" class="btn btn-success btn-mini" target="_blank"> Просмотр </a>
                 <?php } ?>
-                <a href="<?php echo APP_URI; ?>&do=add&id=<?php echo $id ; ?>" class="btn btn-primary btn-mini"> Изменить </a>
+                <a href="<?php echo APP_URI; ?>&do=add&id=<?php echo $id ; ?>" class="btn btn-primary btn-mini"> Редактировать </a>
                 <?php if(in_array($value['status'],array("1","0")) && category::check_priv($value['cid'],'cd')){ ?>
                 <a href="<?php echo APP_FURI; ?>&do=update&id=<?php echo $id ; ?>&_args=status:2" target="iPHP_FRAME" class="del btn btn-danger btn-mini" title="移动此<?php echo $this->app['name'];?>到回收站" /> Удалить</a>
                 <?php } ?>
@@ -288,7 +288,7 @@ $(function(){
                   </span>
                   <div class="btn-group dropup" id="iCMS-batch"> <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i> Пакетные операции</a><a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"> <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a data-toggle="batch" data-action="pubdate:now"><i class="fa fa-clock-o"></i> Изменить время публикации</a></li>
+                      <li><a data-toggle="batch" data-action="pubdate:now"><i class="fa fa-clock-o"></i> Редактировать время публикации</a></li>
                       <?php if($stype=="inbox"||$stype=="trash"){ ?>
                       <li><a data-toggle="batch" data-action="status:1"><i class="fa fa-share"></i> Опубликовать</a></li>
                       <li><a data-toggle="batch" data-action="status:1,pubdate:now"><i class="fa fa-clock-o"></i> Время публикации и обновления</a></li>

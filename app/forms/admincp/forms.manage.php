@@ -114,7 +114,7 @@ $(function(){
                   ?>
                 </td>
                   <td>
-                    <a href="<?php echo APP_URI; ?>&do=create&id=<?php echo $data['id'] ; ?>" class="btn btn-small"><i class="fa fa-edit"></i> Изменить </a>
+                    <a href="<?php echo APP_URI; ?>&do=create&id=<?php echo $data['id'] ; ?>" class="btn btn-small"><i class="fa fa-edit"></i> Редактировать </a>
                     <a href="<?php echo APP_URI; ?>&do=pack&id=<?php echo $data['id'] ; ?>" class="btn btn-small"><i class="fa fa-download"></i> Пакет </a>
                     <div class="clearfix mt5"></div>
                     <?php if($data['status']){?>

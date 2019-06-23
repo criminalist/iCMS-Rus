@@ -122,9 +122,9 @@ class filesAdmincp{
         $udir      = iSecurity::escapeStr($_GET['udir']);
         $name      = iSecurity::escapeStr($_GET['name']);
         $ext       = iSecurity::escapeStr($_GET['ext']);
-        strpos($udir, '..') !== false && iUI::json(array('code'=>0,'msg'=>'非法目录名'));
-        strpos($name, '..') !== false && iUI::json(array('code'=>0,'msg'=>'非法文件名'));
-        iFS::check_ext($ext,0) OR iUI::json(array('state'=>'ERROR','msg'=>'不允许的文件类型'));
+        strpos($udir, '..') !== false && iUI::json(array('code'=>0,'msg'=>'Неверное имя каталога'));
+        strpos($name, '..') !== false && iUI::json(array('code'=>0,'msg'=>'Неверное имя файла'));
+        iFS::check_ext($ext,0) OR iUI::json(array('state'=>'ERROR','msg'=>'Тип файла не поддерживается'));
         iFS::$ERROR_TYPE = true;
         $F = iFS::IO($name,$udir,$ext);
         $F ===false && iUI::json(iFS::$ERROR);
@@ -178,7 +178,7 @@ class filesAdmincp{
         files::$userid = false;
         $rs = files::get('id',$this->id,false);
         $FileRootPath  = iFS::fp($rs->filepath,"+iPATH");
-        iFS::check_ext($rs->filepath,true) OR iUI::alert('文件类型不合法!');
+        iFS::check_ext($rs->filepath,true) OR iUI::alert('Тип файла не поддерживается системой!');
         files::$userid = members::$userid;
         $fileresults   = iHttp::remote($rs->ofilename);
 
@@ -192,13 +192,13 @@ class filesAdmincp{
     		if($_FileSize!=$rs->size){
                 files::update_size($this->id,_FileSize);
     		}
-    		iUI::success("{$rs->ofilename} <br />重新下载到<br /> {$rs->filepath} <br />完成",'js:1',3);
+    		iUI::success("{$rs->ofilename} <br />Повторно загрузить в <br /> {$rs->filepath} <br />",'js:1',3);
     	}else{
-    		iUI::alert("下载远程文件失败!",'js:1',3);
+    		iUI::alert("Не удалось скачать и сохранить файл!",'js:1',3);
     	}
     }
     public function do_batch(){
-        list($idArray,$ids,$batch) = iUI::get_batch_args("请选择要删除的文件");
+        list($idArray,$ids,$batch) = iUI::get_batch_args("Выберите файл для удаления");
     	switch($batch){
     		case 'dels':
 				iUI::$break	= false;
@@ -206,20 +206,20 @@ class filesAdmincp{
 	    			$this->do_del($id);
 	    		}
 	    		iUI::$break	= true;
-				iUI::success('文件全部删除完成!','js:1');
+				iUI::success('Все файлы успешно удалены!','js:1');
     		break;
 		}
 	}
     public function do_del($id = null){
         $id ===null && $id = $this->id;
-        $id OR iUI::alert("请选择要删除的文件");
+        $id OR iUI::alert("Выберите файл для удаления");
         // $indexid = (int)$_GET['indexid'];
         // $indexid && $result  = files::index_fileid($indexid);
 
         $result  = files::delete_file($id);
         files::delete_fdb($id);
         if($result){
-            $msg = 'success:#:check:#:文件删除完成!';
+            $msg = 'success:#:check:#:Удаление файла завершено!';
             $_GET['ajax'] && iUI::json(array('code'=>1,'msg'=>$msg));
         }else{
              $msg = 'warning:#:warning:#:找不到相关文件,文件删除失败!<hr/>文件相关数据已清除';
@@ -228,51 +228,51 @@ class filesAdmincp{
         iUI::dialog($msg,'js:parent.$("#id'.$id.'").remove();');
     }
     /**
-     * [创建目录]
+     * [Создать каталог]
      * @return [type] [description]
      */
     public function do_mkdir(){
     	$name	= $_POST['name'];
-        strstr($name,'.')!==false	&& iUI::json(array('code'=>0,'msg'=>'您输入的目录名称有问题!'));
-        strstr($name,'..')!==false	&& iUI::json(array('code'=>0,'msg'=>'您输入的目录名称有问题!'));
+        strstr($name,'.')!==false	&& iUI::json(array('code'=>0,'msg'=>'Возникла проблема с указанным вами именем каталога!'));
+        strstr($name,'..')!==false	&& iUI::json(array('code'=>0,'msg'=>'Возникла проблема с указанным вами именем каталога!'));
     	$pwd	= trim($_POST['pwd'],'/');
     	$dir	= iFS::path_join(iPATH,iCMS::$config['FS']['dir']);
     	$dir	= iFS::path_join($dir,$pwd);
     	$dir	= iFS::path_join($dir,$name);
-    	file_exists($dir) && iUI::json(array('code'=>0,'msg'=>'您输入的目录名称已存在,请重新输入!'));
+    	file_exists($dir) && iUI::json(array('code'=>0,'msg'=>'Имя каталога уже существует. Попробуйте ввести другое имя!'));
     	if(iFS::mkdir($dir)){
-    		iUI::json(array('code'=>1,'msg'=>'创建成功!'));
+    		iUI::json(array('code'=>1,'msg'=>'Успешно создано!'));
     	}
-		iUI::json(array('code'=>0,'msg'=>'创建失败,请检查目录权限!!'));
+		iUI::json(array('code'=>0,'msg'=>'Не удалось создать каталог, проверьте права на запись!!'));
     }
     /**
-     * [选择模板文件页]
+     * [Выберите страницу файла шаблона]
      * @return [type] [description]
      */
     public function do_seltpl(){
     	$this->explorer('template');
     }
     /**
-     * [浏览文件]
+     * [Просмотр файлов]
      * @return [type] [description]
      */
     public function do_browse(){
     	$this->explorer(iCMS::$config['FS']['dir']);
     }
     /**
-     * [浏览图片]
+     * [Просмотр изображения]
      * @return [type] [description]
      */
     public function do_picture(){
     	$this->explorer(iCMS::$config['FS']['dir'],files::$IMG_EXT);
     }
     /**
-     * [图片编辑器]
+     * [Редактор изображений]
      * @return [type] [description]
      */
     public function do_editpic(){
         $pic = iSecurity::escapeStr($_GET['pic']);
-        //$pic OR iUI::alert("请选择图片!");
+        //$pic OR iUI::alert("Выберите изображение!");
         if($pic){
             $src       = iFS::fp($pic,'+http')."?".time();
             $srcPath   = iFS::fp($pic,'+iPATH');
@@ -321,7 +321,7 @@ class filesAdmincp{
         include admincp::view("files.editpic");
     }
     /**
-     * [预览]
+     * [Просмотр]
      * @return [type] [description]
      */
     public function do_preview(){
@@ -333,17 +333,17 @@ class filesAdmincp{
      * @return [type] [description]
      */
     public function do_deldir(){
-        $_GET['path'] OR iUI::alert("请选择要删除的目录");
-        strpos($_GET['path'], '..') !== false && iUI::alert("目录路径中带有..");
+        $_GET['path'] OR iUI::alert("Выберите каталог для удаления");
+        strpos($_GET['path'], '..') !== false && iUI::alert("В пути к каталогу с:");
 
         $hash         = md5($_GET['path']);
         $dirRootPath = iFS::fp($_GET['path'],'+iPATH');
 
         if(iFS::rmdir($dirRootPath)){
-            $msg    = 'success:#:check:#:目录删除完成!';
+            $msg    = 'success:#:check:#:Удаление каталога завершено!';
             $_GET['ajax'] && iUI::json(array('code'=>1,'msg'=>$msg));
         }else{
-            $msg    = 'warning:#:warning:#:找不到相关目录,目录删除失败!';
+            $msg    = 'warning:#:warning:#:Каталог не найден, удалить не получается!';
             $_GET['ajax'] && iUI::json(array('code'=>0,'msg'=>$msg));
         }
         iUI::dialog($msg,'js:parent.$("#'.$hash.'").remove();');
@@ -353,13 +353,13 @@ class filesAdmincp{
      * @return [type] [description]
      */
     public function do_delfile(){
-        $_GET['path'] OR iUI::alert("请选择要删除的文件");
+        $_GET['path'] OR iUI::alert("Выберите файл для удаления");
         strpos($_GET['path'], '..') !== false && iUI::alert("文件路径中带有..");
 
         $hash         = md5($_GET['path']);
         $FileRootPath = iFS::fp($_GET['path'],'+iPATH');
         if(iFS::del($FileRootPath)){
-            $msg    = 'success:#:check:#:文件删除完成!';
+            $msg    = 'success:#:check:#:Удаление файла завершено!';
             $_GET['ajax'] && iUI::json(array('code'=>1,'msg'=>$msg));
         }else{
             $msg    = 'warning:#:warning:#:找不到相关文件,文件删除失败!';
@@ -383,8 +383,8 @@ class filesAdmincp{
     public static function modal_btn($title='',$target='template_index',$click='file',$callback='',$do='seltpl',$from='modal'){
         $href = __ADMINCP__."=files&do={$do}&from={$from}&click={$click}&target={$target}&callback={$callback}";
         $_title=$title.'Файл';
-        $click=='dir' && $_title=$title.'目录';
-        return '<a href="'.$href.'" class="btn files_modal" data-toggle="modal" title="选择'.$_title.'"><i class="fa fa-search"></i> Выбрать</a>';
+        $click=='dir' && $_title=$title.'Каталог';
+        return '<a href="'.$href.'" class="btn files_modal" data-toggle="modal" title=Выбрать '.$_title.'"><i class="fa fa-search"></i> Выбрать</a>';
     }
     public static function set_opt($pic_value = null, $no_http = true) {
         self::$no_http = $no_http;

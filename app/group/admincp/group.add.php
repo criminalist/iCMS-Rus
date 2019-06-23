@@ -11,7 +11,7 @@ $(function(){
 <div class="iCMS-container">
   <div class="widget-box">
     <div class="widget-title"> <span class="icon"> <i class="fa fa-user"></i> </span>
-      <h5 class="brs"><?php echo empty($this->gid)?'Добавить':'Изменить' ; ?> группу </h5>
+      <h5 class="brs"><?php echo empty($this->gid)?'Добавить':'Редактировать' ; ?> группу </h5>
       <ul class="nav nav-tabs" id="group-tab">
         <li class="active"><a href="#group-info" data-toggle="tab"><b>Основная информация</b></a></li>
         <li><a href="#group-mpriv" data-toggle="tab"><b>Права доступа в панели управления</b></a></li>
@@ -39,7 +39,7 @@ $(function(){
           <?php include admincp::view("members.priv","members"); ?>
         </div>
         <div class="form-actions">
-          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>Отправить</button>
+          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
         </div>
       </form>
     </div>

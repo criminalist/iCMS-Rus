@@ -4,7 +4,7 @@ defined('iPHP') OR exit('Oops, something went wrong');
 admincp::head($navbar);
 ?>
 <script type="text/javascript">
-var click_type = {'file':'Файл','dir':'目录'};
+var click_type = {'file':'Файл','dir':'Каталог'};
 
 function modal_callback(obj){
   var state = window.parent.modal_<?php echo $this->callback;?>('<?php echo $this->target; ?>',obj);
@@ -191,7 +191,7 @@ $(function(){
               <td><?php echo $fileRs[$i]['modified'] ; ?></td>
               <td class="op">
                   <?php if(0){ ?>
-              	  <a class="btn btn-small mv_file"><i class="fa fa-edit"></i> Изменить </a>
+              	  <a class="btn btn-small mv_file"><i class="fa fa-edit"></i> Редактировать </a>
               	  <a class="btn btn-small ed_file"><i class="fa fa-pencil-square"></i> 重命名</a>
                   <a class="btn btn-small" href="<?php echo $href; ?>" data-toggle="modal" title="Загрузить и перезаписать файлы"><i class="fa fa-upload"></i> Загрузить </a>
               	  <?php }?>

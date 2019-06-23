@@ -919,7 +919,12 @@ a.badge:hover,a.badge:focus{color:#fff;text-decoration:none;cursor:pointer}
 .alert-info{background-color:#d9edf7;border-color:#bce8f1;color:#31708f}
 .alert-info hr{border-top-color:#a6e1ec}
 .alert-info .alert-link{color:#245269}
-.alert-warning{background-color:#fcf8e3;border-color:#faebcc;color:#8a6d3b}
+.alert-warning{background: #e6e5be;
+    background: -webkit-linear-gradient(top, rgba(244,233,141,.3), rgba(232,209,62,.3), rgba(225,194,40,.3));
+    background: -moz-linear-gradient(top, rgba(244,233,141,.3), rgba(232,209,62,.3), rgba(225,194,40,.3));
+    background: -ms-linear-gradient(top, rgba(244,233,141,.3), rgba(232,209,62,.3), rgba(225,194,40,.3));
+    background: -o-linear-gradient(top, rgba(244,233,141,.3), rgba(232,209,62,.3), rgba(225,194,40,.3));
+    background: linear-gradient(top, rgba(244,233,141,.3), rgba(232,209,62,.3), rgba(225,194,40,.3));}
 .alert-warning hr{border-top-color:#f7e1b5}
 .alert-warning .alert-link{color:#66512c}
 .alert-danger{background-color:#f2dede;border-color:#ebccd1;color:#a94442}

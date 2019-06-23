@@ -14,14 +14,14 @@ defined('iPHP') OR exit('Oops, something went wrong');
     <span class="add-on"><b>{{name}}</b></span>
     <span class="add-on"><input type="checkbox" name="config[cpriv][]" value="{{cid}}:s"> 查询</span>
     <span class="add-on"><input type="checkbox" name="config[cpriv][]" value="{{cid}}:a" /> 添加子级</span>
-    <span class="add-on"><input type="checkbox" name="config[cpriv][]" value="{{cid}}:e" /> Изменить </span>
+    <span class="add-on"><input type="checkbox" name="config[cpriv][]" value="{{cid}}:e" /> Редактировать </span>
     <span class="add-on"><input type="checkbox" name="config[cpriv][]" value="{{cid}}:d" /> Удалить</span>
 </div>
 <div class="input-prepend input-append">
     <span class="add-on">内容权限</span>
     <span class="add-on"><input type="checkbox" name="config[cpriv][]" value="{{cid}}:cs" /> 查询</span>
     <span class="add-on"><input type="checkbox" name="config[cpriv][]" value="{{cid}}:ca" />Добавить</span>
-    <span class="add-on"><input type="checkbox" name="config[cpriv][]" value="{{cid}}:ce" /> Изменить </span>
+    <span class="add-on"><input type="checkbox" name="config[cpriv][]" value="{{cid}}:ce" /> Редактировать </span>
     <span class="add-on"><input type="checkbox" name="config[cpriv][]" value="{{cid}}:cd" /> Удалить</span>
 </div>
 </script>
@@ -82,7 +82,7 @@ function set_select(vars,el){
     <span class="add-on">
       <input type="checkbox" class="checkAll checkbox" data-target="#<?php echo admincp::$APP_NAME;?>-mpriv"/>
     </span>
-    <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>Отправить</button>
+    <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
   </div>
   <div class="clearfloat mb10"></div>
   <div class="input-prepend input-append">
@@ -108,7 +108,7 @@ function set_select(vars,el){
     <span class="add-on">
       <input type="checkbox" class="checkAll checkbox" data-target="#<?php echo admincp::$APP_NAME;?>-cpriv"/>
     </span>
-    <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>Отправить</button>
+    <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
   </div>
   <div class="clearfloat mb10"></div>
   <div class="input-prepend input-append">
@@ -133,7 +133,7 @@ function set_select(vars,el){
     <span class="add-on">
       <input type="checkbox" class="checkAll checkbox" data-target="#<?php echo admincp::$APP_NAME;?>-apriv"/>
     </span>
-    <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>Отправить</button>
+    <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
   </div>
   <div class="clearfloat"></div>
   <table class="table table-bordered table-condensed table-hover">

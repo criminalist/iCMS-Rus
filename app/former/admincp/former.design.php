@@ -1,12 +1,11 @@
-<!-- 字段选择 -->
 <div class="iFormer-design">
   <div class="widget-title">
     <span class="icon"> <i class="fa fa-cog"></i> </span>
-    <h5 class="brs">Поле</h5>
+    <h5 class="brs">Добавить поля</h5>
     <ul class="nav nav-tabs" id="fields-tab">
-      <li class="active"><a href="#fields-tab-base" data-toggle="tab"><i class="fa fa-info-circle"></i> Простое поле</a></li>
-      <li><a href="#fields-tab-func" data-toggle="tab"><i class="fa fa-cog"></i> Функциональное поле</a></li>
-      <li><a href="#fields-tab-addons" data-toggle="tab"><i class="fa fa-cog"></i>Дополнительное поле</a></li>
+      <li class="active"><a href="#fields-tab-base" data-toggle="tab"><i class="fa fa-info-circle"></i> Базовые</a></li>
+      <li><a href="#fields-tab-func" data-toggle="tab"><i class="fa fa-cog"></i> Функции</a></li>
+      <li><a href="#fields-tab-addons" data-toggle="tab"><i class="fa fa-cog"></i>Дополнительно</a></li>
     </ul>
   </div>
   <div id="fields-tab-content" class="tab-content">
@@ -94,7 +93,7 @@
         </li>
         <!--                         <li i="field" fieldtype="32">
           <span class="lookupIcon fb-icon fb-icon-lookup"></span>
-          <p class="lookupConent">查找</p>
+          <p class="lookupConent">Искать</p>
         </li>
         <li i="field" fieldtype="14">
           <span class="addnotesIcon fb-icon fb-icon-addnotes"></span>
@@ -214,13 +213,13 @@
     <div id="fields-tab-addons" class="tab-pane">
       <?php ?>
       <ul>
-        <li i="field" tag="textarea" type="multitext" field="MEDIUMTEXT" label="Большой текст">
+        <li i="field" tag="textarea" type="multitext" field="MEDIUMTEXT" label="Текстовое поле (textarea)">
           <span class="fb-icon fb-icon-textarea"></span>
-          <p>Большой текст</p>
+          <p>Текстовое поле (textarea)</p>
         </li>
-        <li i="field" tag="editor" type="editor" field="MEDIUMTEXT" label="Визуальный редактор">
+        <li i="field" tag="editor" type="editor" field="MEDIUMTEXT" label="Визуальный редактор (ueditor)">
           <span class="fb-icon fb-icon-richtext"></span>
-          <p>Визуальный редактор</p>
+          <p>Визуальный редактор (ueditor)</p>
         </li>
         <li i="field" tag="markdown" type="markdown" field="MEDIUMTEXT" label="Markdown редактор">
           <span class="fb-icon fb-icon-richtext"></span>

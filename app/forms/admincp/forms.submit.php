@@ -11,7 +11,7 @@ admincp::head(!$preview);
       <?php if($preview){?>
             <h5 class="brs">预览表单</h5>
       <?php }else{ ?>
-            <h5 class="brs"><?php echo ($this->id?'Изменить':'Добавить'); ?><?php echo $this->form['title'];?></h5>
+            <h5 class="brs"><?php echo ($this->id?'Редактировать':'Добавить'); ?><?php echo $this->form['title'];?></h5>
       <?php } ?>
       <div class="input-prepend" style="margin-top: 3px; margin-left: 5px;">
         <span class="add-on"> Форма </span>
@@ -37,7 +37,7 @@ admincp::head(!$preview);
           <?php }else{ ?>
           <?php }?>
           <div class="form-actions">
-            <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>Отправить</button>
+            <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
           </div>
         </form>
       <?php } ?>

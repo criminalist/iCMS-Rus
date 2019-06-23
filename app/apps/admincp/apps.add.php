@@ -71,7 +71,7 @@ $(function(){
   <div class="widget-box">
     <div class="widget-title">
       <span class="icon"> <i class="fa fa-pencil"></i> </span>
-      <h5 class="brs"><?php echo empty($this->id)?'Создать':'Изменить' ; ?> приложение</h5>
+      <h5 class="brs"><?php echo empty($this->id)?'Создать':'Редактировать' ; ?> приложение</h5>
       <ul class="nav nav-tabs" id="apps-add-tab">
         <li class="active"><a href="#apps-add-base" data-toggle="tab"><i class="fa fa-info-circle"></i> Основная информация</a></li>
         <li><a href="#apps-add-menu" data-toggle="tab"><i class="fa fa-bars"></i> Конфигурация </a></li>
@@ -82,7 +82,7 @@ $(function(){
           <?php if(!$rs['table']){?>
           <li id="tab-field"><a href="#apps-add-field" data-toggle="tab"><i class="fa fa-cog"></i> Добавить поле</a></li>
           <?php }?>
-          <li id="tab-custom"><a href="#apps-add-custom" data-toggle="tab"><i class="fa fa-cog"></i>Редактор полей</a></li>
+          <li id="tab-custom"><a href="#apps-add-custom" data-toggle="tab"><i class="fa fa-cog"></i>Конструктор полей</a></li>
         <?php }?>
       </ul>
     </div>

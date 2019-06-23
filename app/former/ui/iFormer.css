@@ -35,7 +35,7 @@
 .fb-icon-url:before { content: "\e91e"; }
 
 /*.widget-content .tab-content{padding:0px;}*/
-.ui-draggable { float: left; padding: 5px 5px 5px 8px; cursor: move; line-height: 24px; min-height: 24px; height: 35px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; border: 1px solid #ececec; background: #fff; margin: 4px; }
+.ui-draggable { float: left; padding: 5px 5px 5px 5px; cursor: move; line-height: 24px; min-height: 24px; height: 35px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; border: 1px solid #DDE0E8;; background: #fff; margin: 4px; }
 .ui-draggable p { display: inline-block; font-size: 12px; vertical-align: top; }
 
 /*.ui-state-highlight{border:1px dotted black;display: block;width: 100%;}*/

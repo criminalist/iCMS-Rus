@@ -12,7 +12,7 @@ $(function(){
 <div class="iCMS-container">
   <div class="widget-box">
     <div class="widget-title"> <span class="icon"> <i class="fa fa-plus-square"></i> </span>
-      <h5><?php echo empty($this->cid)?'Добавить':'Изменить' ; ?> форум</h5>
+      <h5><?php echo empty($this->cid)?'Добавить':'Редактировать' ; ?> форум</h5>
     </div>
     <div class="widget-content nopadding">
       <form action="<?php echo APP_FURI; ?>&do=save" method="post" class="form-inline" id="iCMS-pushcategory" target="iPHP_FRAME">

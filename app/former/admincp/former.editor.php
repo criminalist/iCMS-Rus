@@ -1,4 +1,4 @@
-<!--Редактор полей -->
+<!--Конструктор полей -->
 <div id="iFormer-field-editor" class="hide" style="width:500px;text-align: left;">
   <form id="iFormer-field-form">
     <input type="hidden" name="id" id="iFormer-id"/>

@@ -16,7 +16,7 @@ $(function(){
 <div class="iCMS-container">
   <div class="widget-box" id="<?php echo APP_BOXID;?>">
     <div class="widget-title"> <span class="icon"> <i class="fa fa-plus-square"></i> </span>
-      <h5><?php echo empty($this->pid)?'Добавить':'Изменить' ; ?> Свойства </b></h5>
+      <h5><?php echo empty($this->pid)?'Добавить':'Редактировать' ; ?> Свойства </b></h5>
     </div>
     <div class="widget-content nopadding">
       <form action="<?php echo APP_FURI; ?>&do=save" method="post" class="form-inline" id="iCMS-prop" target="iPHP_FRAME">

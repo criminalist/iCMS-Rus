@@ -1,4 +1,3 @@
-<button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>Отправить</button>
 <div class="clearfloat"></div>
 <div class="fields-fluid">
   <ul id="custom_field_list" class="iFormer-layout">
@@ -8,19 +7,19 @@
 </div>
 <div class="clearfloat mt10"></div>
 <div class="alert alert-info alert-block">
-  <h5><i class="fa fa-support"></i> 注意事项</h5>
-  <p><i class="fa fa-arrows-h"></i> 换行符 双击可删除</p>
-  <p><i class="fa fa-arrows-h"></i> 换行符 属于占位符 最终界面上将以10px空白替换.效果请参考文章添加页</p>
-  <p>本界面元素只作编辑用,最终界面展现效果请使用预览功能</p>
+  <h5><i class="fa fa-support"></i> Важная информация!</h5>
+  <p><i class="fa fa-arrows-h"></i> Удаление разрыва строки происходит двойным кликом по полю</p>
+  
   <p>基础字段可移动位置,半透明显示,不可编辑,不可删除.</p>
   <p>若需要无基础字段功能的简单应用请使用自定义表单</p>
-  <p>预览前请先提交修改</p>
+  <p>Для предварительного просмотра необходимо сохранить конфигурацию полей</p>
 </div>
 <?php if($this->id && $_GET['app']=='apps'){?>
 <a href="<?php echo __ADMINCP__; ?>=<?php echo $rs['app'] ; ?>&do=add&appid=<?php echo $this->id ; ?>&preview"
     class="btn btn-success" data-toggle="modal" data-target="#iCMS-MODAL" data-meta='{"width":"85%","height":"640px"}'>
     <i class="fa fa-eye"></i> Предварительный просмотр формы
 </a>
+<button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
 <?php }?>
 <script type="text/javascript" src="./app/admincp/ui/jquery/jquery-ui.min.js"></script>
 <link rel="stylesheet" href="./app/former/ui/iFormer.css" type="text/css" />

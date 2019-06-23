@@ -9,7 +9,7 @@ admincp::head();
 <div class="iCMS-container">
   <div class="widget-box">
     <div class="widget-title"> <span class="icon"> <i class="fa fa-plus-square"></i> </span>
-    <h5><?php echo empty($this->id)?'Добавить':'Изменить' ; ?> ключевое слово</h5>
+    <h5><?php echo empty($this->id)?'Добавить':'Редактировать' ; ?> ключевое слово</h5>
   </div>
   <div class="widget-content nopadding">
     <form action="<?php echo APP_FURI; ?>&do=save" method="post" class="form-inline" id="iCMS-keywords" target="iPHP_FRAME">
@@ -27,7 +27,7 @@ admincp::head();
         <span class="help-inline">Поддерживается html разметка</span>
       </div>
       <div class="form-actions">
-        <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>Отправить</button>
+        <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
       </div>
     </form>
   </div>

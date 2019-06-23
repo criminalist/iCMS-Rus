@@ -194,7 +194,7 @@ function select_sort_value(a, e, p) {
 <div class="iCMS-container">
   <div class="widget-box">
     <div class="widget-title"> <span class="icon"> <i class="fa fa-plus-square"></i> </span>
-      <h5 class="brs"><?php echo ($this->rid ?'Изменить'."[{$rs['name']}]":'Добавить') ; ?> правила </h5>
+      <h5 class="brs"><?php echo ($this->rid ?'Редактировать'."[{$rs['name']}]":'Добавить') ; ?> правила </h5>
       <ul class="nav nav-tabs" id="spider-tab">
         <li class="active"><a href="#spider-base" data-toggle="tab"><i class="fa fa-info-circle"></i> Основные настройки</a></li>
         <li><a href="#spider-data" data-toggle="tab"><i class="fa fa-truck"></i> Сбор данных</a></li>
@@ -610,7 +610,7 @@ function processing_item($name,$item=array(),$length=0,$title=''){
           </div>
         </div>
         <div class="form-actions">
-          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>Отправить</button>
+          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
           <a id="test" href="<?php echo APP_URI; ?>&do=test&rid=<?php echo $this->rid ; ?>" class="btn btn-inverse" data-toggle="modal" title="Тестировать правило"><i class="fa fa-keyboard-o"></i> Тестировать</a>
           <a href="<?php echo APP_URI; ?>&do=manage&rid=<?php echo $this->rid ; ?>" class="btn btn-success" target="_blank"><i class="fa fa-list-alt"></i>Правила парсера</a>
           <a href="<?php echo __ADMINCP__; ?>=spider_project&do=manage&rid=<?php echo $this->rid ; ?>" class="btn btn-info" target="_blank"><i class="fa fa-magnet"></i> Схема </a>

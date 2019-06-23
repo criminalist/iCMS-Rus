@@ -135,7 +135,7 @@ $(function(){
                 <a href="<?php echo __ADMINCP__; ?>=spider&do=manage&pid=<?php echo $rs[$i]['id']; ?>"><?php echo $rs[$i]['name']; ?></a> <br /><?php echo $rs[$i]['lastupdate']?get_date($rs[$i]['lastupdate'],'Y-m-d H:i:s'):'' ; ?>
                 <div class="action mb10">
                   <a href="<?php echo APP_URI; ?>&do=copy&pid=<?php echo $rs[$i]['id']; ?>" class="btn mt10" target="iPHP_FRAME"><i class="fa fa-copy"></i> Копировать</a>
-                  <a href="<?php echo APP_URI; ?>&do=add&pid=<?php echo $rs[$i]['id']; ?>" class="btn mt10"><i class="fa fa-edit"></i> Изменить </a>
+                  <a href="<?php echo APP_URI; ?>&do=add&pid=<?php echo $rs[$i]['id']; ?>" class="btn mt10"><i class="fa fa-edit"></i> Редактировать </a>
                   <a href="<?php echo __ADMINCP__; ?>=spider_rule&do=test&rid=<?php echo $rs[$i]['rid']; ?>" class="btn mt10" data-toggle="modal" title="Тестировать правило"><i class="fa fa-keyboard-o"></i> Тестировать правило</a>
                   <a href="<?php echo __ADMINCP__; ?>=spider_rule&do=test&pid=<?php echo $rs[$i]['id']; ?>" class="btn mt10" data-toggle="modal" title="测试方案"><i class="fa fa-keyboard-o"></i> 测试方案</a>
                   <a href="<?php echo __ADMINCP__; ?>=spider&do=listpub&pid=<?php echo $rs[$i]['id']; ?>" class="btn mt10 btn-primary" data-toggle="modal" title="采集列表,手动发布"><i class="fa fa-hand-o-up"></i> В ручном режиме</a>

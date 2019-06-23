@@ -30,7 +30,7 @@ admincp::head();
         <a href="<?php echo APP_URI;?>&do=copy&id={{id}}" title="复制本菜单设置"  class="btn btn-small" target="iPHP_FRAME"><i class="fa fa-copy"></i> Копировать</a>
         <a href="<?php echo APP_URI;?>&do=add&rootid={{id}}" class="btn btn-info btn-small"><i class="fa fa-plus-square"></i> 子菜单</a>
         <a href="<?php echo APP_FURI;?>&do=addseparator&rootid={{id}}" class="btn btn-success btn-small" target="iPHP_FRAME"><i class="fa fa-minus-square"></i> 分隔符</a>
-        <a href="<?php echo APP_URI;?>&do=add&id={{id}}" title="编辑菜单设置"  class="btn btn-primary btn-small"><i class="fa fa-edit"></i> Изменить </a>
+        <a href="<?php echo APP_URI;?>&do=add&id={{id}}" title="编辑菜单设置"  class="btn btn-primary btn-small"><i class="fa fa-edit"></i> Редактировать </a>
         <a href="<?php echo APP_FURI;?>&do=del&id={{id}}" class="btn btn-danger btn-small" onClick="return confirm('确定要删除此菜单?');" target="iPHP_FRAME"><i class="fa fa-trash-o"></i> Удалить</a>
     </span>
 </div>

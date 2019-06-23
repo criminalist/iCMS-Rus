@@ -124,7 +124,7 @@ class patchAdmincp{
         $type_map = array(
           'D'=>'Удалить',
           'A'=>'Добавить',
-          'M'=>'Изменить'
+          'M'=>'Редактировать'
         );
     	include admincp::view("git.show");
     }

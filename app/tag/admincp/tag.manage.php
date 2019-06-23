@@ -60,13 +60,13 @@ $(function(){
       <form action="<?php echo iPHP_SELF ; ?>" method="get" class="form-inline">
         <input type="hidden" name="app" value="<?php echo admincp::$APP_NAME;?>" />
         <input type="hidden" name="uid" value="<?php echo $_GET['uid'] ; ?>" />
-        <div class="input-prepend"> <span class="add-on">标签属性</span>
+        <div class="input-prepend"> <span class="add-on">Свойства тега</span>
           <select name="pid" id="pid" class="span2 chosen-select">
-            <option value="-1">所有标签</option>
+            <option value="-1">Все теги</option>
             <?php echo $pid_select = propAdmincp::get("pid") ; ?>
           </select>
         </div>
-        <div class="input-prepend input-append"> <span class="add-on">Категории</span>
+        <div class="input-prepend input-append"> <span class="add-on">Категории статей</span>
           <select name="cid" id="cid" class="span3 chosen-select">
             <option value="0"> Все категории</option>
             <?php echo $cid_select = category::priv('cs')->select() ; ?>
@@ -74,7 +74,7 @@ $(function(){
           <span class="add-on">
           <input type="checkbox" name="sub" id="sub"/>
           Подкатегории</span> </div>
-        <div class="input-prepend input-append"> <span class="add-on">Категории</span>
+        <div class="input-prepend input-append"> <span class="add-on">Категории тегов</span>
           <select name="tcid" id="tcid" class="chosen-select">
             <option value="0"> Все категории </option>
             <?php echo $tcid_select = category::appid($this->appid,'cs')->select() ;?>
@@ -123,7 +123,7 @@ $(function(){
     <div class="widget-title"> <span class="icon">
       <input type="checkbox" class="checkAll" data-target="#<?php echo APP_BOXID;?>" />
       </span>
-      <h5>标签列表</h5>
+      <h5>Список тегов</h5>
     </div>
     <div class="widget-content nopadding">
     <form action="<?php echo APP_FURI; ?>&do=batch" method="post" class="form-inline" id="<?php echo APP_FORMID;?>" target="iPHP_FRAME">
@@ -202,7 +202,7 @@ $(function(){
             <?php if($rs[$i]['status']=="0"){ ?>
             <a href="<?php echo APP_FURI; ?>&do=update&id=<?php echo $rs[$i]['id'] ; ?>&_args=status:1" class="btn btn-small btn-success tip " target="iPHP_FRAME" title="Текущий статус: отключен, нажмите, чтобы активировать элемент"><i class="fa fa-play-circle"></i> Активировать</a>
             <?php } ?>
-             <a href="<?php echo APP_URI; ?>&do=add&id=<?php echo $rs[$i]['id'] ; ?>" class="btn btn-small"><i class="fa fa-edit"></i> Изменить </a> <a href="<?php echo APP_FURI; ?>&do=del&id=<?php echo $rs[$i]['id'] ; ?>" target="iPHP_FRAME" class="del btn btn-small" title='Удалить навсегда'  onclick="return confirm('Вы уверены, что хотите удалить?');"/><i class="fa fa-trash-o"></i> Удалить навсегда</a></td>
+             <a href="<?php echo APP_URI; ?>&do=add&id=<?php echo $rs[$i]['id'] ; ?>" class="btn btn-small"><i class="fa fa-edit"></i> Редактировать </a> <a href="<?php echo APP_FURI; ?>&do=del&id=<?php echo $rs[$i]['id'] ; ?>" target="iPHP_FRAME" class="del btn btn-small" title='Удалить навсегда'  onclick="return confirm('Вы уверены, что хотите удалить?');"/><i class="fa fa-trash-o"></i> Удалить навсегда</a></td>
         </tr>
         <?php }  ?>
           </tbody>
@@ -219,13 +219,13 @@ $(function(){
                     <li><a data-toggle="batch" data-action="status:0"><i class="fa fa-power-off"></i> Отключить</a></li>
                     <li class="divider"></li>
                     <li><a data-toggle="batch" data-action="move"><i class="fa fa-fighter-jet"></i> Переместить</a></li>
-                    <li><a data-toggle="batch" data-action="mvtcid"><i class="fa fa-fighter-jet"></i> 移动分类</a></li>
-                    <li><a data-toggle="batch" data-action="prop"><i class="fa fa-puzzle-piece"></i> Настройка свойств</a></li>
-                    <li><a data-toggle="batch" data-action="weight"><i class="fa fa-cog"></i> 设置权重</a></li>
+                    <li><a data-toggle="batch" data-action="mvtcid"><i class="fa fa-fighter-jet"></i>  Переместить категории</a></li>
+                    <li><a data-toggle="batch" data-action="prop"><i class="fa fa-puzzle-piece"></i> Устаовка свойств</a></li>
+                    <li><a data-toggle="batch" data-action="weight"><i class="fa fa-cog"></i>  Установка приоритета</a></li>
                     <li><a data-toggle="batch" data-action="rootid"><i class="fa fa-cog"></i> 设置父标签ID</a></li>
-                    <li><a data-toggle="batch" data-action="keyword"><i class="fa fa-star"></i> 设置关键字</a></li>
-                    <li><a data-toggle="batch" data-action="tag"><i class="fa fa-tags"></i> 设置相关标签</a></li>
-                    <li><a data-toggle="batch" data-action="tpl"><i class="fa fa-tags"></i> 设置模板</a></li>
+                    <li><a data-toggle="batch" data-action="keyword"><i class="fa fa-star"></i> Установка ключевых слов</a></li>
+                    <li><a data-toggle="batch" data-action="tag"><i class="fa fa-tags"></i> Установить привязку тегов</a></li>
+                    <li><a data-toggle="batch" data-action="tpl"><i class="fa fa-tags"></i> Установка шаблона</a></li>
                     <li class="divider"></li>
                      <li><a data-toggle="batch" data-action="keywords"><i class="fa fa-paperclip"></i> 设置为内链</a></li>
                     <li class="divider"></li>

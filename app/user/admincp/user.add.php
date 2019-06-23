@@ -18,7 +18,7 @@ $(function(){
 <div class="iCMS-container">
   <div class="widget-box">
     <div class="widget-title"> <span class="icon"> <i class="fa fa-user"></i> </span>
-      <h5 class="brs"><?php echo empty($this->uid)?'Добавить':'Изменить' ; ?> пользователя</h5>
+      <h5 class="brs"><?php echo empty($this->uid)?'Добавить':'Редактировать' ; ?> пользователя</h5>
       <ul class="nav nav-tabs" id="user-tab">
         <li class="active"><a href="#user-info" data-toggle="tab"><i class="fa fa-info-circle"></i> Основная информация</a></li>
         <?php if($this->uid){;?>
@@ -243,7 +243,7 @@ $(function(){
           </div>
         </div>
         <div class="form-actions">
-          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>Отправить</button>
+          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
         </div>
       </form>
     </div>

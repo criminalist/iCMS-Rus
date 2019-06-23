@@ -145,7 +145,7 @@ function uninstall($msg,$a) {
                         <a href="<?php echo __ADMINCP__; ?>=<?php echo $data['app'] ; ?>&do=add&appid=<?php echo $data['id'] ; ?>" class="btn btn-small" target="_blank"><i class="fa fa-edit"></i> 添加内容</a>
                         <div class="clearfix mt5"></div>
                       <?php }?>
-                      <a href="<?php echo APP_URI; ?>&do=add&id=<?php echo $data['id'] ; ?>" class="btn btn-small"><i class="fa fa-edit"></i> Изменить</a>
+                      <a href="<?php echo APP_URI; ?>&do=add&id=<?php echo $data['id'] ; ?>" class="btn btn-small"><i class="fa fa-edit"></i> Редактировать</a>
                       <a href="<?php echo APP_URI; ?>&do=pack&id=<?php echo $data['id'] ; ?>" class="btn btn-small"><i class="fa fa-download"></i> Скачать пакет</a>
                       <?php if($data['apptype']){?>
                         <?php if($data['status']){?>

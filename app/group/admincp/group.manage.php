@@ -58,7 +58,7 @@ $(function(){
                 <a href="<?php echo APP_URI; ?>&do=add&tab=mpriv&gid=<?php echo $rs[$i]['gid'] ; ?>" class="btn btn-small"><i class="fa fa-tachometer"></i> Фоновые права доступа</a>
                 <a href="<?php echo APP_URI; ?>&do=add&tab=cpriv&gid=<?php echo $rs[$i]['gid'] ; ?>" class="btn btn-small"><i class="fa  fa-unlock-alt"></i> Права доступа к категориям</a>
                 <?php } ?>
-                <a href="<?php echo APP_URI; ?>&do=add&gid=<?php echo $rs[$i]['gid'] ; ?>" class="btn btn-small"><i class="fa fa-edit"></i> Изменить </a>
+                <a href="<?php echo APP_URI; ?>&do=add&gid=<?php echo $rs[$i]['gid'] ; ?>" class="btn btn-small"><i class="fa fa-edit"></i> Редактировать </a>
                 <?php if($rs[$i]['gid']!='1'){  ?>
                 <a href="<?php echo APP_FURI; ?>&do=del&gid=<?php echo $rs[$i]['gid'] ; ?>" target="iPHP_FRAME" class="del btn btn-small" title='Удалить навсегда'  onclick="return confirm('Вы уверены, что хотите удалить?');"><i class="fa fa-trash-o"></i> Удалить</a>
                 <?php } ?>

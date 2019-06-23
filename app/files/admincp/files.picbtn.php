@@ -17,7 +17,7 @@ $unid = uniqid();
     <li class="divider"></li>
     <?php }?>
     <?php if(members::check_priv('files.editpic')){?>
-    <li><a href="<?php echo __ADMINCP__;?>=files&do=editpic&from=modal&callback=<?php echo $callback;?>" data-toggle="modal" title="使用美图秀秀编辑图片" class="modal_photo_<?php echo $callback.'_'.$unid;?> tip"><i class="fa fa-edit"></i> Изменить </a></li>
+    <li><a href="<?php echo __ADMINCP__;?>=files&do=editpic&from=modal&callback=<?php echo $callback;?>" data-toggle="modal" title="使用美图秀秀编辑图片" class="modal_photo_<?php echo $callback.'_'.$unid;?> tip"><i class="fa fa-edit"></i> Редактировать </a></li>
     <li class="divider"></li>
         <?php if($indexid){?>
         <li><a href="<?php echo __ADMINCP__;?>=files&do=editpic&from=modal&indexid=<?php echo $indexid;?>&callback=<?php echo $callback;?>" data-toggle="modal" title="使用加载本篇内容所有图片编辑" class="modal_mphoto_<?php echo $unid;?> tip"><i class="fa fa-edit"></i> Редактирование изображений</a></li>

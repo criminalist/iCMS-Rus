@@ -152,7 +152,7 @@ $(function(){
                 <a class="btn btn-small" href="<?php echo $href; ?>" data-toggle="modal" title="Просмотр"><i class="fa fa-eye"></i> Посмотреть </a>
                 <?php }?>
                 <?php if(members::check_priv('files.editpic')){?>
-                <a class="btn btn-small" href="<?php echo __ADMINCP__;?>=files&frame=iPHP&do=editpic&from=modal&pic=<?php echo $filepath ; ?>" data-toggle="modal" title="编辑图片(<?php echo $rs[$i]['filename'].'.'.$rs[$i]['ext']; ?>)"><i class="fa fa-edit"></i> Изменить </a>
+                <a class="btn btn-small" href="<?php echo __ADMINCP__;?>=files&frame=iPHP&do=editpic&from=modal&pic=<?php echo $filepath ; ?>" data-toggle="modal" title="编辑图片(<?php echo $rs[$i]['filename'].'.'.$rs[$i]['ext']; ?>)"><i class="fa fa-edit"></i> Редактировать </a>
                 <?php }?>
                 <?php if(iHttp::is_url($rs[$i]['ofilename'])){?>
                 <a href="<?php echo __ADMINCP__; ?>=files&frame=iPHP&do=download&id=<?php echo $rs[$i]['id'] ; ?>" class="btn btn-small" title="正常重新下载" target="iPHP_FRAME"><i class="fa fa-download"></i> Скачать </a>
@@ -176,7 +176,7 @@ $(function(){
                   </span>
                   <div class="btn-group dropup" id="iCMS-batch"> <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i> Пакетные операции</a><a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"> <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a data-toggle="batch" data-action="edit" data-dialog="no" title=""><i class="fa fa-edit"></i>Изменить</a></li>
+                      <li><a data-toggle="batch" data-action="edit" data-dialog="no" title=""><i class="fa fa-edit"></i>Редактировать</a></li>
                       <li class="divider"></li>
                       <li><a data-toggle="batch" data-action="dels"><i class="fa fa-trash-o"></i> Удалить</a></li>
                     </ul>

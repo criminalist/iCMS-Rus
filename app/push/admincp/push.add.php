@@ -29,7 +29,7 @@ $(function(){
 <div class="iCMS-container">
   <div class="widget-box">
     <div class="widget-title"> <span class="icon"> <i class="fa fa-plus-square"></i> </span>
-      <h5><?php echo empty($id)?'Добавить':'Изменить' ; ?>推荐</h5>
+      <h5><?php echo empty($id)?'Добавить':'Редактировать' ; ?>推荐</h5>
       <ul class="nav nav-tabs" id="push-add-tab">
         <li class="active"><a href="#push-add-base" data-toggle="tab"><i class="fa fa-info-circle"></i> Основная информация</a></li>
         <li><a href="#push-add-custom" data-toggle="tab"><i class="fa fa-wrench"></i> 自定义</a></li>
@@ -69,7 +69,7 @@ $(function(){
               </select>
             </div>
             <div class="clearfloat mb10"></div>
-            <div class="input-prepend"> <span class="add-on"> Изменить </span>
+            <div class="input-prepend"> <span class="add-on"> Редактировать </span>
               <input id="'editor" class="span3" value="<?php echo $rs['editor'] ; ?>" name="editor" type="text"/>
             </div>
             <div class="clearfloat mb10"></div>

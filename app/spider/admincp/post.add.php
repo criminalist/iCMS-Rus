@@ -23,7 +23,7 @@ $(function(){
 <div class="iCMS-container">
   <div class="widget-box">
     <div class="widget-title"> <span class="icon"> <i class="fa fa-plus-square"></i> </span>
-      <h5><?php echo empty($this->poid)?'Добавить':'Изменить' ; ?> правила публикации</h5>
+      <h5><?php echo empty($this->poid)?'Добавить':'Редактировать' ; ?> правила публикации</h5>
     </div>
     <div class="widget-content nopadding">
       <form action="<?php echo APP_FURI; ?>&do=save" method="post" class="form-inline" id="iCMS-spider-post" target="iPHP_FRAME">
@@ -59,7 +59,7 @@ $(function(){
           <div class="clearfloat mb10"></div>
         </div>
         <div class="form-actions">
-          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>Отправить</button>
+          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
         </div>
       </form>
     </div>

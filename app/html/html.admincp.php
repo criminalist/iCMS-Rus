@@ -31,7 +31,7 @@ class htmlAdmincp{
         $indexName = iCMS::$config['template']['index']['name']  = $this->PG['indexName'];
         $ext = iFS::get_ext($indexName);
         if($ext) iFS::allow_files($ext) OR iUI::alert("文件名不合法!");
-    	iFS::check_ext($indexName.iCMS::$config['router']['ext']) OR iUI::alert('文件类型不合法!');
+    	iFS::check_ext($indexName.iCMS::$config['router']['ext']) OR iUI::alert('Тип файла не поддерживается системой!');
 		configAdmincp::update('template');
     	$this->CreateIndex($indexTPL,$indexName);
     }

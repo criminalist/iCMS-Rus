@@ -27,11 +27,11 @@ $(function(){
   <div class="widget-box">
     <div class="widget-title">
       <span class="icon"> <i class="fa fa-pencil"></i> </span>
-      <h5 class="brs"><?php echo ($id?'Добавить':'Изменить'); ?>Теги</h5>
+      <h5 class="brs"><?php echo ($id?'Добавить':'Редактировать'); ?> теги</h5>
       <ul class="nav nav-tabs" id="tag-add-tab">
         <li class="active"><a href="#tag-add-base" data-toggle="tab"><i class="fa fa-info-circle"></i> Основная информация</a></li>
         <li><a href="#add-publish" data-toggle="tab"><i class="fa fa-rocket"></i> Настройки публикации</a></li>
-        <li><a href="#former-layout" data-toggle="tab"><i class="fa fa-wrench"></i>Пользовательские поля</a></li>
+        <li><a href="#former-layout" data-toggle="tab"><i class="fa fa-wrench"></i> Пользовательские поля</a></li>
         <li><a href="#apps-metadata" data-toggle="tab"><i class="fa fa-sitemap"></i> Динамические свойства </a></li>
       </ul>
     </div>
@@ -45,8 +45,8 @@ $(function(){
         <div id="tags-add" class="tab-content">
           <div id="tag-add-base" class="tab-pane active">
             <div class="input-prepend">
-              <span class="add-on">标签分类</span>
-              <select name="tcid" id="tcid" class="chosen-select span6" data-placeholder="请选择标签分类...">
+              <span class="add-on">Категория тега</span>
+              <select name="tcid" id="tcid" class="chosen-select span6" data-placeholder="Выберите категорию тега ...">
                 <option value="0"> ==== Категория по умолчанию ==== </option>
                 <?php echo category::appid($this->appid,'ca')->select($rs['tcid'],0,1,true);?>
               </select>
@@ -63,7 +63,7 @@ $(function(){
             <span class="help-inline">本标签所属的栏目</span>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend input-append">
-              <span class="add-on">标签属性</span>
+              <span class="add-on">Свойства тега</span>
               <select name="pid[]" id="pid" class="chosen-select span6" multiple="multiple" data-placeholder="请选择标签属性 (множественный выбор)...">
                 <option value="0">普通标签[pid='0']</option>
                 <?php echo propAdmincp::get("pid") ; ?>
@@ -225,7 +225,7 @@ $(function(){
           </div>
         </div>
         <div class="form-actions">
-          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i>Отправить</button>
+          <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
         </div>
       </form>
     </div>

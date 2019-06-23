@@ -56,7 +56,7 @@ $(function(){
               <td><?php echo $rs[$i]['fun'] ; ?></td>
               <td>
                 <a href="<?php echo APP_FURI; ?>&do=copy&poid=<?php echo $rs[$i]['id']; ?>" class="btn btn-small" target="iPHP_FRAME"><i class="fa fa-copy"></i> Копировать</a>
-                <a href="<?php echo APP_URI; ?>&do=add&poid=<?php echo $rs[$i]['id'] ; ?>" class="btn btn-small"><i class="fa fa-edit"></i> Изменить </a>
+                <a href="<?php echo APP_URI; ?>&do=add&poid=<?php echo $rs[$i]['id'] ; ?>" class="btn btn-small"><i class="fa fa-edit"></i> Редактировать </a>
                 <a href="<?php echo APP_FURI; ?>&do=del&poid=<?php echo $rs[$i]['id'] ; ?>" target="iPHP_FRAME" class="del btn btn-small" title='Удалить навсегда'  onclick="return confirm('Вы уверены, что хотите удалить?');"/><i class="fa fa-trash-o"></i> Удалить</a></td>
             </tr>
             <?php }  ?>
