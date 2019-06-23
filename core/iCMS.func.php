@@ -198,7 +198,12 @@ function get_php_content($content){
 function check_priv($p,$priv){
     return is_array($p)?array_intersect((array)$p,(array)$priv):in_array((string)$p,(array)$priv);
 }
+function iCMS_php_head(){
+    return '<?php
 
+defined(\'iPHP\') OR exit(\'Oops, something went wrong?\');
+';
+}
 function orderby_option($array,$by="DESC"){
     $opt = '';
     $byText = ($by=="ASC"?"По возрастанию":"По убыванию");
@@ -228,4 +233,68 @@ function get_orderby($array=null){
     // $obj->sql = $orderby;
     // $obj->option = $option;
     // return $obj;
+}
+
+
+function jsonFormat($data, $indent=null){
+    is_array($data) OR $data = json_decode($data,true);
+    if(empty($data)){
+        return '';
+    }
+    
+    array_walk_recursive($data, 'jsonFormatProtect');
+
+    // json encode
+    $data = json_encode($data);
+
+    
+    $data = urldecode($data);
+
+    
+    $ret = '';
+    $pos = 0;
+    $length = strlen($data);
+    $indent = isset($indent)? $indent : '    ';
+    $newline = "\n";
+    $prevchar = '';
+    $outofquotes = true;
+
+    for($i=0; $i<=$length; $i++){
+
+        $char = substr($data, $i, 1);
+
+        if($char=='"' && $prevchar!='\\'){
+            $outofquotes = !$outofquotes;
+        }elseif(($char=='}' || $char==']') && $outofquotes){
+            $ret .= $newline;
+            $pos --;
+            for($j=0; $j<$pos; $j++){
+                $ret .= $indent;
+            }
+        }
+
+        $ret .= $char;
+
+        if(($char==',' || $char=='{' || $char=='[') && $outofquotes){
+            $ret .= $newline;
+            if($char=='{' || $char=='['){
+                $pos ++;
+            }
+
+            for($j=0; $j<$pos; $j++){
+                $ret .= $indent;
+            }
+        }
+
+        $prevchar = $char;
+    }
+
+    return $ret;
+}
+
+
+function jsonFormatProtect(&$val){
+    if($val!==true && $val!==false && $val!==null){
+        $val = urlencode($val);
+    }
 }

@@ -99,9 +99,12 @@ class iPHP {
 			strpos($site, '..') === false OR self::error_throw('What are you doing','001');
 		}
 
-		define('iPHP_APP_SITE', $site);
-		define('iPHP_APP_CONF', iPHP_CONF_DIR . '/' . iPHP_APP_SITE); //网站配置目录
-		define('iPHP_APP_CONFIG', iPHP_APP_CONF . '/config.php'); //网站配置文件
+if(!defined('iPHP_APP_SITE')){
+			$site OR self::error_throw('Please define iPHP_APP_SITE ', '0000');
+			define('iPHP_APP_SITE', $site);
+		}
+		define('iPHP_APP_CONF', iPHP_CONF_DIR . '/' . iPHP_APP_SITE); 
+		define('iPHP_APP_CONFIG', iPHP_APP_CONF . '/config.php');
 		is_file(iPHP_APP_CONFIG) OR self::error_throw('Unable to find "' . iPHP_APP_SITE . '" config file ('.iPHP_APP_CONFIG.').Please install '.iPHP_APP, '0001');
 		$config = require_once iPHP_APP_CONFIG;
 		defined('iPHP_APP_SITE') && $config['cache']['prefix'] = iPHP_APP_SITE;
@@ -116,12 +119,7 @@ class iPHP {
             }
         }
     }
-    /**
-     * [define_device]
-     * @param  string  $device [设备标识]
-     * @param  boolean $mobile [是否移动设设备]
-     * @return [type]          [description]
-     */
+    
     public static function define_device($device='',$mobile=false) {
         defined('iPHP_DEVICE') OR define('iPHP_DEVICE', $device);
         defined('iPHP_MOBILE') OR define('iPHP_MOBILE', $mobile);
@@ -406,13 +404,7 @@ class iPHP {
         return apps::id($app,$trans);
 	}
 
-    /**
-     * [hook 应用钩子]
-     * @param  [type] $app      [应用]
-     * @param  [type] $resource [资源]
-     * @param  [type] $hooks    [钩子]
-     * @return [type]           [description]
-     */
+    
     public static function hook($app,&$resource=null,$hooks=null){
         if($hooks){
             foreach ($hooks as $field => $call) {
@@ -424,12 +416,7 @@ class iPHP {
         }
         return $resource;
     }
-    /**
-     * [callback 回调执行]
-     * @param  [type] $callback [执行函数]
-     * @param  [type] $value    [引用参数]
-     * @return [type]           [description]
-     */
+   
     public static function callback($callback,$value=null,$return=null){
     	if(empty($callback)) return;
 

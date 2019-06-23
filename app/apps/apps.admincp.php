@@ -24,8 +24,9 @@ class appsAdmincp{
             $rs['config']['iFormer'] = '1';
             $rs['config']['menu']    = 'default';
             $base_fields  = apps_mod::base_fields_array();
-            $rs['fields'] = json_decode(get_php_file(iPHP_APP_DIR.'/apps/json/fields.php'),true);
-            $rs['menu']   = json_decode(get_php_file(iPHP_APP_DIR.'/apps/json/menu.php'),true);
+            $rs['fields'] = apps::etc('apps','fields.source');
+            $rs['menu']   = apps::etc('apps','menu.source');
+            $rs['fields'] = json_decode($rs['fields'],true);
           }
         }else{
           if($rs['apptype']=="2"){
@@ -38,18 +39,18 @@ class appsAdmincp{
           $rs['config']['iurl'] = apps_mod::iurl($rs);
         }
         if($rs['menu']){
-          $rs['menu'] = str_replace(
-            array('[{"','},','}]'),
-            array("[\n{\"","},\n","}\n]"),
-            cnjson_encode($rs['menu'])
-          );
+          $rs['menu'] = jsonFormat($rs['menu']);
+
+
+
+
         }
         if($rs['router']){
-          $rs['router'] = str_replace(
-            array('{["','],',']}','\/'),
-            array("{\n[\"","],\n","]\n}",'/'),
-            stripcslashes($rs['router'])
-          );
+          $rs['router'] = jsonFormat($rs['router']);
+
+
+
+
         }
         include admincp::view("apps.add");
     }
@@ -84,7 +85,7 @@ class appsAdmincp{
           $table  = addslashes(cnjson_encode($table_array));
         }
 
-        $config = $_POST['config'];
+        $config = (array)$_POST['config'];
         if($config['template']){
           $config['template'] = explode("\n", $config['template']);
           $config['template'] = array_map('trim', $config['template']);
@@ -132,7 +133,6 @@ class appsAdmincp{
               $array['fields'] = '';
               $msg = "应用信息添加完成!";
             }else if($type=='2'){
-
                 iDB::check_table($array['app']) && iUI::alert('Таблица  ['.$array['app'].']уже существует!');
                 if($dataTable_field_array){
                     $dataTable_name = apps_mod::data_table_name($array['app']);
@@ -372,6 +372,9 @@ class appsAdmincp{
         }
         $_POST['config'] = $hooks;
         configAdmincp::save($this->appid,'hooks');
+    }
+    public function do_menu_source(){
+        echo apps::etc('apps','menu.source');
     }
     public static function _count(){
       return iDB::value("SELECT count(*) FROM `#iCMS@__apps`");

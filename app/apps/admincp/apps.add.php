@@ -33,8 +33,10 @@ $(function(){
       $("#tab-field,#tab-custom").hide();
       $('[name="apptype"]').val('1');
       $('#config_iFormer').val('0');
-      $("#menu").data('data', $("#menu").val());
-      $("#menu").val('[{"id":"{app}","caption":"{name}","icon":"pencil-square-o","children":[{"caption":"Обновить кеш разделов","href":"{app}_category&do=cache","icon":"refresh","target":"iPHP_FRAME"},{"caption":"-"},{"caption":"Категории","href":"{app}_category","icon":"list-alt"},{"caption":"Добавить раздел","href":"{app}_category&do=add","icon":"edit"},{"caption":"-"},{"caption":"Добавить {name}","href":"{app}&do=add","icon":"edit"},{"caption":"{name}","href":"{app}&do=manage","icon":"list-alt"},{"caption":"Черновик","href":"{app}&do=inbox","icon":"inbox"},{"caption":"Корзина","href":"{app}&do=trash","icon":"trash-o"}]}]');
+      $("#menu").data('data', $("#menu").text());
+      $.get("<?php echo APP_FURI; ?>&do=menu_source", function(json){
+        $("#menu").text(json);
+      });
       $(".type_3").show();
     }else if(this.value=="2"){
       $("#tab-field,#tab-custom").show();
@@ -43,7 +45,7 @@ $(function(){
       $(".type_3").hide();
       var data = $("#menu").data('data');
       if(data){
-        $("#menu").val(data);
+        $("#menu").text(data);
       }
     }
   });

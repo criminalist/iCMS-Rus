@@ -13,15 +13,12 @@ public static function table(){
         }
         return $table;
     }
-    /**
-     * [cache 更新配置]
-     * @return [type] [description]
-     */
+    
     public static function cache(){
         $config         = self::get();
         $config['apps'] = apps::get_appsid();
         $config['iurl'] = apps::get_iurl();
-        $config['router']['config'] = apps::router_cache();
+        $config['router']['config'] = apps::get_router();
         $config['meta'] = array();
         $data = apps_meta::data(iCMS_APP_CONFIG,1);
         $data && $config['meta'] = $data['meta'];
@@ -33,11 +30,7 @@ public static function table(){
     public static function foot(){
         include admincp::view("config.foot","config");
     }
-    /**
-     * [app 其它应用配置接口]
-     * @param  integer $appid [应用ID]
-     * @param  [sting] $name   [应用名]
-     */
+    
     public static  function app($appid=0,$name=null,$ret=false,$suffix="config"){
         $name===null && $name = admincp::$APP_NAME;
         if(empty($appid) && self::$appid){
@@ -51,11 +44,7 @@ public static function table(){
         }
         include admincp::view($name.'.'.$suffix);
     }
-    /**
-     * [save 其它应用配置保存]
-     * @param  integer $appid [应用ID]
-     * @param  [sting] $app   [应用名]
-     */
+    
     public static function save($appid=0,$name=null,$handler=null,$dialog=true){
         $name===null   && $name = admincp::$APP_NAME;
         if(empty($appid) && self::$appid){
@@ -72,12 +61,7 @@ public static function table(){
     public static function post() {
         $_POST['config'] = array_merge((array)self::$data,(array)$_POST['config']);
     }
-    /**
-     * [get 获取配置]
-     * @param  integer $appid [应用ID]
-     * @param  [type]  $name   [description]
-     * @return [type]       [description]
-     */
+    
     public static function get($appid = NULL, $name = NULL) {
         $appid && self::$appid = $appid;
         if ($name === NULL) {
@@ -100,13 +84,7 @@ public static function table(){
             return $value;
         }
     }
-    /**
-     * [set 更新配置]
-     * @param [type]  $v     [description]
-     * @param [type]  $n     [description]
-     * @param [type]  $appid   [description]
-     * @param boolean $cache [description]
-     */
+    
     public static function set($value, $name, $appid, $cache = false) {
         $cache && iCache::set('config/' . $name, $value, 0);
         // is_array($value) && $value = addslashes(serialize($value));
@@ -125,11 +103,7 @@ public static function table(){
             iDB::query("DELETE FROM `#iCMS@__".self::table()."` WHERE `appid` ='$appid' AND `name` ='$name'");
         }
     }
-    /**
-     * [write 配置写入文件]
-     * @param  [type] $config [description]
-     * @return [type]         [description]
-     */
+    
     public static function write($config=null){
         $config===null && $config = self::get();
         $output = "<?php\ndefined('iPHP') OR exit('Access Denied');\nreturn ";
@@ -137,11 +111,7 @@ public static function table(){
         $output.= ';';
         iFS::write(iPHP_APP_CONFIG,$output);
     }
-    /**
-     * [update 单个配置更新]
-     * @param  [type] $k [description]
-     * @return [type]    [description]
-     */
+    
     public static function update($k,$appid=0){
         self::set(iCMS::$config[$k],$k,$appid);
         self::cache();

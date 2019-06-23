@@ -137,22 +137,17 @@ class apps_mod {
             $a = json_decode($value,true);
             if(strtoupper($a['field'])=="MEDIUMTEXT"){
               $addons_json_field[$key] = $value;
-              unset($json_field[$key]);//不参与基本表比较
+              unset($json_field[$key]);
             }
         }
         return $addons_json_field;
     }
-    /**
-     * 创建xxx_data附加表
-     * @param  [type] $fieldata [description]
-     * @param  [type] $name     [description]
-     * @return [type]           [description]
-     */
+    
     public static function data_create_table($fieldata,$name,$union_id,$query=true) {
         $table = apps_db::create_table(
           $name,
-          apps_mod::get_field_array($fieldata),//获取字段数组
-          array(//索引
+          apps_mod::get_field_array($fieldata),
+          array(
             'index_'.$union_id =>'KEY `'.$union_id.'` (`'.$union_id.'`)'
           ),
           $query
@@ -160,12 +155,7 @@ class apps_mod {
         array_push ($table,$union_id,'附加');
         return array($name=>$table);
     }
-    /**
-     * 将由查询字符串(query string)组成的数组转换成二维数组
-     * @param  [type]  $data [查询字符串 数组]
-     * @param  boolean $ui   [是否把UI标识返回数组]
-     * @return [type]        [description]
-     */
+    
     public static function get_field_array($data,$ui=false) {
         $array = array();
         if($data)foreach ($data as $key => $value) {
@@ -203,7 +193,7 @@ class apps_mod {
         return $data;
     }
     public static function template($rs,$ret='string'){
-      //模板标签
+     
       if($rs['app']){
         $_app = $rs['app'];
         if($rs['config']['iFormer'] && $rs['apptype']=="2"){
@@ -213,7 +203,7 @@ class apps_mod {
         list($path,$obj_name)= apps::get_path($_app,'app',true);
 
         if(is_file($path)){
-            //判断是否有APP同名方法存在 如果有 $appname 模板标签可用
+            
             $class_methods = get_class_methods ($obj_name);
             if(array_search ($_app ,  $class_methods )!==FALSE){
               array_push ($template,'$'.$_app);
@@ -230,7 +220,7 @@ class apps_mod {
     public static function iurl($rs){
       if($rs['table'] && $rs['apptype']=="2"){
         $table  = reset($rs['table']);
-        $router = array('rule'=>'4','primary'=>$table['primary'],'page'=>'p');
+        $rule = array('rule'=>'4','primary'=>$table['primary'],'page'=>'p');
       }else{
         $array = array(
             'http'     => array('rule'=>'0','primary'=>''),
@@ -239,11 +229,11 @@ class apps_mod {
             'article'  => array('rule'=>'2','primary'=>'id','page'=>'p'),
             'tag'      => array('rule'=>'3','primary'=>'id'),
         );
-        $router = $array[$rs['app']];
-        if(empty($router) && $rs['config']['iurl']){
-          $router = $rs['config']['iurl'];
+        $rule = $array[$rs['app']];
+        if(empty($rule) && $rs['config']['iurl']){
+          $rule = $rs['config']['iurl'];
         }
       }
-      return $router;
+      return $rule;
     }
 }

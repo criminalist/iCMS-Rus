@@ -114,7 +114,7 @@ function set_select(vars,el){
   <div class="input-prepend input-append">
     <span class="add-on"><i class="fa fa-cog"></i> Глобальные права</span>
     <span class="add-on">::</span>
-    <span class="add-on">Разрешить добавлять категории в верхний уровень</span>
+    <span class="add-on">Разрешить добавлять категории в корень</span>
     <span class="add-on"><input type="checkbox" name="config[cpriv][]" value="0:a" /></span>
   </div>
   <div class="clearfloat mb10"></div>
@@ -140,11 +140,11 @@ function set_select(vars,el){
     <thead>
       <tr>
         <th><i class="fa fa-arrows-v"></i></th>
-        <th style="width:36px;">appid</th>
-        <th style="width:72px;">Приложение</th>
-        <th style="width:90px;">Приложение</th>
-        <th>权限</th>
-        <th>附加权限</th>
+        <th>appid</th>
+        <th>Приложение</th>
+        <th>Приложение</th>
+        <th>Права доступа</th>
+        <th>Дополнительные разрешения</th>
       </tr>
     </thead>
     <tbody>

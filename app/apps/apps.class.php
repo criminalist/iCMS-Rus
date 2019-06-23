@@ -87,7 +87,7 @@ class apps {
             $rs = (array)$rs;
             if($rs['table']){
                 $table = json_decode($rs['table'],true);
-                $table && $rs['table']  = apps::table_item($table);
+                $rs['table']  = apps::table_item($table);
             }
             $rs['config']&& $rs['config']  = json_decode($rs['config'],true);
             $rs['menu']  && $rs['menu']    = json_decode($rs['menu'],true);
@@ -272,6 +272,7 @@ class apps {
 
     public static function table_item($variable){
         is_array($variable) OR $variable = json_decode($variable,true);
+        $table = array();
         if($variable){
             foreach ($variable as $key => $value) {
                 if(count($value)>3){
@@ -291,9 +292,11 @@ class apps {
                     );
                 }
             }
-            return $table;
-        }
+      }
+        return $table;
     }
+
+
 
 	public static function cache(){
         $rs = iDB::all("SELECT * FROM `#iCMS@__apps`");
@@ -318,11 +321,27 @@ class apps {
         iCache::set('app/'.$a['id'],$a,0);
         iCache::set('app/'.$a['app'],$a,0);
     }
-    public static function router_cache(){
+     
+public static function etc($app,$name='router',$data=null){
+        $path = iPHP_APP_DIR.'/'.$app.'/etc/'.$name.'.php';
+        if($data===null){
+            is_file($path) && $json = include $path;
+            return $json;
+        }else{
+            if(empty($data)){
+                return iFS::del($path);
+            }
+            iFS::mkdir(dirname($path));
+            $data = jsonFormat($data);
+            file_put_contents($path, iCMS_php_head().PHP_EOL.'return \''.$json.'\';');
+        }
+    }
+
+    public static function get_router(){
         $rs = apps::get_array(array('!router'=>'','status'=>'1'),'id,app,name,title,router','app ASC');
-        $router = array(
-            'api' => array('/api','api.php')
-        );
+        $router = array('api' => array('/api','api.php'));
+
+
         foreach ($rs as $appid=> $app) {
             $name = $app['title']?$app['title']:$app['name'];
             $json = str_replace(
@@ -336,6 +355,7 @@ class apps {
                 $router   = array_merge($router,$array);
             }
         }
+        ksort($router);
         return $router;
     }
     public static function get_path($app,$type='app',$arr=false){
