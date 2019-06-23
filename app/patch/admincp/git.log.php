@@ -12,7 +12,7 @@ admincp::head(false);
           <th>版本</th>
           <th>信息</th>
           <th>作者</th>
-          <th>更新时间 </th>
+          <th>Время обновления </th>
           <th></th>
         </tr>
       </thead>

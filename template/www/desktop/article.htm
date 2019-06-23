@@ -37,17 +37,7 @@
                         <!--{$article.link}-->
                     </li>
                 </ul>
-				<!--{$article|print_r}-->
-				
-				============
-<!--{iCMS:prop:array loop="true" field="lang" sapp="test"}-->
-<a href="<!--{$prop_array.url}-->" id="<!--{$prop_array.name}-->" >
-<!--{$prop_array.name}-->
-</a>
-<!--{/iCMS}-->
-			    =============
-				
-				
+
                 <div class="content-wrap">
                     <h1><!--{$article.title}--></h1>
                     <div class="info">
@@ -91,7 +81,7 @@
                           <li>第<!--{$pagelist.pn}-->章:
                             <a href="<!--{$pagelist.url}-->" title="<!--{$pagelist.title}-->">
                               <!--{if $pagelist.title}-->
-                              <!--{$pagelist.title|default:'下一页更精彩'}-->
+                              <!--{$pagelist.title|default:'Следующая страница более захватывающая'}-->
                               <!--{else}-->
                               第<!--{$pagelist.pn}-->章
                               <!--{/if}-->

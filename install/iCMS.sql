@@ -65,7 +65,7 @@ CREATE TABLE `icms_apps_store` (
   `transaction_id` varchar(255) NOT NULL DEFAULT '' COMMENT '订单号',
   `data` text NOT NULL COMMENT '信息',
   `addtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '安装时间',
-  `uptime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '更新时间',
+  `uptime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Время обновления',
   `type` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT 'app:0 tpl:1',
   `status` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '状态',
   PRIMARY KEY (`id`)

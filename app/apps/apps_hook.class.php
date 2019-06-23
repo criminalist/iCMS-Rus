@@ -168,9 +168,9 @@ class apps_hook {
             $html.= '</td>';
             $html.= '<td>';
             $html.= '<div class="input-prepend input-append">';
-            $html.= '  <span class="add-on"><input type="checkbox" name="config[apriv][]" value="'.$value['app'].'.VIEW" /> 查看所有'.$value['title'].'</span>';
-            $html.= '  <span class="add-on"><input type="checkbox" name="config[apriv][]" value="'.$value['app'].'.EDIT" /> 编辑所有'.$value['title'].'</span>';
-            $html.= '  <span class="add-on"><input type="checkbox" name="config[apriv][]" value="'.$value['app'].'.DELETE" /> 删除所有'.$value['title'].'</span>';
+            $html.= '  <span class="add-on"><input type="checkbox" name="config[apriv][]" value="'.$value['app'].'.VIEW" /> Просмотреть все '.$value['title'].'</span>';
+            $html.= '  <span class="add-on"><input type="checkbox" name="config[apriv][]" value="'.$value['app'].'.EDIT" /> Изменить все '.$value['title'].'</span>';
+            $html.= '  <span class="add-on"><input type="checkbox" name="config[apriv][]" value="'.$value['app'].'.DELETE" /> Удалить все '.$value['title'].'</span>';
             $html.= '</div>';
             $html.= '</td>';
             $html.= '</tr>';
@@ -186,24 +186,24 @@ class apps_hook {
     }
     public static function method_priv($obj_name,$value,&$privArray){
         $docMap = array(
-            'iCMS'        => "{title}列表",
-            'manage'      => "{title}列表",
-            'add'         => "添加{title}",
-            'save'        => "保存{title}",
-            'update'      => "更新操作",
-            'batch'       => "批量操作",
-            'cache'       => "更新{title}缓存",
-            'copy'        => "克隆{title}",
-            'del'         => "删除{title}",
-            'ajaxtree'    => "ajax树状数据",
+            'iCMS'        => "Список {title}",
+            'manage'      => "Список {title}",
+            'add'         => "Добавить {title}",
+            'save'        => "Сохранить {title}",
+            'update'      => "Обновление",
+            'batch'       => "Пакетная операция",
+            'cache'       => "Обновление {title} кеша",
+            'copy'        => "Копировать {title}",
+            'del'         => "Удалить {title}",
+            'ajaxtree'    => "ajax дерево",
             'inbox'       => "Черновик",
             'trash'       => "Корзина",
-            'examine'     => "审核{title}",
-            'off'         => "淘汰{title}",
-            'config'      => "{title}配置",
-            'save_config' => "保存{title}配置",
-            'user'        => "用户{title}列表",
-            'updateorder' => "更新排序",
+            'examine'     => "Проверить {title}",
+            'off'         => "Исключить {title}",
+            'config'      => "Конфигурация {title}",
+            'save_config' => "Сохранить конфигурацию {title}",
+            'user'        => "Список пользователей {title}",
+            'updateorder' => "Обновить сортировку",
         );
         $class_methods = get_class_methods ($obj_name);
         foreach ($class_methods as $key => $method) {
@@ -223,7 +223,7 @@ class apps_hook {
                 }
                 $url = __ADMINCP__.'='.$value['app'].($do != 'iCMS' ? '&do=' . $do : '');
                 // $apriv[$do]='<option value="'.$obj_name.'::'.$method.'">'.$title.'</option>';
-                $apriv[$do]='<span class="add-on tip" title="网址:'.$url.'"><input type="checkbox" name="config[apriv][]" value="'.$value['app'].'.'.$do.'"/> '.$title.'</span>';
+                $apriv[$do]='<span class="add-on tip" title="URL:'.$url.'"><input type="checkbox" name="config[apriv][]" value="'.$value['app'].'.'.$do.'"/> '.$title.'</span>';
                 $privArray[$url] = $value['name'].'('.$title.')';
             }
         }

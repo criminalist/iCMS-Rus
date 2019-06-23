@@ -139,7 +139,7 @@ $(function(){
             <th>Категории</th>
             <th> Свойства </th>
             <th style="width:48px;">统计</th>
-            <th class="span2"><a class="fa fa-clock-o tip-top" title="更新时间/创建时间"></a></th>
+            <th class="span2"><a class="fa fa-clock-o tip-top" title="Время обновления/创建时间"></a></th>
             <th>Операции</th>
           </tr>
         </thead>

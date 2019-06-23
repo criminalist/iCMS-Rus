@@ -129,7 +129,7 @@ class apps_store {
         }
         apps::cache() && $msg.= self::msg('更新应用缓存',true);
         menu::cache() && $msg.= self::msg('更新菜单缓存',true);
-        $msg.= self::msg('应用安装完成',true);
+        $msg.= self::msg('Установка приложения завершена',true);
         self::$success = true;
         return $msg;
     }

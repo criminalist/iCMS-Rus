@@ -40,16 +40,9 @@ class appsAdmincp{
         }
         if($rs['menu']){
           $rs['menu'] = jsonFormat($rs['menu']);
-
-
-
-
         }
         if($rs['router']){
           $rs['router'] = jsonFormat($rs['router']);
-
-
-
 
         }
         include admincp::view("apps.add");
@@ -75,7 +68,7 @@ class appsAdmincp{
           $router = addslashes(json_encode($router));
         }
         $name OR iUI::alert('Имя приложения не может быть пустым!');
-        strpos($app, '..') !== false && iUI::alert('非法应用标识!');
+        strpos($app, '..') !== false && iUI::alert('Неверный идентификатор приложения!');
         empty($app) && $app = iPinyin::get($name);
         empty($title) && $title = $name;
 
@@ -106,7 +99,7 @@ class appsAdmincp{
             if(isset($output['UI:BR'])){
               $field_array[$key] = 'UI:BR';
             }else{
-              preg_match("/[a-zA-Z0-9_\-]/",$output['name']) OR iUI::alert('['.$output['label'].'] 字段名 Может состоять только из английских букв, цифр или символов _-');
+              preg_match("/[a-zA-Z0-9_\-]/",$output['name']) OR iUI::alert('['.$output['label'].'] Имя поля может состоять только из английских букв, цифр или символов _-');
               $output['label'] OR iUI::alert('发现自定义字段中空字段名称!');
               $output['comment'] = $output['label'].($output['comment']?':'.$output['comment']:'');
               $fname = $output['name'];
@@ -114,11 +107,11 @@ class appsAdmincp{
               $field_array[$fname] = $value;
               if($output['field']=="MEDIUMTEXT"){
                 $dataTable_field_array[$key] = $value;
-                unset($fieldata[$key]);//从基本表移除
+                unset($fieldata[$key]);
               }
             }
           }
-          //字段数据存入数据库
+          
           $fields = addslashes(cnjson_encode($field_array));
         }
 
@@ -131,29 +124,29 @@ class appsAdmincp{
             // iDB::$print_sql = true;
             if($type=='3'){
               $array['fields'] = '';
-              $msg = "应用信息添加完成!";
+              $msg = "Информация о приложении!";
             }else if($type=='2'){
-                iDB::check_table($array['app']) && iUI::alert('Таблица  ['.$array['app'].']уже существует!');
+                iDB::check_table($array['app']) && iUI::alert('Таблица ['.$array['app'].'] уже существует!');
                 if($dataTable_field_array){
                     $dataTable_name = apps_mod::data_table_name($array['app']);
                     iDB::check_table($dataTable_name) && iUI::alert('['.$dataTable_name.'] дополнительная таблица уже существует!');
                 }
 
-              //创建基本表
+              
               $tb = apps_db::create_table(
                 $array['app'],
-                apps_mod::get_field_array($fieldata),//获取字段数组
-                apps_mod::base_fields_index(),//索引
+                apps_mod::get_field_array($fieldata),
+                apps_mod::base_fields_index(),
                 true
               );
               array_push ($tb,null,$array['name']);
               $table_array = array();
-              $table_array[$array['app']]= $tb;//记录基本表名
+              $table_array[$array['app']]= $tb;
 
-              //有MEDIUMTEXT类型字段就创建xxx_cdata附加表
+              
               if($dataTable_field_array){
-                $union_id = apps_mod::data_union_key($array['app']);//关联基本表id
-                $dataTbale_base_fields = apps_mod::data_base_fields($array['app']);//xxx_data附加表的基础字段
+                $union_id = apps_mod::data_union_key($array['app']);
+                $dataTbale_base_fields = apps_mod::data_base_fields($array['app']);
                 $dataTable_field_array = $dataTbale_base_fields+$dataTable_field_array;
                 $table_array += apps_mod::data_create_table($dataTable_field_array,$dataTable_name,$union_id,true);
               }
@@ -184,23 +177,20 @@ class appsAdmincp{
         }else {
             iDB::value("SELECT `id` FROM `#iCMS@__apps` where `app` ='$app' AND `id` !='$id'") && iUI::alert('Приложение уже существует!');
             $_fields     = iDB::value("SELECT `fields` FROM `#iCMS@__apps` where `id` ='$id'");//json
-            $_json_field = apps_mod::json_field($_fields);//旧数据
-            $json_field  = apps_mod::json_field($fields); //新数据
-            /**
-             * 找出字段数据中的 MEDIUMTEXT类型字段
-             * PS:函数内会unset(json_field[key]) 所以要在 基本表make_alter_sql前执行
-             */
+            $_json_field = apps_mod::json_field($_fields);
+            $json_field  = apps_mod::json_field($fields);
+           
             $_DT_json_field = apps_mod::find_MEDIUMTEXT($_json_field);
             $DT_json_field  = apps_mod::find_MEDIUMTEXT($json_field);
 
-            //基本表 新旧数据计算交差集 origin 为旧字段名
+            
             $alter_sql_array = apps_db::make_alter_sql($json_field,$_json_field,$_POST['origin']);
             if($alter_sql_array){
                 $t_fields  = apps_db::fields('#iCMS@__'.$array['app']);
                 foreach ($alter_sql_array as $skey => $sql) {
                     $p = explode('`', $sql);
                     if(strpos($sql, 'CHANGE')!==false || strpos($sql, 'DROP COLUMN')!==false){
-                        if(!$t_fields[$p[1]]){//检查当前表 字段是否存在
+                        if(!$t_fields[$p[1]]){
                             unset($alter_sql_array[$skey]);
                         }
                     }
@@ -221,11 +211,11 @@ class appsAdmincp{
                     $array['table'] = addslashes(cnjson_encode($table_array));
                 }
             }else{
-                //表不存在 但有表结构数据 则创建表
+                
                 if($dataTable_field_array){
-                    //有MEDIUMTEXT类型字段创建xxx_cdata Дополнительные таблицы
+                    
                     $union_id = apps_mod::data_union_key($array['app']);
-                    $dataTbale_base_fields = apps_mod::data_base_fields($array['app']);//xxx_cdata附加表的基础字段
+                    $dataTbale_base_fields = apps_mod::data_base_fields($array['app']);
                     $dataTable_field_array = $dataTbale_base_fields+$dataTable_field_array;
                     $table_array += apps_mod::data_create_table($dataTable_field_array,$dataTable_name,$union_id);
                     $array['table'] = addslashes(cnjson_encode($table_array));
@@ -259,7 +249,7 @@ class appsAdmincp{
       $rs     = iDB::all("SELECT * FROM `#iCMS@__apps` {$sql} order by {$orderby} LIMIT ".iPagination::$offset." , {$maxperpage}");
       $_count = count($rs);
 
-      //分组
+      
       foreach ($rs as $key => $value) {
         $apps_type_group[$value['type']][$key] = $value;
       }
@@ -267,7 +257,7 @@ class appsAdmincp{
     }
 
     public function do_batch(){
-        list($idArray,$ids,$batch) = iUI::get_batch_args("请选择要操作的应用");
+        list($idArray,$ids,$batch) = iUI::get_batch_args("Выберите приложение");
       	switch($batch){
   		  }
 	  }
@@ -276,12 +266,12 @@ class appsAdmincp{
       iUI::success('Успешно обновлено');
     }
     /**
-     * [卸载应用]
+     * [Удалить приложение]
      * @return [type] [description]
      */
     public function do_uninstall($id = null,$dialog=true){
       if(!isset($_GET['confirm'])||!$_GET['confirm']){
-        iUI::alert('非正常删除','js:1');
+        iUI::alert('Недействительный запрос на удаление','js:1');
       }
       $id===null && $id=$this->id;
       $app = apps::get($id);
@@ -290,7 +280,7 @@ class appsAdmincp{
         apps::cache();
         menu::cache();
       }
-      $dialog && iUI::alert('应用已经删除','js:1');
+      $dialog && iUI::alert('Приложение было удалено','js:1');
     }
     /**
      * [本地安装应用]
@@ -302,15 +292,12 @@ class appsAdmincp{
         apps_store::$zip_file = iPATH.$zipfile;
         apps_store::$msg_mode = 'alert';
         apps_store::install_app($match[1]);
-        iUI::success('应用安装完成','js:1');
+        iUI::success('Установка приложения завершена','js:1');
       }else{
-        iUI::alert('What the fuck!!');
+        iUI::alert('Ошибка!!');
       }
     }
-    /**
-     * [打包下载应用]
-     * @return [type] [description]
-     */
+    
     public function do_pack(){
       $rs = iDB::row("SELECT * FROM `#iCMS@__apps` where `id`='".$this->id."'",ARRAY_A);
       iFS::check($rs['app'],true);
@@ -319,18 +306,17 @@ class appsAdmincp{
       $data     = base64_encode(serialize($rs));
       $config   = json_decode($rs['config'],true);
       $filename = 'iCMS.APP.'.$rs['app'].'-'.$config['version'];
-      if(iFS::ex($appdir)) { //本地应用
+      if(iFS::ex($appdir)) {
         $remove_path = iPHP_APP_DIR;
-      }else{//自定义应用
+      }else{
         $appdir = iPHP_APP_CACHE.'/pack.app/'.$rs['app'];
         $remove_path = iPHP_APP_CACHE.'/pack.app/';
         iFS::mkdir($appdir);
       }
-      //应用数据
+      
       $app_data_file = $appdir.'/iCMS.APP.DATA.php';
       put_php_file($app_data_file, $data);
 
-      //数据库结构
       if($rs['table']){
         $app_table_file = $appdir.'/iCMS.APP.TABLE.php';
 
@@ -350,17 +336,11 @@ class appsAdmincp{
         iFS::rmdir($remove_path);
       }
     }
-    /**
-     * [钩子管理]
-     * @return [type] [description]
-     */
+    
     public function do_hooks(){
         configAdmincp::app($this->appid,'hooks');
     }
-    /**
-     * [保存钩子]
-     * @return [type] [description]
-     */
+    
     public function do_hooks_save(){
         $hooks = array();
         foreach ((array)$_POST['hooks']['method'] as $key => $method) {

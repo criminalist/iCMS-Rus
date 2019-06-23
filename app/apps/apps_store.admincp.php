@@ -184,7 +184,7 @@ class apps_storeAdmincp extends appsAdmincp {
             $count++;
         }
       }
-      echo '{"code":"1","count":"'.$count.'个更新"}';
+      echo '{"code":"1","count":"'.$count.' обновлений"}';
     }
     public function store_view($type=0,$app=null,$title=null){
       $storeArray = apps_store::get_array(array('type'=>$type));
@@ -198,7 +198,7 @@ class apps_storeAdmincp extends appsAdmincp {
       $data = apps_store::get($sid);
       if($data){
         apps_store::del($sid);
-        iUI::alert('应用已经删除','js:1');
+        iUI::alert('Приложение было удалено','js:1');
       }
     }
 }

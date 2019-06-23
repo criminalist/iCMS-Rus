@@ -358,7 +358,7 @@ class categoryAdmincp {
         iUI::success('Успешно выполнено!','js:1');
     }
     /**
-     * [更新排序]
+     * [Обновить сортировку]
      * @return [type] [description]
      */
     public function do_updateorder(){
