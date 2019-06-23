@@ -203,10 +203,10 @@ class contentAdmincp{
         //     $mip = plugin_baidu::ping($iurl['mip']['url'],'mip');
         // }
         if($res===true){
-            $msg = '推送完成';
+            $msg = 'Нажмите, чтобы завершить';
             $dialog && iUI::success($msg,'js:1');
         }else{
-            $msg = '推送失败!['.$res->message.']';
+            $msg = 'Не удалось отправить! ['.$res->message.']';
             $dialog && iUI::alert($msg,'js:1');
         }
         if(!$dialog) return $msg.'<br />';

@@ -135,13 +135,13 @@ class articleAdmincp{
                 foreach((array)$_POST['id'] AS $id) {
                     $this->do_baiduping_original($id,false);
                 }
-                iUI::success('推送完成!','js:1');
+                iUI::success('Нажмите, чтобы завершить!','js:1');
             break;
             case 'baidu_xzh':
                 foreach((array)$_POST['id'] AS $id) {
                     $this->do_baidu_xzh($id,false);
                 }
-                iUI::success('推送完成!','js:1');
+                iUI::success('Нажмите, чтобы завершить!','js:1');
             break;
     		case 'move':
 		        $_POST['cid'] OR iUI::alert("请选择目标栏目!");
@@ -299,10 +299,10 @@ class articleAdmincp{
         //     $mip = plugin_baidu::ping($iurl['mip']['url'],'mip');
         // }
         if($res===true){
-            $msg = '推送完成';
+            $msg = 'Нажмите, чтобы завершить';
             $dialog && iUI::success($msg,'js:1');
         }else{
-            $msg = '推送失败!['.$res->message.']';
+            $msg = 'Не удалось отправить! ['.$res->message.']';
             $dialog && iUI::alert($msg,'js:1');
         }
         if(!$dialog) return $msg.'<br />';
@@ -331,10 +331,10 @@ class articleAdmincp{
         $res = plugin_baidu::ping($urls,'original');
 
         if($res===true){
-            $msg = '推送完成';
+            $msg = 'Нажмите, чтобы завершить';
             $dialog && iUI::success($msg,'js:1');
         }else{
-            $msg = '推送失败!['.$res->message.']';
+            $msg = 'Не удалось отправить! ['.$res->message.']';
             $dialog && iUI::alert($msg,'js:1');
         }
         if(!$dialog) return $msg.'<br />';
@@ -348,18 +348,15 @@ class articleAdmincp{
         $urls = array($iurl['mobile']['url']);
         $res = plugin_baidu::xzh($urls,'realtime',$out);
         if($res){
-            $msg = '推送完成';
+            $msg = 'Нажмите, чтобы завершить';
             $dialog && iUI::success($msg,'js:1');
         }else{
-            $msg = '推送失败!['.$out['message'].']';
+            $msg = 'Не удалось отправить! ['.$out['message'].']';
             $dialog && iUI::alert($msg,'js:1');
         }
         if(!$dialog) return $msg.'<br />';
     }
-    /**
-     * [JSON数据]
-     * @return [type] [description]
-     */
+    
     public function do_getjson(){
         $id = (int)$_GET['id'];
         $rs = article::row($id);
@@ -394,10 +391,7 @@ class articleAdmincp{
         article::update($data ,compact('id'));
 		iUI::json(array('code'=>1));
 	}
-    /**
-     * [查找正文图片]
-     * @return [type] [description]
-     */
+    
     public function do_findpic($id=null){
         $id===null && $id=$this->id;
         $rs = $this->getContentPics($id);
@@ -436,7 +430,7 @@ class articleAdmincp{
     }
 
     /**
-     * [正文预览]
+     * [Предварительный просмотр текста]
      * @return [type] [description]
      */
     public function do_preview(){
