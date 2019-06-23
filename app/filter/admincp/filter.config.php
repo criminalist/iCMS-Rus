@@ -21,7 +21,7 @@ admincp::head();
           <textarea name="config[filter]" class="span6" style="height: 300px;"><?php echo implode("\n",(array)$config['filter']) ; ?></textarea>
         </div>
         <span class="help-inline">По одному на строку<br />
-        过滤词格式:过滤词=***</span> </div>
+        Формат: Запрещенное слово=***</span> </div>
         <div class="form-actions">
           <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
         </div>

@@ -91,7 +91,7 @@ $(function(){
                 <td>
                   <?php
                   if($data['template'])foreach ($data['template'] as $key => $tpltags) {
-                    echo '<a href="https://www.icmsdev.com/docs/'.str_replace(array(':','$'), array('_',''), $tpltags).'" target="_blank" title="点击查看模板标签说明">&lt;!--{'.$tpltags.'}--&gt;</a><br />';
+                    echo '<a href="https://www.icmsdev.com/docs/'.str_replace(array(':','$'), array('_',''), $tpltags).'" target="_blank" title="Перейти к официальной документации">&lt;!--{'.$tpltags.'}--&gt;</a><br />';
                   }
                   ?>
                   <td>

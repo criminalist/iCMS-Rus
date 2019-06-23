@@ -51,21 +51,21 @@ $(function(){
                 <?php echo category::appid($this->appid,'ca')->select($rs['tcid'],0,1,true);?>
               </select>
             </div>
-            <span class="help-inline">本标签所属的标签分类</span>
+            <span class="help-inline">Категория к которой принадлежит тег</span>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend">
               <span class="add-on">Привязка к категории</span>
               <select name="cid" id="cid" class="chosen-select span6" data-placeholder="Выберите категорию...">
-                <option> ==== 无所属栏目 ==== </option>
+                <option> ==== Нет привязки ==== </option>
                 <?php echo category::appid(0,'ca')->select($rs['cid'],0,1,true);?>
               </select>
             </div>
-            <span class="help-inline">本标签所属的栏目</span>
+            <span class="help-inline">Категория к которой принадлежит тег</span>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend input-append">
               <span class="add-on">Свойства тега</span>
-              <select name="pid[]" id="pid" class="chosen-select span6" multiple="multiple" data-placeholder="请选择标签属性 (множественный выбор)...">
-                <option value="0">普通标签[pid='0']</option>
+              <select name="pid[]" id="pid" class="chosen-select span6" multiple="multiple" data-placeholder="Выберите свойство тега (множественный выбор)...">
+                <option value="0">Без свойств [pid='0']</option>
                 <?php echo propAdmincp::get("pid") ; ?>
               </select>
               <?php echo propAdmincp::btn_add('Добавить общие свойства');?>
@@ -78,22 +78,22 @@ $(function(){
             <span class="help-inline">本标签所属的标签的ID,请自行填写ID</span>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend">
-              <span class="add-on">标签名称</span>
+              <span class="add-on">Имя тега</span>
               <input type="text" name="name" class="span6" id="name" value="<?php echo $rs['name'] ; ?>"/>
             </div>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend">
-              <span class="add-on">唯一标识</span>
+              <span class="add-on">Уникальный идентификатор</span>
               <input type="text" name="tkey" class="span6" id="tkey" value="<?php echo $rs['tkey'] ; ?>"/>
             </div>
-            <span class="help-inline">用于伪静态或者静态生成 唯一性<br />
-            留空则系统按名称拼音生成</span>
+            <span class="help-inline">Для псевдостатического URL<br />
+            Оставьте пустым для автоматического генерации транслитом.</span>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend">
               <span class="add-on">Поле</span>
               <input type="text" name="field" class="span6" id="field" value="<?php echo $rs['field'] ; ?>"/>
             </div>
-            <span class="help-inline">一般不用修改</span>
+            <span class="help-inline">Не требует изменений</span>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend">
               <span class="add-on">SEO Заголовок</span>
@@ -101,7 +101,7 @@ $(function(){
             </div>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend">
-              <span class="add-on">副 标 题</span>
+              <span class="add-on">Подзаголовок</span>
               <input type="text" name="subtitle" class="span6" id="subtitle" value="<?php echo $rs['subtitle'] ; ?>"/>
             </div>
             <div class="clearfloat mb10"></div>
@@ -111,7 +111,7 @@ $(function(){
             </div>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend input-append">
-              <span class="add-on">缩 略 图</span>
+              <span class="add-on">Эскиз</span>
               <input type="text" name="pic" class="span6" id="pic" value="<?php echo $rs['pic'] ; ?>"/>
               <?php filesAdmincp::set_opt($rs['pic'])->pic_btn("pic");?>
             </div>
@@ -141,7 +141,7 @@ $(function(){
             <span class="help-inline"></span>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend">
-              <span class="add-on">相关标签</span>
+              <span class="add-on">Похожие теги</span>
               <input type="text" name="related" class="span6" id="related" value="<?php echo $rs['related'] ; ?>" onkeyup="javascript:this.value=this.value.replace(/,/ig,',');"/>
             </div>
             <div class="clearfloat mb10"></div>

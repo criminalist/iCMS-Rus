@@ -71,16 +71,16 @@ $(function() { iCMS.select('watermark_pos', "<?php echo (int)$config['watermark'
 </div>
 <hr />
 <div class="input-prepend">
-    <span class="add-on">水印文字</span>
+    <span class="add-on">Текст водяного знака</span>
     <input type="text" name="config[watermark][text]" class="span3" id="watermark_text" value="<?php echo $config['watermark']['text'] ; ?>" />
 </div>
-<span class="help-inline">如果设置为中文,字体文件必需要支持中文字体 ,存放路径:/cache/conf/iCMS/</span>
+<span class="help-inline"></span>
 <div class="clearfloat mb10"></div>
 <div class="input-prepend">
-    <span class="add-on">文字字体</span>
+    <span class="add-on">Шрифт текста</span>
     <input type="text" name="config[watermark][font]" class="span3" id="watermark_font" value="<?php echo $config['watermark']['font'] ; ?>" />
 </div>
-<span class="help-inline">字体文件</span>
+<span class="help-inline">Файл шрифта</span>
 <div class="clearfloat mb10"></div>
 <div class="input-prepend">
     <span class="add-on">Размер шрифта</span>
@@ -88,10 +88,10 @@ $(function() { iCMS.select('watermark_pos', "<?php echo (int)$config['watermark'
 </div>
 <div class="clearfloat mb10"></div>
 <div class="input-prepend">
-    <span class="add-on">水印文字颜色</span>
+    <span class="add-on">Цвет текста</span>
     <input type="text" name="config[watermark][color]" class="span3" id="watermark_color" value="<?php echo $config['watermark']['color'] ; ?>" />
 </div>
-<span class="help-inline">例#000000 长度必须7位</span>
+<span class="help-inline">Пример:#000000, черный цвет</span>
 <hr />
 <div class="clearfloat mb10"></div>
 <div class="input-prepend input-append">
@@ -103,16 +103,15 @@ $(function() { iCMS.select('watermark_pos', "<?php echo (int)$config['watermark'
 </div>
 <div class="clearfloat mb10"></div>
 <div class="input-prepend">
-    <span class="add-on">马赛克深度</span>
+    <span class="add-on">Глубина мозаики</span>
     <input type="text" name="config[watermark][mosaics][deep]" class="span3" id="watermark_mosaics_deep" value="<?php echo $config['watermark']['mosaics']['deep']?:9 ; ?>" />
 </div>
-<!--
+
 <div class="clearfloat mb10"></div>
 <div class="input-prepend">
-    <span class="add-on">С эскизами水印</span>
+    <span class="add-on">Наложение на эскизы</span>
     <div class="switch">
         <input type="checkbox" data-type="switch" name="config[watermark][thumb]" id="watermark_thumb" <?php echo $config['watermark']['thumb']?'checked':''; ?>/>
     </div>
 </div>
-<span class="help-inline">开启时缩略图也会打上水印</span>
--->
+<span class="help-inline">Если включить опцию, на все эскизы будет наложен водяной знак.</span>

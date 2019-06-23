@@ -95,7 +95,7 @@ function uninstall($msg,$a) {
                   <?php echo $data['name'] ; ?>
                   <p class="app_list_desc"><?php echo $config['info'] ; ?></p>
                   <?php if($config['iFormer']){ ?>
-                    <span class="label label-info">可自定义</span>
+                    <span class="label label-info">Настраиваемое</span>
                   <?php }?>
                 </td>
                 <td>
@@ -103,10 +103,10 @@ function uninstall($msg,$a) {
                   <table class="table table-bordered">
                     <thead>
                       <tr>
-                        <td> Название таблицы </td>
-                        <td> Первичный ключ </td>
+                        <td>Название таблицы</td>
+                        <td>Первичный ключ</td>
                         <td>关联</td>
-                        <td> Имя </td>
+                        <td>Имя</td>
                       </tr>
                     </thead>
                     <tbody>
@@ -131,7 +131,7 @@ function uninstall($msg,$a) {
                   <?php
                   if($config['template']){
                     foreach ((array)$config['template'] as $key => $tpltags) {
-                      echo '<a href="https://www.icmsdev.com/docs/'.str_replace(array(':','$'), array('_',''), $tpltags).'" target="_blank" title="点击查看模板标签说明">&lt;!--{'.$tpltags.'}--&gt;</a><br />';
+                      echo '<a href="https://www.icmsdev.com/docs/'.str_replace(array(':','$'), array('_',''), $tpltags).'" target="_blank" title="Перейти к официальной документации">&lt;!--{'.$tpltags.'}--&gt;</a><br />';
                     }
                   }else{
                     echo '<span class="label">Не поддерживает теги</span>';

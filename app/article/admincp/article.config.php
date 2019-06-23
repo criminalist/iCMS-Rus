@@ -17,10 +17,10 @@ configAdmincp::head("Настройка контента");
     <input type="checkbox" data-type="switch" name="config[pic_center]" id="article_pic_center" <?php echo $config['pic_center']?'checked':''; ?>/>
   </div>
 </div>
-<span class="help-inline">启用后 文章内的图片会自动居中</span>
+<span class="help-inline">После включения изображения в статье будут автоматически центрированы.</span>
 <div class="clearfloat mb10"></div>
 <div class="input-prepend">
-  <span class="add-on">文章图片链接</span>
+  <span class="add-on">Ссылка на изображение</span>
   <div class="switch" data-on-label="Вкл" data-off-label="Закрыть">
     <input type="checkbox" data-type="switch" name="config[pic_next]" id="article_pic_next" <?php echo $config['pic_next']?'checked':''; ?>/>
   </div>
@@ -34,20 +34,20 @@ configAdmincp::head("Настройка контента");
 <span class="help-inline">设置此项后,内容分页数比实际页数+N页,不增加请设置为0</span>
 <div class="clearfloat mb10"></div>
 <div class="input-prepend">
-  <span class="add-on">编辑器</span>
+  <span class="add-on">Визуальный редактор</span>
   <div class="switch" data-on-label="Editor.md" data-off-label="UEditor">
     <input type="checkbox" data-type="switch" name="config[markdown]" id="article_markdown" <?php echo $config['markdown']?'checked':''; ?>/>
   </div>
 </div>
-<span class="help-inline">Editor.md为markdown编辑器,默认使用UEditor</span>
+<span class="help-inline">Editor.md - упрощенный редактор, UEditor более функциональный и используется по умолчанию.</span>
 <div class="clearfloat mb10"></div>
 <div class="input-prepend">
-  <span class="add-on">自动排版</span>
+  <span class="add-on">Автоматическое форматирование текста</span>
   <div class="switch">
     <input type="checkbox" data-type="switch" name="config[autoformat]" id="article_autoformat" <?php echo $config['autoformat']?'checked':''; ?>/>
   </div>
 </div>
-<span class="help-inline">开启后发布文章时,程序会自动对内容进行清理无用代码.采集时推荐开启.如果内容格式丢失 请关闭此项</span>
+<span class="help-inline">Система автоматически удалить лишний HTML код после публикации контента, рекомендуется включать при парсинге с других сайтов, если вы заметили проблемы после сохранения документа, с текстом или версткой, отключите эту функцию.</span>
 <div class="clearfloat mb10"></div>
 <div class="input-prepend">
   <span class="add-on">编辑器图片</span>

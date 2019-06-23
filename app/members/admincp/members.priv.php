@@ -91,7 +91,7 @@ function set_select(vars,el){
     <span class="add-on"><input type="checkbox" name="config[mpriv][]" value="ADMINCP" /> Разрешить вход в панель управления</span>
   </div>
   <div class="clearfloat mb10"></div>
-  <span class="alert alert-danger">В случае если гуппе выдаются права к конкретному приложению, нужно обратить внимания на доступ к панели управления</span>
+  <span class="alert alert-danger">В случае если группе выдаются права к конкретному приложению, нужно обратить внимания на доступ к панели управления</span>
   <div class="clearfloat mb10"></div>
   <div id="mpriv_treecontrol">
     <a style="display:none;"></a>

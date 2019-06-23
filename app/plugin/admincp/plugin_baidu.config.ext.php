@@ -1,7 +1,7 @@
 <?php
 defined('iPHP') OR exit('What are you doing?');
 ?>
-<h3 class="title">百度站长平台 主动推送(实时)</h3>
+<h3 class="title">Baidu платформа для веб-мастеров Active push (в режиме реального времени)</h3>
 <span class="help-inline">申请地址:http://zhanzhang.baidu.com/ (需要权限)</span>
 <div class="clearfloat"></div>
 <div class="input-prepend"> <span class="add-on">站点</span>
