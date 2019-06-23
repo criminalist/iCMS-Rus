@@ -167,7 +167,7 @@ $(function(){
                 <div class="input-prepend input-append mt20"> <span class="add-on"> Выбрать все
                   <input type="checkbox" class="checkAll checkbox" data-target="#<?php echo APP_BOXID;?>" />
                   </span>
-                  <div class="btn-group dropup" id="iCMS-batch"> <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i>Пакетная операция</a><a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"> <span class="caret"></span></a>
+                  <div class="btn-group dropup" id="iCMS-batch"> <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i> Пакетные операции</a><a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"> <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                       <li><a data-toggle="batch" data-action="auto:1"><i class="fa fa-check-square"></i> Активация автоматического режима</a></li>
                       <li><a data-toggle="batch" data-action="auto:0"><i class="fa fa-circle-o"></i> Отключение автоматического режима</a></li>
@@ -218,7 +218,7 @@ $(function(){
 <div id="import_project_wrap" style="display:none;">
   <form action="<?php echo APP_FURI; ?>&do=import" method="post" enctype="multipart/form-data" target="iPHP_FRAME">
     <div class="alert alert-info">
-      Импортировать (только TXT)
+      Импорт (поддерживаются только TXT)
     </div>
     <div class="clearfloat mb10"></div>
     <a id="local" class="btn btn-primary btn-large btn-block"><i class="fa fa-upload"></i> Загрузить правила</a>

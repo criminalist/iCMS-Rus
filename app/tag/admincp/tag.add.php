@@ -47,7 +47,7 @@ $(function(){
             <div class="input-prepend">
               <span class="add-on">标签分类</span>
               <select name="tcid" id="tcid" class="chosen-select span6" data-placeholder="请选择标签分类...">
-                <option value="0"> ==== 默认分类 ==== </option>
+                <option value="0"> ==== Категория по умолчанию ==== </option>
                 <?php echo category::appid($this->appid,'ca')->select($rs['tcid'],0,1,true);?>
               </select>
             </div>
@@ -55,7 +55,7 @@ $(function(){
             <div class="clearfloat mb10"></div>
             <div class="input-prepend">
               <span class="add-on">Привязка к категории</span>
-              <select name="cid" id="cid" class="chosen-select span6" data-placeholder="请选择栏目...">
+              <select name="cid" id="cid" class="chosen-select span6" data-placeholder="Выберите категорию...">
                 <option> ==== 无所属栏目 ==== </option>
                 <?php echo category::appid(0,'ca')->select($rs['cid'],0,1,true);?>
               </select>
@@ -64,7 +64,7 @@ $(function(){
             <div class="clearfloat mb10"></div>
             <div class="input-prepend input-append">
               <span class="add-on">标签属性</span>
-              <select name="pid[]" id="pid" class="chosen-select span6" multiple="multiple" data-placeholder="请选择标签属性(несколько вариантов)...">
+              <select name="pid[]" id="pid" class="chosen-select span6" multiple="multiple" data-placeholder="请选择标签属性 (множественный выбор)...">
                 <option value="0">普通标签[pid='0']</option>
                 <?php echo propAdmincp::get("pid") ; ?>
               </select>

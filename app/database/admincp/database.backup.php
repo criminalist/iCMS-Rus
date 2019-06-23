@@ -27,7 +27,7 @@ $(function(){
               <th>Название таблицы</th>
               <th>行数</th>
               <th>数据</th>
-              <th> Индекс </th>
+              <th> Индексные поля</th>
               <th>Размер</th>
               <th>创建</th>
               <th>最后更新</th>
@@ -58,7 +58,7 @@ $(function(){
               <div class="input-prepend input-append mt20"> <span class="add-on"> Выбрать все
                 <input type="checkbox" class="checkAll checkbox" data-target="#<?php echo APP_BOXID;?>" />
                 </span>
-                <div class="btn-group dropup" id="iCMS-batch"> <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i>Пакетная операция</a><a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"> <span class="caret"></span></a>
+                <div class="btn-group dropup" id="iCMS-batch"> <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i> Пакетные операции</a><a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"> <span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li><a data-toggle="batch" data-action="backup"><i class="fa fa-upload"></i> Резервное копирование</a></li>
               		<li class="divider"></li>

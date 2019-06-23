@@ -120,7 +120,7 @@ $(function(){
                     <?php if($data['status']){?>
                     <a href="<?php echo APP_URI; ?>&do=update&_args=status:0&id=<?php echo $data['id'] ; ?>" target="iPHP_FRAME" class="btn btn-small btn-warning" onclick="return confirm('Закрытие формы не удаляет данные и саму форму, но форма не будет доступна \n Вы уверены, что хотите закрыть форму?');"><i class="fa fa-close"></i> Закрыть </a>
                     <?php }else{?>
-                    <a href="<?php echo APP_URI; ?>&do=update&_args=status:1&id=<?php echo $data['id'] ; ?>" target="iPHP_FRAME" class="btn btn-small btn-success"><i class="fa fa-check"></i> 启用</a>
+                    <a href="<?php echo APP_URI; ?>&do=update&_args=status:1&id=<?php echo $data['id'] ; ?>" target="iPHP_FRAME" class="btn btn-small btn-success"><i class="fa fa-check"></i> Активировать</a>
                     <?php }?>
                     <a href="<?php echo APP_FURI; ?>&do=del&id=<?php echo $data['id'] ; ?>" target="iPHP_FRAME" class="del btn btn-small btn-danger" title='Удалить навсегда'  onclick="return confirm('При удалении формы все поля в базу и данные которые заполнены через форму будут также удалены\nВы действительно хотите уадлить форму?');"/><i class="fa fa-trash-o"></i> Удалить</a>
                 </tr>
@@ -134,7 +134,7 @@ $(function(){
                       <input type="checkbox" class="checkAll checkbox" data-target="#<?php echo APP_BOXID;?>" />
                     </span>
                     <div class="btn-group dropup" id="iCMS-batch">
-                      <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i>Пакетная операция</a>
+                      <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i> Пакетные операции</a>
                       <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"> <span class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <li><a data-toggle="batch" data-action="dels"><i class="fa fa-trash-o"></i> Удалить</a></li>

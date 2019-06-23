@@ -206,7 +206,7 @@ var iFormer = {
                         elem_type       = 'checkbox';
                     }
                     if(obj_type=='radio_prop'||obj_type=='checkbox_prop'){
-                        obj['option']= '默认属性=0;'
+                        obj['option']= 'Свойство по умолчанию=0;'
                     }
                     //改变$div内容
                     var _div = function () {

@@ -336,7 +336,7 @@ function _modal_dialog(cancel_text){
             </div>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend"> <span class="add-on">Подкатегории</span>
-              <select name="scid[]" id="scid" class="chosen-select span6" multiple="multiple"  data-placeholder="Выберите подкатегорию (несколько вариантов)...">
+              <select name="scid[]" id="scid" class="chosen-select span6" multiple="multiple"  data-placeholder="Выберите подкатегорию  (множественный выбор)...">
                 <?php echo $cata_option;?>
               </select>
             </div>

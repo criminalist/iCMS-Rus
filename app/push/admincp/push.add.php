@@ -18,7 +18,7 @@ $(function(){
 		// 	return false;
 		// }
 		if($("#title").val()==''){
-			iCMS.alert("1.标题必填!");
+			iCMS.alert("1.Введите название!");
 			$("#title").focus();
 			return false;
 		}
@@ -31,7 +31,7 @@ $(function(){
     <div class="widget-title"> <span class="icon"> <i class="fa fa-plus-square"></i> </span>
       <h5><?php echo empty($id)?'Добавить':'Изменить' ; ?>推荐</h5>
       <ul class="nav nav-tabs" id="push-add-tab">
-        <li class="active"><a href="#push-add-base" data-toggle="tab"><i class="fa fa-info-circle"></i> 基本信息</a></li>
+        <li class="active"><a href="#push-add-base" data-toggle="tab"><i class="fa fa-info-circle"></i> Основная информация</a></li>
         <li><a href="#push-add-custom" data-toggle="tab"><i class="fa fa-wrench"></i> 自定义</a></li>
       </ul>
     </div>
@@ -47,23 +47,23 @@ $(function(){
         <div id="push-add" class="tab-content">
           <div id="push-add-base" class="tab-pane active">
             <div class="input-prepend"> <span class="add-on">Привязка к категории</span>
-              <select name="cid" id="cid" class="chosen-select span6" multiple="multiple" data-placeholder="请选择栏目(可多选)...">
-                <option value="0"> ==== 默认栏目 ==== </option>
+              <select name="cid" id="cid" class="chosen-select span6" multiple="multiple" data-placeholder="Выберите категорию  (множественный выбор)...">
+                <option value="0"> ==== Категория по умолчанию ==== </option>
                 <?php echo category::priv('ca')->select($rs['cid'],0,1,true);?>
               </select>
             </div>
-            <span class="help-inline">本推荐所属的栏目</span>
+            <span class="help-inline">Категорию к которому привязана рекомендация</span>
   		      <div class="clearfloat mb10"></div>
             <div class="input-prepend"> <span class="add-on">推荐分类</span>
-              <select name="pcid[]" id="pcid" class="chosen-select span6" multiple="multiple" data-placeholder="请选择推荐分类(可多选)...">
-                <option value="0"> ==== 默认分类 ==== </option>
+              <select name="pcid[]" id="pcid" class="chosen-select span6" multiple="multiple" data-placeholder="请选择推荐分类  (множественный выбор)...">
+                <option value="0"> ==== Категория по умолчанию ==== </option>
                 <?php echo category::appid($this->appid,'ca')->select($rs['pcid'],0,1,true);?>
               </select>
             </div>
             <span class="help-inline">本推荐所属的标签分类</span>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend"> <span class="add-on"> Свойства </span>
-              <select name="pid[]" id="pid" class="chosen-select span6" multiple="multiple" data-placeholder="请选择标签属性(可多选)...">
+              <select name="pid[]" id="pid" class="chosen-select span6" multiple="multiple" data-placeholder="请选择标签属性  (множественный выбор)...">
                 <option value="0">普通标签[pid='0']</option>
                 <?php echo propAdmincp::get("pid") ; ?>
               </select>

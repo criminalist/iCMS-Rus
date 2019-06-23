@@ -210,7 +210,7 @@ class former {
                     if(strpos($type,'multi')!==false){
                         $attr['name']     = $attr['name'].'[]';
                         $attr['multiple'] = 'true';
-                        $attr['data-placeholder']= 'Выберите '.$field['label'].'(несколько вариантов)...';
+                        $attr['data-placeholder']= 'Выберите '.$field['label'].' (множественный выбор)...';
                         $orig = self::widget('input',array('type'=>'hidden','name'=>$orig_name,'value'=>$value));
                     }
                     $btn = propAdmincp::btn_add('Добавить'.$field['label'],$name,self::$config['app']['app']);
@@ -340,7 +340,7 @@ class former {
                     if(strpos($type,'multi')!==false){
                         $attr['name']     = $attr['name'].'[]';
                         $attr['multiple'] = 'true';
-                        $attr['data-placeholder']= 'Выберите '.$field['label'].' (несколько вариантов)...';
+                        $attr['data-placeholder']= 'Выберите '.$field['label'].'  (множественный выбор)...';
                         $orig = self::widget('input',array('type'=>'hidden','name'=>$orig_name,'value'=>$value));
                     }
                     $select = self::widget('select',$attr)->addClass('chosen-select');
@@ -356,7 +356,7 @@ class former {
                         unset($attr['type']);
                         $attr['multiple'] = 'true';
                         $attr['name']     = $attr['name'].'[]';
-                        $attr['data-placeholder']= 'Выберите '.$field['label'].'(несколько вариантов)...';
+                        $attr['data-placeholder']= 'Выберите '.$field['label'].' (множественный выбор)...';
                         $_input = self::widget('input',array('type'=>'hidden','name'=>$orig_name,'value'=>$value));
                     }
                     $input  = self::widget('select',$attr)->addClass('chosen-select');

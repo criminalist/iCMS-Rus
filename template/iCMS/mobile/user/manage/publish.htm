@@ -32,7 +32,7 @@ window.UMEDITOR_HOME_URL = "<!--{$site.urls.public}-->/js/libs/umeditor/";
         </select>
         <div class="input-group-addon">
             <div class="dropdown">
-                <a data-toggle="dropdown" id="user_category_dropdown"> <span class="caret"></span> <span id="user_category_select">默认分类</span></a>
+                <a data-toggle="dropdown" id="user_category_dropdown"> <span class="caret"></span> <span id="user_category_select">Категория по умолчанию</span></a>
                 <ul class="dropdown-menu">
                     <!--{iCMS:user:category loop="true" userid="$user.uid" appid="$iCMS.APPID.ARTICLE"}-->
                     <li>
@@ -41,7 +41,7 @@ window.UMEDITOR_HOME_URL = "<!--{$site.urls.public}-->/js/libs/umeditor/";
                         </a>
                     </li>
                     <!--{/iCMS}-->
-                    <li id="user_category_item_0"><a href="javascript:;" cid="0" class="user_category_item">默认分类</a></li>
+                    <li id="user_category_item_0"><a href="javascript:;" cid="0" class="user_category_item">Категория по умолчанию</a></li>
                     <li class="divider"></li>
                     <li><a href="javascript:;" title="添加分类" id="add_category" class="btn"><i class="fa fa-edit"></i> 添加分类</a></li>
                 </ul>

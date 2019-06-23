@@ -116,7 +116,7 @@ class tagAdmincp{
      * @return [type] [description]
      */
     public function do_import(){
-        // $_POST['cid'] OR iUI::alert('请选择标签所属栏目!');
+        // $_POST['cid'] OR iUI::alert('Выберите категорию к которой привязан тег!');
         files::$check_data        = false;
         files::$cloud_enable      = false;
         iFS::$config['allow_ext'] = 'txt';

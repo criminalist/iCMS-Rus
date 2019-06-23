@@ -286,7 +286,7 @@ $(function(){
                 <div class="input-prepend input-append mt20"> <span class="add-on"> Выбрать все
                   <input type="checkbox" class="checkAll checkbox" data-target="#<?php echo APP_BOXID;?>" />
                   </span>
-                  <div class="btn-group dropup" id="iCMS-batch"> <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i>Пакетная операция</a><a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"> <span class="caret"></span></a>
+                  <div class="btn-group dropup" id="iCMS-batch"> <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i> Пакетные операции</a><a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"> <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                       <li><a data-toggle="batch" data-action="pubdate:now"><i class="fa fa-clock-o"></i> Изменить время публикации</a></li>
                       <?php if($stype=="inbox"||$stype=="trash"){ ?>
@@ -320,7 +320,7 @@ $(function(){
 <div class='iCMS-batch'>
   <div id="scidBatch">
     <div class="input-prepend">
-      <select name="scid[]" id="scid" class="span3" multiple="multiple"  data-placeholder="Выберите подкатегорию (несколько вариантов)...">
+      <select name="scid[]" id="scid" class="span3" multiple="multiple"  data-placeholder="Выберите подкатегорию  (множественный выбор)...">
         <?php echo $category_select;?>
       </select>
     </div>

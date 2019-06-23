@@ -151,7 +151,7 @@ function uninstall($msg,$a) {
                         <?php if($data['status']){?>
                           <a href="<?php echo APP_URI; ?>&do=update&_args=status:0&id=<?php echo $data['id'] ; ?>" target="iPHP_FRAME" class="btn btn-small btn-warning" onclick="return confirm('关闭应用不会删除数据,但应用将不可用\n确定要关闭应用?');"><i class="fa fa-close"></i> Закрыть </a>
                         <?php }else{?>
-                          <a href="<?php echo APP_URI; ?>&do=update&_args=status:1&id=<?php echo $data['id'] ; ?>" target="iPHP_FRAME" class="btn btn-small btn-success"><i class="fa fa-check"></i> 启用</a>
+                          <a href="<?php echo APP_URI; ?>&do=update&_args=status:1&id=<?php echo $data['id'] ; ?>" target="iPHP_FRAME" class="btn btn-small btn-success"><i class="fa fa-check"></i> Активировать</a>
                         <?php }?>
                         <a href="<?php echo APP_FURI; ?>&do=uninstall&id=<?php echo $data['id'] ; ?>" target="iPHP_FRAME" class="del btn btn-small btn-danger" title='Удалить навсегда'  onclick="return uninstall('卸载应用会清除应用所有数据!\n卸载应用会清除应用所有数据!\n卸载应用会清除应用所有数据!\n确定要卸载?\n确定要卸载?\n确定要卸载?',this);"/><i class="fa fa-trash-o"></i> Удалить</a>
                       <?php }else{?>
@@ -169,7 +169,7 @@ function uninstall($msg,$a) {
                       <input type="checkbox" class="checkAll checkbox" data-target="#<?php echo APP_BOXID;?>" />
                     </span>
                     <div class="btn-group dropup" id="iCMS-batch">
-                      <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i>Пакетная операция</a>
+                      <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i> Пакетные операции</a>
                       <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"> <span class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <li><a data-toggle="batch" data-action="dels"><i class="fa fa-trash-o"></i> Удалить</a></li>

@@ -170,7 +170,7 @@ class pushAdmincp{
         (iFS::checkHttp($pic3) && !isset($_POST['pic3_http'])) && $pic3 = iFS::http($pic3);
 
 		empty($uid) && $uid=members::$userid;
-        empty($title) && iUI::alert('1.标题必填');
+        empty($title) && iUI::alert('1.Введите название');
         empty($cid) && iUI::alert('Выберите категорию');
 
         $haspic	= empty($pic)?0:1;

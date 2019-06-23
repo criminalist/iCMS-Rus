@@ -7,15 +7,15 @@ if($rs['table'])foreach ($rs['table'] as $key => $tval) {
   <table class="table table-hover table-bordered">
     <thead>
       <tr>
-        <th style="width:100px;">Поле</th>
+        <th style="width:100px;">Имя поля</th>
         <th>Тип поля</th>
         <th>Длина</th>
         <th>Первичный ключ</th>
         <th>NULL</th>
         <th>Unsigned</th>
-        <th>自增</th>
-        <th>核对</th>
-        <th>注释</th>
+        <th>Инкремент</th>
+        <th>Кодировка (character)</th>
+        <th>Комментарий</th>
       </tr>
     </thead>
     <tbody>
@@ -46,7 +46,7 @@ if($rs['table'])foreach ($rs['table'] as $key => $tval) {
     <table class="table table-bordered bordered">
       <thead>
         <tr>
-          <th colspan="2"> Индекс </th>
+          <th colspan="2"> Индексные поля</th>
         </tr>
       </thead>
       <tbody>

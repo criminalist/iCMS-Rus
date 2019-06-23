@@ -19,7 +19,7 @@
 <?php if($this->id && $_GET['app']=='apps'){?>
 <a href="<?php echo __ADMINCP__; ?>=<?php echo $rs['app'] ; ?>&do=add&appid=<?php echo $this->id ; ?>&preview"
     class="btn btn-success" data-toggle="modal" data-target="#iCMS-MODAL" data-meta='{"width":"85%","height":"640px"}'>
-    <i class="fa fa-eye"></i> 预览表单
+    <i class="fa fa-eye"></i> Предварительный просмотр формы
 </a>
 <?php }?>
 <script type="text/javascript" src="./app/admincp/ui/jquery/jquery-ui.min.js"></script>

@@ -142,9 +142,9 @@
           <span class="multiselect fb-icon fb-icon-multiselect"></span>
           <p>Категории</p>
         </li>
-        <li i="field" tag="multi_category" type="multi_category" field="VARCHAR" len="255" label="Категории (множественный выбор)">
+        <li i="field" tag="multi_category" type="multi_category" field="VARCHAR" len="255" label="Категории  (множественный выбор)">
           <span class="multiselect fb-icon fb-icon-multiselect"></span>
-          <p>Категории (множественный выбор)</p>
+          <p>Категории  (множественный выбор)</p>
         </li>
         <li i="field" tag="image" type="image" field="VARCHAR" len="255" label="Изображение">
           <span class="fb-icon fb-icon-image"></span>
@@ -166,9 +166,9 @@
           <span class="fb-icon fb-icon-prop"></span>
           <p>Свойства(Выпадающий список)</p>
         </li>
-        <li i="field" tag="multi_prop" type="multi_prop" field="VARCHAR" len="255" label="Свойство (множественный выбор)">
+        <li i="field" tag="multi_prop" type="multi_prop" field="VARCHAR" len="255" label="Свойство  (множественный выбор)">
           <span class="fb-icon fb-icon-prop"></span>
-          <p>Свойство(множественный выбор)</p>
+          <p>Свойство (множественный выбор)</p>
         </li>
         <li i="field" tag="multi_prop" type="radio_prop" field="VARCHAR" len="200" label="Свойство (чекбокс)">
           <span class="fb-icon fb-icon-prop"></span>

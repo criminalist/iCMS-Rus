@@ -188,8 +188,7 @@ $(function(){
                 В избранном:<?php echo $rs[$i]['favorite'] ; ?><br />
                 Комментариев:<?php echo $rs[$i]['comments'] ; ?><br />
                 Поставили лайк:<?php echo $rs[$i]['good'] ; ?><br />
-                使用数:<?php echo $rs[$i]['count'] ; ?><br />
-                ">
+                使用数:<?php echo $rs[$i]['count'] ; ?><br />">
                   <?php echo $rs[$i]['hits']; ?>/<?php echo $rs[$i]['count']; ?>
                 </a>
         </td>
@@ -201,7 +200,7 @@ $(function(){
             <!-- <a href="<?php echo APP_FURI; ?>&do=cache&id=<?php echo $rs[$i]['id'] ; ?>" class="btn btn-small" target="iPHP_FRAME"><i class="fa fa-refresh"></i>Обновить кэш</a> -->
             <?php } ?>
             <?php if($rs[$i]['status']=="0"){ ?>
-            <a href="<?php echo APP_FURI; ?>&do=update&id=<?php echo $rs[$i]['id'] ; ?>&_args=status:1" class="btn btn-small btn-success tip " target="iPHP_FRAME" title="当前状态:禁用,点击可启用此标签"><i class="fa fa-play-circle"></i> 启用</a>
+            <a href="<?php echo APP_FURI; ?>&do=update&id=<?php echo $rs[$i]['id'] ; ?>&_args=status:1" class="btn btn-small btn-success tip " target="iPHP_FRAME" title="Текущий статус: отключен, нажмите, чтобы активировать элемент"><i class="fa fa-play-circle"></i> Активировать</a>
             <?php } ?>
              <a href="<?php echo APP_URI; ?>&do=add&id=<?php echo $rs[$i]['id'] ; ?>" class="btn btn-small"><i class="fa fa-edit"></i> Изменить </a> <a href="<?php echo APP_FURI; ?>&do=del&id=<?php echo $rs[$i]['id'] ; ?>" target="iPHP_FRAME" class="del btn btn-small" title='Удалить навсегда'  onclick="return confirm('Вы уверены, что хотите удалить?');"/><i class="fa fa-trash-o"></i> Удалить навсегда</a></td>
         </tr>
@@ -214,9 +213,9 @@ $(function(){
               <div class="input-prepend input-append mt20"> <span class="add-on"> Выбрать все
                 <input type="checkbox" class="checkAll checkbox" data-target="#<?php echo APP_BOXID;?>" />
                 </span>
-                <div class="btn-group dropup" id="iCMS-batch"> <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i>Пакетная операция</a><a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"> <span class="caret"></span></a>
+                <div class="btn-group dropup" id="iCMS-batch"> <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i> Пакетные операции</a><a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"> <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a data-toggle="batch" data-action="status:1"><i class="fa fa-play-circle"></i> 启用</a></li>
+                    <li><a data-toggle="batch" data-action="status:1"><i class="fa fa-play-circle"></i> Активировать</a></li>
                     <li><a data-toggle="batch" data-action="status:0"><i class="fa fa-power-off"></i> Отключить</a></li>
                     <li class="divider"></li>
                     <li><a data-toggle="batch" data-action="move"><i class="fa fa-fighter-jet"></i> Переместить</a></li>
@@ -257,35 +256,35 @@ $(function(){
 <div id="import_wrap" style="display:none;">
   <form action="<?php echo APP_FURI; ?>&do=import" method="post" enctype="multipart/form-data" target="iPHP_FRAME">
     <div class="input-prepend"> <span class="add-on">Категории</span>
-      <select name="cid" class="span3 chosen-select" multiple="multiple" data-placeholder="请选择栏目(несколько вариантов)...">
-        <option value="0">请选择标签所属栏目</option>
+      <select name="cid" class="span3 chosen-select" multiple="multiple" data-placeholder="Выберите категорию (множественный выбор)...">
+        <option value="0">Выберите категорию к которой привязан тег</option>
         <?php echo $cid_select; ?>
       </select>
     </div>
     <div class="clearfloat mb10"></div>
     <div class="input-prepend"> <span class="add-on">Категории</span>
-      <select name="tcid" class="span3 chosen-select" multiple="multiple" data-placeholder="请选择分类(несколько вариантов)...">
-        <option value="0">默认分类</option>
+      <select name="tcid" class="span3 chosen-select" multiple="multiple" data-placeholder="Выберите категорию  (множественный выбор)...">
+        <option value="0">Категория по умолчанию</option>
         <?php echo $tcid_select; ?>
       </select>
     </div>
     <div class="clearfloat mb10"></div>
     <div class="input-prepend"> <span class="add-on"> Свойства </span>
-      <select name="pid" class="span3 chosen-select" multiple="multiple" data-placeholder="请选择属性(несколько вариантов)...">
-        <option value="0">默认属性</option>
+      <select name="pid" class="span3 chosen-select" multiple="multiple" data-placeholder="Выберите свойство (множественный выбор)...">
+        <option value="0">Свойство по умолчанию</option>
         <?php echo $pid_select ; ?>
       </select>
     </div>
     <div class="clearfloat mb10"></div>
     <div class="alert alert-info">
-      Импортировать (только TXT)
+      Импорт (поддерживаются только TXT)
       <br />
-      По одному на строку标签
+      По одному на строку
       <br />
-      请把文件编码转换成UTF-8
+      Кодировка файла должна быть в UTF-8
     </div>
     <div class="clearfloat mb10"></div>
-    <a id="local" class="btn btn-primary btn-large btn-block"><i class="fa fa-upload"></i> 请选择要导入的标签</a>
+    <a id="local" class="btn btn-primary btn-large btn-block"><i class="fa fa-upload"></i> Выбрать файл для импорта</a>
     <input id="localfile" name="upfile" type="file" class="hide"/>
     <div class="clearfloat mb10"></div>
   </form>
