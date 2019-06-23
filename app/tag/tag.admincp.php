@@ -375,7 +375,7 @@ class tagAdmincp{
                         categoryAdmincp::update_count($cid);
 		            }
 		        }
-		        iUI::success('成功移动到目标栏目!','js:1');
+		        iUI::success('Успешно перемещено!','js:1');
     		break;
     		case 'mvtcid':
 		        $_POST['tcid'] OR iUI::alert("请选择目标分类!");

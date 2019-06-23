@@ -37,6 +37,16 @@
                         <!--{$article.link}-->
                     </li>
                 </ul>
+				
+				============
+				<!--{iCMS:prop:array loop="true" field="lang" sapp="lang"}-->
+<a href="<!--{$prop_array.url}-->" id="<!--{$prop_array.name}-->" >
+<!--{$prop_array.name}-->
+</a>
+<!--{/iCMS}-->
+			    =============
+				
+				
                 <div class="content-wrap">
                     <h1><!--{$article.title}--></h1>
                     <div class="info">
@@ -125,7 +135,7 @@
                             <i class="fa fa-thumbs-down"></i>
                             <span i="vote_bad_num" class="like-num"><!--{$article.bad}--></span>
                         </div>
-                        <div i="favorite:article" class="btn btn-primary btn-sm" title="非常棒!收藏起来">
+                        <div i="favorite:article" class="btn btn-primary btn-sm" title="Добавить в избранное">
                             <i class="fa fa-heart"></i>
                             <span i="favorite_num" class="favorite-num"><!--{$article.favorite}--></span>
                         </div>

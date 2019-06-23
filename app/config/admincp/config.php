@@ -257,61 +257,61 @@ function modal_tpl_index(el,a){
               </div>
               <span class="help-inline">Пример:<span class="label label-info">https://www.icmsdev.com</span></span>
               <div class="clearfloat mb10"></div>
-              <div class="input-prepend input-append"> <span class="add-on">桌面端模板</span>
+              <div class="input-prepend input-append"> <span class="add-on">Шаблон PC версии</span>
                 <input type="text" name="config[template][desktop][tpl]" class="span3" id="template_desktop_tpl" value="<?php echo $config['template']['desktop']['tpl'] ; ?>"/>
                 <?php echo filesAdmincp::modal_btn('Шаблон','template_desktop_tpl','dir');?>
               </div>
-              <span class="help-inline">网站桌面端模板默认模板</span>
+              <span class="help-inline">По умолчанию размещается в каталоге "www/desktop"</span>
               <div class="clearfloat mb10"></div>
-              <div class="input-prepend input-append"> <span class="add-on">首页模板</span>
+              <div class="input-prepend input-append"> <span class="add-on">Шаблон главной страницы</span>
                 <input type="text" name="config[template][desktop][index]" class="span3" id="template_desktop_index" value="<?php echo $config['template']['desktop']['index']?:'{iTPL}/index.htm' ; ?>"/>
                 <?php echo filesAdmincp::modal_btn('Шаблон','template_desktop_index','file','tpl_index');?>
               </div>
-              <span class="help-inline">桌面端默认模板</span>
+              <span class="help-inline">По умолчанию "{iTPL}/index.htm"</span>
             </div>
             <div class="clearfloat mb10 solid"></div>
             <div id="template_mobile">
               <input type="hidden" name="config[template][desktop][name]" value="mobile"/>
               <div class="input-prepend">
-                <span class="add-on">移动端识别</span>
+                <span class="add-on">Определения мобильных устройств</span>
                 <input type="text" name="config[template][mobile][agent]" class="span3" id="template_mobile_agent" value="<?php echo $config['template']['mobile']['agent'] ; ?>"/>
               </div>
-              <span class="help-inline">请用<span class="label label-info">,</span>分隔 如不启用自动识别请留空</span>
+              <span class="help-inline">Разделяйте запятой "," или оставьте поле пустым если вам не требуется определение мобильных устройств. Списк устройств по умолчанию WAP,Smartphone,Mobile,UCWEB,Opera Mini,Windows CE,Symbian,SAMSUNG,iPhone,Android,BlackBerry,HTC,Mini,LG,SonyEricsson,J2ME,MOT</span>
               <div class="clearfloat mb10"></div>
               <div class="input-prepend"> <span class="add-on">Доменное имя мобильной версии сайта</span>
                 <input type="text" name="config[template][mobile][domain]" class="span3" id="template_mobile_domain" value="<?php echo $config['template']['mobile']['domain'] ; ?>"/>
               </div>
               <span class="help-inline">Пример:<span class="label label-info">http://m.icmsdev.com</span></span>
               <div class="clearfloat mb10"></div>
-              <div class="input-prepend input-append"> <span class="add-on">移动端模板</span>
+              <div class="input-prepend input-append"> <span class="add-on">Шаблон мобильной версии</span>
                 <input type="text" name="config[template][mobile][tpl]" class="span3" id="template_mobile_tpl" value="<?php echo $config['template']['mobile']['tpl'] ; ?>"/>
                 <?php echo filesAdmincp::modal_btn('Шаблон','template_mobile_tpl','dir');?>
               </div>
-              <span class="help-inline">网站移动端模板默认模板,如果不想让程序自行切换请留空</span>
+              <span class="help-inline">Шаблон мобильного шаблона сайта по умолчанию "www/mobile", если вы не хотите, чтобы система отображала мобильную версию шаблона оставьте поле пустым.</span>
               <div class="clearfloat mb10"></div>
-              <div class="input-prepend input-append"> <span class="add-on">首页模板</span>
+              <div class="input-prepend input-append"> <span class="add-on">Шаблон главной страницы мобильной версии</span>
                 <input type="text" name="config[template][mobile][index]" class="span3" id="template_mobile_index" value="<?php echo $config['template']['mobile']['index']?:'{iTPL}/index.htm'; ?>"/>
                 <?php echo filesAdmincp::modal_btn('Шаблон','template_mobile_index','file','tpl_index');?>
               </div>
-              <span class="help-inline">移动端首页默认模板</span>
+              <span class="help-inline">По умолчанию "{iTPL}/index.htm"</span>
             </div>
             <div class="clearfloat mb10 solid"></div>
             <div class="<?php echo $config['router']['redirect']?'':'hide'; ?> router_redirect">
-              <div class="input-prepend"> <span class="add-on">Редирект</span>
+              <div class="input-prepend"> <span class="add-on">Автоматическая переадресация</span>
                 <div class="switch">
                   <input type="checkbox" data-type="switch" name="config[router][redirect]" id="router_redirect" <?php echo $config['router']['redirect']?'checked':''; ?>/>
                 </div>
               </div>
-              <span class="help-inline">如果出现循环重定向(跳转)或者已在服务器配置做重定向,请关闭此项.</span>
+              <span class="help-inline">Если возникает проблема с циклическим перенаправлением, отключите эту опцию.</span>
               <div class="clearfloat mb10 solid"></div>
             </div>
             <table class="table table-hover">
               <thead>
                 <tr>
                   <th style="text-align:left;">
-                    <span class="label label-important fs16">模板优先级为:设备模板 &gt; 移动端模板 &gt; PC端模板</span>
-                    <span class="label label-inverse fs16"><i class="icon-warning-sign icon-white"></i> 设备模板和移动端模板 暂时不支持生成静态模式</span>
-                    <a onclick="javscript:$('.router_redirect').toggle();">Редирект</a>
+                    <span class="label label-important fs16">Приоритет шаблонов &gt; Мобильный шаблон &gt; Шаблон для ПК</span>
+                    <span class="label label-inverse fs16"><i class="icon-warning-sign icon-white"></i> мобильная версия временно не поддерживает работу в статическом режиме</span>
+                    <a onclick="javscript:$('.router_redirect').toggle();">Автоматическая переадресация</a>
                   </th>
                 </tr>
               </thead>
@@ -321,33 +321,33 @@ function template_device_td($key,$device=array()){
   $td_key = "device_{$key}";
 ?>
   <td>
-    <div class="input-prepend input-append"> <span class="add-on">设备名称</span>
+    <div class="input-prepend input-append"> <span class="add-on">Имя пользователського устройства</span>
       <input type="text" name="config[template][device][<?php echo $key;?>][name]" class="span3" id="<?php echo $td_key;?>_name" value="<?php echo $device['name'];?>"/>
       <a class="btn del_device"><i class="fa fa-trash-o"></i> Удалить</a>
     </div>
     <span class="help-inline"></span>
     <div class="clearfloat mb10"></div>
-    <div class="input-prepend"> <span class="add-on">设备识别符</span>
+    <div class="input-prepend"> <span class="add-on">Идентификатор устройства</span>
       <input type="text" name="config[template][device][<?php echo $key;?>][ua]" class="span3" id="<?php echo $td_key;?>_ua" value="<?php echo $device['ua'];?>"/>
     </div>
-    <span class="help-inline">设备唯一识别符,识别设备的User agent,如果多个请用<span class="label label-info">,</span>分隔.</span>
+    <span class="help-inline">Уникальный идентификатор устройства, определяется по User agent, если необходимо более одного устройства перечислите их через запятую ","</span>
     <div class="clearfloat mb10"></div>
-    <div class="input-prepend"> <span class="add-on">访问域名</span>
+    <div class="input-prepend"> <span class="add-on">Домен</span>
       <input type="text" name="config[template][device][<?php echo $key;?>][domain]" class="span3" id="<?php echo $td_key;?>_domain" value="<?php echo $device['domain'];?>"/>
     </div>
     <span class="help-inline"></span>
     <div class="clearfloat mb10"></div>
-    <div class="input-prepend input-append"> <span class="add-on">设备模板</span>
+    <div class="input-prepend input-append"> <span class="add-on">Шаблон пользовательского устройства</span>
       <input type="text" name="config[template][device][<?php echo $key;?>][tpl]" class="span3" id="<?php echo $td_key;?>_tpl" value="<?php echo $device['tpl'];?>"/>
       <?php echo filesAdmincp::modal_btn('Шаблон',"<?php echo $td_key;?>_tpl",'dir');?>
     </div>
-    <span class="help-inline">识别到的设备会使用这个模板设置</span>
+    <span class="help-inline"></span>
     <div class="clearfloat mb10"></div>
-    <div class="input-prepend input-append"> <span class="add-on">首页模板</span>
+    <div class="input-prepend input-append"> <span class="add-on">Шаблон главной страницы мобильной версии</span>
       <input type="text" name="config[template][device][<?php echo $key;?>][index]" class="span3" id="<?php echo $td_key;?>_index" value="<?php echo $device['index']?:'{iTPL}/index.htm';?>"/>
       <?php echo filesAdmincp::modal_btn('Шаблон',"<?php echo $td_key;?>_index",'file','tpl_index');?>
     </div>
-    <span class="help-inline">设备的首页模板</span>
+    <span class="help-inline">Шаблон главной страницы пользовательского устройства</span>
   </td>
 <?php }?>
                 <?php foreach ((array)$config['template']['device'] as $key => $device) {?>
@@ -358,7 +358,7 @@ function template_device_td($key,$device=array()){
               </tbody>
               <tfoot>
               <tr>
-                <td colspan="2"><a href="#template_device" class="btn add_template_device btn-success"/><i class="fa fa-tablet"></i>Добавить шаблон устройства</a></td>
+                <td colspan="2"><a href="#template_device" class="btn add_template_device btn-success"/><i class="fa fa-tablet"></i>Добавить пользовательское устройство</a></td>
               </tr>
               </tfoot>
             </table>

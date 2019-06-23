@@ -252,7 +252,7 @@ class pushAdmincp{
                         iMap::diff($cid,$_cid,$id);
                     }
                 }
-                iUI::success('成功移动到目标栏目!','js:1');
+                iUI::success('Успешно перемещено!','js:1');
             break;
             case 'mvpcid':
                 $_POST['pcid'] OR iUI::alert("请选择目标分类!");

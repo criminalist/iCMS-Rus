@@ -50,7 +50,7 @@ class formsAdmincp{
         if($update){
             iUI::success($this->form['name'].'编辑完成!<br />3秒后返回'.$this->form['name'].'Список','url:'.$REFERER_URL);
         }else{
-            iUI::success($this->form['name'].'添加完成!<br />3秒后返回'.$this->form['name'].'Список','url:'.$REFERER_URL);
+            iUI::success($this->form['name'].'Успешно добавлено!<br />3秒后返回'.$this->form['name'].'Список','url:'.$REFERER_URL);
         }
       }else{
         return $update;

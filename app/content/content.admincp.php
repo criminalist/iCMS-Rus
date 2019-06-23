@@ -79,13 +79,13 @@ class contentAdmincp{
                 foreach((array)$_POST['sortnum'] AS $id=>$sortnum) {
                     content::update(compact('sortnum'),compact('id'));
                 }
-                iUI::success('排序已更新!','js:1');
+                iUI::success('Сортировка обновлена!','js:1');
             break;
             case 'meta':
                 foreach((array)$_POST['id'] AS $id) {
                     iPHP::callback(array("apps_meta","save"),array($this->appid,$id));
                 }
-                iUI::success('添加完成!','js:1');
+                iUI::success('Успешно добавлено!','js:1');
             break;
             case 'baiduping':
                 foreach($idArray AS $id) {
@@ -107,7 +107,7 @@ class contentAdmincp{
                         categoryAdmincp::update_count($cid);
                     }
                 }
-                iUI::success('成功移动到目标栏目!','js:1');
+                iUI::success('Успешно перемещено!','js:1');
             break;
             case 'prop':
                 iMap::init('prop',$this->appid,'pid');
@@ -418,7 +418,7 @@ class contentAdmincp{
                     array("text" =>"查看网站首页","url"=>iCMS_URL,"target"=>'_blank')
             );
             iUI::$dialog['modal'] = true;
-            iUI::dialog('success:#:check:#:'.$this->app['title'].'添加完成!<br />10秒后返回'.$this->app['title'].'Список'.$msg,'url:'.$REFERER_URL,10,$moreBtn);
+            iUI::dialog('success:#:check:#:'.$this->app['title'].'Успешно добавлено!<br />10秒后返回'.$this->app['title'].'Список'.$msg,'url:'.$REFERER_URL,10,$moreBtn);
         }
     }
 

@@ -163,7 +163,7 @@ $(function(){
               <th style="width:320px;">Имя файла <span class="label label-important">Подсказка: щелкните поле с несколькими вариантами выбора, чтобы выбрать</span></th>
               <th> Тип </th>
               <th>Размер</th>
-              <th style="width:130px;">Последнее изменение</th>
+              <th>Последнее изменение</th>
               <th>Операции</th>
             </tr>
           </thead>

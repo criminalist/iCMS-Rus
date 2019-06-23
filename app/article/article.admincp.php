@@ -31,15 +31,15 @@ class articleAdmincp{
         configAdmincp::save(self::$appid);
     }
     /**
-     * [添加文章]
+     * [Добавить статью]
      */
     public function do_add(){
-        $_GET['cid'] && category::check_priv($_GET['cid'],'ca','page');//添加权限
+        $_GET['cid'] && category::check_priv($_GET['cid'],'ca','page');
         $rs        = array();
         $bodyArray = array();
         if($this->id){
             list($rs,$adRs) = article::data($this->id,$this->dataid);
-            category::check_priv($rs['cid'],'ce','page');//编辑权限
+            category::check_priv($rs['cid'],'ce','page');
             if($adRs){
                 if($rs['chapter']){
                     foreach ($adRs as $key => $value) {
@@ -95,19 +95,19 @@ class articleAdmincp{
         }
     }
     public function do_batch(){
-        list($idArray,$ids,$batch) = iUI::get_batch_args("请选择要操作的文章");
+        list($idArray,$ids,$batch) = iUI::get_batch_args("Выберите документ");
     	switch($batch){
     		case 'order':
 		        foreach((array)$_POST['sortnum'] AS $id=>$sortnum) {
                     article::update(compact('sortnum'),compact('id'));
 		        }
-		        iUI::success('排序已更新!','js:1');
+		        iUI::success('Сортировка обновлена!','js:1');
             break;
             case 'meta':
                 foreach((array)$_POST['id'] AS $id) {
                     iPHP::callback(array("apps_meta","save"),array(self::$appid,$id));
                 }
-                iUI::success('添加完成!','js:1');
+                iUI::success('Успешно добавлено!','js:1');
             break;
             case 'purge':
                 @set_time_limit(0);
@@ -119,11 +119,11 @@ class articleAdmincp{
                     $this->do_purge($id,false);
                     $updateMsg = $i ? true : false;
                     $timeout = ($i++) == $_count ? '3' : false;
-                    iUI::dialog($id.'清除完成!', 'js:void(0)', $timeout, 0, $updateMsg);
+                    iUI::dialog($id.'Очистка завершена!', 'js:void(0)', $timeout, 0, $updateMsg);
                     iUI::flush();
                 }
-                iUI::dialog('success:#:check:#:清除完成!', 0, 3, 0, true);
-                // iUI::success('清除完成!','js:1');
+                iUI::dialog('success:#:check:#:Очистка завершена!', 0, 3, 0, true);
+                // iUI::success('Очистка завершена!','js:1');
             break;
             case 'baiduping':
                 foreach((array)$_POST['id'] AS $id) {
@@ -157,7 +157,7 @@ class articleAdmincp{
                         categoryAdmincp::update_count($cid);
 		            }
 		        }
-		        iUI::success('成功移动到目标栏目!','js:1');
+		        iUI::success('Успешно перемещено!','js:1');
             break;
             case 'scid':
                 //$_POST['scid'] OR iUI::alert("请选择目标栏目!");
@@ -199,7 +199,7 @@ class articleAdmincp{
                         $keywords = $keywords?$keywords.','.iSecurity::escapeStr($_POST['mkeyword']):iSecurity::escapeStr($_POST['mkeyword']);
                         article::update(compact('keywords'),compact('id'));
 		        	}
-		        	iUI::success('文章关键字更改完成!','js:1');
+		        	iUI::success('Изменение ключевого слова документа завершено!','js:1');
     			}
     		break;
     		case 'tag':
@@ -718,7 +718,7 @@ class articleAdmincp{
         }
 
         if($clink && article::check($clink,$aid,'clink')){
-            return iUI::alert('该文章自定义链接已经存在!请检查是否重复');
+            return iUI::alert('Пользовательская ссылка уже существует, попробуйте другое название!.');
         }
 
         if(empty($description) && empty($url)) {

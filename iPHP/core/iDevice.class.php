@@ -81,8 +81,8 @@ class iDevice {
     /**
      * [set_device description]
      * @param [type]  $domain       [访问域名]
-     * @param [type]  $device_tpl   [设备模板]
-     * @param [type]  $device_name  [设备名称]
+     * @param [type]  $device_tpl   [Шаблон пользовательского устройства]
+     * @param [type]  $device_name  [Имя устройства]
      * @param [type]  $device_index [首页模板]
      * @param boolean $IS_MOBILE    [是否标识移动端]
      */
