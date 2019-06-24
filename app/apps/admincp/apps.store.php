@@ -160,10 +160,10 @@ function uninstall($msg,$a) {
                             <?php if($is_update){?>
                             <a href="<?php echo APP_FURI; ?>&do=<?php echo admincp::$APP_DO; ?>_update&sid=<?php echo $sid;?>&id=<?php echo $appconf['appid'];?>"
                               target="iPHP_FRAME" class="btn btn-success update-btn">
-                              <i class="fa fa-repeat"></i> 现在更新
+                              <i class="fa fa-repeat"></i> Обновить сейчас
                             </a>
                             <?php }else{ ?>
-                              <a disabled="disabled" href="javascript:;" class="btn btn-default"><i class="fa fa-repeat"></i> 暂无更新</a>
+                              <a disabled="disabled" href="javascript:;" class="btn btn-default"><i class="fa fa-repeat"></i> Пока нет обновлений</a>
                             <?php } ?>
                             <p class="clearfix mt5"></p>
                             <a href="<?php echo APP_FURI; ?>&do=<?php echo admincp::$APP_DO; ?>_uninstall&sid=<?php echo $sid;?>&id=<?php echo $appconf['appid'];?>"
@@ -183,9 +183,9 @@ function uninstall($msg,$a) {
                             target="iPHP_FRAME" class="btn btn-primary install-btn">
                             <i class="fa fa-download"></i>
                             <?php if($value['premium']){?>
-                            付费安装
+                           Платная установка
                             <?php }else{ ?>
-                            现在安装
+                            Установить
                             <?php } ?>
                           </a>
                           <?php } ?>
@@ -193,10 +193,10 @@ function uninstall($msg,$a) {
                           <?php if($value['premium']){?>
                           <li class="premium">
                             <?php if($value['coupon']){?>
-                            <span class="label label-inverse"><del>原价:<i class="fa fa-rmb"></i> <?php echo $value['price'];?></del></span>
-                            <span class="label label-warning">优惠价:<i class="fa fa-rmb"></i> <?php echo $value['coupon'];?></span>
+                            <span class="label label-inverse"><del> Цена:<i class="fa fa-rmb"></i> <?php echo $value['price'];?></del></span>
+                            <span class="label label-warning"> Специальная цена:<i class="fa fa-rmb"></i> <?php echo $value['coupon'];?></span>
                             <?php }else{ ?>
-                            <span class="label label-success">价格:<i class="fa fa-rmb"></i> <?php echo $value['price'];?></span>
+                            <span class="label label-success"> Цена:<i class="fa fa-rmb"></i> <?php echo $value['price'];?></span>
                             <?php } ?>
                             </li>
                           <?php } ?>
@@ -209,9 +209,9 @@ function uninstall($msg,$a) {
                       </ul>
                   </div>
                   <div class="desc column-description">
-                      <p><?php echo csubstr($value['description'],40,'...');?></p>
+                      <p><?php echo csubstr($value['description'],80,'...');?></p>
                       <p class="authors">
-                        <cite>由<a href="<?php echo $value['website']?:'javascript:;';?>" target="_blank"><?php echo $value['author'];?></a>提供</cite>
+                        <cite>由<a href="<?php echo $value['website']?:'javascript:;';?>" target="_blank"><?php echo $value['author'];?></a>Поддержка</cite>
                         <?php if($appconf && $value['qq']){?>
                         <cite>QQ:<?php echo $value['qq'];?></cite>
                         <?php } ?>
@@ -228,12 +228,12 @@ function uninstall($msg,$a) {
                   </div>
                   <div class="column-updated">
                       <?php if($appconf['git_time']){?>
-                      <strong>安装时间:</strong> <?php echo format_date($appconf['git_time'],'Y-m-d H:i');?>
+                      <strong>Время установки:</strong> <?php echo format_date($appconf['git_time'],'Y-m-d H:i');?>
                       <div class="clearfix"></div>
                       <?php } ?>
-                      <strong>最近更新:</strong> <?php echo format_date($value['git_time'],'Y-m-d H:i');?>
+                      <strong>Последнее обновление:</strong> <?php echo format_date($value['git_time'],'Y-m-d H:i');?>
                   </div>
-                  <div class="column-downloaded"><?php echo $value['install'];?>个安装</div>
+                  <div class="column-downloaded"><?php echo $value['install'];?> установок</div>
                   <div class="column-compatibility">
                       <?php $compatible ="该{$title}<strong>兼容</strong>于您当前使用的".iPHP_APP."版本"; ?>
                       <?php if($value['iCMS_VERSION']){?>
@@ -252,7 +252,7 @@ function uninstall($msg,$a) {
                   <?php if($value['iCMS_GIT_TIME']){?>
                   <div class="column-compatibility">
                         <?php if(GIT_TIME<$value['iCMS_GIT_TIME']){?>
-                          <span class="compatibility-untested"><i class="fa fa-times"></i><strong>要求</strong>[git:<?php echo get_date($value['iCMS_GIT_TIME'],'Y-m-d H:i');?>]及之后的开发版本</span>
+                          <span class="compatibility-untested"><i class="fa fa-times"></i><strong>要求</strong>[git:<?php echo get_date($value['iCMS_GIT_TIME'],'Y-m-d H:i');?>] И последующие версии разработки</span>
                         <?php } ?>
                   </div>
                   <?php } ?>

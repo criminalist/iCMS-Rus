@@ -32,7 +32,7 @@ class forms_zip {
         if($setup_msg===true){
             $msg.= self::msg('表单数据安装完成',true);
         }else{
-            return self::msg($setup_msg.'安装出错',false);
+            return self::msg($setup_msg.'Установка завершилась с ошибкой',false);
         }
         //创建表单表
         if(self::setup_table($archive_files)){

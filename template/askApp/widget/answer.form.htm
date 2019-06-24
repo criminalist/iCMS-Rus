@@ -1,0 +1,31 @@
+<div id="askApp-answer-form">
+    <div i="profile" class="profile">
+        <!--{include file="iCMS://user/profile.menu.htm"}-->
+    </div>
+    <div i="login" class="passport">
+        <a href="<!--{iCMS:router url='user:login'}-->" title="登录"><i class="fa fa-user"></i> 登录</a>
+        <a href="<!--{iCMS:router url='user:register'}-->" target="_blank"><i class="fa fa-heart"></i> 注册</a>
+    </div>
+    <div class="alert alert-warning" role="alert">
+        <i class="fa fa-warning "></i> 请自觉遵守互联网相关的政策法规，严禁发布色情、暴力、反动的言论！
+    </div>
+    <div class="ask-editor">
+        <div class="clearfix mb10"></div>
+        <textarea i="ask_answer_content" class="form-control ask_answer_content" placeholder="写下你的评论…"></textarea>
+        <a name="_ask_anchor"></a>
+    </div>
+    <div class="clearfix"></div>
+    <div class="ask-command">
+        <div class="ask-seccode">
+            <label for="seccode" class="control-label">验证码：</label>
+            <input type="text" maxlength="4" i="ask_answer_seccode" class="seccode form-control" id="seccode" placeholder="请输入验证码">
+            <!--{iCMS:public:seccode}-->
+        </div>
+        <input i="ask_answer_id" type="hidden" value="0" />
+        <input i="ask_answer_iid" type="hidden" value="<!--{$ask.id}-->" />
+        <input i="ask_answer_auth" type="hidden" value="<!--{$user_cookie.userid|auth_encode}-->" />
+        <button i="ask_answer_add" class="btn btn-primary ask_answer_add" type="submit"><i class="fa fa-check"></i> 发 布</button>
+        <a i="ask_answer_cancel" href="javascript:;" class="ask_answer_cancel">取 消</a>
+    </div>
+    <div class="clearfix mb10"></div>
+</div>

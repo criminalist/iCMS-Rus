@@ -1,0 +1,67 @@
+<div class="answer-item" data-id="<!--{$ask_answer.id}-->">
+    <a title="<!--{$ask_answer.user.name}-->" i="ucard:<!--{$ask_answer.userid}-->" class="askApp-link-avatar" href="<!--{$ask_answer.user.url}-->">
+        <img src="<!--{$ask_answer.user.avatar}-->" class="askApp-img-avatar" onerror="iUSER.NOAVATAR(this);">
+    </a>
+    <div class="askApp-content-wrap">
+        <div class="askApp-content-hd">
+            <a i="ucard:<!--{$ask_answer.userid}-->" href="<!--{$ask_answer.user.url}-->" target="_blank" class="zg-link">
+                <!--{$ask_answer.user.name}-->
+            </a>
+            <!--{if $ask_answer.userid == $ask.userid}-->
+            <span class="desc">（楼主）</span>
+            <!--{/if}-->
+            <span class="text-num">
+            <em><!--{$ask_answer.lou}--></em>
+            <em>楼</em>
+            </span>
+        </div>
+        <div class="askApp-content">
+            <!--{if $ask_answer.title}-->
+            <!--{if $ask_answer.lou=="1"}-->
+            <h1><!--{$ask_answer.title}--></h1>
+            <!--{else}-->
+            <b><!--{$ask_answer.title}--></b>
+            <!--{/if}-->
+            <div class="clearfix mt5"></div>
+            <!--{/if}-->
+            <div class="article-content">
+                <!--{$ask_answer.content|markdown}-->
+            </div>
+        </div>
+        <div class="askApp-content-ft" data-param='<!--{$ask_answer.param|json_encode}-->'>
+            <span class="date">
+                <!--{if $ask_answer.pubdate==$ask_answer.postime}-->
+                <span>发布于 <!--{$ask_answer.postime|format_date}--></span>
+                <!--{else}-->
+                <span i="tip:发布于<!--{$ask_answer.postime|date:"Y-m-d"}-->">
+                编辑于 <!--{$ask_answer.pubdate|date:"Y-m-d"}-->
+                </span>
+                <!--{/if}-->
+            </span>
+            <a href="javascript:;" i="ask_answer_up">
+                <span i="ask_answer_up_label" class="label label-info <!--{if !$ask_answer.good}-->hide<!--{/if}-->">
+                    <i class="fa fa-thumbs-up"></i>
+                    <em i="ask_answer_up_num"><!--{$ask_answer.good}--></em>
+                    <em>赞</em>
+                </span>
+            </a>
+            <a href="javascript:;" i="ask_answer_reply" class="askApp-op-link">
+                <i class="iCMS_icon ask-reply-icon"></i>回复
+            </a>
+            <a href="javascript:;" i="ask_answer_up" class="askApp-op-link">
+                <i class="iCMS_icon ask-like-icon"></i>赞
+            </a>
+            <!--{if $ask_answer.userid == $user_cookie.userid}-->
+            <a href="javascript:;" i="ask_answer_edit" class="askApp-op-link">
+                <i class="iCMS_icon ask-edit-icon"></i>编辑
+            </a>
+            <a href="javascript:;" i="ask_answer_delete" class="askApp-op-link">
+                <i class="iCMS_icon ask-delete-icon"></i>删除
+            </a>
+            <!--{/if}-->
+            <a href="javascript:;" i="report" class="askApp-op-link" data-param='{"appid":"<!--{$iCMS.APPID.ASK}-->"}'>
+                <i class="iCMS_icon ask-report-icon"></i>举报
+            </a>
+        </div>
+    </div>
+</div>

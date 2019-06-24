@@ -6,12 +6,12 @@
   "homepage": "https://www.icmsdev.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/idreamsoft/iCMS"
+    "url": "https://github.com/criminalist/iCMS-Rus"
   },
   "author": {
     "name": "icmsdev",
     "email": "master@icmsdev.com",
-    "url": "https://github.com/idreamsoft"
+    "url": "https://github.com/criminalist/"
   },
   "keywords": [
     "iCMS",
@@ -21,7 +21,7 @@
   ],
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/idreamsoft/iCMS/issues"
+    "url": "https://github.com/criminalist/iCMS-Rus/issues"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

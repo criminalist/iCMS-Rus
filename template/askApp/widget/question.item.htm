@@ -1,0 +1,27 @@
+<div class="askApp-question-item">
+    <a class="question-item-object" href="<!--{$ask_list.user.url}-->" title="<!--{$ask_list.user.name}-->" i="ucard:<!--{$ask_list.userid}-->">
+        <img src="<!--{$ask_list.user.avatar}-->" class="avatar" onerror="iUSER.NOAVATAR(this);">
+    </a>
+    <div class="question-item-content">
+        <a class="question-item-link" href="<!--{$ask_list.url}-->">
+            <h3 class="question-item-title"><!--{$ask_list.title}--></h3>
+        </a>
+        <div class="question-item-info">最后回复:
+            <span class="question-item-lastposter">
+            <a href="<!--{$ask_list.poster.url}-->" title="<!--{$ask_list.poster.name}-->" i="ucard:<!--{$ask_list.poster.uid}-->">
+                <!--{$ask_list.poster.name}-->
+            </a>
+            </span>
+            <span class="question-item-date">
+            <time><!--{$ask_list.lastpost|date:'Y/m/d H:i'}--></time>
+            </span>
+        </div>
+        <!--{if $ask_list.tags}-->
+        <span class="question-item-tags">[<!--{$ask_list.tags_link}-->]</span>
+        <!--{/if}-->
+        <span class="question-item-num">
+        <i class="fa fa-comments-o"></i> <!--{$ask_list.replies}-->
+        </span>
+        <div class="clearfix"></div>
+    </div>
+</div>

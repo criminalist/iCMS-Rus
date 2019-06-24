@@ -1,0 +1,120 @@
+/* ===========askAppCategory=========== */
+.askAppCategory .badge { border-radius: 4px; }
+.badge-red { background-color: rgba(249, 0, 0, 0.76); }
+.badge-blue { background-color: rgb(33, 150, 243); }
+.badge-green { background-color: rgb(76, 175, 80); }
+.badge-purple { background-color: rgb(121, 134, 203); }
+.askApp-category-item { padding: 8px 0 8px 0px; }
+.askApp-category-item a { color: #7088a9; }
+.askApp-category-item a:hover { text-decoration: none; }
+.askApp-category-item span { margin-right: 10px; }
+
+/* ===========askApp=========== */
+.askAppCategory .body-wrap,.askApp .body-wrap { padding-top: 0px;background-color: #fff; }
+.askApp-form { border-top: 1px solid #eaeaea; }
+
+/* ====================== */
+
+/* ==========ask.htm=========== */
+
+.askApp-answer-wrap { padding: 0px; margin-right: 20px; }
+.askApp-answer-wrap h1 { font: bold 34px/40px "microsoft yahei", Arial; color: #333; margin: 20px 0; text-align: left; }
+.askApp-answer-wrap .askApp-answer-pagenav { margin: 30px auto 10px; display: block; }
+.askApp-answer-wrap .askApp-answer-pagenav a, .askApp-answer-wrap .askApp-answer-pagenav span { padding: 6px 15px; font-size: 14px; }
+.askApp-answer-wrap .askApp-answer-pagenav { position: relative; margin: 0 auto; padding: 10px; background: #f3f3f3; text-align: center; font-size: 14px; }
+.askApp-answer-wrap .askApp-answer-pagenav a { color: #666; }
+.askApp-answer-list .answer-item { margin: 0px; position: relative; padding: 8px 10px; border-radius: 5px; }
+.askApp-answer-list .answer-item:not(:last-child) { border-bottom: 1px solid #e8ecf3 }
+.answer-item .askApp-link-avatar { float: left; margin: 4px 0 0 }
+.answer-item .askApp-img-avatar { width: 64px; height: 64px; border-radius: 50%; }
+.answer-item .askApp-content-hd, .answer-item .askApp-content-ft { color: #999; }
+.answer-item .askApp-content-hd .desc, .answer-item .askApp-content-ft .desc { font-size: 14px; }
+.answer-item .label em { font-style: normal; }
+.answer-item .text-num { float: right; margin-top: -1px; }
+.answer-item .text-num>span, .answer-item .text-num>em { font-style: normal; vertical-align: -2px; font-size: 12px; }
+.answer-item .askApp-content-wrap { margin: 0 0 0 80px; }
+.answer-item .askApp-content { font-size: 14px; line-height: 1.7; min-height: 48px; margin: 8px 0px; color: #333; }
+.answer-item .askApp-content img { max-width: 90%; }
+.answer-item .date { margin-top: 1em; font-size: 14px; color: #8590a6; }
+.answer-item .askApp-content-hd .zg-link { color: #111; font-weight: bold; font-size: 14px; }
+.askApp-op-link { margin-left: .5em; color: #999; font-size: 12px; visibility: hidden; }
+.answer-item:hover .askApp-op-link { visibility: visible }
+a.askApp-op-link:hover { text-decoration: none; }
+
+/* ===========icon=========== */
+.ask-reply-icon { background-position: -250px -92px }
+.ask-like-icon { background-position: -222px -92px }
+.ask-report-icon { background-position: -71px -183px }
+.ask-edit-icon { background-position: -120px -49px }
+.ask-delete-icon { background-position: -235px -92px; }
+a:hover>.ask-reply-icon { background-position: -250px -79px }
+a:hover>.ask-like-icon { background-position: -222px -79px }
+a:hover>.ask-report-icon { background-position: -71px -170px }
+a:hover>.ask-edit-icon { background-position: -133px -49px }
+a:hover>.ask-delete-icon { background-position: -235px -79px }
+.askApp-op-link>.iCMS_icon { margin-right: 5px; width: 11px; height: 11px; vertical-align: -1px }
+
+/* ===========askApp-answer-form =========== */
+#askApp-answer-form { margin: 10px auto; width: 90%; }
+#askApp-answer-form .profile-wrap .avatar { margin-top: 5px; }
+#askApp-answer-form .alert { margin: 10px 0px; padding: 4px 10px; font-size: 12px }
+#askApp-answer-form .profile { display: none }
+#askApp-answer-form .login { margin: 10px 0px }
+#askApp-answer-form .ask-editor { }
+#askApp-answer-form .ask_answer_content { width: 100%; height: 120px; background: url(../img/iCMS.logo.bg.png) no-repeat center center; font-size: 14px; }
+#askApp-answer-form .ask-seccode { float: left; overflow: hidden; margin-top: 8px; line-height: 30px; }
+#askApp-answer-form .ask-seccode label, #askApp-answer-form .ask-seccode input, #askApp-answer-form .ask-seccode img, #askApp-answer-form .ask-seccode a { float: left; display: inline-block; vertical-align: middle; }
+#askApp-answer-form .ask-seccode .seccode-img { margin-top: 2px; }
+#askApp-answer-form .ask-seccode .seccode-text { color: #999; margin-left: 5px; font-size: 12px; }
+#askApp-answer-form .ask-command { text-align: right }
+#askApp-answer-form .ask-command .ask_answer_add { float: right; margin: 8px 0px 8px 8px; padding: 5px 10px; font-size: 18px; width: 90px; height: 36px; }
+#askApp-answer-form .ask-command .ask_answer_cancel { float: right; margin: 15px 15px 0 0; cursor: pointer }
+
+/* ===========askApp-question-item =========== */
+.askApp-question-item { padding: 15px 10px; border-radius: 5px; }
+.askApp-question-item * { margin: 0; padding: 0; border: 0; outline: 0;}
+.askApp-question-item:hover { background: #e8ecf3; }
+.question-item-content { color: #7088a9; position: relative; }
+.question-item-link { display: block; color: #444; text-decoration: none; line-height: 28px; }
+.question-item-link:hover { color: #009cf4; }
+.question-item-title { font-size: 18px; font-weight: 500; }
+.question-item-date { color: #999; float: right; font-size: 0.9em; }
+.question-item-num { color: #7088a9; float: right; font-size: 0.9em; }
+.question-item-object { float: left; margin-right: 15px; }
+.question-item-object .avatar { width: 36px; height: 36px; border-radius: 50%; }
+.question-item-link { line-height: 36px; }
+.question-item-info { float: left; color: #7088a9; }
+.question-item-tags { /*position: absolute; right: 0px; top: 0px;*/ color: #7088a9; margin-left: 5px; }
+.question-item-tags a { margin: 0px 5px; font-size: 0.8em; }
+.question-item-lastposter { margin-right: 10px; }
+
+/* ========iCMS_QUESTION_DIALOG========= */
+.iCMS_QUESTION_DIALOG { width: 100%; text-align: left; }
+@media screen and (min-width:769px){
+    .iCMS_QUESTION_DIALOG { width: 600px; text-align: left; }
+}
+.iCMS_QUESTION_DIALOG .alert { padding: 8px; margin-bottom: 10px; }
+.iCMS_QUESTION_DIALOG .ask_question_content { width: 100%; height: 120px; background: url(../img/iCMS.logo.bg.png) no-repeat center center; font-size: 14px; }
+.iCMS_QUESTION_DIALOG .ask-seccode { float: left; overflow: hidden; margin-top: 8px; line-height: 30px; }
+.iCMS_QUESTION_DIALOG .ask-seccode label, .iCMS_QUESTION_DIALOG .ask-seccode input, .iCMS_QUESTION_DIALOG .ask-seccode img, .iCMS_QUESTION_DIALOG .ask-seccode a { float: left; display: inline-block; vertical-align: middle; }
+.iCMS_QUESTION_DIALOG .ask-seccode .seccode-img { margin-top: 2px; }
+.iCMS_QUESTION_DIALOG .ask-seccode .seccode-text { color: #999; margin-left: 5px; font-size: 12px; }
+.iCMS_QUESTION_DIALOG .ask-command { text-align: right }
+.iCMS_QUESTION_DIALOG .ask-command .ask_question_add { float: right; margin: 8px 0px 8px 8px; padding: 5px 10px; font-size: 18px; width: 90px; height: 36px; }
+.iCMS_QUESTION_DIALOG .ask-command .ask_question_cancel { float: right; margin: 15px 15px 0 0; cursor: pointer }
+.iCMS_QUESTION_DIALOG .ask_question_cid { float: left; width: 25%; border-right: 0px; border-radius: 4px 0px 0px 4px; }
+.iCMS_QUESTION_DIALOG .ask_question_title { float: left; width: 75%; border-radius: 0px 4px 4px 0px; }
+.bootstrap-select button.btn-default:active, .bootstrap-select button.btn-default.active, .open>button.dropdown-toggle.btn-default { color: #555 !important; background-color: #fff !important; border-color: #ccc !important; }
+.bootstrap-select button.btn-default:hover { background-color: #fff !important; border-color: #ccc !important; }
+.bootstrap-select button.btn:active, .bootstrap-select button.btn.active { -webkit-box-shadow: none; box-shadow: none; }
+.bootstrap-select button.dropdown-toggle:focus { outline: none !important; }
+.bootstrap-select.btn-group .dropdown-menu .notify { color: #a94442; background-color: #f2dede !important; border-color: #ebccd1 !important; box-shadow: none !important; -webkit-box-shadow: none !important; }
+.btn-group.open button.dropdown-toggle { -webkit-box-shadow: none; box-shadow: none; }
+
+.iCMS_user_link{color: #337ab7;}
+.tag-wrap blockquote { padding: 10px 15px; position: relative;    /* border: 1px solid #D6DBDF; */ border-left: 8px solid #D6DBDF; background: none repeat scroll 0 0 rgba(102, 128, 153, .05); }
+
+.iCMS_SIMPLEMDE_DIALOG{text-align: left;}
+.iCMS_SIMPLEMDE_DIALOG .SIMPLEMDE_UPLOAD_INPUT{height: 42px;line-height: 42px;}
+.iCMS_QUESTION_DIALOG .CodeMirror{min-height: 160px;height: 150px;}
+.iCMS_QUESTION_DIALOG .CodeMirror-scroll {min-height: 140px;}

@@ -143,12 +143,12 @@ class patch {
 				$fp = iPATH . $file['filename'];
 				if (file_exists($fp) && !@is_writable($fp)) {
 					$update = false;
-					$msg .= $fp . ' 文件无写权限<iCMS>';
+					$msg .= $fp . ' Нет прав для записи файла<iCMS>';
 				}
 			}
 		}
 		if (!$update) {
-			$msg .= '权限测试无法完成<iCMS>';
+			$msg .= 'Проверка прав доступа завершилась с ошибкой<iCMS>';
 			$msg .= '请设置好上面提示的文件写权限<iCMS>';
 			$msg .= '然后重新更新<iCMS>';
 			self::$upgrade = false;
@@ -157,7 +157,7 @@ class patch {
 		}
 		$msg .= '权限测试通过<iCMS>';
 		//测试通过!
-		$msg .= '备份目录创建完成<iCMS>';
+		$msg .= 'Резервное копирование каталога завершено<iCMS>';
 		$bakdir = iPATH.'.backup/patch.'.self::$release;
 		iFS::mkdir($bakdir);
 
@@ -182,7 +182,7 @@ class patch {
 				$bfp = $bakdir . '/' . $file['filename'];
 				iFS::mkdir(dirname($bfp));
 				if (iFS::ex($fp)) {
-					$msg .= '备份 [' . $fp . '] 文件 到 [' . $bfp . ']<iCMS>';
+					$msg .= 'Резервное копирование [' . $fp . '] файлов в [' . $bfp . ']<iCMS>';
 					@rename($fp, $bfp); //备份旧文件
 				}
 				$msg .= '更新 [' . $fp . '] 文件<iCMS>';

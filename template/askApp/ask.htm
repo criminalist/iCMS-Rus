@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+        <!--{if $ask.chapter && $ask.subtitle}-->
+        <!--{$ask.subtitle}-->_
+        <!--{/if}-->
+        <!--{$ask.title}-->_
+        <!--{$category.name}-->_
+        <!--{$site.title}-->_
+        <!--{$site.seotitle}-->
+        </title>
+        <meta name="keywords" content="<!--{$ask.keywords}-->" />
+        <meta name="description" content="<!--{$ask.description}-->" />
+        <meta name="mobile-agent" content="format=xhtml;url=<!--{$ask.iurl.mobile.url}-->">
+        <meta name="mobile-agent" content="format=html5;url=<!--{$ask.iurl.mobile.url}-->">
+        <link rel="alternate" media="only screen and(max-width: 640px)" href="<!--{$ask.iurl.mobile.url}-->">
+        <!--{iCMS:public:ui}-->
+        <!--{iCMS:user:cookie}-->
+    </head>
+
+    <body class="askApp" i="<!--{$iCMS.APP.NAME}-->">
+        <!--{include file="./header.htm"}-->
+        <div class="body clearfix">
+            <div class="body-wrap r5">
+                <div class="main-col">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="<!--{$site.url}-->">首页</a>
+                        </li>
+                        <!--{foreach value="catenav" from="$category.navArray"}-->
+                        <li>
+                            <a href='<!--{$catenav.url}-->'>
+                                <!--{$catenav.name}-->
+                            </a>
+                        </li>
+                        <!--{/foreach}-->
+                        <li class="active">
+                            <!--{$ask.link}-->
+                        </li>
+                    </ul>
+                    <div class="askApp-answer-wrap">
+                        <div class="askApp-answer-list">
+                            <!--{iCMS:ask:answer loop="true" page="true" row="5"}-->
+                            <!--{include file="/askApp/widget/answer.item.htm"}-->
+                            <!--{/iCMS}-->
+                        </div>
+                        <div class="clearfix"></div>
+                        <!--{if $iCMS.PAGE.NAV}-->
+                        <div class="askApp-answer-pagenav">
+                            <div class="pagination">
+                                <!--{$iCMS.PAGE.NAV}-->
+                            </div>
+                        </div>
+                        <!--{/if}-->
+                        <div class="clearfix mb10"></div>
+                        <div class="askApp-form">
+                            <!--{include file="/askApp/widget/answer.form.htm"}-->
+                        </div>
+
+                        <div class="clearfix mb10"></div>
+                        <div class="share">
+                            <div class="share-icon">
+                                <div class="t">分享到</div>
+                                <div class="bdsharebuttonbox" id="share-bd">
+                                    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                                    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                                    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+                                    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                                    <a href="#" class="bds_more" data-cmd="more"></a>
+                                </div>
+                            </div>
+                            <script>
+                            window._bd_share_config = {
+                                common: {
+                                    bdText: '<!--{$ask.title}-->',
+                                    bdDesc: '<!--{$ask.description|html2txt}-->',
+                                    bdUrl: '<!--{$ask.url}-->',
+                                    bdPic: '<!--{$ask.pic.url}-->'
+                                },
+                                share: [{
+                                    "bdSize": 16
+                                }]
+                            }
+                            //以下为js加载部分
+                            with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=' + ~(-new Date() / 36e5)];
+                            </script>
+
+                        </div>
+                    </div>
+                    <div class="clearfix mb10"></div>
+                </div>
+                <div class="side-col">
+                    <div class="clearfix mb10"></div>
+                    <div class="askBtn">
+                        <button type="button" class="btn btn-success btn-lg" i="ask_answer_reply">回复</button>
+                        <button type="button" class="btn btn-primary btn-lg" i="ask_add_question">提问</button>
+                    </div>
+                    <div class="mod-box">
+                        <div class="mod-title">
+                            <h3 class="mod-txt">热门问题</h3>
+                        </div>
+                        <div class="mod-content">
+                            <ul>
+                                <!--{iCMS:ask:list loop="true" orderby="hot" sub="all" row="30" cid="$category.cid"}-->
+                                <li>
+                                    <a href="<!--{$ask_list.url}-->" target="_blank">
+                                        <!--{$ask_list.title}-->
+                                    </a>
+                                </li>
+                                <!--{/iCMS}-->
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="clearfix mb10"></div>
+            </div>
+            <div class="clearfix mb20"></div>
+        </div>
+        <!--{include file="./footer.htm"}-->
+        <!--{iCMS:ask:ui}-->
+        <script src="<!--{$ask.hits.script}-->"></script>
+    </body>
+</html>

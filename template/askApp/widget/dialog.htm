@@ -1,0 +1,78 @@
+<div id="iCMS-SIMPLEMDE-DIALOG" style="display:none;width:450px;">
+  <div class="iCMS_SIMPLEMDE_DIALOG">
+    <p>请输入图片/附件地址</p>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-file-image-o fa-2x"></i></span>
+      <input i="SIMPLEMDE_UPLOAD_INPUT" class="form-control SIMPLEMDE_UPLOAD_INPUT" type="text" placeholder="http://example.com/images/diagram.jpg &quot;可选标题&quot;">
+    </div>
+    <div class="clearfix mb20"></div>
+    <button i="SIMPLEMDE_UPLOAD_BTN" type="button" class="btn btn-success btn-lg"><i class="fa fa-upload"></i> 上传本地图片/附件...</button>
+    <form class="hide" i="SIMPLEMDE_UPLOAD_FORM" role="form" method="post" enctype="multipart/form-data" target="SIMPLEMDE_UPLOAD_FRAME"
+          action="<!--{iCMS:router url='user' query='do=uploadpic&callback=SIMPLEMDE_UPLOAD_INPUT'}-->">
+        <input type="file" name="upfile">
+    </form>
+    <iframe class="hide" id="SIMPLEMDE_UPLOAD_FRAME" name="SIMPLEMDE_UPLOAD_FRAME"></iframe>
+  </div>
+</div>
+<!---->
+<div id="iCMS-QUESTION-DIALOG" style="display:none;">
+  <div class="iCMS_QUESTION_DIALOG">
+    <div class="alert alert-warning" role="alert">
+      <i class="fa fa-warning "></i> 请自觉遵守互联网相关的政策法规，严禁发布色情、暴力、反动的言论！
+    </div>
+    <div class="form-group">
+      <label for="ask_title" class="control-label">主题</label>
+      <div class="clearfix"></div>
+      <select i="ask_question_cid" class="form-control ask_question_cid">
+        <option value="0"> == 请选择分类 == </option>
+        <!--{iCMS:category:list loop="true" row="15" stype="sub" cid="$category.rootid|default:$category.cid"}-->
+        <option value="<!--{$category_list.cid}-->"><!--{$category_list.name}--></option>
+        <!--{/iCMS}-->
+      </select>
+      <input i="ask_question_title" class="form-control ask_question_title" id="ask_question_title" type="text" value="" placeholder="内容的主题">
+    </div>
+    <div class="clearfix mb5"></div>
+    <div class="form-group">
+      <label for="ask_tags" class="control-label">标签</label>
+      <select i="ask_question_tags" class="form-control selectpicker" multiple title="请选择相关标签">
+        <optgroup label="请选择一个主标签" data-max-options="1">
+          <option data-subtext="PHP相关的问题">PHP问题</option>
+          <option data-subtext="数据库的问题">数据库问题</option>
+          <option data-subtext="iPHP框架的问题">iPHP框架</option>
+          <option data-subtext="二次开发的问题">iCMS二次开发</option>
+          <option data-subtext="与iCMS应用相关的问题">iCMS应用</option>
+          <option data-subtext="与iCMS模板相关的问题">iCMS模板</option>
+        </optgroup>
+        <optgroup label="最多可选择三个副标签" data-max-options="3">
+          <option data-subtext="服务器的配置相关问题">服务器</option>
+          <option data-subtext="iCMS的伪静态问题">伪静态</option>
+          <option data-subtext="iCMS的安装与配置相关问题">安装与配置</option>
+          <option data-subtext="iCMS的安全问题">安全问题</option>
+          <option data-subtext="iCMS的模板问题">模板问题</option>
+          <option data-subtext="分享iCMS的相关模板">模板分享</option>
+          <option data-subtext="该问题已经解决" data-content="<span class='label label-success'>已解决</span>">已解决</option>
+        </optgroup>
+      </select>
+    </div>
+    <div class="clearfix"></div>
+    <div class="form-group">
+      <label for="ask_question_content" class="control-label">内容</label>
+      <textarea i="ask_question_content" id="ask_question_content" class="form-control ask_question_content" placeholder="写下你的问题…"></textarea>
+    </div>
+    <div class="clearfix"></div>
+    <div class="ask-command">
+      <div class="ask-seccode">
+        <label for="seccode" class="control-label">验证码：</label>
+        <input type="text" maxlength="4" i="ask_question_seccode" class="seccode form-control" id="seccode" placeholder="请输入验证码">
+        <!--{iCMS:public:seccode}-->
+      </div>
+      <input i="ask_question_id" type="hidden" value="0" />
+      <input i="ask_question__cid" type="hidden" value="" />
+      <input i="ask_question__tags" type="hidden" value="" />
+      <input i="ask_question_auth" type="hidden" value="<!--{$user_cookie.userid|auth_encode}-->" />
+      <button i="ask_question_add" class="btn btn-primary ask_question_add" type="submit"><i class="fa fa-check"></i> 发 布</button>
+      <a i="ask_question_cancel" href="javascript:;" class="ask_question_cancel">取 消</a>
+    </div>
+    <div class="clearfix mb10"></div>
+  </div>
+</div>

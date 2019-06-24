@@ -23,11 +23,11 @@ class apps_store {
             $zip_name = basename($url);
             $zip_name = strstr($zip_name, '?', true);
         }
-        self::$zip_file = $cache_dir . $zip_name; //临时文件
+        self::$zip_file = $cache_dir . $zip_name;
 
-        $msg = self::msg('正在下载 [' . $name . '] 安装包',true);
+        $msg = self::msg('Загрузка установочного пакета ['.$name.']',true);
         if (iFS::ex(self::$zip_file) && (filemtime(self::$zip_file)-time()<3600)) {
-            $msg.= self::msg('安装包已存在',true);
+            $msg.= self::msg('Установочный пакет уже существует',true);
             self::$success = true;
             return $msg;
         }
@@ -37,14 +37,14 @@ class apps_store {
             if($array){
                 $msg.= self::msg($array['msg'],false);
             }else{
-                $msg.= self::msg('下载出错误',false);
+                $msg.= self::msg('Ошибка загрузки установочного пакета',false);
             }
         }else if ($data) {
-            iFS::write(self::$zip_file, $data); //下载更新包
-            $msg.= self::msg('安装包下载完成',true);
+            iFS::write(self::$zip_file, $data);
+            $msg.= self::msg('Загрузка установочного пакета завершена',true);
             self::$success = true;
         }else{
-            $msg.= self::msg('下载出错误',false);
+            $msg.= self::msg('Ошибка загрузки установочного пакета',false);
         }
         return $msg;
     }
@@ -67,7 +67,7 @@ class apps_store {
             $msg.= self::setup_install($app);
         }
 
-        $msg.= self::msg('安装完成',true);
+        $msg.= self::msg('Установка завершена',true);
         self::$success = true;
         return $msg;
     }
@@ -84,7 +84,7 @@ class apps_store {
             }
         }
         self::$test OR iFS::rm(self::$zip_file);
-        $msg.= self::msg('模板安装完成',true);
+        $msg.= self::msg('Установка шаблона завершена',true);
         self::$success = true;
         return $msg;
     }
@@ -94,22 +94,22 @@ class apps_store {
 
         $msg = null;
         $files = self::setup_zip($msg);
-        //安装应用数据
+        
         $files && $setup_msg = self::setup_app_data($files,$app);
 
         if($setup_msg===true){
-            $msg.= self::msg('应用数据安装完成',true);
+            $msg.= self::msg('Установка приложения завершена',true);
         }else{
             if($setup_msg===false){
             }else{
                 if(!self::$is_update){
-                    return self::msg($setup_msg.'安装出错',false);
+                    return self::msg($setup_msg.'Установка завершилась с ошибкой',false);
                 }
             }
         }
-        //创建应用表
+        
         if(self::setup_app_table($files,$app)){
-            $msg.= self::msg('应用表创建完成',true);
+            $msg.= self::msg('Создание таблицы завершено',true);
         }
 
         if (count($files)>0) {
@@ -127,14 +127,14 @@ class apps_store {
         }else{
             $msg.= self::setup_install($app);
         }
-        apps::cache() && $msg.= self::msg('更新应用缓存',true);
-        menu::cache() && $msg.= self::msg('更新菜单缓存',true);
+        apps::cache() && $msg.= self::msg('Кеш приложения обновлен',true);
+        menu::cache() && $msg.= self::msg('Кеш меню обновлен',true);
         $msg.= self::msg('Установка приложения завершена',true);
         self::$success = true;
         return $msg;
     }
     public static function setup_template_file(&$archive_files,$dir){
-        $msg = self::msg('正在对安装包进行解压缩',true);
+        $msg = self::msg('Распаковка установочного пакета',true);
         $msg.= self::msg('解压完成',true);
         $msg.= self::msg('开始测试目录权限',true);
 
@@ -143,7 +143,7 @@ class apps_store {
         }
 
         if (!iFS::checkDir(iPHP_TPL_DIR)) {
-            return self::msg(iPHP_TPL_DIR . '目录无写权限',false);
+            return self::msg(iPHP_TPL_DIR . 'Нет прав на запись в каталог',false);
         }
 
         $ROOTPATH = self::rootpath('TPL');
@@ -152,7 +152,7 @@ class apps_store {
         $continue = self::extract_test($archive_files,$ROOTPATH,$msg);
 
         if (!$continue) {
-            $msg.= self::msg('权限测试无法完成',false);
+            $msg.= self::msg('Проверка прав доступа завершилась с ошибкой',false);
             $msg.= self::msg('请设置好上面提示的文件写权限',false);
             $msg.= self::msg('然后重新安装',false);
             return $msg;
@@ -181,9 +181,10 @@ class apps_store {
                     SELECT `id` FROM `#iCMS@__apps`
                     WHERE `app` ='".$array['app']."'
                 ");
+				//print_r ($array['app']);
                 if($check_app){
-                    $_msg = self::msg('检测应用是否存在',false);
-                    return self::msg($_msg.'Приложение уже существует',false);
+                    $_msg = self::msg('Проверяем существует ли приложение',false);
+                    return self::msg($_msg.'Приложение уже существует ',false);
                 }
 
                 if($array['table']){
@@ -224,7 +225,7 @@ class apps_store {
         return false;
     }
     public static function setup_app_file(&$archive_files,$app){
-        $msg = self::msg('正在对安装包进行解压缩',true);
+        $msg = self::msg('Распаковка установочного пакета',true);
         $msg.= self::msg('解压完成',true);
         $msg.= self::msg('开始测试目录权限',true);
 
@@ -233,7 +234,7 @@ class apps_store {
         }
 
         if (!iFS::checkDir(iPHP_APP_DIR)) {
-            return self::msg(iPHP_APP_DIR . '目录无写权限',false);
+            return self::msg(iPHP_APP_DIR . 'Нет прав на запись в каталог',false);
         }
 
         if (!iFS::checkDir(iPHP_TPL_DIR)) {
@@ -241,10 +242,10 @@ class apps_store {
         }
 
         $ROOTPATH = self::rootpath();
-        //测试目录文件是否写
+        
         $continue = self::extract_test($archive_files,$ROOTPATH,$msg);
         if (!$continue) {
-            $msg.= self::msg('权限测试无法完成',false);
+            $msg.= self::msg('Проверка прав доступа завершилась с ошибкой',false);
             $msg.= self::msg('请设置好上面提示的文件写权限',false);
             $msg.= self::msg('然后重新安装',false);
             return $msg;
@@ -282,7 +283,7 @@ class apps_store {
                     iFS::del($file);
                 }else{
                     $name = $app.'_'.str_replace(array('.php','.'), array('','_'), basename($file));
-                    $msg.= self::setup_exec($file,$name,'升级');
+                    $msg.= self::setup_exec($file,$name,'Обновление');
                 }
             }
         }
@@ -295,7 +296,7 @@ class apps_store {
             $zip = new PclZip($zip_file);
             if (false == ($archive_files = $zip->extract(PCLZIP_OPT_EXTRACT_AS_STRING))) {
                 iFS::rm($zip_file);
-                $msg = self::msg("ZIP包错误:".$zip->errorInfo(true),false);
+                $msg = self::msg("Ошибка распаковки архива ZIP:".$zip->errorInfo(true),false);
             }
 
             if (0 == count($archive_files)) {
@@ -312,7 +313,7 @@ class apps_store {
         is_file($path) OR $path = iPHP_APP_DIR.'/iCMS.'.$app.'.INSTALL.php';
         self::setup_update($app,'delete');
         if(is_file($path)){
-            return self::setup_exec($path,$app,'安装');
+            return self::setup_exec($path,$app,' установка');
         }
     }
     public static function setup_exec($file,$name,$title='升级') {
@@ -351,7 +352,7 @@ class apps_store {
     }
     public static function check_must($store){
       if(empty($store)){
-        iUI::alert('请求出错','js:1',10);
+        iUI::alert('Ошибка в запросе','js:1',10);
       }
       if(empty($store['code'])){
           iUI::alert($store['msg'],'js:1',10);
@@ -367,7 +368,7 @@ class apps_store {
     }
     public static function create_bakdir($a,&$msg){
         $bakdir = iPATH.'.backup/'.$a.'_'.date("Ymd");
-        iFS::mkdir($bakdir) && $msg.= self::msg('备份目录创建完成',true);
+        iFS::mkdir($bakdir) && $msg.= self::msg('Резервное копирование каталога завершено',true);
         return $bakdir;
     }
     public static function extract_test($archive_files,$ROOTPATH,&$msg){
@@ -377,13 +378,13 @@ class apps_store {
             $dp = $ROOTPATH .'/'.trim($folder,'/').'/';
             if (!iFS::checkdir($dp) && iFS::ex($dp)) {
                 $continue = false;
-                $msg .= self::msg($dp . '目录无写权限',false);
+                $msg .= self::msg($dp . 'Нет прав на запись в каталог',false);
             }
             if (empty($file['folder'])) {
                 $fp = $ROOTPATH .'/'. $file['filename'];
                 if (file_exists($fp) && !@is_writable($fp)) {
                     $continue = false;
-                    $msg.= self::msg($fp . '文件无写权限',false);
+                    $msg.= self::msg($fp . 'Нет прав для записи файла',false);
                 }
             }
         }
@@ -397,16 +398,16 @@ class apps_store {
 
             if (!iFS::ex($dp)) {
                 self::$test OR iFS::mkdir($dp);
-                $msg.= self::msg('创建文件夹 [' . $dp . ']',true);
+                $msg.= self::msg('Создание каталога [' . $dp . ']',true);
             }
             if (!$file['folder']) {
                 $fp = $ROOTPATH .'/'. $file['filename'];
                 if($bakdir){
                     $bfp = $bakdir . '/' . $file['filename'];
-                    iFS::backup($fp,$bfp) && $msg.= self::msg('备份 [' . $fp . '] 文件 到 [' . $bfp . ']',true);
+                    iFS::backup($fp,$bfp) && $msg.= self::msg('Резервное копирование [' . $fp . '] файлов в [' . $bfp . ']',true);
                 }
                 self::$test OR iFS::write($fp, $file['content']);
-                $msg.= self::msg('安装文件 [' . $fp . ']',true);
+                $msg.= self::msg('Установочный файл [' . $fp . ']',true);
             }
         }
         $msg = iSecurity::filter_path($msg);

@@ -241,7 +241,7 @@ class htmlAdmincp{
 		$offset    = $this->page*$perpage;
 		$rs        = iDB::all("SELECT `id` FROM `#iCMS@__article` {$whereSQL} order by {$orderby} LIMIT {$offset},{$perpage}");
 		$_count    = count($rs);
-		$msg       = "Всего <span class='label label-info'>{$total}</span>篇文章,将分成<span class='label label-info'>{$looptimes}</span>次完成<hr />开始执行第<span class='label label-info'>".($this->page+1)."</span>次生成,共<span class='label label-info'>{$_count}</span>篇<hr />";
+		$msg       = "Всего <span class='label label-info'>{$total}</span>篇文章,将分成<span class='label label-info'>{$looptimes}</span>次完成<hr />开始执行第<span class='label label-info'>".($this->page+1)."</span>次生成,共<span class='label label-info'>{$_count}</span> публикаций<hr />";
         for($i=0;$i<$_count;$i++){
 			self::Article($rs[$i]['id']);
 			$msg.= '<span class="label label-success">'.$rs[$i]['id'].' <i class="fa fa-check"></i></span> ';
