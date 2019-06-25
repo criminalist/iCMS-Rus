@@ -39,10 +39,10 @@ admincp::head(!isset($_GET['modal']));
                         <td><?php if($value['vip']) echo 'vip';?></td>
                         <td>
                             <?php if($value['status']=="1"){ ?>
-                            <a href="<?php echo $value['url']; ?>" class="btn btn-success btn-mini" target="_blank">查看</a>
+                            <a href="<?php echo $value['url']; ?>" class="btn btn-success btn-mini" target="_blank"> Просмотр </a>
                             <?php } ?>
-                            <a href="<?php echo APP_URI; ?>&do=add&id=<?php echo $id ; ?>&video_id=<?php echo $video_id; ?>" class="btn btn-primary btn-mini">编辑</a>
-                            <a href="<?php echo APP_FURI; ?>&do=del&id=<?php echo $id ; ?>&video_id=<?php echo $video_id; ?>" target="iPHP_FRAME" class="del btn btn-danger btn-mini" onclick="return confirm('确定要删除?');"/> Удалить</a>
+                            <a href="<?php echo APP_URI; ?>&do=add&id=<?php echo $id ; ?>&video_id=<?php echo $video_id; ?>" class="btn btn-primary btn-mini">Редактировать</a>
+                            <a href="<?php echo APP_FURI; ?>&do=del&id=<?php echo $id ; ?>&video_id=<?php echo $video_id; ?>" target="iPHP_FRAME" class="del btn btn-danger btn-mini" onclick="return confirm('Вы уверены, что хотите удалить?');"/> Удалить</a>
                         </td>
                     </tr>
                     <?php } ?>

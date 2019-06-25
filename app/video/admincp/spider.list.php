@@ -147,7 +147,7 @@ $(function(){
               <th><i class="fa fa-arrows-v"></i></th>
               <th>Заголовок</th>
               <th>分类</th>
-              <th>来源</th>
+              <th> Источник </th>
               <th>时间</th>
             </tr>
           </thead>

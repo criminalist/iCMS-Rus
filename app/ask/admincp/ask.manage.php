@@ -88,9 +88,9 @@ $(function(){
           <select name="status" id="status" class="chosen-select span3">
             <option value=""></option>
             <option value="all">所有状态</option>
-            <option value="0"> 草稿 [status='0']</option>
-            <option value="1"selected='selected'> 正常 [status='1']</option>
-            <option value="2"> 回收站 [status='2']</option>
+            <option value="0"> Черновик[status='0']</option>
+            <option value="1"selected='selected'> Опубликован [status='1']</option>
+            <option value="2"> Корзина [status='2']</option>
             <option value="3"> 待审核 [status='3']</option>
             <option value="4"> 未通过 [status='4']</option>
             <?php echo propAdmincp::get("status") ; ?>
@@ -197,7 +197,7 @@ $(function(){
               <a href="<?php echo APP_FURI; ?>&do=update&id=<?php echo $rs[$i]['id'] ; ?>&_args=status:1" class="btn btn-small tip" target="iPHP_FRAME" title="当前状态:关闭,点击可打开此问题"><i class="fa fa-play-circle"></i></a>
               <?php } ?>
               <a href="<?php echo APP_URI; ?>&do=add&id=<?php echo $rs[$i]['id'] ; ?>" class="btn btn-small"><i class="fa fa-edit"></i> 编辑</a>
-              <a href="<?php echo APP_FURI; ?>&do=del&id=<?php echo $rs[$i]['id'] ; ?>" target="iPHP_FRAME" class="del btn btn-small" title='永久删除'  onclick="return confirm('确定要删除?');"/><i class="fa fa-trash-o"></i> 永久删除</a></td>
+              <a href="<?php echo APP_FURI; ?>&do=del&id=<?php echo $rs[$i]['id'] ; ?>" target="iPHP_FRAME" class="del btn btn-small" title='永久删除'  onclick="return confirm('Вы уверены, что хотите удалить?');"/><i class="fa fa-trash-o"></i> Удалить навсегда</a></td>
             </tr>
         <?php }  ?>
           </tbody>
@@ -207,7 +207,7 @@ $(function(){
               <div class="input-prepend input-append mt20"> <span class="add-on">全选
                 <input type="checkbox" class="checkAll checkbox" data-target="#<?php echo APP_BOXID;?>" />
                 </span>
-                <div class="btn-group dropup" id="iCMS-batch"> <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i> 批 量 操 作 </a><a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"> <span class="caret"></span></a>
+                <div class="btn-group dropup" id="iCMS-batch"> <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i>Пакетные операции</a><a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"> <span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li><a data-toggle="batch" data-action="status:1"><i class="fa fa-play-circle"></i> 启用</a></li>
                     <li><a data-toggle="batch" data-action="status:0"><i class="fa fa-power-off"></i> 禁用</a></li>

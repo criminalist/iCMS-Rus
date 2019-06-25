@@ -5,11 +5,11 @@ admincp::head(false);
 ?>
 <div class="widget-box widget-plain" id="<?php echo APP_BOXID;?>">
     <div class="widget-title"> <span class="icon"> <i class="fa fa-plus-square"></i> </span>
-    <h5><?php echo empty($this->id)?'Добавить':'Редактировать' ; ?> 《 <?php echo $video['title'];?> 》</b></h5>
+    <h5><?php echo empty($this->id)?'Добавить':'Редактировать' ; ?> <?php echo $video['title'];?> </b></h5>
     <ul class="nav nav-tabs" id="-add-tab">
         <li class="active">
             <a href="#-add-base" data-toggle="tab">
-                <i class="fa fa-info-circle"></i> <?php echo empty($this->id)?'新资源':$rs['title']; ?>
+                <i class="fa fa-info-circle"></i> <?php echo empty($this->id)?'Добавить ресурс':$rs['title']; ?>
             </a>
         </li>
     </ul>
@@ -20,10 +20,10 @@ admincp::head(false);
         <input name="video_id" type="hidden" value="<?php echo $rs['video_id'];?>" />
         <div class="tab-content">
             <div id="-add-base" class="tab-pane active">
-                <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> 添加</button>
+                <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
                 <div class="clearfloat mb10"></div>
                 <div class="input-prepend">
-                    <span class="add-on">类型</span>
+                    <span class="add-on">Способ доставки</span>
                     <select name="type" id="type" class="chosen-select span4">
                         <?php foreach (videoApp::$typeMap as $key => $type) {?>
                         <option value="<?php echo $key;?>"> <?php echo $type[1];?> [type='<?php echo $key;?>']</option>
@@ -32,18 +32,18 @@ admincp::head(false);
                 </div>
                 <div class="clearfloat mb10"></div>
                 <div class="input-prepend input-append">
-                    <span class="add-on">来源</span>
+                    <span class="add-on"> Источник </span>
                     <select name="from" id="from" class="chosen-select span4">
                         <?php foreach ($fromArray as $key => $fa) {?>
                         <option value="<?php echo $fa['val'];?>"> <?php echo $fa['name'];?> [from='<?php echo $fa['val'];?>']</option>
                         <?php }?>
                         <?php echo propAdmincp::get("from") ; ?>
                     </select>
-                    <?php echo propAdmincp::btn_add('添加来源',null,'video');?>
+                    <?php echo propAdmincp::btn_add('Добавить источник',null,'video');?>
                 </div>
                 <div class="clearfloat mb10"></div>
                 <div class="input-prepend">
-                    <span class="add-on"> Название </span>
+                    <span class="add-on">Название</span>
                     <input type="text" name="title" class="span6" id="title" value="<?php echo $rs['title'];?>"/>
                 </div>
                 <span class="help-inline">添加时可批量可不填写或者设置标题格式,如:第%s集</span>
@@ -69,7 +69,7 @@ admincp::head(false);
                 </div>
                 <div class="clearfloat mb10"></div>
                 <div class="input-prepend input-append">
-                    <span class="add-on">大小</span>
+                    <span class="add-on"> Размер </span>
                     <input type="text" name="size" class="span3" id="size" value="<?php echo $rs['size'];?>"/>
                     <span class="add-on">KB</span>
                 </div>
@@ -83,8 +83,8 @@ admincp::head(false);
                 <div class="input-prepend input-append">
                     <span class="add-on">Статус</span>
                     <select name="status" id="status" class="chosen-select span4">
-                        <option value="0"> 草稿 [status='0']</option>
-                        <option value="1"> 正常 [status='1']</option>
+                        <option value="0">Черновик [status='0']</option>
+                        <option value="1">Опубликован [status='1']</option>
                         <?php echo propAdmincp::get("status") ; ?>
                     </select>
                     <?php echo propAdmincp::btn_add('Добавить статус');?>
@@ -92,7 +92,7 @@ admincp::head(false);
             </div>
         </div>
         <div class="form-actions">
-            <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> 添加</button>
+            <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
         </div>
     </form>
 </div>

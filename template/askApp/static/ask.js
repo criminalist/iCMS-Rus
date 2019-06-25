@@ -217,7 +217,7 @@ $(function() {
     }).on('click', '[i="ask_answer_delete"]', function(event) {
         event.preventDefault();
         if (!iUSER.CHECK.LOGIN()) return;
-        if (!confirm('确定要删除?')) return;
+        if (!confirm('Вы уверены, что хотите удалить?')) return;
 
         var me = this,
             param = iCMS.API.param(this);

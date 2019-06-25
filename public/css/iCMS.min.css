@@ -117,7 +117,7 @@ del { text-decoration: line-through; padding: 3px 0; background: #f5dfdf; color:
 .clearfloat { clear: both }
 .clearfix:before, .clearfix:after { display: table; content: "" }
 .clearfix:after { clear: both }
-.clearfix { zoom: 1; clear: both; height: 1px; }
+.clearfix { zoom: 1; clear: both; }
 .clear { display: block; visibility: hidden; clear: both; overflow: hidden; width: 0; height: 0 }
 .posr { position: relative }
 .posa { position: absolute }

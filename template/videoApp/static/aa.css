@@ -1,4 +1,4 @@
-html { color: #333; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-size: 14px; font-family: 'pingfang sc', stheiti, 'microsoft yahei', arial, sans-serif }
+html { color: #67809f; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-size: 14px; font-family: Arial, sans-serif }
 body, dl, dd, ul, ol, h1, h2, h3, h4, h5, h6, form, p, th, td { margin: 0; padding: 0 }
 button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle }
 input::-ms-clear, input::-ms-reveal { display: none }
@@ -9,7 +9,7 @@ caption, th { text-align: left }
 img { border: 0; -ms-interpolation-mode: bicubic }
 ul, ol { list-style: none }
 img { vertical-align: top }
-a { color: #333; text-decoration: none }
+a { color: #141e30; text-decoration: none }
 a:hover { color: #04b872 }
 i, em { font-style: normal }
 .clearfix:before, .clearfix:after { content: ""; display: table }

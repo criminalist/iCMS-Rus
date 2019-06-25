@@ -18,7 +18,7 @@ class video_categoryAdmincp extends categoryAdmincp {
             'list'        => array('列表','{iTPL}/video.list.htm'),
             'video'       => array('视频','{iTPL}/video.info.htm'),
             'video:play'  => array('播放','{iTPL}/video.play.htm'),
-            'video:down'  => array('下载','{iTPL}/video.down.htm'),
+            'video:down'  => array('Скачать','{iTPL}/video.down.htm'),
             'video:story' => array('剧情','{iTPL}/video.story.htm'),
             'tag'         => array('标签','{iTPL}/video.tag.htm'),
         );
@@ -29,7 +29,7 @@ class video_categoryAdmincp extends categoryAdmincp {
         $this->category_rule+= array(
             'video'       => array('视频','/video/{ID}{EXT}','{ID},{0xID},{LINK},{Hash@ID},{Hash@0xID}'),
             'video:play'  => array('播放','/play/{VIDEO:ID}/{ID}{EXT}','{VIDEO:ID},{ID},{0xID},{Hash@ID},{Hash@0xID}'),
-            'video:down'  => array('下载','/down/{VIDEO:ID}/{ID}{EXT}','{VIDEO:ID},{ID},{0xID},{Hash@ID},{Hash@0xID}'),
+            'video:down'  => array('Скачать','/down/{VIDEO:ID}/{ID}{EXT}','{VIDEO:ID},{ID},{0xID},{Hash@ID},{Hash@0xID}'),
             'video:story' => array('剧情','/story/{VIDEO:ID}/{ID}{EXT}','{VIDEO:ID},{ID},{0xID},{Hash@ID},{Hash@0xID}'),
             'tag'         => array('标签','/video/{TKEY}{EXT}','{ID},{0xID},{TKEY},{NAME},{RUS},{Hash@ID},{Hash@0xID}')
         );

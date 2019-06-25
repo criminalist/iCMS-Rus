@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="ru">
 
 <head>
     <title>
@@ -80,7 +80,7 @@
                         <ul class="nav nav-tabs">
                             <!--{foreach key="k" value="from" from="$video.from_array.play"}-->
                             <li<!--{if !$k }--> class="active"<!--{/if}-->>
-                                <a href="javascript:;" data-target="#<!--{$from.val}-->-tab" data-toggle="tab"><!--{$from.name}-->在线播放</a>
+                                <a href="javascript:;" data-target="#<!--{$from.val}-->-tab" data-toggle="tab"><!--{$from.name}-->Онлайн проигрыватель</a>
                             </li>
                             <!--{/foreach}-->
                         </ul>
@@ -115,7 +115,7 @@
                         <div class="section_aside">
                             <div id="cartoon_hot_list">
                                 <div class="section_aside_tit hotlist-tit">
-                                    <h2>热播榜</h2>
+                                    <h2>Популярное</h2>
                                 </div>
                                 <div class="section_aside_hotlist">
                                     <ul class="section_aside_lst section_aside_lst_score">
@@ -155,7 +155,7 @@
                                     <li class="top_nav_li"><a href="#tab-body" data-target="#tab-story" data-toggle="tab">剧情</a></li>
                                     <li class="top_nav_li"><a href="#tab-photo" data-target="#tab-photo" data-toggle="tab">剧照</a></li>
                                     <li class="top_nav_li"><a href="#tab-comment" data-target="#tab-comment" data-toggle="tab">讨论</a></li>
-                                    <li class="top_nav_li"><a href="#tab-ulike" data-target="#tab-ulike" data-toggle="tab">猜你喜欢</a></li>
+                                    <li class="top_nav_li"><a href="#tab-ulike" data-target="#tab-ulike" data-toggle="tab">Вам также может понравиться</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -186,7 +186,7 @@
                     </div>
                     <div class="column_lft" id="tab-ulike">
                         <a name="tab-ulike"></a>
-                        <h3 class="detail_tit"><i></i>猜你喜欢</h3>
+                        <h3 class="detail_tit"><i></i>Вам также может понравиться</h3>
                         <div class="sort_lst_bx">
                             <ul id="hobby_ul" class="sort_lst lst_ulike">
                                 <!--{iCMS:video:list loop="true" sub="all" row="10" orderby="hot"}-->

@@ -93,9 +93,9 @@ $(function(){
             <div class="input-prepend input-append">
               <span class="add-on">状 态</span>
               <select name="status" id="status" class="chosen-select span3">
-                <option value="0"> 草稿 [status='0']</option>
-                <option value="1"> 正常 [status='1']</option>
-                <option value="2"> 回收站 [status='2']</option>
+                <option value="0"> Черновик[status='0']</option>
+                <option value="1"> Опубликован [status='1']</option>
+                <option value="2"> Корзина [status='2']</option>
                 <option value="3"> 待审核 [status='3']</option>
                 <option value="4"> 未通过 [status='4']</option>
                 <?php echo propAdmincp::get("status") ; ?>

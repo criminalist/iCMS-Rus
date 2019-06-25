@@ -151,9 +151,9 @@ $(function(){
         <div class="input-prepend">
           <span class="add-on">状 态</span>
           <select name="status" id="status" class="chosen-select span3">
-            <option value="0"> 草稿 [status='0']</option>
-            <option value="1"selected='selected'> 正常 [status='1']</option>
-            <option value="2"> 回收站 [status='2']</option>
+            <option value="0"> Черновик[status='0']</option>
+            <option value="1"selected='selected'> Опубликован [status='1']</option>
+            <option value="2"> Корзина [status='2']</option>
             <option value="3"> 待审核 [status='3']</option>
             <option value="4"> 未通过 [status='4']</option>
             <?php echo propAdmincp::get("status") ; ?>
@@ -208,7 +208,7 @@ $(function(){
               <th> Название </th>
               <th class="span2">日期</th>
               <th style="width:80px;">栏目</th>
-              <th style="width:60px;">编辑</th>
+              <th style="width:60px;">Редактировать</th>
               <th class="span1">点/评</th>
               <th style="width:120px;"> Операция </th>
             </tr>
@@ -305,17 +305,17 @@ $(function(){
                 </a>
               </td>
               <td><?php if($value['status']=="1"){ ?>
-                <a href="<?php echo $value['url']; ?>" class="btn btn-success btn-mini" target="_blank">查看</a>
+                <a href="<?php echo $value['url']; ?>" class="btn btn-success btn-mini" target="_blank"> Просмотр </a>
                 <?php } ?>
                 <!-- <a href="<?php echo APP_URI; ?>&do=add&id=<?php echo $value['id'] ; ?>" class="btn btn-primary btn-mini">+章节</a> -->
                 <?php if(category::check_priv($value['cid'],'ce')){ ?>
-                <a href="<?php echo APP_URI; ?>&do=add&id=<?php echo $value['id'] ; ?>" class="btn btn-primary btn-mini">编辑</a>
+                <a href="<?php echo APP_URI; ?>&do=add&id=<?php echo $value['id'] ; ?>" class="btn btn-primary btn-mini">Редактировать</a>
                 <?php } ?>
                 <?php if(in_array($value['status'],array("1","0")) && category::check_priv($value['cid'],'cd')){ ?>
                 <a href="<?php echo APP_FURI; ?>&do=update&id=<?php echo $value['id'] ; ?>&_args=status:2" target="iPHP_FRAME" class="del btn btn-danger btn-mini" title="移动此专题到回收站" /> Удалить</a>
                 <?php } ?>
                 <?php if($value['status']=="2"){ ?>
-                <a href="<?php echo APP_FURI; ?>&do=del&id=<?php echo $value['id'] ; ?>" target="iPHP_FRAME" class="del btn btn-danger btn-mini" onclick="return confirm('确定要删除?');"/>永久删除</a>
+                <a href="<?php echo APP_FURI; ?>&do=del&id=<?php echo $value['id'] ; ?>" target="iPHP_FRAME" class="del btn btn-danger btn-mini" onclick="return confirm('Вы уверены, что хотите удалить?');"/>Удалить навсегда</a>
                 <?php } ?>
               </td>
             </tr>
@@ -328,7 +328,7 @@ $(function(){
                   <span class="add-on">全选
                   <input type="checkbox" class="checkAll checkbox" data-target="#<?php echo APP_BOXID;?>" />
                   </span>
-                  <div class="btn-group dropup" id="iCMS-batch"> <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i> 批 量 操 作 </a><a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"> <span class="caret"></span></a>
+                  <div class="btn-group dropup" id="iCMS-batch"> <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i>Пакетные операции</a><a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"> <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                       <li><a data-toggle="batch" data-action="pubdate:now"><i class="fa fa-clock-o"></i> 更新发布时间</a></li>
                       <?php if($stype=="inbox"||$stype=="trash"){ ?>
@@ -353,7 +353,7 @@ $(function(){
                       <li class="divider"></li>
                       <?php } ?>
                       <li><a data-toggle="batch" data-action="status:2"><i class="fa fa-trash-o"></i> 移入回收站</a></li>
-                      <li><a data-toggle="batch" data-action="dels"><i class="fa fa-trash-o"></i> 永久删除</a></li>
+                      <li><a data-toggle="batch" data-action="dels"><i class="fa fa-trash-o"></i> Удалить навсегда</a></li>
                     </ul>
                   </div>
                 </div></td>

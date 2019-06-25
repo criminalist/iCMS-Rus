@@ -55,7 +55,7 @@ admincp::head();
         </div>
       </div>
       <div class="form-actions">
-        <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> 添加</button>
+        <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
       </div>
     </form>
   </div>

@@ -1,7 +1,7 @@
 <?php
 
 class videoApp extends appsApp {
-    public static $typeMap = array(array('play','在线播放'),array('down','下载'));
+    public static $typeMap = array(array('play','Онлайн проигрыватель'),array('down','Скачать'));
 
     public function __construct() {
         parent::__construct('video');

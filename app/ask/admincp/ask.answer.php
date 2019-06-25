@@ -74,11 +74,11 @@ $("#<?php echo APP_FORMID;?>").batch();
             <a href="<?php echo APP_FURI; ?>&do=update&id=<?php echo $value['id'] ; ?>&_args=status:1" class="btn btn-success btn-mini" target="iPHP_FRAME">通过审核</a>
             <?php } ?>
             <?php if($value['rootid']){?>
-            <a href="<?php echo APP_FURI; ?>&do=edit&id=<?php echo $value['id'] ; ?>" class="btn btn-primary btn-mini">编辑</a>
+            <a href="<?php echo APP_FURI; ?>&do=edit&id=<?php echo $value['id'] ; ?>" class="btn btn-primary btn-mini">Редактировать</a>
             <?php }else{ ?>
-            <a href="<?php echo APP_FURI; ?>&do=add&id=<?php echo $value['iid'] ; ?>" class="btn btn-primary btn-mini">编辑</a>
+            <a href="<?php echo APP_FURI; ?>&do=add&id=<?php echo $value['iid'] ; ?>" class="btn btn-primary btn-mini">Редактировать</a>
             <?php } ?>
-            <a href="<?php echo APP_FURI; ?>&do=delete&id=<?php echo $value['id'] ; ?>&rootid=<?php echo $value['rootid'] ; ?>&iid=<?php echo $que['id'] ; ?>" class="btn btn-danger btn-mini" target="iPHP_FRAME" onclick="return confirm('确定要删除?');"> Удалить</a>
+            <a href="<?php echo APP_FURI; ?>&do=delete&id=<?php echo $value['id'] ; ?>&rootid=<?php echo $value['rootid'] ; ?>&iid=<?php echo $que['id'] ; ?>" class="btn btn-danger btn-mini" target="iPHP_FRAME" onclick="return confirm('Вы уверены, что хотите удалить?');"> Удалить</a>
           </div>
           <div class="claerfix mb10"></div>
         </li>
@@ -92,7 +92,7 @@ $("#<?php echo APP_FORMID;?>").batch();
           <span class="add-on">全选
           <input type="checkbox" class="checkAll checkbox" data-target="#<?php echo APP_BOXID;?>" />
           </span>
-          <div class="btn-group dropup" id="iCMS-batch"> <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i> 批 量 操 作 </a><a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"> <span class="caret"></span></a>
+          <div class="btn-group dropup" id="iCMS-batch"> <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i>Пакетные операции</a><a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"> <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a data-toggle="batch" data-action="dels"><i class="fa fa-trash-o"></i> Удалить</a></li>
           </ul>

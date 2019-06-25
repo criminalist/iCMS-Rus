@@ -134,9 +134,9 @@ function _modal_dialog(cancel_text){
             </div>
             <div class="input-prepend input-append"> <span class="add-on">Статус</span>
               <select name="status" id="status" class="chosen-select span3">
-                <option value="0"> 草稿 [status='0']</option>
-                <option value="1"> 正常 [status='1']</option>
-                <option value="2"> 回收站 [status='2']</option>
+                <option value="0"> Черновик[status='0']</option>
+                <option value="1"> Опубликован [status='1']</option>
+                <option value="2"> Корзина [status='2']</option>
                 <option value="3"> 待审核 [status='3']</option>
                 <option value="4"> 未通过 [status='4']</option>
                 <?php echo propAdmincp::get("status") ; ?>
@@ -192,7 +192,7 @@ function _modal_dialog(cancel_text){
             </div>
             <span class="help-inline">如:高清,无水印 (配合标题一起显示)</span>
             <div class="clearfloat mb10"></div>
-            <div class="input-prepend input-append"> <span class="add-on">类型</span>
+            <div class="input-prepend input-append"> <span class="add-on">Способ доставки</span>
               <select name="genre[]" id="genre" class="chosen-select span6" multiple="multiple"  data-placeholder="请选择影片类型(可多选)...">
                 <option></option>
                 <?php echo propAdmincp::get("genre") ; ?>

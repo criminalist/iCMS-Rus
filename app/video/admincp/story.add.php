@@ -5,11 +5,11 @@ admincp::head(false);
 ?>
 <div class="widget-box widget-plain" id="<?php echo APP_BOXID;?>">
     <div class="widget-title"> <span class="icon"> <i class="fa fa-plus-square"></i> </span>
-    <h5><?php echo empty($this->id)?'Добавить':'Редактировать' ; ?> 《 <?php echo $video['title'];?> 》</b></h5>
+    <h5><?php echo empty($this->id)?'Добавить':'Редактировать' ; ?> <?php echo $video['title'];?></b></h5>
     <ul class="nav nav-tabs" id="-add-tab">
         <li class="active">
             <a href="#-add-base" data-toggle="tab">
-                <i class="fa fa-info-circle"></i> <?php echo empty($this->id)?'新剧情':$rs['name']; ?>
+                <i class="fa fa-info-circle"></i> <?php echo empty($this->id)?'Новая серия':$rs['name']; ?>
             </a>
         </li>
     </ul>
@@ -19,7 +19,7 @@ admincp::head(false);
         <input name="id" type="hidden" value="<?php echo $this->id ; ?>" />
         <div class="tab-content">
             <div id="-add-base" class="tab-pane active">
-                <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> 添加</button>
+                <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
                 <div class="clearfloat mb10"></div>
                 <div class="input-prepend">
                     <span class="add-on"> Название </span>
@@ -48,8 +48,8 @@ admincp::head(false);
                 <div class="input-prepend input-append">
                     <span class="add-on">Статус</span>
                     <select name="status" id="status" class="chosen-select span4">
-                        <option value="0"> 草稿 [status='0']</option>
-                        <option value="1"> 正常 [status='1']</option>
+                        <option value="0"> Черновик[status='0']</option>
+                        <option value="1"> Опубликован [status='1']</option>
                         <?php echo propAdmincp::get("status") ; ?>
                     </select>
                     <?php echo propAdmincp::btn_add('Добавить статус');?>
@@ -58,14 +58,14 @@ admincp::head(false);
                 <script type="text/javascript" charset="utf-8" src="./app/admincp/ui/iCMS.ueditor.js"></script>
                 <script type="text/javascript" charset="utf-8" src="./app/admincp/ui/ueditor/ueditor.all.min.js"></script>
                 <a id="cleanupEditor-btn" class="btn btn-inverse hide" href="javascript:iCMS.editor.cleanup();"><i class="fa fa-magic"></i> 自动排版</a>
-                <a id="createEditor-btn" class="btn btn-success" href="javascript:createEditor();"><i class="fa fa-check"></i> 使用编辑器</a>
+                <a id="createEditor-btn" class="btn btn-success" href="javascript:createEditor();"><i class="fa fa-check"></i> Использовать редактор</a>
                 <a id="deleteEditor-btn" class="btn btn-inverse hide" href="javascript:deleteEditor();"><i class="fa fa-times"></i> 关闭编辑器</a>
                 <div class="clearfix mt10"></div>
                 <textarea type="text/plain" id="editor-body" name="content" style="width:90%;height:600px;"><?php echo $rs['content'] ; ?></textarea>
             </div>
         </div>
         <div class="form-actions">
-            <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> 添加</button>
+            <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
         </div>
     </form>
 </div>
