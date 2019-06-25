@@ -67,7 +67,7 @@ only screen and (-webkit-min-device-pixel-ratio:2), only screen and (   min--moz
 .marketing h1 { margin-bottom: 10px; font-size: 60px; font-weight: 200; line-height: 1; letter-spacing: -1px; }
 .marketing h2 { font-weight: 200; margin-bottom: 5px; font-size: 32px; }
 .marketing p { font-size: 16px; line-height: 1.5; text-align: left;}
-.marketing .marketing-byline { margin-bottom: 40px; font-size: 20px; font-weight: 300; line-height: 1.25; color: #999; text-align: center;}
+.marketing .marketing-byline { margin-bottom: 40px; font-size: 20px; font-weight: 300; line-height: 1.25; color: #8395a7; text-align: center;}
 .marketing-img { display: block; margin: 0 auto 30px; max-height: 145px; }
 .form-actions { text-align: center; }
 .form-horizontal .form-actions{padding-left:0px;}
@@ -82,7 +82,7 @@ only screen and (-webkit-min-device-pixel-ratio:2), only screen and (   min--moz
 .license { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.6; }
 /* Footer
 -------------------------------------------------- */
-.footer { text-align: center; padding: 30px 0; margin-top: 70px; border-top: 1px solid #e5e5e5; background-color: #f5f5f5; }
+.footer { text-align: center; padding: 30px 0; margin-top: 70px; border-top: 1px solid #e5e5e5; background: linear-gradient(to left,#243b55,#141e30); }
 .footer p { margin-bottom: 0; color: #777; }
 .footer-links { margin: 10px 0; }
 .footer-links li { display: inline; padding: 0 2px; }

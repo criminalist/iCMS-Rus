@@ -70,7 +70,7 @@ h1, h2, h3 { font-weight: normal }
 .aside_vlist_thumb { overflow: hidden; width: 107px; height: 79px; float: left; margin: 0 13px 0 0; position: relative }
 .aside_vlist_tit { width: 120px; line-height: 22px; color: #333; margin-top: 12px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis }
 .aside_vlist_tit_brackets { margin-left: -7px; _display: block }
-.aside_vlist_txt { width: 120px; line-height: 16px; font-size: 12px; color: #999; margin-top: 1px; height: 32px; overflow: hidden }
+.aside_vlist_txt { width: 120px; line-height: 16px; font-size: 12px; color: #8395a7; margin-top: 1px; height: 32px; overflow: hidden }
 .aside_date_nav { overflow: hidden; background-color: #e5e5e5; margin-left: -1px; zoom: 1 }
 .aside_date_nav li { float: left }
 .aside_date_nav li a { width: 38px; _width: 37px; height: 33px; line-height: 33px; display: block; font-size: 12px; text-align: center }
@@ -379,7 +379,7 @@ body { background-color: #fff }
 .thumb-duration { position: absolute; right: 6px; bottom: 5px; background-color: rgba(0, 0, 0, 0.6); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000); color: #fff; font-size: 12px; line-height: 17px; height: 18px; padding: 0 4px }
 .ico_play_time { width: 11px; height: 11px; float: left; margin: 12px 5px 0 0 }
 .sort_lst_tit { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; margin-top: 9px; padding-left: 1px; width: 174px; height: 19px; line-height: 19px }
-.sort_lst_txt { overflow: hidden; margin-top: 4px; width: 174px; height: 15px; line-height: 15px; color: #999; font-size: 12px; padding-left: 1px }
+.sort_lst_txt { overflow: hidden; margin-top: 4px; width: 174px; height: 15px; line-height: 15px; color: #8395a7; font-size: 12px; padding-left: 1px }
 .sort_lst_txt_rgt { float: right }
 .sort_lst_txt a { margin-right: 7px }
 .section_ad { padding-top: 27px; overflow: hidden }
@@ -545,11 +545,11 @@ html, html body { _background-image: url(about:blank?v=50837451); _background-at
 .srch-result-info dd .dtd-intro { margin-top: 12px }
 .srch-result-info dd .en-name { color: #999 }
 .srch-result-info dd a { margin-right: 10px }
-.btn-info-more { margin-left: 15px; color: #999; font-size: 12px }
+.btn-info-more { margin-left: 15px; color: #8395a7; font-size: 12px }
 .btn-info-more i { background-position: -119px -176px; width: 12px; height: 8px; display: inline-block; margin-left: 3px; vertical-align: -1px; *vertical-align: 3px; *padding: 1px 0 1px 1px }
 .btn-info-more:hover { color: #04b872; cursor: pointer }
 .btn-info-more:hover i { background-position: -105px -176px; width: 12px; height: 8px; display: inline-block }
-.btn-info-more2 { margin-left: 15px; color: #999; font-size: 12px }
+.btn-info-more2 { margin-left: 15px; color: #8395a7; font-size: 12px }
 .btn-info-more2 i { margin-left: 3px; background-position: -91px -176px; width: 12px; height: 8px; display: inline-block; vertical-align: 0; *vertical-align: 5px; *padding: 1px 0 1px 1px }
 .btn-info-more2:hover { color: #04b872; cursor: pointer }
 .btn-info-more2:hover i { background-position: -133px -176px; width: 12px; height: 8px; display: inline-block }
@@ -680,7 +680,7 @@ body { margin: 0 }
 .sort_lst_small_thumb .sort_lst_thumb_txt_rgt, .sort_lst_small_thumb .sort_lst_thumb_txt_lft { height: 25px; line-height: 26px }
 .sort_lst_small_thumb .ico_play_time { margin-top: 7px }
 .sort_lst_thumb_txt_bg { background-color: #000; opacity: 0.6; filter: alpha(opacity=60); padding: 2px 4px; position: absolute; bottom: 6px; right: 6px; color: #fff; font-size: 12px; text-align: center }
-.sort_lst_small_txt { margin-top: 2px; height: 15px; line-height: 15px; font-size: 12px; color: #999; overflow: hidden }
+.sort_lst_small_txt { margin-top: 2px; height: 15px; line-height: 15px; font-size: 12px; color: #8395a7; overflow: hidden }
 .sort_lst_small_txt .txt_date { float: left; line-height: 16px }
 .sort_lst_small_txt .txt_player { float: right }
 .sort_nav_bx { font-size: 20px; color: #666; border-bottom: 1px solid #e5e5e5; height: 40px; padding-bottom: 14px; padding-top: 13px }
@@ -724,7 +724,7 @@ body { margin: 0 }
 .actors_lst .cur p { color: #04b872 }
 .actors_lst_info { margin-left: 8px; display: inline-block; *float: left; line-height: 22px; width: 64% }
 .actors_lst_info .actors_name { font-size: 14px; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
-.actors_lst_info .actors_identy { font-size: 12px; color: #999; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+.actors_lst_info .actors_identy { font-size: 12px; color: #8395a7; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
 .actors_sort_lst_bx { height: 300px; overflow: hidden }
 .reviews-box { overflow: hidden }
 .review { overflow: hidden; margin-top: 24px; padding-bottom: 24px; border-bottom: 1px solid #eaeaea }

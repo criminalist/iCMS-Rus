@@ -150,7 +150,7 @@ class tagFunc{
             if($array){
                 return tagApp::tag($array[0],$array[1],false);
             }else{
-                iUI::warning('iCMS&#x3a;tag&#x3a;array 标签出错! 缺少参数"id"或"name".');
+                iUI::warning('iCMS&#x3a;tag&#x3a;array Ошибка! отсутствуют параметры  "id"或"name".');
             }
         }
         if($resource){

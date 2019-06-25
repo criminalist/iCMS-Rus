@@ -25,7 +25,7 @@
 <body class="categoryApp" i="<!--{$iCMS.APP.NAME}-->">
     <!--{include file="./header.htm"}-->
     <div class="body clearfix ">
-        <div class="body-wrap r5">
+        <div class="body-wrap r3">
             <div class="sort-lst-wrap">
                 <ul class="sort-lst-nav">
                     <!--{iCMS:category:list loop="true" stype='self' cid="$category.cid"}-->
@@ -55,7 +55,7 @@
                 <div class="sort-section">
                     <a href="javascript:void(0)" id="filter_more_1" class="btn-sort-section filter_more" style="display:none">更多<i></i></a>
                     <a href="javascript:void(0)" id="filter_fold_1" class="btn-sort-section on filter_fold" style="display:none">收起<i></i></a>
-                    <div class="sort-tit">地区</div>
+                    <div class="sort-tit">Страна</div>
                     <a href="<!--{'area=null&page=null'|url}-->" id="sort_tab_area_" class="btn-sort-all sort-tab on">全部</a>
                     <div id="sort_box_1" class="sort-box sort-unfold">
                         <!--{iCMS:prop:array loop="true" field="area" sapp="video"}-->
@@ -69,7 +69,7 @@
                 <div class="sort-section">
                     <a href="javascript:void(0)" id="filter_more_2" class="btn-sort-section filter_more" style="display:none">更多<i></i></a>
                     <a href="javascript:void(0)" id="filter_fold_2" class="btn-sort-section on filter_fold" style="display:none">收起<i></i></a>
-                    <div class="sort-tit">年代</div>
+                    <div class="sort-tit">Год выпуска</div>
                     <a href="<!--{'year=null&page=null'|url}-->" id="sort_tab_year_" class="btn-sort-all sort-tab on">全部</a>
                     <div id="sort_box_2" class="sort-box sort-unfold">
                         <!--{iCMS:prop:array loop="true" field="year" sapp="video"}-->

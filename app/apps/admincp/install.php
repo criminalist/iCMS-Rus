@@ -4,7 +4,7 @@ defined('iPHP') OR exit('Oops, something went wrong');
 admincp::head();
 ?>
 <style>
-#log{color: #999;font-size: 14px;line-height: 24px;}
+#log{color: #8395a7;font-size: 14px;line-height: 24px;}
 </style>
 <div class="iCMS-container">
   <div class="well iCMS-well iCMS-patch">

@@ -43,13 +43,13 @@
   padding: 0 3px 0 5px;
   min-width: 20px;
   text-align: right;
-  color: #999;
+  color: #8395a7;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 
 .CodeMirror-guttermarker { color: black; }
-.CodeMirror-guttermarker-subtle { color: #999; }
+.CodeMirror-guttermarker-subtle { color: #8395a7; }
 
 /* CURSOR */
 
@@ -125,7 +125,7 @@ div.CodeMirror-overwrite div.CodeMirror-cursor {}
 .cm-s-default .cm-attribute {color: #00c;}
 .cm-s-default .cm-header {color: blue;}
 .cm-s-default .cm-quote {color: #090;}
-.cm-s-default .cm-hr {color: #999;}
+.cm-s-default .cm-hr {color: #8395a7;}
 .cm-s-default .cm-link {color: #00c;}
 
 .cm-negative {color: #d44;}

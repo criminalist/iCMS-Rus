@@ -54,8 +54,8 @@ class commentFunc{
 		if ($vars['display'] && empty($vars['loop'])) {
 			$_vars = iView::app_vars(true);
 			$vars  = array_merge($vars,(array)$_vars);
-			$vars['iid']   OR iUI::warning('iCMS&#x3a;comment&#x3a;list 标签出错! 缺少参数"iid"或"iid"值为空.');
-			$vars['appid'] OR iUI::warning('iCMS&#x3a;comment&#x3a;list 标签出错! 缺少参数"appid"或"appid"值为空.');
+			$vars['iid']   OR iUI::warning('iCMS&#x3a;comment&#x3a;list Ошибка! отсутствуют параметры  "iid"或"iid"值为空.');
+			$vars['appid'] OR iUI::warning('iCMS&#x3a;comment&#x3a;list Ошибка! отсутствуют параметры  "appid"或"appid"值为空.');
 			return commentFunc::list_display($vars);
 		}
 
@@ -172,10 +172,10 @@ class commentFunc{
 			unset($vars['ref'],$_vars);
 		}
 
-		$vars['iid']   OR iUI::warning('iCMS&#x3a;comment&#x3a;form 标签出错! 缺少参数"iid"或"iid"值为空.');
-		$vars['cid']   OR iUI::warning('iCMS&#x3a;comment&#x3a;form 标签出错! 缺少参数"cid"或"cid"值为空.');
-		$vars['appid'] OR iUI::warning('iCMS&#x3a;comment&#x3a;form 标签出错! 缺少参数"appid"或"appid"值为空.');
-		$vars['title'] OR iUI::warning('iCMS&#x3a;comment&#x3a;form 标签出错! 缺少参数"title"或"title"值为空.');
+		$vars['iid']   OR iUI::warning('iCMS&#x3a;comment&#x3a;form Отсутствуют параметры "iid"或"iid"值为空.');
+		$vars['cid']   OR iUI::warning('iCMS&#x3a;comment&#x3a;form Отсутствуют параметры "cid"或"cid"值为空.');
+		$vars['appid'] OR iUI::warning('iCMS&#x3a;comment&#x3a;form Отсутствуют параметры "appid"或"appid"值为空.');
+		$vars['title'] OR iUI::warning('iCMS&#x3a;comment&#x3a;form Отсутствуют параметры "title"或"title"值为空.');
 		switch ($vars['display']) {
 			case 'iframe':
 				$tpl        = 'form.iframe';

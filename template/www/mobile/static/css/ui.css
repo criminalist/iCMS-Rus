@@ -91,10 +91,10 @@ body { background: #e6e6e6; }
 article .article-header { background-position: center bottom; background-repeat: no-repeat; background-size: 100% 1px; border: 0 none; padding-bottom: 10px; }
 article .article-title { font-weight: bold; margin-bottom: 10px; font: 24px/1.2 "Microsoft Yahei"; font-weight: bold; }
 article .article-title a { color: #444; }
-article .article-meta { font-size: 11px; color: #999; }
-article .article-meta a { color: #999999; }
+article .article-meta { font-size: 11px; color: #8395a7; }
+article .article-meta a { color: #8395a7; }
 article .article-meta time { margin-right: 10px; }
-article .article-meta .item { margin-right: 10px; color: #999; }
+article .article-meta .item { margin-right: 10px; color: #8395a7; }
 article .article-tags p { margin: 5px 0px; }
 article .article-tags a { font-size: 16px; padding: 0 8px; }
 article .article-tags a { color: #428bca; text-decoration: underline; }
@@ -126,7 +126,7 @@ article .pagination a, article .pagination span { padding: 10px; }
 #comment-list .commentApp-pagenav { margin: 10px auto; }
 #comment-list .cmt-item-img-avatar { width: 30px; height: 30px; }
 #comment-list .commentApp-content-wrap { margin-left: 40px; }
-#comment-list .comment-item.empty{font-size: 12px;color: #999;padding-left: 10px;}
+#comment-list .comment-item.empty{font-size: 12px;color: #8395a7;padding-left: 10px;}
 
 /* ===========comment-form=========== */
 #comment-form { border-top: 1px solid #eaeaea; }
@@ -139,7 +139,7 @@ article .pagination a, article .pagination span { padding: 10px; }
 #comment-form .comment-seccode { float: left; overflow: hidden; margin-top: 8px; line-height: 30px; }
 #comment-form .comment-seccode label, #comment-form .comment-seccode input, #comment-form .comment-seccode img, #comment-form .comment-seccode a { float: left; display: inline-block; vertical-align: middle; }
 #comment-form .comment-seccode .seccode-img { margin-top: 2px; }
-#comment-form .comment-seccode .seccode-text { color: #999; margin-left: 5px; font-size: 12px; }
+#comment-form .comment-seccode .seccode-text { color: #8395a7; margin-left: 5px; font-size: 12px; }
 #comment-form .comment-command { text-align: right }
 #comment-form .comment-command .cmt-add { float: right; margin: 8px 0px 8px 8px; padding: 5px 10px; font-size: 18px; width: 90px; height: 36px; }
 #comment-form .comment-command .cmt-cancel { float: right; margin: 15px 15px 0 0; cursor: pointer }

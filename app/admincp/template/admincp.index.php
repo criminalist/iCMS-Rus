@@ -20,7 +20,7 @@ admincp::head();
   <div class="widget-box">
     <div class="widget-title"> <span class="icon"> <i class="fa fa-signal"></i> </span>
       <h5>Статистика сайта</h5>
-      <span id="counts" style="display: inline-block;margin-top: 6px; color: #999;">
+      <span id="counts" style="display: inline-block;margin-top: 6px; color: #8395a7;">
         <img src="./app/admincp/ui/img/ajax_loader.gif" width="16" height="16" align="absmiddle">
         Загрузка данных ожидайте...
       </span>

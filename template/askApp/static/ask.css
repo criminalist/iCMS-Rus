@@ -27,7 +27,7 @@
 .askApp-answer-list .answer-item:not(:last-child) { border-bottom: 1px solid #e8ecf3 }
 .answer-item .askApp-link-avatar { float: left; margin: 4px 0 0 }
 .answer-item .askApp-img-avatar { width: 64px; height: 64px; border-radius: 50%; }
-.answer-item .askApp-content-hd, .answer-item .askApp-content-ft { color: #999; }
+.answer-item .askApp-content-hd, .answer-item .askApp-content-ft { color: #8395a7; }
 .answer-item .askApp-content-hd .desc, .answer-item .askApp-content-ft .desc { font-size: 14px; }
 .answer-item .label em { font-style: normal; }
 .answer-item .text-num { float: right; margin-top: -1px; }
@@ -37,7 +37,7 @@
 .answer-item .askApp-content img { max-width: 90%; }
 .answer-item .date { margin-top: 1em; font-size: 14px; color: #8590a6; }
 .answer-item .askApp-content-hd .zg-link { color: #111; font-weight: bold; font-size: 14px; }
-.askApp-op-link { margin-left: .5em; color: #999; font-size: 12px; visibility: hidden; }
+.askApp-op-link { margin-left: .5em; color: #8395a7; font-size: 12px; visibility: hidden; }
 .answer-item:hover .askApp-op-link { visibility: visible }
 a.askApp-op-link:hover { text-decoration: none; }
 
@@ -65,7 +65,7 @@ a:hover>.ask-delete-icon { background-position: -235px -79px }
 #askApp-answer-form .ask-seccode { float: left; overflow: hidden; margin-top: 8px; line-height: 30px; }
 #askApp-answer-form .ask-seccode label, #askApp-answer-form .ask-seccode input, #askApp-answer-form .ask-seccode img, #askApp-answer-form .ask-seccode a { float: left; display: inline-block; vertical-align: middle; }
 #askApp-answer-form .ask-seccode .seccode-img { margin-top: 2px; }
-#askApp-answer-form .ask-seccode .seccode-text { color: #999; margin-left: 5px; font-size: 12px; }
+#askApp-answer-form .ask-seccode .seccode-text { color: #8395a7; margin-left: 5px; font-size: 12px; }
 #askApp-answer-form .ask-command { text-align: right }
 #askApp-answer-form .ask-command .ask_answer_add { float: right; margin: 8px 0px 8px 8px; padding: 5px 10px; font-size: 18px; width: 90px; height: 36px; }
 #askApp-answer-form .ask-command .ask_answer_cancel { float: right; margin: 15px 15px 0 0; cursor: pointer }
@@ -78,7 +78,7 @@ a:hover>.ask-delete-icon { background-position: -235px -79px }
 .question-item-link { display: block; color: #444; text-decoration: none; line-height: 28px; }
 .question-item-link:hover { color: #009cf4; }
 .question-item-title { font-size: 18px; font-weight: 500; }
-.question-item-date { color: #999; float: right; font-size: 0.9em; }
+.question-item-date { color: #8395a7; float: right; font-size: 0.9em; }
 .question-item-num { color: #7088a9; float: right; font-size: 0.9em; }
 .question-item-object { float: left; margin-right: 15px; }
 .question-item-object .avatar { width: 36px; height: 36px; border-radius: 50%; }
@@ -98,7 +98,7 @@ a:hover>.ask-delete-icon { background-position: -235px -79px }
 .iCMS_QUESTION_DIALOG .ask-seccode { float: left; overflow: hidden; margin-top: 8px; line-height: 30px; }
 .iCMS_QUESTION_DIALOG .ask-seccode label, .iCMS_QUESTION_DIALOG .ask-seccode input, .iCMS_QUESTION_DIALOG .ask-seccode img, .iCMS_QUESTION_DIALOG .ask-seccode a { float: left; display: inline-block; vertical-align: middle; }
 .iCMS_QUESTION_DIALOG .ask-seccode .seccode-img { margin-top: 2px; }
-.iCMS_QUESTION_DIALOG .ask-seccode .seccode-text { color: #999; margin-left: 5px; font-size: 12px; }
+.iCMS_QUESTION_DIALOG .ask-seccode .seccode-text { color: #8395a7; margin-left: 5px; font-size: 12px; }
 .iCMS_QUESTION_DIALOG .ask-command { text-align: right }
 .iCMS_QUESTION_DIALOG .ask-command .ask_question_add { float: right; margin: 8px 0px 8px 8px; padding: 5px 10px; font-size: 18px; width: 90px; height: 36px; }
 .iCMS_QUESTION_DIALOG .ask-command .ask_question_cancel { float: right; margin: 15px 15px 0 0; cursor: pointer }

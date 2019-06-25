@@ -187,7 +187,7 @@ span.view{display: inline-block;width: 30px;float: right;cursor: pointer;color: 
 }
 
 #upload .placeholder.webuploader-dnd-over {
-    border-color: #999999;
+    border-color: #8395a7;
 }
 
 #upload .filelist {

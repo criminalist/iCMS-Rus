@@ -58,7 +58,7 @@ a:hover {
 .ico_play_time { width: 11px; height: 11px; float: left; margin: 12px 5px 0 0; }
 .ico_play_time { background-position: -10px 0; }
 .sort_lst_tit { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; margin-top: 9px; padding-left: 1px; width: 174px; height: 19px; line-height: 19px; }
-.sort_lst_txt { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; margin-top: 4px; width: 174px; height: 15px; line-height: 15px; color: #999; font-size: 12px; padding-left: 1px; }
+.sort_lst_txt { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; margin-top: 4px; width: 174px; height: 15px; line-height: 15px; color: #8395a7; font-size: 12px; padding-left: 1px; }
 .no-result-wrap { overflow: hidden; width: 730px; margin: 0 auto; }
 .no-result { padding: 100px 0; overflow: hidden; }
 .no-result-thumb { float: left; margin-right: 40px; }

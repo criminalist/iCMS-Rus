@@ -114,7 +114,7 @@ a:hover { text-decoration: none; }
 .solid { clear: both; height: 1px; margin-top: 10px; margin-bottom: 10px; border-bottom: 1px solid #BDBDBD; }
 .border { border: 1px solid #DADADA }
 .placeholder { color: #222 }
-.gray, .link-gray { color: #999; }
+.gray, .link-gray { color: #8395a7; }
 .noneline { text-decoration: none !important; }
 .input-text { padding: 6px 10px !important; line-height: 15px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset; }
 .error { color: #C33; }
@@ -160,7 +160,7 @@ a:hover { text-decoration: none; }
 .iCMS_UI_DIALOG .ui-dialog { opacity: 1; border: 0px; box-shadow: none; background-color: inherit; }
 .iCMS_UI_DIALOG .ui-dialog-header {position: relative; padding: 0px; cursor: move; border-radius: 2px 2px 0 0;border: 0px; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 1px rgba(0, 0, 0, 0.2); margin: -1px -1px 0; line-height: 14px; background-color: #465a73 !important;background: #141e30;background: -webkit-linear-gradient(to left,#243b55,#141e30);background: linear-gradient(to left,#243b55,#141e30);}
 .iCMS_UI_DIALOG .ui-dialog-header .ui-dialog-title { font-family: museo-slab, Georgia, "Times New Roman", Times, serif; color: #fff; text-shadow: 0 1px 1px rgba(0, 0, 0, .4); font-size: 15px; font-weight: 700; padding: 8px 15px; cursor: move; }
-.iCMS_UI_DIALOG .ui-dialog-header .ui-dialog-close { top: 0px; right: 0px; padding: 6px 12px; color: #999; opacity: .4; font-weight: normal; }
+.iCMS_UI_DIALOG .ui-dialog-header .ui-dialog-close { top: 0px; right: 0px; padding: 6px 12px; color: #8395a7; opacity: .4; font-weight: normal; }
 .iCMS_UI_DIALOG .ui-dialog-body { padding: 0px; }
 .iCMS_UI_DIALOG .ui-dialog-table { height: 100%; width: 100%; vertical-align: middle; }
 

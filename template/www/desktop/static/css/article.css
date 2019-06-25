@@ -1,9 +1,10 @@
 body.articleApp { }
 .articleApp .body-wrap { padding-top: 0px; }
-.content-wrap .article-desc { border-radius: 5px; text-indent: 2em; background: #f0f5f7;background-color: #f0f5f7; padding: 20px; margin-bottom: 4px; }
+.content-wrap .article-desc { border-radius: 2px;text-indent: 0em;background: #f0f5f7;background-color: #f0f5f7;padding: 20px;margin-bottom: 4px;background: #f0f5f7;border-top: 1px solid #dde0e8;
+/* border-radius: 0 0 2px 2px; */ }
 .content-wrap .tags-link{background: url(./../img/tag.png) no-repeat 0 4px; padding-left: 20px; }
 .content-wrap .text-body tkbox { margin: 0px auto; }
-.content-wrap .tip { text-align: center; color: #999; margin-bottom: 10px; }
+.content-wrap .tip { text-align: center; color: #8395a7; margin-bottom: 10px; }
 .content-wrap .chapterlist { border: 1px dashed #CCC; max-height: none; padding: 10px; }
 .content-wrap .chapterlist h3 { height: 30px; line-height: 30px; text-align: left; font-size: 14px; margin: 0px !important; }
 .content-wrap .chapterlist li { width: 48%; float: left; text-align: left; margin-bottom: 5px; }

@@ -7,7 +7,7 @@
   The mdn-like theme is inspired on the displayed code examples at: https://developer.mozilla.org/en-US/docs/Web/CSS/animation
 
 */
-.cm-s-mdn-like.CodeMirror { color: #999; background-color: #fff; }
+.cm-s-mdn-like.CodeMirror { color: #8395a7; background-color: #fff; }
 .cm-s-mdn-like .CodeMirror-selected { background: #cfc !important; }
 .cm-s-mdn-like.CodeMirror ::selection { background: #cfc; }
 .cm-s-mdn-like.CodeMirror ::-moz-selection { background: #cfc; }

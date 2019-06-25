@@ -22,7 +22,7 @@ class contentFunc {
         }
         self::$apps = apps::get_app($vars['app']);
         if(empty(self::$apps)||$vars['app']=='content'){
-            iUI::warning('iCMS&#x3a;content&#x3a;'.$func.' 标签出错! 缺少参数"app"或"app"值为空.');
+            iUI::warning('iCMS&#x3a;content&#x3a;'.$func.' Ошибка! отсутствуют параметры  "app"或"app"值为空.');
         }
         self::$tables  = apps::get_table(self::$apps);
         self::$app     = self::$apps['app'];

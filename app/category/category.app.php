@@ -23,16 +23,14 @@ class categoryApp{
         return $this->do_iCMS();
     }
     /**
-     * [hooked 钩子]
+     * [hooked]
      * @param  [type] $data [description]
      * @return [type]       [description]
      */
     // public static function hooked(&$data){
     //     iPHP::hook('category',$data,iCMS::$config['hooks']['category']);
     // }
-    /**
-     * 该方法超多次调用 禁止SQL查询
-     */
+    
     public static function category($cid,$tpl='index',$is_list=null) {
         $category = categoryApp::get_cache_cid($cid);
         if(empty($category) && $tpl){
@@ -64,12 +62,12 @@ class categoryApp{
         if($tpl) {
             iView::set_iVARS($category['iurl'],'iURL');
             $category['mode'] && iURL::page_url($category['iurl']);
-            if($category['app']['type']=="2"){ //自定义应用模板信息
+            if($category['app']['type']=="2"){
                 iPHP::callback(array("contentFunc","interfaced"),array($category['app']));
             }
             $view_app = "category";
             $category['app']['app'] && $view_app = $category['app']['app'];
-            iView::assign('APP', $category['app']); //绑定的应用信息
+            iView::assign('APP', $category['app']);
             unset($category['app']);
             iView::assign('category',$category);
             if(strpos($tpl, '.htm')!==false){
@@ -80,7 +78,7 @@ class categoryApp{
             if($category['template']){
                 $view = iView::render($category['template'][$tpl],$view_app);
             }else{
-                iPHP::error_404('找不到该栏目的模板配置,请设置栏目'.$tpl.'Шаблон', 20002);
+                iPHP::error_404('Не удается найти шаблон для текущей категории, в конфигурации указан шаблон '.$tpl.'', 20002);
             }
             if($view) return array($view,$category);
         }else{

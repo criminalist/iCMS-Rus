@@ -22,7 +22,7 @@
 #upload .placeholder .flashTip { color: #4d7284; font-size: 12px; position: absolute; width: 100%; text-align: center; bottom: 20px; }
 #upload .placeholder .flashTip a { color: #0785d1; text-decoration: none; }
 #upload .placeholder .flashTip a:hover { text-decoration: underline; }
-#upload .placeholder.webuploader-dnd-over { border-color: #999999; }
+#upload .placeholder.webuploader-dnd-over { border-color: #8395a7; }
 #upload .filelist { list-style: none; margin: 0; padding: 0; overflow-x: hidden; overflow-y: auto; position: relative; height: 300px; }
 #upload .filelist:after { content: ''; display: block; width: 0; height: 0; overflow: hidden; clear: both; }
 #upload .filelist li { width: 113px; height: 113px; background: url(./images/bg.png); text-align: center; margin: 9px 0 0 9px; *margin: 6px 0 0 6px; position: relative; display: block; float: left; overflow: hidden; font-size: 12px; }

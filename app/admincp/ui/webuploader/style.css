@@ -21,7 +21,7 @@ clip: rect(1px, 1px, 1px, 1px); }
 #uploader .placeholder .flashTip { color: #4d7284; font-size: 12px; position: absolute; width: 100%; text-align: center; bottom: 20px; }
 #uploader .placeholder .flashTip a { color: #0785d1; text-decoration: none; }
 #uploader .placeholder .flashTip a:hover { text-decoration: underline; }
-#uploader .placeholder.webuploader-dnd-over { border-color: #999999; }
+#uploader .placeholder.webuploader-dnd-over { border-color: #8395a7; }
 #uploader .placeholder.webuploader-dnd-over.webuploader-dnd-denied { border-color: red; }
 #uploader .filelist { list-style: none; margin: 0; padding: 0; }
 #uploader .filelist:after { content: ''; display: block; width: 0; height: 0; overflow: hidden; clear: both; }

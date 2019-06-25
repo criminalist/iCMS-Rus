@@ -20,9 +20,8 @@
 <body class="articleApp" i="<!--{$iCMS.APP.NAME}-->">
     <!--{include file="./header.htm"}-->
     <div class="body clearfix">
-        <div class="body-wrap r5">
-            <div class="main-col">
-                <ul class="breadcrumb">
+		
+		<ul class="breadcrumb">
                     <li><a href="<!--{$site.url}-->">Главная</a></li>
                     <!--{foreach value="catenav" from="$category.navArray"}-->
                     <li>
@@ -35,11 +34,12 @@
                         <!--{$article.link}-->
                     </li>
                 </ul>
-
+		
+        <div class="body-wrap r3">
+            <div class="main-col">
                 <div class="content-wrap">
                     <h1><!--{$article.title}--></h1>
                     <div class="info">
-                        <span><a href="<!--{$site.url}-->"><!--{$site.name}--></a> <!--{$site.url}--></span>
                         <span class="pubdate"><!--{$article.pubdate|date:"Y-m-d H:i"}--></span>
                         <span class="source">Источник:<!--{$article.source|default:'Не указан'}--> </span>
                         <!--{if $article.author}--><span class="author">Автор:<!--{$article.author}--></span>
