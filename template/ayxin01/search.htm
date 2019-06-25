@@ -78,9 +78,9 @@
             </div>
           </form>
 		   <!--{if $search.keyword}-->
-          以下是您想要的结果：
+          以下是您想要的结果:
             <!--{else}-->
-            很抱歉，没有找到与"<!--{$search.title}-->"相关的内容！
+            很抱歉,没有找到与"<!--{$search.title}-->"相关的内容!
            <!--{/if}-->
 		   <!--{iCMS:article:list loop="true" page="true" row="10" keywords="$search.keyword"}-->
           <div class='list'>
@@ -99,7 +99,7 @@
                   <img src='<!--{$article_list.pic.url|thumb:150:100}-->' class="search_pic"></td><!--{/if}-->
                 <td width='80%'><!--{$article_list.description|cut:200:'...'}-->
                   <br>
-                  <font color='#777777'>所属栏目：
+                  <font color='#777777'>所属栏目:
                     <!--{$article_list.category.link}--> <!--{$article_list.pubdate|date:'Y-m-d'}--></font>
                 </td>
               </tr>

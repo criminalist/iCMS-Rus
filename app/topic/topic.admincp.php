@@ -218,7 +218,7 @@ class topicAdmincp{
             $msg = '推送完成';
             $dialog && iUI::success($msg,'js:1');
         }else{
-            $msg = '推送失败！['.$res->message.']';
+            $msg = '推送失败!['.$res->message.']';
             $dialog && iUI::alert($msg,'js:1');
         }
         if(!$dialog) return $msg.'<br />';
@@ -481,11 +481,11 @@ class topicAdmincp{
         $source      = iSecurity::escapeStr($_POST['source']);
         $author      = iSecurity::escapeStr($_POST['author']);
 
-        $tags        = str_replace('，', ',',iSecurity::escapeStr($_POST['tags']));
+        $tags        = str_replace(',', ',',iSecurity::escapeStr($_POST['tags']));
         $_tags       = iSecurity::escapeStr($_POST['_tags']);
 
         if (empty($title)) {
-            return iUI::alert('标题不能为空！');
+            return iUI::alert('标题不能为空!');
         }
 
         $pubdate   = str2time($_POST['pubdate']);

@@ -61,7 +61,7 @@ $(function(){
   <div class="clearfix mt20"></div>
   <div class="alert">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <strong>Warning!</strong> 采集资源库来自互联网，iCMS不提供任何资源采集服务!
+    <strong>Warning!</strong> 采集资源库来自互联网,iCMS不提供任何资源采集服务!
   </div>
 </div>
 <div class='iCMS-batch'>

@@ -181,12 +181,12 @@ $(function(){
             <div class="clearfloat mb10"></div>
             <div class="input-prepend">
               <span class="add-on">关键字</span>
-              <input type="text" name="keywords" class="span6" id="keywords" value="<?php echo $rs['keywords'] ; ?>" onkeyup="javascript:this.value=this.value.replace(/，/ig,',');"/>
+              <input type="text" name="keywords" class="span6" id="keywords" value="<?php echo $rs['keywords'] ; ?>" onkeyup="javascript:this.value=this.value.replace(/,/ig,',');"/>
             </div>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend">
               <span class="add-on">标 签</span>
-              <input type="text" name="tags" class="span6" id="tags" value="<?php echo $rs['tags'] ; ?>" onkeyup="javascript:this.value=this.value.replace(/，/ig,',');"/>
+              <input type="text" name="tags" class="span6" id="tags" value="<?php echo $rs['tags'] ; ?>" onkeyup="javascript:this.value=this.value.replace(/,/ig,',');"/>
             </div>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend" style="width:100%;">

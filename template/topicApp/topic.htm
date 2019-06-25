@@ -42,10 +42,10 @@
                     <div class="article-info">
                         <span><a href="<!--{$site.url}-->"><!--{$site.name}--></a> <!--{$site.url}--></span>
                         <span class="pubdate"><!--{$topic.pubdate|date:"Y-m-d H:i"}--></span>
-                        <span class="source">出处：<!--{$topic.source|default:'网络'}--> </span>
-                        <!--{if $topic.author}--><span class="author">作者：<!--{$topic.author}--></span>
+                        <span class="source">出处:<!--{$topic.source|default:'网络'}--> </span>
+                        <!--{if $topic.author}--><span class="author">作者:<!--{$topic.author}--></span>
                         <!--{/if}-->
-                        <span class="editor">编辑：<!--{$topic.user.at}--></span>
+                        <span class="editor">编辑:<!--{$topic.user.at}--></span>
                         <span id="cmt_count" class="cmt_count"></span>
                     </div>
                     <!--{if $topic.description}-->
@@ -56,7 +56,7 @@
                     <div class="clearfix"></div>
                     <!--{if $topic.tags}-->
                     <div class="article-tags">
-                        <b>相关专题：</b>
+                        <b>相关专题:</b>
                         <!--{$topic.tags_link}-->
                     </div>
                     <!--{/if}-->
@@ -151,7 +151,7 @@
                 </div>
                 <div class="clearfix"></div>
                 <div class="related">
-                    <h3><i class="line"></i>更多 <b><!--{$category.link}--></b> 相关资讯：</h3>
+                    <h3><i class="line"></i>更多 <b><!--{$category.link}--></b> 相关资讯:</h3>
                     <div class="related-left">
                         <ul>
                             <!--{iCMS:topic:list loop='true' row='9' cid="$category.cid"}-->

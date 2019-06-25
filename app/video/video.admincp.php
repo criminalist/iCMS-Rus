@@ -216,7 +216,7 @@ class videoAdmincp{
             $msg = '推送完成';
             $dialog && iUI::success($msg,'js:1');
         }else{
-            $msg = '推送失败！['.$res->message.']';
+            $msg = '推送失败!['.$res->message.']';
             $dialog && iUI::alert($msg,'js:1');
         }
         if(!$dialog) return $msg.'<br />';
@@ -514,13 +514,13 @@ class videoAdmincp{
         $editor      = iSecurity::escapeStr($_POST['editor']);
         $description = iSecurity::escapeStr($_POST['description']);
         $keywords    = iSecurity::escapeStr($_POST['keywords']);
-        $tags        = str_replace('，', ',',iSecurity::escapeStr($_POST['tags']));
+        $tags        = str_replace(',', ',',iSecurity::escapeStr($_POST['tags']));
         $clink       = iSecurity::escapeStr($_POST['clink']);
         $url         = iSecurity::escapeStr($_POST['url']);
         $tpl         = iSecurity::escapeStr($_POST['tpl']);
         $creative    = (int)$_POST['creative'];
 
-        $alias    = str_replace(array('，',' / ','/'), ',',iSecurity::escapeStr($_POST['alias']));
+        $alias    = str_replace(array(',',' / ','/'), ',',iSecurity::escapeStr($_POST['alias']));
         $enname   = iSecurity::escapeStr($_POST['enname']);
         $star     = iSecurity::escapeStr($_POST['star']);
         $remark   = iSecurity::escapeStr($_POST['remark']);
@@ -537,11 +537,11 @@ class videoAdmincp{
         $score    = (int)$_POST['score'];
         $scorenum = (int)$_POST['scorenum'];
 
-        $actor     = str_replace(array('，',' / ','/'), ',',iSecurity::escapeStr($_POST['actor']));
+        $actor     = str_replace(array(',',' / ','/'), ',',iSecurity::escapeStr($_POST['actor']));
         $_actor    = iSecurity::escapeStr($_POST['_actor']);
-        $director  = str_replace(array('，',' / ','/'), ',',iSecurity::escapeStr($_POST['director']));
+        $director  = str_replace(array(',',' / ','/'), ',',iSecurity::escapeStr($_POST['director']));
         $_director = iSecurity::escapeStr($_POST['_director']);
-        $attrs     = str_replace(array('，',' / ','/'), ',',iSecurity::escapeStr($_POST['attrs']));
+        $attrs     = str_replace(array(',',' / ','/'), ',',iSecurity::escapeStr($_POST['attrs']));
         $_attrs    = iSecurity::escapeStr($_POST['_attrs']);
 
         $genre  = implode(',', (array)$_POST['genre']);
@@ -551,7 +551,7 @@ class videoAdmincp{
         $scores  = addslashes(json_encode((array)$_POST['scores']));
 
         if (empty($title)) {
-            return iUI::alert('Заголовок не может быть пустым！');
+            return iUI::alert('Заголовок не может быть пустым!');
         }
         if (empty($cid)) {
             return iUI::alert('Выберите категорию для привязки');
@@ -566,7 +566,7 @@ class videoAdmincp{
             foreach (self::$config['filter'] as $fkey => $fvalue) {
                 list($field,$text) = explode(':', $fvalue);
                 if($fwd = iPHP::callback(array("filterApp","run"),array(&${$field}),false)){
-                    return iUI::alert($text.'中包含【'.$fwd.'】被系统屏蔽的字符，请重新填写。');
+                    return iUI::alert($text.'中包含 ['.$fwd.'] 被系统屏蔽的字符,请重新填写。');
                 }
             }
         }

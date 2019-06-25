@@ -19,7 +19,7 @@ admincp::head();
         <div class="input-prepend"> <span class="add-on">资源库地址</span>
           <input type="text" name="url" class="span6" id="url" value="<?php echo $rs['url']; ?>"/>
         </div>
-        <span class="help-line">资源库api地址，如：http://www.ooxx.com/api.php</span>
+        <span class="help-line">资源库api地址,如:http://www.ooxx.com/api.php</span>
         <div class="clearfloat mb10"></div>
         <div class="input-prepend"> <span class="add-on">资源库描述</span>
           <input type="text" name="info" class="span6" id="info" value="<?php echo $rs['info']; ?>"/>

@@ -4,7 +4,7 @@
 <head>
     <title>
         <!--{if $category.title}-->
-        <!--{$category.title}-->_
+        <!--{$category.title}-->
         <!--{$site.title}-->
         <!--{$category.name}-->
         <!--{else}-->
@@ -51,7 +51,7 @@
                         <!--{if $topic_list[0].description}-->
                         <p>
                             <!--{$topic_list[0].description|cut:100}-->...
-                            <a href="<!--{$topic_list[0].url}-->" target="_blank" class="blue">[详细]</a>
+                            <a href="<!--{$topic_list[0].url}-->" target="_blank" class="blue">[Подробнее]</a>
                         </p>
                         <!--{/if}-->
                         <p class="clearfix dotted mb10"></p>
@@ -97,7 +97,7 @@
                     <div class="tabs-content">
                         <div class="tabs-pane" id="tabs_c0">
                             <div class="kwLink">
-                                <b>相关标签：</b>
+                                <b>相关标签:</b>
                                 <!--{iCMS:tag:list loop="true" row="20" orderby="hot" cid="$category.cid"}-->
                                 <a href="<!--{$tag_list.url}-->" target="_blank">
                                     <!--{$tag_list.name}-->
@@ -119,12 +119,12 @@
                                         <!--{if $topic_list.description}-->
                                         <p class="media-text">
                                             <!--{$topic_list.description|cut:110:'...'}-->
-                                            <a href="<!--{$topic_list.url}-->" target="_blank" class="blue">[详细]</a>
+                                            <a href="<!--{$topic_list.url}-->" target="_blank" class="blue">[Подробнее]</a>
                                         </p>
                                         <!--{/if}-->
                                         <div class="media-info">
                                             <span class="date"><!--{$topic_list.pubdate|date:'Y-m-d H:i'}--></span>
-                                            <span class="category">分类：<!--{$topic_list.category.link}--></span>
+                                            <span class="category">分类:<!--{$topic_list.category.link}--></span>
                                             <!--{if $topic_list.tags_link}-->
                                             <span class="tags"><!--{$topic_list.tags_link}--></span>
                                             <!--{/if}-->
@@ -141,7 +141,7 @@
                         <!--{foreach value="catlist" from="$category_list"}-->
                         <div class="tabs-pane hide" id="tabs_c<!--{$catlist.cid}-->">
                             <div class="kwLink">
-                                <b>相关标签：</b>
+                                <b>相关标签:</b>
                                 <!--{iCMS:tag:list loop="true" row="20" orderby="hot" cid="$catlist.cid"}-->
                                 <a href="<!--{$tag_list.url}-->" target="_blank">
                                     <!--{$tag_list.name}-->
@@ -162,7 +162,7 @@
                                         </h4>
                                         <p class="media-text">
                                             <!--{$topic_list.description|cut:100:'......'}-->
-                                            <a href="<!--{$topic_list.url}-->" target="_blank" class="blue">[详细]</a>
+                                            <a href="<!--{$topic_list.url}-->" target="_blank" class="blue">[Подробнее]</a>
                                         </p>
                                         <div class="media-info">
                                             <span class="date"><!--{$topic_list.pubdate|date:'m月d日'}--></span>

@@ -56,7 +56,7 @@ $("#<?php echo APP_FORMID;?>").batch();
             <span class="user-info">
               <a href="<?php echo APP_URI; ?>&userid=<?php echo $value['userid'] ; ?>" class="tip" title="查看该用户所有回复"><span class="label label-info"><?php echo $user['name'] ; ?></span></a>
               发表<?php if(!$value['rootid']){?>问题<?php }else{ ?>回复<?php } ?>
-              <a href="<?php echo APP_URI; ?>&ip=<?php echo $value['ip'] ; ?>" class="tip" title="查看该IP所有回复"><span class="label label-inverse">IP：<?php echo $value['ip'] ; ?></span></a>
+              <a href="<?php echo APP_URI; ?>&ip=<?php echo $value['ip'] ; ?>" class="tip" title="查看该IP所有回复"><span class="label label-inverse">IP:<?php echo $value['ip'] ; ?></span></a>
               <?php if(!$value['status']){?>
               <span class="label label-warning">未审核</span>
               <?php } ?>

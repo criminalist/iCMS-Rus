@@ -121,14 +121,14 @@ class video_spiderAdmincp {
     }
     public static function insert_video($value,$category,$rid) {
         $video_id = self::video_spider_check($value['id'],$rid);
-        //查找同名
+        
         $title = str_replace(array('\\','()','\''),'/',$value['name']);
-        $title = str_replace(array('HD','BD','DVD','VCD','TS','【完结】','【】','[]','()','\''),'',$title);
+        $title = str_replace(array('HD','BD','DVD','VCD','TS','[完结]','[] ','[]','()','\''),'',$title);
         $vid = video::check($title,$video_id);
         $vid && $video_id = $vid;
 
         if($video_id){
-            $msg = '更新';
+            $msg = 'Обновить';
             $vid && $msg = '仅更新资源';
             // $video['video_id'] = $video_id;
             list($_video,$vdata) = video::data($video_id);

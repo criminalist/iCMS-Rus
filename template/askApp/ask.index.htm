@@ -4,7 +4,7 @@
 <head>
     <title>
         <!--{if $category.title}-->
-        <!--{$category.title}-->_
+        <!--{$category.title}-->
         <!--{$site.title}-->
         <!--{$category.name}-->
         <!--{else}-->
@@ -75,7 +75,7 @@
                     <div class="tabs-content">
                         <div class="tabs-pane" id="tabs_c0">
                             <div class="kwLink">
-                                <b>相关标签：</b>
+                                <b>相关标签:</b>
                                 <!--{iCMS:tag:list loop="true" row="20" orderby="hot" sub="all" cid="$category.cid"}-->
                                 <a href="<!--{$tag_list.url}-->" target="_blank">
                                     <!--{$tag_list.name}-->
@@ -94,7 +94,7 @@
                         <!--{foreach value="catlist" from="$category_list"}-->
                         <div class="tabs-pane hide" id="tabs_c<!--{$catlist.cid}-->">
                             <div class="kwLink">
-                                <b>相关标签：</b>
+                                <b>相关标签:</b>
                                 <!--{iCMS:tag:list loop="true" row="20" orderby="hot" cid="$catlist.cid"}-->
                                 <a href="<!--{$tag_list.url}-->" target="_blank">
                                     <!--{$tag_list.name}-->

@@ -110,10 +110,10 @@ class askAdmincp{
         $rootid = (int) $_GET['rootid'];
 
         if (empty($iid)) {
-            return iUI::alert('iid不能为空！');
+            return iUI::alert('iid不能为空!');
         }
         if (empty($id)) {
-            return iUI::alert('id不能为空！');
+            return iUI::alert('id不能为空!');
         }
         iDB::query("
             DELETE
@@ -252,7 +252,7 @@ class askAdmincp{
         $_tags       = iSecurity::escapeStr($_POST['_tags']);
 
         $title       = iSecurity::escapeStr($_POST['title']);
-        $tags        = str_replace('，', ',',iSecurity::escapeStr($_POST['tags']));
+        $tags        = str_replace(',', ',',iSecurity::escapeStr($_POST['tags']));
 
         $username    = iSecurity::escapeStr($_POST['uname']);
         $userid      = iSecurity::escapeStr($_POST['uid']);
@@ -290,7 +290,7 @@ class askAdmincp{
 
 
         if (empty($title)) {
-            return iUI::alert('Заголовок не может быть пустым！');
+            return iUI::alert('Заголовок не может быть пустым!');
         }
         if (empty($cid)) {
             return iUI::alert('Выберите категорию для привязки');

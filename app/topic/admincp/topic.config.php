@@ -30,7 +30,7 @@ configAdmincp::head("Настройки");
   <span class="add-on">专题目录</span>
   <input type="text" name="config[dir]" class="span4" id="dir" value="<?php echo $config['dir'] ; ?>"/>
 </div>
-<span class="help-inline">存放专题静态页面目录，相对于app目录。可用../表示上级目录</span>
+<span class="help-inline">存放专题静态页面目录,相对于app目录。可用../表示上级目录</span>
  --><div class="clearfloat mb10"></div>
 <div class="input-prepend input-append">
   <span class="add-on">Шаблон</span>

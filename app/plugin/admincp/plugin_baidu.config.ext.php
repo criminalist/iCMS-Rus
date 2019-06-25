@@ -7,7 +7,7 @@ defined('iPHP') OR exit('What are you doing?');
 <div class="input-prepend"> <span class="add-on">站点</span>
   <input type="text" name="config[plugin][baidu][sitemap][site]" class="span3" id="plugin_baidu_sitemap_site" value="<?php echo $config['plugin']['baidu']['sitemap']['site'] ; ?>"/>
 </div>
-<span class="help-inline">在站长平台验证的站点，比如www.example.com</span>
+<span class="help-inline">在站长平台验证的站点,比如www.example.com</span>
 <div class="clearfloat mt10"></div>
 <div class="input-prepend"> <span class="add-on">准入密钥</span>
   <input type="text" name="config[plugin][baidu][sitemap][access_token]" class="span3" id="plugin_baidu_sitemap_access_token" value="<?php echo $config['plugin']['baidu']['sitemap']['access_token'] ; ?>"/>

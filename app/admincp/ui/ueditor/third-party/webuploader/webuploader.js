@@ -59,7 +59,7 @@
             return module;
         },
 
-        // 将所有modules，将路径ids装换成对象.
+        // 将所有modules,将路径ids装换成对象.
         exportsTo = function( obj ) {
             var key, host, parts, part, last, ucFirst;
 
@@ -159,12 +159,12 @@
      */
     
     /**
-     * Web Uploader内部类的详细说明，以下提及的功能类，都可以在`WebUploader`这个变量中访问到.
+     * Web Uploader内部类的详细说明,以下提及的功能类,都可以在`WebUploader`这个变量中访问到.
      *
      * As you know, Web Uploader的每个文件都是用过[AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)规范中的`define`组织起来的, 每个Module都会有个module id.
-     * 默认module id该文件的路径，而此路径将会转化成名字空间存放在WebUploader中.如：
+     * 默认module id该文件的路径,而此路径将会转化成名字空间存放在WebUploader中.如:
      *
-     * * module `base`：WebUploader.Base
+     * * module `base`:WebUploader.Base
      * * module `file`: WebUploader.File
      * * module `lib/dnd`: WebUploader.Lib.Dnd
      * * module `runtime/html5/dnd`: WebUploader.Runtime.Html5.Dnd
@@ -210,7 +210,7 @@
     
     
         /**
-         * 基础类，提供一些简单常用的方法.
+         * 基础类,提供一些简单常用的方法.
          * @class Base
          */
         return {
@@ -234,12 +234,12 @@
             /**
              * @description  简单的浏览器检查结果.
              *
-             * * `webkit`  webkit版本号，如果浏览器为非webkit内核，此属性为`undefined`.
-             * * `chrome`  chrome浏览器版本号，如果浏览器为chrome，此属性为`undefined`.
-             * * `ie`  ie浏览器版本号，如果浏览器为非ie，此属性为`undefined`.**暂不支持ie10+**
-             * * `firefox`  firefox浏览器版本号，如果浏览器为非firefox，此属性为`undefined`.
-             * * `safari`  safari浏览器版本号，如果浏览器为非safari，此属性为`undefined`.
-             * * `opera`  opera浏览器版本号，如果浏览器为非opera，此属性为`undefined`.
+             * * `webkit`  webkit版本号,如果浏览器为非webkit内核,此属性为`undefined`.
+             * * `chrome`  chrome浏览器版本号,如果浏览器为chrome,此属性为`undefined`.
+             * * `ie`  ie浏览器版本号,如果浏览器为非ie,此属性为`undefined`.**暂不支持ie10+**
+             * * `firefox`  firefox浏览器版本号,如果浏览器为非firefox,此属性为`undefined`.
+             * * `safari`  safari浏览器版本号,如果浏览器为非safari,此属性为`undefined`.
+             * * `opera`  opera浏览器版本号,如果浏览器为非opera,此属性为`undefined`.
              *
              * @property {Object} [browser]
              */
@@ -268,8 +268,8 @@
             /**
              * @description  操作系统检查结果.
              *
-             * * `android`  如果在android浏览器环境下，此值为对应的android版本号，否则为`undefined`.
-             * * `ios` 如果在ios浏览器环境下，此值为对应的ios版本号，否则为`undefined`.
+             * * `android`  如果在android浏览器环境下,此值为对应的android版本号,否则为`undefined`.
+             * * `ios` 如果在ios浏览器环境下,此值为对应的ios版本号,否则为`undefined`.
              * @property {Object} [os]
              */
             os: (function( ua ) {
@@ -293,8 +293,8 @@
              * @grammar Base.inherits( super, protos ) => child
              * @grammar Base.inherits( super, protos, statics ) => child
              * @param  {Class} super 父类
-             * @param  {Object | Function} [protos] 子类或者对象.如果对象中包含constructor，子类将是用此属性值.
-             * @param  {Function} [protos.constructor] 子类构造器，不指定的话将创建个临时的直接执行父类构造器的方法.
+             * @param  {Object | Function} [protos] 子类或者对象.如果对象中包含constructor,子类将是用此属性值.
+             * @param  {Function} [protos.constructor] 子类构造器,不指定的话将创建个临时的直接执行父类构造器的方法.
              * @param  {Object} [statics] 静态属性或方法.
              * @return {Class} 返回子类.
              * @example
@@ -311,7 +311,7 @@
              *     }
              * });
              *
-             * // 因为没有指定构造器，父类的构造器将会执行.
+             * // 因为没有指定构造器,父类的构造器将会执行.
              * var instance = new Manager();    // => Super
              *
              * // 继承子父类的方法
@@ -343,7 +343,7 @@
                 // 让子类的__super__属性指向父类.
                 child.__super__ = Super.prototype;
     
-                // 构建原型，添加原型方法或属性.
+                // 构建原型,添加原型方法或属性.
                 // 暂时用Object.create实现.
                 child.prototype = createObject( Super.prototype );
                 protos && $.extend( true, child.prototype, protos );
@@ -358,7 +358,7 @@
             noop: noop,
     
             /**
-             * 返回一个新的方法，此方法将已指定的`context`来执行.
+             * 返回一个新的方法,此方法将已指定的`context`来执行.
              * @grammar Base.bindFn( fn, context ) => Function
              * @method bindFn
              * @example
@@ -376,7 +376,7 @@
             bindFn: bindFn,
     
             /**
-             * 引用Console.log如果存在的话，否则引用一个[空函数loop](#WebUploader:Base.log).
+             * 引用Console.log如果存在的话,否则引用一个[空函数loop](#WebUploader:Base.log).
              * @grammar Base.log( args... ) => undefined
              * @method log
              */
@@ -449,7 +449,7 @@
              * @grammar Base.formatSize( size, pointLength, units ) => String
              * @param {Number} size 文件大小
              * @param {Number} [pointLength=2] 精确到的小数点数.
-             * @param {Array} [units=[ 'B', 'K', 'M', 'G', 'TB' ]] 单位数组.从字节，到千字节，一直往上指定.如果单位数组里面只指定了到了K(千字节)，同时文件大小大于M, 此方法的输出将还是显示成多少K.
+             * @param {Array} [units=[ 'B', 'K', 'M', 'G', 'TB' ]] 单位数组.从字节,到千字节,一直往上指定.如果单位数组里面只指定了到了K(千字节),同时文件大小大于M, 此方法的输出将还是显示成多少K.
              * @example
              * console.log( Base.formatSize( 100 ) );    // => 100B
              * console.log( Base.formatSize( 1024 ) );    // => 1.00K
@@ -473,7 +473,7 @@
         };
     });
     /**
-     * 事件处理类，可以独立使用，也可以扩展给对象使用.
+     * 事件处理类,可以独立使用,也可以扩展给对象使用.
      * @fileOverview Mediator
      */
     define('mediator',[
@@ -496,7 +496,7 @@
         }
     
         function eachEvent( events, callback, iterator ) {
-            // 不支持对象，只支持多个event用空格隔开
+            // 不支持对象,只支持多个event用空格隔开
             $.each( (events || '').split( separator ), function( _, key ) {
                 iterator( key, callback );
             });
@@ -525,7 +525,7 @@
             /**
              * 绑定事件.
              *
-             * `callback`方法在执行时，arguments将会来源于trigger的时候携带的参数.如
+             * `callback`方法在执行时,arguments将会来源于trigger的时候携带的参数.如
              * ```javascript
              * var obj = {};
              *
@@ -539,11 +539,11 @@
              * obj.trigger( 'testa', 'arg1', 'arg2' );
              * ```
              *
-             * 如果`callback`中，某一个方法`return false`了，则后续的其他`callback`都不会被执行到.
-             * 切会影响到`trigger`方法的返回值，为`false`.
+             * 如果`callback`中,某一个方法`return false`了,则后续的其他`callback`都不会被执行到.
+             * 切会影响到`trigger`方法的返回值,为`false`.
              *
-             * `on`还可以用来添加一个特殊事件`all`, 这样所有的事件触发都会响应到.同时此类`callback`中的arguments有一个不同处，
-             * 就是第一个参数为`type`，记录当前是什么事件在触发.此类`callback`的优先级比脚低，会再正常`callback`执行完后触发.
+             * `on`还可以用来添加一个特殊事件`all`, 这样所有的事件触发都会响应到.同时此类`callback`中的arguments有一个不同处,
+             * 就是第一个参数为`type`,记录当前是什么事件在触发.此类`callback`的优先级比脚低,会再正常`callback`执行完后触发.
              * ```javascript
              * obj.on( 'all', function( type, arg1, arg2 ) {
              *     console.log( type, arg1, arg2 ); // => 'testa', 'arg1', 'arg2'
@@ -552,10 +552,10 @@
              *
              * @method on
              * @grammar on( name, callback[, context] ) => self
-             * @param  {String}   name     事件名，支持多个事件用空格隔开
+             * @param  {String}   name     事件名,支持多个事件用空格隔开
              * @param  {Function} callback 事件处理器
              * @param  {Object}   [context]  事件处理器的上下文.
-             * @return {self} 返回自身，方便链式
+             * @return {self} 返回自身,方便链式
              * @chainable
              * @class Mediator
              */
@@ -584,13 +584,13 @@
             },
     
             /**
-             * 绑定事件，且当handler执行完后，自动解除绑定.
+             * 绑定事件,且当handler执行完后,自动解除绑定.
              * @method once
              * @grammar once( name, callback[, context] ) => self
              * @param  {String}   name     事件名
              * @param  {Function} callback 事件处理器
              * @param  {Object}   [context]  事件处理器的上下文.
-             * @return {self} 返回自身，方便链式
+             * @return {self} 返回自身,方便链式
              * @chainable
              */
             once: function( name, callback, context ) {
@@ -620,7 +620,7 @@
              * @param  {String}   [name]     事件名
              * @param  {Function} [callback] 事件处理器
              * @param  {Object}   [context]  事件处理器的上下文.
-             * @return {self} 返回自身，方便链式
+             * @return {self} 返回自身,方便链式
              * @chainable
              */
             off: function( name, cb, ctx ) {
@@ -650,7 +650,7 @@
              * @grammar trigger( name[, args...] ) => self
              * @param  {String}   type     事件名
              * @param  {*} [...] 任意参数
-             * @return {Boolean} 如果handler中return false了，则返回false, 否则返回true
+             * @return {Boolean} 如果handler中return false了,则返回false, 否则返回true
              */
             trigger: function( type ) {
                 var args, events, allEvents;
@@ -669,15 +669,15 @@
         };
     
         /**
-         * 中介者，它本身是个单例，但可以通过[installTo](#WebUploader:Mediator:installTo)方法，使任何对象具备事件行为.
-         * 主要目的是负责模块与模块之间的合作，降低耦合度.
+         * 中介者,它本身是个单例,但可以通过[installTo](#WebUploader:Mediator:installTo)方法,使任何对象具备事件行为.
+         * 主要目的是负责模块与模块之间的合作,降低耦合度.
          *
          * @class Mediator
          */
         return $.extend({
     
             /**
-             * 可以通过这个接口，使任何对象具备事件功能.
+             * 可以通过这个接口,使任何对象具备事件功能.
              * @method installTo
              * @param  {Object} obj 需要具备事件行为的对象.
              * @return {Object} 返回obj.
@@ -772,7 +772,7 @@
              *     resize: null;
              * });
              *
-             * // 修改后图片上传前，尝试将图片压缩到1600 * 1600
+             * // 修改后图片上传前,尝试将图片压缩到1600 * 1600
              * uploader.options( 'resize', {
              *     width: 1600,
              *     height: 1600
@@ -856,7 +856,7 @@
         });
     
         /**
-         * 创建Uploader实例，等同于new Uploader( opts );
+         * 创建Uploader实例,等同于new Uploader( opts );
          * @method create
          * @class Base
          * @static
@@ -866,13 +866,13 @@
             return new Uploader( opts );
         };
     
-        // 暴露Uploader，可以通过它来扩展业务逻辑.
+        // 暴露Uploader,可以通过它来扩展业务逻辑.
         Base.Uploader = Uploader;
     
         return Uploader;
     });
     /**
-     * @fileOverview Runtime管理器，负责Runtime的选择, 连接
+     * @fileOverview Runtime管理器,负责Runtime的选择, 连接
      */
     define('runtime/runtime',[
         'base',
@@ -983,7 +983,7 @@
     });
     
     /**
-     * @fileOverview Runtime管理器，负责Runtime的选择, 连接
+     * @fileOverview Runtime管理器,负责Runtime的选择, 连接
      */
     define('runtime/client',[
         'base',
@@ -1009,7 +1009,7 @@
                     }
     
                     for ( i in obj ) {
-                        // 有些类型不能重用，比如filepicker.
+                        // 有些类型不能重用,比如filepicker.
                         if ( standalone && obj[ i ].__standalone ) {
                             continue;
                         }
@@ -1032,7 +1032,7 @@
     
             this.uid = Base.guid('client_');
     
-            // 允许runtime没有初始化之前，注册一些方法在初始化后执行.
+            // 允许runtime没有初始化之前,注册一些方法在初始化后执行.
             this.runtimeReady = function( cb ) {
                 return deferred.done( cb );
             };
@@ -1050,7 +1050,7 @@
                     runtime = cache.get( opts );
                 }
     
-                // 像filePicker只能独立存在，不能公用.
+                // 像filePicker只能独立存在,不能公用.
                 runtime = runtime || cache.get( null, standalone );
     
                 // 需要创建
@@ -1209,8 +1209,8 @@
     
             init: Base.noop,
     
-            // 类Backbone的事件监听声明，监听uploader实例上的事件
-            // widget直接无法监听事件，事件只能通过uploader来传递
+            // 类Backbone的事件监听声明,监听uploader实例上的事件
+            // widget直接无法监听事件,事件只能通过uploader来传递
             invoke: function( apiName, args ) {
     
                 /*
@@ -1283,7 +1283,7 @@
                     }
                 }
     
-                // 如果有callback，则用异步方式.
+                // 如果有callback,则用异步方式.
                 if ( callback || dfds.length ) {
                     promise = Base.when.apply( Base, dfds );
                     key = promise.pipe ? 'pipe' : 'then';
@@ -1308,7 +1308,7 @@
     
         /**
          * 添加组件
-         * @param  {object} widgetProto 组件原型，构造函数通过constructor属性定义
+         * @param  {object} widgetProto 组件原型,构造函数通过constructor属性定义
          * @param  {object} responseMap API名称与函数实现的映射
          * @example
          *     Uploader.register( {
@@ -1351,7 +1351,7 @@
         Uploader.options.dnd = '';
     
         /**
-         * @property {Selector} [dnd=undefined]  指定Drag And Drop拖拽的容器，如果不指定，则不启动.
+         * @property {Selector} [dnd=undefined]  指定Drag And Drop拖拽的容器,如果不指定,则不启动.
          * @namespace options
          * @for Uploader
          */
@@ -1359,7 +1359,7 @@
         /**
          * @event dndAccept
          * @param {DataTransferItemList} items DataTransferItem
-         * @description 阻止此事件可以拒绝某些类型的文件拖入进来.目前只有 chrome 提供这样的 API，且只能通过 mime-type 验证.
+         * @description 阻止此事件可以拒绝某些类型的文件拖入进来.目前只有 chrome 提供这样的 API,且只能通过 mime-type 验证.
          * @for  Uploader
          */
         return Uploader.register({
@@ -1450,7 +1450,7 @@
         var $ = Base.$;
     
         /**
-         * @property {Selector} [paste=undefined]  指定监听paste事件的容器，如果不指定，不启用此功能.此功能为通过粘贴来添加截屏的图片.建议设置为`document.body`.
+         * @property {Selector} [paste=undefined]  指定监听paste事件的容器,如果不指定,不启用此功能.此功能为通过粘贴来添加截屏的图片.建议设置为`document.body`.
          * @namespace options
          * @for Uploader
          */
@@ -1523,7 +1523,7 @@
     });
     /**
      * 为了统一化Flash的File和HTML5的File而存在.
-     * 以至于要调用Flash里面的File，也可以像调用HTML5版本的File一下.
+     * 以至于要调用Flash里面的File,也可以像调用HTML5版本的File一下.
      * @fileOverview File
      */
     define('lib/file',[
@@ -1713,9 +1713,9 @@
              * @property {Selector | Object} [pick=undefined]
              * @namespace options
              * @for Uploader
-             * @description 指定选择文件的按钮容器，不指定则不创建按钮.
+             * @description 指定选择文件的按钮容器,不指定则不创建按钮.
              *
-             * * `id` {Seletor} 指定选择文件的按钮容器，不指定则不创建按钮.
+             * * `id` {Seletor} 指定选择文件的按钮容器,不指定则不创建按钮.
              * * `label` {String} 请采用 `innerHTML` 代替
              * * `innerHTML` {String} 指定按钮文字.不指定时优先从指定的容器中看是否自带文字.
              * * `multiple` {Boolean} 是否开起同时选择多个文件能力.
@@ -1726,13 +1726,13 @@
              * @property {Arroy} [accept=null]
              * @namespace options
              * @for Uploader
-             * @description 指定接受哪些类型的文件. 由于目前还有ext转mimeType表，所以这里需要分开指定.
+             * @description 指定接受哪些类型的文件. 由于目前还有ext转mimeType表,所以这里需要分开指定.
              *
              * * `title` {String} 文字描述
-             * * `extensions` {String} 允许的文件后缀，不带点，多个用逗号分割.
+             * * `extensions` {String} 允许的文件后缀,不带点,多个用逗号分割.
              * * `mimeTypes` {String} 多个用逗号分割.
              *
-             * 如：
+             * 如:
              *
              * ```
              * {
@@ -1772,7 +1772,7 @@
              * @for Uploader
              * @grammar addButton( pick ) => Promise
              * @description
-             * 添加文件选择按钮，如果一个按钮不够，需要调用此方法来添加.参数跟[options.pick](#WebUploader:Uploader:options)一致.
+             * 添加文件选择按钮,如果一个按钮不够,需要调用此方法来添加.参数跟[options.pick](#WebUploader:Uploader:options)一致.
              * @example
              * uploader.addButton({
              *     id: '#btnContainer',
@@ -1932,7 +1932,7 @@
         var $ = Base.$,
             throttle;
     
-        // 根据要处理的文件大小来节流，一次不能处理太多，会卡.
+        // 根据要处理的文件大小来节流,一次不能处理太多,会卡.
         throttle = (function( max ) {
             var occupied = 0,
                 waiting = [],
@@ -1964,17 +1964,17 @@
              * @for Uploader
              * @description 配置生成缩略图的选项.
              *
-             * 默认为：
+             * 默认为:
              *
              * ```javascript
              * {
              *     width: 110,
              *     height: 110,
              *
-             *     // 图片质量，只有type为`image/jpeg`的时候才有效.
+             *     // 图片质量,只有type为`image/jpeg`的时候才有效.
              *     quality: 70,
              *
-             *     // 是否允许放大，如果想要生成小图的时候不失真，此选项应该设置为false.
+             *     // 是否允许放大,如果想要生成小图的时候不失真,此选项应该设置为false.
              *     allowMagnify: true,
              *
              *     // 是否允许裁剪.
@@ -1999,7 +1999,7 @@
     
                 // 为空的话则保留原有图片格式.
                 // 否则强制转换成指定的类型.
-                // IE 8下面 base64 大小不能超过 32K 否则预览失败，而非 jpeg 编码的图片很可
+                // IE 8下面 base64 大小不能超过 32K 否则预览失败,而非 jpeg 编码的图片很可
                 // 能会超过 32k, 所以这里设置成预览的时候都是 image/jpeg
                 type: 'image/jpeg'
             },
@@ -2010,17 +2010,17 @@
              * @for Uploader
              * @description 配置压缩的图片的选项.如果此选项为`false`, 则图片在上传前不进行压缩.
              *
-             * 默认为：
+             * 默认为:
              *
              * ```javascript
              * {
              *     width: 1600,
              *     height: 1600,
              *
-             *     // 图片质量，只有type为`image/jpeg`的时候才有效.
+             *     // 图片质量,只有type为`image/jpeg`的时候才有效.
              *     quality: 90,
              *
-             *     // 是否允许放大，如果想要生成小图的时候不失真，此选项应该设置为false.
+             *     // 是否允许放大,如果想要生成小图的时候不失真,此选项应该设置为false.
              *     allowMagnify: false,
              *
              *     // 是否允许裁剪.
@@ -2048,15 +2048,15 @@
     
     
             /**
-             * 生成缩略图，此过程为异步，所以需要传入`callback`.
+             * 生成缩略图,此过程为异步,所以需要传入`callback`.
              * 通常情况在图片加入队里后调用此方法来生成预览图以增强交互效果.
              *
              * `callback`中可以接收到两个参数.
-             * * 第一个为error，如果生成缩略图有错误，此error将为真.
+             * * 第一个为error,如果生成缩略图有错误,此error将为真.
              * * 第二个为ret, 缩略图的Data URL值.
              *
              * **注意**
-             * Date URL在IE6/7中不支持，所以不用调用此方法了，直接显示一张暂不支持预览图片好了.
+             * Date URL在IE6/7中不支持,所以不用调用此方法了,直接显示一张暂不支持预览图片好了.
              *
              *
              * @method makeThumb
@@ -2166,7 +2166,7 @@
     
                         size = file.size;
     
-                        // 如果压缩后，比原来还大则不用压缩后的.
+                        // 如果压缩后,比原来还大则不用压缩后的.
                         if ( blob.size < size ) {
                             // file.source.destroy && file.source.destroy();
                             file.source = blob;
@@ -2175,11 +2175,11 @@
                             file.trigger( 'resize', blob.size, size );
                         }
     
-                        // 标记，避免重复压缩.
+                        // 标记,避免重复压缩.
                         file._compressed = true;
                         deferred.resolve();
                     } catch ( e ) {
-                        // 出错了直接继续，让其上传原始图片
+                        // 出错了直接继续,让其上传原始图片
                         deferred.resolve();
                     }
                 });
@@ -2220,7 +2220,7 @@
         function WUFile( source ) {
     
             /**
-             * 文件名，包括扩展名（后缀）
+             * 文件名,包括扩展名（后缀）
              * @property name
              * @type {string}
              */
@@ -2235,7 +2235,7 @@
             this.size = source.size || 0;
     
             /**
-             * 文件MIMETYPE类型，与文件类型的对应关系请参考[http://t.cn/z8ZnFny](http://t.cn/z8ZnFny)
+             * 文件MIMETYPE类型,与文件类型的对应关系请参考[http://t.cn/z8ZnFny](http://t.cn/z8ZnFny)
              * @property type
              * @type {string}
              * @default 'application'
@@ -2251,14 +2251,14 @@
             this.lastModifiedDate = source.lastModifiedDate || (new Date() * 1);
     
             /**
-             * 文件ID，每个对象具有唯一ID，与文件名无关
+             * 文件ID,每个对象具有唯一ID,与文件名无关
              * @property id
              * @type {string}
              */
             this.id = gid();
     
             /**
-             * 文件扩展名，通过文件名获取，例如test.png的扩展名为png
+             * 文件扩展名,通过文件名获取,例如test.png的扩展名为png
              * @property ext
              * @type {string}
              */
@@ -2272,7 +2272,7 @@
              */
             this.statusText = '';
     
-            // 存储文件状态，防止通过属性直接修改
+            // 存储文件状态,防止通过属性直接修改
             statusMap[ this.id ] = WUFile.Status.INITED;
     
             this.source = source;
@@ -2286,11 +2286,11 @@
         $.extend( WUFile.prototype, {
     
             /**
-             * 设置状态，状态变化时会触发`change`事件.
+             * 设置状态,状态变化时会触发`change`事件.
              * @method setStatus
              * @grammar setStatus( status[, statusText] );
              * @param {File.Status|String} status [文件状态值](#WebUploader:File:File.Status)
-             * @param {String} [statusText=''] 状态说明，常在error时使用，用http, abort,server等来标记是由于什么原因导致文件错误.
+             * @param {String} [statusText=''] 状态说明,常在error时使用,用http, abort,server等来标记是由于什么原因导致文件错误.
              */
             setStatus: function( status, text ) {
     
@@ -2313,7 +2313,7 @@
              * 获取文件状态
              * @return {File.Status}
              * @example
-                     文件状态具体包括以下几种类型：
+                     文件状态具体包括以下几种类型:
                      {
                          // 初始化
                         INITED:     0,
@@ -2349,14 +2349,14 @@
         Mediator.installTo( WUFile.prototype );
     
         /**
-         * 文件状态值，具体包括以下几种类型：
+         * 文件状态值,具体包括以下几种类型:
          * * `inited` 初始状态
          * * `queued` 已经进入队列, 等待上传
          * * `progress` 上传中
          * * `complete` 上传完成.
-         * * `error` 上传出错，可重试
-         * * `interrupt` 上传中断，可续传.
-         * * `invalid` 文件不合格，不能重试上传.会自动从队列中移除.
+         * * `error` 上传出错,可重试
+         * * `interrupt` 上传中断,可续传.
+         * * `invalid` 文件不合格,不能重试上传.会自动从队列中移除.
          * * `cancelled` 文件被移除.
          * @property {Object} Status
          * @namespace File
@@ -2367,11 +2367,11 @@
             INITED:     'inited',    // 初始状态
             QUEUED:     'queued',    // 已经进入队列, 等待上传
             PROGRESS:   'progress',    // 上传中
-            ERROR:      'error',    // 上传出错，可重试
+            ERROR:      'error',    // 上传出错,可重试
             COMPLETE:   'complete',    // 上传完成.
             CANCELLED:  'cancelled',    // 上传取消.
-            INTERRUPT:  'interrupt',    // 上传中断，可续传.
-            INVALID:    'invalid'    // 文件不合格，不能重试上传.
+            INTERRUPT:  'interrupt',    // 上传中断,可续传.
+            INVALID:    'invalid'    // 文件不合格,不能重试上传.
         };
     
         return WUFile;
@@ -2415,7 +2415,7 @@
                 numOfInvalid: 0
             };
     
-            // 上传队列，仅包括等待上传的文件
+            // 上传队列,仅包括等待上传的文件
             this._queue = [];
     
             // 存储所有文件
@@ -2487,7 +2487,7 @@
             },
     
             /**
-             * 对队列进行排序，能够控制文件上传顺序.
+             * 对队列进行排序,能够控制文件上传顺序.
              * @grammar sort( fn ) => undefined
              * @method sort
              * @param {Function} fn 排序方法
@@ -2652,7 +2652,7 @@
                 me.queue = new Queue();
                 me.stats = me.queue.stats;
     
-                // 如果当前不是html5运行时，那就算了.
+                // 如果当前不是html5运行时,那就算了.
                 // 不执行后续操作
                 if ( this.request('predict-runtime-type') !== 'html5' ) {
                     return;
@@ -2693,7 +2693,7 @@
             acceptFile: function( file ) {
                 var invalid = !file || file.size < 6 || this.accept &&
     
-                        // 如果名字中有后缀，才做后缀白名单处理.
+                        // 如果名字中有后缀,才做后缀白名单处理.
                         rExt.exec( file.name ) && !this.accept.test( file.name );
     
                 return !invalid;
@@ -2703,7 +2703,7 @@
             /**
              * @event beforeFileQueued
              * @param {File} file File对象
-             * @description 当文件被加入队列之前触发，此事件的handler返回值为`false`，则此文件不会被添加进入队列.
+             * @description 当文件被加入队列之前触发,此事件的handler返回值为`false`,则此文件不会被添加进入队列.
              * @for  Uploader
              */
     
@@ -2719,12 +2719,12 @@
     
                 file = me._wrapFile( file );
     
-                // 不过类型判断允许不允许，先派送 `beforeFileQueued`
+                // 不过类型判断允许不允许,先派送 `beforeFileQueued`
                 if ( !me.owner.trigger( 'beforeFileQueued', file ) ) {
                     return;
                 }
     
-                // 类型不匹配，则派送错误事件，并返回.
+                // 类型不匹配,则派送错误事件,并返回.
                 if ( !me.acceptFile( file ) ) {
                     me.owner.trigger( 'error', 'Q_TYPE_DENIED', file );
                     return;
@@ -2741,7 +2741,7 @@
     
             /**
              * @event filesQueued
-             * @param {File} files 数组，内容为原始File(lib/File）对象.
+             * @param {File} files 数组,内容为原始File(lib/File）对象.
              * @description 当一批文件添加进队列以后触发.
              * @for  Uploader
              */
@@ -2809,7 +2809,7 @@
              * @method getFiles
              * @grammar getFiles() => Array
              * @grammar getFiles( status1, status2, status... ) => Array
-             * @description 返回指定状态的文件集合，不传参数将返回所有状态的文件.
+             * @description 返回指定状态的文件集合,不传参数将返回所有状态的文件.
              * @for  Uploader
              * @example
              * console.log( uploader.getFiles() );    // => all files
@@ -2827,7 +2827,7 @@
              * @method retry
              * @grammar retry() => undefined
              * @grammar retry( file ) => undefined
-             * @description 重试上传，重试指定文件，或者从出错的文件开始重新上传.
+             * @description 重试上传,重试指定文件,或者从出错的文件开始重新上传.
              * @for  Uploader
              * @example
              * function retry() {
@@ -2860,7 +2860,7 @@
             /**
              * @method sort
              * @grammar sort( fn ) => undefined
-             * @description 排序队列中的文件，在上传之前调整可以控制上传顺序.
+             * @description 排序队列中的文件,在上传之前调整可以控制上传顺序.
              * @for  Uploader
              */
             sortFiles: function() {
@@ -2963,7 +2963,7 @@
             server: '',
             method: 'POST',
     
-            // 跨域时，是否允许携带cookie, 只有html5 runtime才有效
+            // 跨域时,是否允许携带cookie, 只有html5 runtime才有效
             withCredentials: false,
             fileVal: 'file',
             timeout: 2 * 60 * 1000,    // 2分钟
@@ -2974,7 +2974,7 @@
     
         $.extend( Transport.prototype, {
     
-            // 添加Blob, 只能添加一次，最后一次有效.
+            // 添加Blob, 只能添加一次,最后一次有效.
             appendBlob: function( key, blob, filename ) {
                 var me = this,
                     opts = me.options;
@@ -3085,8 +3085,8 @@
              * @namespace options
              * @for Uploader
              * @description 是否允许在文件传输时提前把下一个文件准备好.
-             * 对于一个文件的准备工作比较耗时，比如图片压缩，md5序列化.
-             * 如果能提前在当前文件传输期处理，可以节省总体耗时.
+             * 对于一个文件的准备工作比较耗时,比如图片压缩,md5序列化.
+             * 如果能提前在当前文件传输期处理,可以节省总体耗时.
              */
             prepareNextFile: false,
     
@@ -3102,7 +3102,7 @@
              * @property {Boolean} [chunkSize=5242880]
              * @namespace options
              * @for Uploader
-             * @description 如果要分片，分多大一片? 默认大小为5M.
+             * @description 如果要分片,分多大一片? 默认大小为5M.
              */
             chunkSize: 5 * 1024 * 1024,
     
@@ -3110,7 +3110,7 @@
              * @property {Boolean} [chunkRetry=2]
              * @namespace options
              * @for Uploader
-             * @description 如果某个分片由于网络问题出错，允许自动重传多少次?
+             * @description 如果某个分片由于网络问题出错,允许自动重传多少次?
              */
             chunkRetry: 2,
     
@@ -3127,7 +3127,7 @@
              * @property {Object} [formData]
              * @namespace options
              * @for Uploader
-             * @description 文件上传请求的参数表，每次发送都会发送此对象中的参数.
+             * @description 文件上传请求的参数表,每次发送都会发送此对象中的参数.
              */
             formData: null
     
@@ -3142,14 +3142,14 @@
              * @property {Object} [method='POST']
              * @namespace options
              * @for Uploader
-             * @description 文件上传方式，`POST`或者`GET`.
+             * @description 文件上传方式,`POST`或者`GET`.
              */
     
             /**
              * @property {Object} [sendAsBinary=false]
              * @namespace options
              * @for Uploader
-             * @description 是否已二进制的流的方式发送文件，这样整个上传内容`php://input`都为文件内容，
+             * @description 是否已二进制的流的方式发送文件,这样整个上传内容`php://input`都为文件内容,
              * 其他参数在$_GET数组中.
              */
         });
@@ -3206,7 +3206,7 @@
     
                 this.runing = false;
     
-                // 记录当前正在传的数据，跟threads相关
+                // 记录当前正在传的数据,跟threads相关
                 this.pool = [];
     
                 // 缓存即将上传的文件.
@@ -3235,7 +3235,7 @@
              */
     
             /**
-             * 开始上传.此方法可以从初始状态调用开始上传流程，也可以从暂停状态调用，继续上传流程.
+             * 开始上传.此方法可以从初始状态调用开始上传流程,也可以从暂停状态调用,继续上传流程.
              * @grammar upload() => undefined
              * @method upload
              * @for  Uploader
@@ -3254,7 +3254,7 @@
     
                 me.runing = true;
     
-                // 如果有暂停的，则续传
+                // 如果有暂停的,则续传
                 $.each( me.pool, function( _, v ) {
                     var file = v.file;
     
@@ -3315,7 +3315,7 @@
             },
     
             /**
-             * 掉过一个文件上传，直接标记指定文件为已上传状态.
+             * 掉过一个文件上传,直接标记指定文件为已上传状态.
              * @grammar skipFile( file ) => undefined
              * @method skipFile
              * @for  Uploader
@@ -3350,26 +3350,26 @@
                     opts = me.options,
                     fn, val;
     
-                // 上一个promise还没有结束，则等待完成后再执行.
+                // 上一个promise还没有结束,则等待完成后再执行.
                 if ( me._promise ) {
                     return me._promise.always( me.__tick );
                 }
     
-                // 还有位置，且还有文件要处理的话.
+                // 还有位置,且还有文件要处理的话.
                 if ( me.pool.length < opts.threads && (val = me._nextBlock()) ) {
                     me._trigged = false;
     
                     fn = function( val ) {
                         me._promise = null;
     
-                        // 有可能是reject过来的，所以要检测val的类型.
+                        // 有可能是reject过来的,所以要检测val的类型.
                         val && val.file && me._startSend( val );
                         Base.nextTick( me.__tick );
                     };
     
                     me._promise = isPromise( val ) ? val.always( fn ) : fn( val );
     
-                // 没有要上传的了，且没有正在传输的了.
+                // 没有要上传的了,且没有正在传输的了.
                 } else if ( !me.remaning && !me.getStats().numOfQueue ) {
                     me.runing = false;
     
@@ -3386,7 +3386,7 @@
                     opts = me.options,
                     next, done;
     
-                // 如果当前文件还有没有需要传输的，则直接返回剩下的.
+                // 如果当前文件还有没有需要传输的,则直接返回剩下的.
                 if ( act && act.has() &&
                         act.file.getStatus() === Status.PROGRESS ) {
     
@@ -3397,10 +3397,10 @@
     
                     return act.fetch();
     
-                // 否则，如果正在运行，则准备下一个文件，并等待完成后返回下个分片.
+                // 否则,如果正在运行,则准备下一个文件,并等待完成后返回下个分片.
                 } else if ( me.runing ) {
     
-                    // 如果缓存中有，则直接在缓存中取，没有则去queue中取.
+                    // 如果缓存中有,则直接在缓存中取,没有则去queue中取.
                     if ( !me.pending.length && me.getStats().numOfQueue ) {
                         me._prepareNextFile();
                     }
@@ -3416,7 +3416,7 @@
                         return act.fetch();
                     };
     
-                    // 文件可能还在prepare中，也有可能已经完全准备好了.
+                    // 文件可能还在prepare中,也有可能已经完全准备好了.
                     return isPromise( next ) ?
                             next[ next.pipe ? 'pipe' : 'then']( done ) :
                             done( next );
@@ -3427,7 +3427,7 @@
             /**
              * @event uploadStart
              * @param {File} file File对象
-             * @description 某个文件开始上传前触发，一个文件只会触发一次.
+             * @description 某个文件开始上传前触发,一个文件只会触发一次.
              * @for  Uploader
              */
             _prepareNextFile: function() {
@@ -3439,7 +3439,7 @@
                 if ( file ) {
                     promise = me.request( 'before-send-file', file, function() {
     
-                        // 有可能文件被skip掉了.文件被skip掉后，状态坑定不是Queued.
+                        // 有可能文件被skip掉了.文件被skip掉后,状态坑定不是Queued.
                         if ( file.getStatus() === Status.QUEUED ) {
                             me.owner.trigger( 'uploadStart', file );
                             file.setStatus( Status.PROGRESS );
@@ -3449,7 +3449,7 @@
                         return me._finishFile( file );
                     });
     
-                    // 如果还在pending中，则替换成文件本身.
+                    // 如果还在pending中,则替换成文件本身.
                     promise.done(function() {
                         var idx = $.inArray( promise, pending );
     
@@ -3467,7 +3467,7 @@
                 }
             },
     
-            // 让出位置了，可以让其他分片开始上传
+            // 让出位置了,可以让其他分片开始上传
             _popBlock: function( block ) {
                 var idx = $.inArray( block, this.pool );
     
@@ -3476,7 +3476,7 @@
                 this.remaning--;
             },
     
-            // 开始上传，可以被掉过.如果promise被reject了，则表示跳过此分片.
+            // 开始上传,可以被掉过.如果promise被reject了,则表示跳过此分片.
             _startSend: function( block ) {
                 var me = this,
                     file = block.file,
@@ -3485,7 +3485,7 @@
                 me.pool.push( block );
                 me.remaning++;
     
-                // 如果没有分片，则直接使用原始的.
+                // 如果没有分片,则直接使用原始的.
                 // 不会丢失content-type信息.
                 block.blob = block.chunks === 1 ? file.source :
                         file.source.slice( block.start, block.end );
@@ -3493,7 +3493,7 @@
                 // hook, 每个分片发送之前可能要做些异步的事情.
                 promise = me.request( 'before-send', block, function() {
     
-                    // 有可能文件已经上传出错了，所以不需要再传输了.
+                    // 有可能文件已经上传出错了,所以不需要再传输了.
                     if ( file.getStatus() === Status.PROGRESS ) {
                         me._doSend( block );
                     } else {
@@ -3502,7 +3502,7 @@
                     }
                 });
     
-                // 如果为fail了，则跳过此分片.
+                // 如果为fail了,则跳过此分片.
                 promise.fail(function() {
                     if ( file.remaning === 1 ) {
                         me._finishFile( file ).always(function() {
@@ -3523,16 +3523,16 @@
             /**
              * @event uploadBeforeSend
              * @param {Object} object
-             * @param {Object} data 默认的上传参数，可以扩展此对象来控制上传参数.
-             * @description 当某个文件的分块在发送前触发，主要用来询问是否要添加附带参数，大文件在开起分片上传的前提下此事件可能会触发多次.
+             * @param {Object} data 默认的上传参数,可以扩展此对象来控制上传参数.
+             * @description 当某个文件的分块在发送前触发,主要用来询问是否要添加附带参数,大文件在开起分片上传的前提下此事件可能会触发多次.
              * @for  Uploader
              */
     
             /**
              * @event uploadAccept
              * @param {Object} object
-             * @param {Object} ret 服务端的返回数据，json格式，如果服务端不是json格式，从ret._raw中取数据，自行解析.
-             * @description 当某个文件上传到服务端响应后，会派送此事件来询问服务端响应是否有效.如果此事件handler返回值为`false`, 则此文件将派送`server`类型的`uploadError`事件.
+             * @param {Object} ret 服务端的返回数据,json格式,如果服务端不是json格式,从ret._raw中取数据,自行解析.
+             * @description 当某个文件上传到服务端响应后,会派送此事件来询问服务端响应是否有效.如果此事件handler返回值为`false`, 则此文件将派送`server`类型的`uploadError`事件.
              * @for  Uploader
              */
     
@@ -3540,7 +3540,7 @@
              * @event uploadProgress
              * @param {File} file File对象
              * @param {Number} percentage 上传进度
-             * @description 上传过程中触发，携带上传进度.
+             * @description 上传过程中触发,携带上传进度.
              * @for  Uploader
              */
     
@@ -3564,7 +3564,7 @@
             /**
              * @event uploadComplete
              * @param {File} [file] File对象
-             * @description 不管成功或者失败，文件上传完成时触发.
+             * @description 不管成功或者失败,文件上传完成时触发.
              * @for  Uploader
              */
     
@@ -3592,7 +3592,7 @@
                     var totalPercent = 0,
                         uploaded = 0;
     
-                    // 可能没有abort掉，progress还是执行进来了.
+                    // 可能没有abort掉,progress还是执行进来了.
                     // if ( !file.blocks ) {
                     //     return;
                     // }
@@ -3610,7 +3610,7 @@
                     owner.trigger( 'uploadProgress', file, totalPercent || 0 );
                 });
     
-                // 用来询问，是否返回的结果是有错误的.
+                // 用来询问,是否返回的结果是有错误的.
                 requestAccept = function( reject ) {
                     var fn;
     
@@ -3620,7 +3620,7 @@
                         reject = value;
                     };
     
-                    // 服务端响应了，不代表成功了，询问是否响应正确.
+                    // 服务端响应了,不代表成功了,询问是否响应正确.
                     if ( !owner.trigger( 'uploadAccept', block, ret, fn ) ) {
                         reject = reject || 'server';
                     }
@@ -3628,7 +3628,7 @@
                     return reject;
                 };
     
-                // 尝试重试，然后广播文件上传出错.
+                // 尝试重试,然后广播文件上传出错.
                 tr.on( 'error', function( type, flag ) {
                     block.retried = block.retried || 0;
     
@@ -3656,7 +3656,7 @@
                 tr.on( 'load', function() {
                     var reason;
     
-                    // 如果非预期，转向上传出错.
+                    // 如果非预期,转向上传出错.
                     if ( (reason = requestAccept()) ) {
                         tr.trigger( 'error', reason, true );
                         return;
@@ -3685,7 +3685,7 @@
                 });
     
                 // 在发送之间可以添加字段什么的...
-                // 如果默认的字段不够使用，可以通过监听此事件来扩展
+                // 如果默认的字段不够使用,可以通过监听此事件来扩展
                 owner.trigger( 'uploadBeforeSend', block, data, headers );
     
                 // 开始发送.
@@ -3706,7 +3706,7 @@
                         })
                         .fail(function( reason ) {
     
-                            // 如果外部已经标记为invalid什么的，不再改状态.
+                            // 如果外部已经标记为invalid什么的,不再改状态.
                             if ( file.getStatus() === Status.PROGRESS ) {
                                 file.setStatus( Status.ERROR, reason );
                             }
@@ -3721,7 +3721,7 @@
         });
     });
     /**
-     * @fileOverview 各种验证，包括文件总大小是否超出, 单文件是否超出和文件是否重复.
+     * @fileOverview 各种验证,包括文件总大小是否超出, 单文件是否超出和文件是否重复.
      */
     
     define('widgets/validator',[
@@ -3738,7 +3738,7 @@
         /**
          * @event error
          * @param {String} type 错误类型.
-         * @description 当validate不通过时，会以派送错误事件的形式通知调用者.通过`upload.on('error', handler)`可以捕获到此类错误，目前有以下错误会在特定的情况下派送错来.
+         * @description 当validate不通过时,会以派送错误事件的形式通知调用者.通过`upload.on('error', handler)`可以捕获到此类错误,目前有以下错误会在特定的情况下派送错来.
          *
          * * `Q_EXCEED_NUM_LIMIT` 在设置了`fileNumLimit`且尝试给`uploader`添加的文件数量超出这个值时派送.
          * * `Q_EXCEED_SIZE_LIMIT` 在设置了`Q_EXCEED_SIZE_LIMIT`且尝试给`uploader`添加的文件总大小超出这个值时派送.
@@ -3888,7 +3888,7 @@
          * @property {int} [duplicate=undefined]
          * @namespace options
          * @for Uploader
-         * @description 去重， 根据文件名字, 文件大小和最后修改时间来生成hash Key.
+         * @description 去重, 根据文件名字, 文件大小和最后修改时间来生成hash Key.
          */
         api.addValidator( 'duplicate', function() {
             var uploader = this,
@@ -3941,7 +3941,7 @@
     });
     
     /**
-     * @fileOverview Runtime管理器，负责Runtime的选择, 连接
+     * @fileOverview Runtime管理器,负责Runtime的选择, 连接
      */
     define('runtime/compbase',[],function() {
     
@@ -3986,7 +3986,7 @@
             me.type = type;
     
     
-            // 这个方法的调用者，实际上是RuntimeClient
+            // 这个方法的调用者,实际上是RuntimeClient
             me.exec = function( comp, fn/*, args...*/) {
                 var client = this,
                     uid = client.uid,
@@ -4012,7 +4012,7 @@
         Base.inherits( Runtime, {
             constructor: Html5Runtime,
     
-            // 不需要连接其他程序，直接执行callback
+            // 不需要连接其他程序,直接执行callback
             init: function() {
                 var me = this;
                 setTimeout(function() {
@@ -4164,7 +4164,7 @@
                 return false;
             },
     
-            // 如果传入 callback 则去查看文件夹，否则只管当前文件夹.
+            // 如果传入 callback 则去查看文件夹,否则只管当前文件夹.
             _getTansferFiles: function( e, callback ) {
                 var results  = [],
                     promises = [],
@@ -4423,7 +4423,7 @@
     
         if ( urlAPI ) {
     
-            // 更安全的方式调用，比如android里面就能把context改成其他的对象.
+            // 更安全的方式调用,比如android里面就能把context改成其他的对象.
             createObjectURL = function() {
                 return urlAPI.createObjectURL.apply( urlAPI, arguments );
             };
@@ -4500,12 +4500,12 @@
                 return canvas.toDataURL( type, quality / 100 );
             },
     
-            // imagemeat会复写这个方法，如果用户选择加载那个文件了的话.
+            // imagemeat会复写这个方法,如果用户选择加载那个文件了的话.
             parseMeta: function( blob, callback ) {
                 callback( false, {});
             },
     
-            // imagemeat会复写这个方法，如果用户选择加载那个文件了的话.
+            // imagemeat会复写这个方法,如果用户选择加载那个文件了的话.
             updateImageHead: function( data ) {
                 return data;
             }
@@ -4643,7 +4643,7 @@
         return api;
     });
     /**
-     * 代码来自于：https://github.com/blueimp/JavaScript-Load-Image
+     * 代码来自于:https://github.com/blueimp/JavaScript-Load-Image
      * 暂时项目中只用了orientation.
      *
      * 去除了 Exif Sub IFD Pointer, GPS Info IFD Pointer, Exif Thumbnail.
@@ -4953,10 +4953,10 @@
         return EXIF;
     });
     /**
-     * 这个方式性能不行，但是可以解决android里面的toDataUrl的bug
+     * 这个方式性能不行,但是可以解决android里面的toDataUrl的bug
      * android里面toDataUrl('image/jpege')得到的结果却是png.
      *
-     * 所以这里没辙，只能借助这个工具
+     * 所以这里没辙,只能借助这个工具
      * @fileOverview jpeg encoder
      */
     define('runtime/html5/jpegencoder',[], function( require, exports, module ) {
@@ -5723,8 +5723,8 @@
                 return origin.apply( null, arguments );
             }
     
-            // 检测是否canvas支持jpeg导出，根据数据格式来判断.
-            // JPEG 前两位分别是：255, 216
+            // 检测是否canvas支持jpeg导出,根据数据格式来判断.
+            // JPEG 前两位分别是:255, 216
             if ( type === 'image/jpeg' && typeof supportJpeg === 'undefined' ) {
                 fragement = origin.apply( null, arguments );
     
@@ -5817,7 +5817,7 @@
                         (this._canvas = document.createElement('canvas'));
     
                 this._resize( this._img, canvas, width, height );
-                this._blob = null;    // 没用了，可以删掉了.
+                this._blob = null;    // 没用了,可以删掉了.
                 this.modified = true;
                 this.owner.trigger('complete');
             },
@@ -5909,7 +5909,7 @@
                     this._canvas = null;
                 }
     
-                // 释放内存.非常重要，否则释放不了image的内存.
+                // 释放内存.非常重要,否则释放不了image的内存.
                 this._img.src = BLANK;
                 this._img = this._blob = null;
             },
@@ -6013,7 +6013,7 @@
             // blob/master/src/megapix-image.js
             _renderImageToCanvas: (function() {
     
-                // 如果不是ios, 不需要这么复杂！
+                // 如果不是ios, 不需要这么复杂!
                 if ( !Base.os.ios ) {
                     return function( canvas, img, x, y, w, h ) {
                         canvas.getContext('2d').drawImage( img, x, y, w, h );
@@ -6149,8 +6149,8 @@
     });
     /**
      * @fileOverview Transport
-     * @todo 支持chunked传输，优势：
-     * 可以将大文件分成小块，挨个传输，可以提高大文件成功率，当失败的时候，也只需要重传那小部分，
+     * @todo 支持chunked传输,优势:
+     * 可以将大文件分成小块,挨个传输,可以提高大文件成功率,当失败的时候,也只需要重传那小部分,
      * 而不需要重头再传一次.另外断点续传也需要用chunked方式.
      */
     define('runtime/html5/transport',[
@@ -6360,7 +6360,7 @@
             me.type = type;
     
     
-            // 这个方法的调用者，实际上是RuntimeClient
+            // 这个方法的调用者,实际上是RuntimeClient
             me.exec = function( comp, fn/*, args...*/ ) {
                 var client = this,
                     uid = client.uid,

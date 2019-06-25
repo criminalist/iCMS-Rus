@@ -265,7 +265,7 @@ class spider{
         spider::$callback['STATUS'] = null;
 
         if ($result['code'] == $rcode && $work===NULL) {
-            $msg = ($indexid?'更新':'发布').'成功!';
+            $msg = ($indexid?'Обновить':'发布').'成功!';
             if (spider::$sid) {
                 iUI::success($msg,'js:1');
             } else {

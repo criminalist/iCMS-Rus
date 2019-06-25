@@ -190,7 +190,7 @@ function _modal_dialog(cancel_text){
               <span class="add-on"> Примечание </span>
               <input type="text" name="remark" class="span3" id="remark" value="<?php echo $rs['remark'] ; ?>"/>
             </div>
-            <span class="help-inline">如：高清,无水印 (配合标题一起显示)</span>
+            <span class="help-inline">如:高清,无水印 (配合标题一起显示)</span>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend input-append"> <span class="add-on">类型</span>
               <select name="genre[]" id="genre" class="chosen-select span6" multiple="multiple"  data-placeholder="请选择影片类型(可多选)...">
@@ -203,19 +203,19 @@ function _modal_dialog(cancel_text){
             <input name="_genre" type="hidden" value="<?php echo $rs['genre']; ?>" />
             <div class="clearfloat mb10"></div>
             <div class="input-prepend input-append"> <span class="add-on">主演</span>
-              <input type="text" name="actor" class="span6" id="actor" value="<?php echo $rs['actor'] ; ?>" onkeyup="javascript:this.value=this.value.replace(/，/ig,',');"/>
+              <input type="text" name="actor" class="span6" id="actor" value="<?php echo $rs['actor'] ; ?>" onkeyup="javascript:this.value=this.value.replace(/,/ig,',');"/>
             </div>
             <input name="_actor" type="hidden" value="<?php echo $rs['actor']; ?>" />
             <span class="help-inline">Множественное кол-во, разделяйте запятой ","</span>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend"> <span class="add-on">导演</span>
-              <input type="text" name="director" class="span6" id="director" value="<?php echo $rs['director'] ; ?>" onkeyup="javascript:this.value=this.value.replace(/，/ig,',');"/>
+              <input type="text" name="director" class="span6" id="director" value="<?php echo $rs['director'] ; ?>" onkeyup="javascript:this.value=this.value.replace(/,/ig,',');"/>
             </div>
             <input name="_director" type="hidden" value="<?php echo $rs['director']; ?>" />
             <span class="help-inline">Множественное кол-во, разделяйте запятой ","</span>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend"> <span class="add-on">编剧</span>
-              <input type="text" name="attrs" class="span6" id="attrs" value="<?php echo $rs['attrs'] ; ?>" onkeyup="javascript:this.value=this.value.replace(/，/ig,',');"/>
+              <input type="text" name="attrs" class="span6" id="attrs" value="<?php echo $rs['attrs'] ; ?>" onkeyup="javascript:this.value=this.value.replace(/,/ig,',');"/>
             </div>
             <input name="_attrs" type="hidden" value="<?php echo $rs['attrs']; ?>" />
             <span class="help-inline">Множественное кол-во, разделяйте запятой ","</span>
@@ -333,11 +333,11 @@ function _modal_dialog(cancel_text){
             </div>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend"> <span class="add-on">关键字</span>
-              <input type="text" name="keywords" class="span6" id="keywords" value="<?php echo $rs['keywords'] ; ?>" onkeyup="javascript:this.value=this.value.replace(/，/ig,',');"/>
+              <input type="text" name="keywords" class="span6" id="keywords" value="<?php echo $rs['keywords'] ; ?>" onkeyup="javascript:this.value=this.value.replace(/,/ig,',');"/>
             </div>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend"> <span class="add-on">标 签</span>
-              <input type="text" name="tags" class="span6" id="tags" value="<?php echo $rs['tags'] ; ?>" onkeyup="javascript:this.value=this.value.replace(/，/ig,',');"/>
+              <input type="text" name="tags" class="span6" id="tags" value="<?php echo $rs['tags'] ; ?>" onkeyup="javascript:this.value=this.value.replace(/,/ig,',');"/>
             </div>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend" style="width:100%;"><span class="add-on">简介</span>

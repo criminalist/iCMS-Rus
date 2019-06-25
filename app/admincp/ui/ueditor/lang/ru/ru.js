@@ -234,7 +234,7 @@ UE.I18N['ru'] = {
             'lang_background_position':'Позиция',
             'repeatType':{'options':["Center", "Repeat-x", "Repeat-y", "Tile","Custom"]}
         },
-        'noUploadImage':"Изображения не загружены！",
+        'noUploadImage':"Изображения не загружены!",
         'toggleSelect':'Change the active state by click!\n Image Size: '
     },
     //===============dialog i18N=======================
@@ -290,7 +290,7 @@ UE.I18N['ru'] = {
         'remoteLockError':"Cannot Lock the Proportion between width and height",
         'numError':"Please enter the correct Num. e.g 123,400",
         'imageUrlError':"The image format may be wrong!",
-        'imageLoadError':"Error,please check the network or URL！",
+        'imageLoadError':"Error,please check the network or URL!",
         'searchRemind':"Enter the search keyword!",
         'searchLoading':"Image is loading,please wait...",
         'searchRetry':" Sorry,can't find the image,please try again!"
@@ -371,18 +371,18 @@ UE.I18N['ru'] = {
         'fileUploadReady':'Wait for uploading...',
         'delUploadQueue':'Remove from the uploading queue ',
         'limitPrompt1':'Can not choose more than single',
-        'limitPrompt2':'file(s)！Please choose again！',
+        'limitPrompt2':'file(s)!Please choose again!',
         'delFailFile':'Remove failure file',
-        'fileSizeLimit':'File size exceeds the limit！',
-        'emptyFile':'Невозможно загрузить пустой файл！',
-        'fileTypeError':'Ошибка, неверный тип файла！',
-        'unknownError':'Unknown error！',
+        'fileSizeLimit':'File size exceeds the limit!',
+        'emptyFile':'Невозможно загрузить пустой файл!',
+        'fileTypeError':'Ошибка, неверный тип файла!',
+        'unknownError':'Unknown error!',
         'fileUploading':'Загрузка, пожалуйста, подождите ...',
         'cancelUpload':'Отменить загрузку',
         'netError':'Network error',
         'failUpload':'Upload failed',
-        'serverIOError':'Server IO error！',
-        'noAuthority':'No Permission！',
+        'serverIOError':'Server IO error!',
+        'noAuthority':'No Permission!',
         'fileNumLimit':'Upload limit to the number',
         'failCheck':'Authentication fails, the upload is skipped!',
         'fileCanceling':'Cancel, please wait...',
@@ -520,22 +520,22 @@ UE.I18N['ru'] = {
     },
     insertframe:{
         'static':{
-            'lang_input_address':'Адрес：',
-            'lang_input_width':'Ширина：',
-            'lang_input_height':'Высота：',
-            'lang_input_isScroll':'Включить полосы прокрутки：',
-            'lang_input_frameborder':'Показать границы фрейма：',
-            'lang_input_alignMode':'Выравнивание：',
+            'lang_input_address':'Адрес:',
+            'lang_input_width':'Ширина:',
+            'lang_input_height':'Высота:',
+            'lang_input_isScroll':'Включить полосы прокрутки:',
+            'lang_input_frameborder':'Показать границы фрейма:',
+            'lang_input_alignMode':'Выравнивание:',
             'align':{title:"Выравнивание", options:["По умолчанию", "Лево", "Право", "По центру"]}
         },
         'enterAddress':'Введите адрес!'
     },
     link:{
         'static':{
-            'lang_input_text':'Текст：',
-            'lang_input_url':'URL：',
-            'lang_input_title':'Заголовок：',
-            'lang_input_target':'Открыть в новом окне：'
+            'lang_input_text':'Текст:',
+            'lang_input_url':'URL:',
+            'lang_input_title':'Заголовок:',
+            'lang_input_target':'Открыть в новом окне:'
         },
         'validLink':'Поддерживается только при выборе ссылки',
         'httpPrompt':'Гиперссылка должна начинаться с одного из протоколов "http|https|ftp://"!'

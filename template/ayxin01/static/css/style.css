@@ -976,8 +976,8 @@ div.slideBox div.tips div.nums a.active {
 	padding-bottom: 5px;
 	padding-top: 5px;
 	text-indent: 2em;
-	word-break: break-all; /*支持IE，chrome，FF不支持*/
-	word-wrap: break-word;/*支持IE，chrome，FF*/
+	word-break: break-all; /*支持IE,chrome,FF不支持*/
+	word-wrap: break-word;/*支持IE,chrome,FF*/
 }
 .g_con1 .con img {
 	max-width: 95%;
@@ -1538,7 +1538,7 @@ table.dataintable td a:hover {
 }
 
 .toolbar-item,.toolbar-layer{background:url(../images/toolbar.png) no-repeat;}
-.toolbar{position:fixed;right:20px;bottom:50px; z-index:1000;}/*假设网页宽度为1200px，导航条在右侧悬浮*/
+.toolbar{position:fixed;right:20px;bottom:50px; z-index:1000;}/*假设网页宽度为1200px,导航条在右侧悬浮*/
 .toolbar-item{display:block;width:52px;height:52px;margin-top:1px;position:relative;-moz-transition:background-position 1s;-ms-transition:background-position 1s;-o-moz-transition:background-position 1s;-webkit-moz-transition:background-position 1s;transition:background-position 1s;}
 .toolbar-item:hover .toolbar-layer{opacity:1;filter:alpha(opacity=100);transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-ms-transform:scale(1);-o-transform:scale(1);}
 .toolbar-item-weixin{background-position:0 -798px;}

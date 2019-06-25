@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title><!--{if $category.title}-->
-        <!--{$category.title}-->_
+        <!--{$category.title}-->
         <!--{$site.title}-->
         <!--{$category.name}-->
         <!--{else}-->
@@ -25,7 +25,7 @@
 <!--{include file="./a-header.htm"}-->
     <div class="g_box1 u_1">
       <div class="weizhi fl">
-        <h3><!--{$category.name}--></h3>当前位置：
+        <h3><!--{$category.name}--></h3>当前位置:
         <a href="<!--{$site.url}-->">首页</a> / 
 		<!--{foreach value="catenav" from="$category.navArray"}-->
         <a href="<!--{$catenav.url}-->"> <!--{$catenav.name}--></a> / <!--{/foreach}-->

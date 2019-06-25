@@ -164,7 +164,7 @@ $(function(){
                 <a href="<?php echo $rs[$i]['url'] ; ?>" class="noneline aTitle" target="_blank"><?php echo $rs[$i]['title'] ; ?></a>
                 <div class="claerfix"></div>
                 <a href="<?php echo APP_URI; ?>&ip=<?php echo $rs[$i]['ip'] ; ?>" class="tip" title="查看该IP所有问题">
-                  <span class="label label-inverse">发贴IP：<?php echo $rs[$i]['ip'] ; ?></span>
+                  <span class="label label-inverse">发贴IP:<?php echo $rs[$i]['ip'] ; ?></span>
                 </a>
                 <div class="claerfix mt5"></div>
                 最后回复:

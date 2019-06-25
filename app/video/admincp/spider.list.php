@@ -59,7 +59,7 @@ $(function(){
       <span class="icon">
         <input type="checkbox" class="checkAll" data-target="#<?php echo APP_BOXID;?>" />
       </span>
-      <h5><?php echo $res['name'];?> » 【采集前需绑定分类】</h5>
+      <h5><?php echo $res['name'];?> » [采集前需绑定分类] </h5>
     </div>
     <div class="widget-content nopadding">
         <form action="<?php echo APP_FURI; ?>&do=bind_category" method="post" class="form-inline" target="iPHP_FRAME">

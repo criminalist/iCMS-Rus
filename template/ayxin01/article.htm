@@ -23,7 +23,7 @@
   <!--{include file="./a-header.htm"}-->
     <div class="g_box1 u_1">
       <div class="weizhi fl">
-        <h3><!--{$category.name}--></h3>当前位置：
+        <h3><!--{$category.name}--></h3>当前位置:
         <a href="<!--{$site.url}-->">首页</a> / 
 		<!--{foreach value="catenav" from="$category.navArray"}-->
         <a href="<!--{$catenav.url}-->"><!--{$catenav.name}--></a> / 
@@ -42,10 +42,10 @@
       <div class="left_2">
         <div class="g_con1">
           <h1><!--{$article.title}--></h1>
-          <div class="info">时间：<!--{$article.pubdate|date:"Y-m-d"}-->
-            <em>|</em>栏目：
+          <div class="info">时间:<!--{$article.pubdate|date:"Y-m-d"}-->
+            <em>|</em>栏目:
             <a href='<!--{$catenav.url}-->'><!--{$catenav.name}--></a>
-            <em>|</em>点击：<span id="view"><!--{$article.hits.count}--></span>次</div>
+            <em>|</em>点击:<span id="view"><!--{$article.hits.count}--></span>次</div>
           <ul class="ban_838_2 clearfix">
           <!--{iCMS:marker:html key="article_body_ad"}-->
           </ul>
@@ -58,18 +58,18 @@
                         <!--{/if}--></div>
         </div>
         <div class="b_box5">
-          <p>上一篇：
+          <p>上一篇:
 		  <!--{iCMS:article:prev cid="$article.cid" id="$article.id"}-->
           <!--{if $article_prev}-->
             <a disabled="true" href="<!--{$article_prev.url}-->"><!--{$article_prev.title}--></a><!--{else}-->没有了<!--{/if}--></p>
-          <p>栏&nbsp;&nbsp;&nbsp;目：
+          <p>栏&nbsp;&nbsp;&nbsp;目:
             <a href="<!--{$category.url}-->"><!--{$category.name}--></a></p>
-          <p>下一篇：
+          <p>下一篇:
 		  <!--{iCMS:article:next cid="$article.cid" id="$article.id"}-->
           <!--{if $article_next}-->
             <a disabled="true" href="<!--{$article_next.url}-->"><!--{$article_next.title}--></a><!--{else}-->没有了<!--{/if}--></p>
-          <p>本文标题：<!--{$article.link}--></p>
-          <p>本文地址：<span id="url"></span></p>
+          <p>本文标题:<!--{$article.link}--></p>
+          <p>本文地址:<span id="url"></span></p>
         </div>
         <script>$("#url").html(window.location.href);</script>
         <div class="b_box6">
