@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title>
+        <!--{$video.title}-->_
+        <!--{$category.name}-->_
+        <!--{$site.title}-->_
+        <!--{$site.seotitle}-->
+    </title>
+    <meta name="keywords" content="<!--{$video.keywords}-->" />
+    <meta name="description" content="<!--{$video.description}-->" />
+    <meta name="mobile-agent" content="format=xhtml;url=<!--{$video.iurl.mobile.url}-->">
+    <meta name="mobile-agent" content="format=html5;url=<!--{$video.iurl.mobile.url}-->">
+    <link rel="alternate" media="only screen and(max-width: 640px)" href="<!--{$video.iurl.mobile.url}-->">
+    <!--{iCMS:public:ui}-->
+    <link rel="stylesheet" href="<!--{$site.urls.template}-->/videoApp/static/video.css" type="text/css" />
+</head>
+
+<body class="videoApp" i="<!--{$iCMS.APP.NAME}-->">
+    <!--{include file="./header.htm"}-->
+    <div class="body clearfix">
+        <div class="video-main">
+            <div class="detail_section_container">
+                <div class="srch-result-wrap">
+                    <a id="thumb_img" class="srch-result-thumb img-thumb" target="_blank" title="<!--{$video.title}-->" href="<!--{$video.play.url}-->">
+                        <span class="result-thumb-tag"></span>
+                        <div class="thumb-shade"></div>
+                        <div class="sort_lst_txt_btm_bg"></div>
+                        <img src="<!--{$video.pic.url}-->" title="<!--{$video.title}-->" alt="<!--{$video.title}-->" height="360" width="258" onerror="this.onerror=null;this.src='<!--{$video.pic.url}-->'">
+                        <div class="srch-result-thumb-tit"><!--{$video.time}-->分钟</div>
+                        <div class="srch-result-thumb-rgt"><em class="stress"><!--{$video.score}--></em></div>
+                        <!-- <div class="sort_lst_thumb_tag_pay">付费</div> -->
+                    </a>
+                    <h1 class="srch-result-tit">
+                        <div class="result-tit-sub">
+                            <span class="tit-info">(<!--{$video.year}-->)</span>
+                            <span class="tit-type"><!--{$category.name}--></span>
+                        </div>
+                        <!--{$video.title}-->
+                    </h1>
+                    <dl class="srch-result-info">
+                        <dt>上&nbsp;映：</dt>
+                        <dd class="srch-info-lft">
+                            <!--{$video.release}-->
+                        </dd>
+                        <dt>地&nbsp;区：</dt>
+                        <dd class="srch-info-lft" uigs="m_head_zone">
+                            <!--{iCMS:url url="$category.url" area="$video.area"}-->
+                            <a href="<!--{$url}-->" target="_blank" title="<!--{$video.area}-->">
+                                <!--{$video.area}-->
+                            </a>
+                        </dd>
+                        <dt>类&nbsp;型：</dt>
+                        <dd uigs="m_head_styles">
+                            <!--{$video.genre_link}-->
+                        </dd>
+                        <div class="clearfix"></div>
+                        <dt>导&nbsp;演：</dt>
+                        <dd class="srch-info-lft">
+                            <!--{$video.director_link}-->
+                        </dd>
+                        <dt>主&nbsp;演：</dt>
+                        <dd>
+                            <!--{$video.actor_link}-->
+                        </dd>
+                        <div class="clearfix"></div>
+                        <dt>别&nbsp;名：</dt>
+                        <dd>
+                            <!--{$video.alias|replace:',':' / '}-->
+                        </dd>
+                        <div class="clearfix"></div>
+                        <dt class="dtd-intro">简&nbsp;介：</dt>
+                        <dd id="detail_intro" class="dtd-intro">
+                            <!--{$video.description}-->
+                            <a id="detail_btn" href="javascript:void(0)" class="btn-info-more">更多<i></i></a>
+                        </dd>
+                    </dl>
+                    <div id="play_area" class="detail_section_btom">
+                        <ul class="nav nav-tabs">
+                            <!--{foreach key="k" value="from" from="$video.from_array.play"}-->
+                            <li<!--{if !$k }--> class="active"<!--{/if}-->>
+                                <a href="javascript:;" data-target="#<!--{$from.val}-->-tab" data-toggle="tab"><!--{$from.name}-->在线播放</a>
+                            </li>
+                            <!--{/foreach}-->
+                        </ul>
+                        <div class="tab-content">
+                            <!--{foreach key="k" value="from" from="$video.from_array.play"}-->
+                            <ul class="source-lst tab-pane<!--{if !$k}--> fade in active<!--{/if}-->" id="<!--{$from.val}-->-tab">
+                                <p><!--{$from.info}--></p>
+                                <!--{iCMS:video:play loop="true" video_id="$video.id" from="$from.val"}-->
+                                <!--{if $video_play.index<50||$video_play.max-$video_play.index<5}-->
+                                <li><a href="<!--{$video_play.url}-->" class="source-lst-tab"><!--{$video_play.title}--></a></li>
+                                <!--{/if}-->
+                                <!--{if $video_play.index==50}-->
+                                <li><a href="javascript:void(0)" class="source-lst-tab" uigs="episode_unfold">.....</a></li>
+                                <!--{/if}-->
+                                <!--{/iCMS}-->
+                            </ul>
+                            <!--{/foreach}-->
+                        </div>
+                        <script>
+                        $("#play_area").tabs({
+                            item: '.source-lst',
+                            action: 'mouseover'
+                        });
+                        </script>
+                    </div>
+                    <div id="share_area" class="ui-pulldown-menu srch-info-source">
+                        <span id="share_btn" class="btn-info-share"><i class="fa fa-share-alt"></i>分享</span>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="column_rgt">
+                        <div class="section_aside">
+                            <div id="cartoon_hot_list">
+                                <div class="section_aside_tit hotlist-tit">
+                                    <h2>热播榜</h2>
+                                </div>
+                                <div class="section_aside_hotlist">
+                                    <ul class="section_aside_lst section_aside_lst_score">
+                                        <!--{iCMS:video:list loop="true" sub="all" row="8" orderby="hot"}-->
+                                        <!--{if $video_list.rownum<3}-->
+                                        <li class="hotlist-top<!--{$video_list.rownum}-->">
+                                            <a href="<!--{$video_list.url}-->" title="<!--{$video_list.title}-->" class="section_aside_hotlist_bx" target="_blank">
+                                                <span class="section_aside_lst_tab_rgt"><em class="stress"><!--{$video_list.score}--></em></span>
+                                                <div class="section_aside_lst_tab_lft"><span class="hotlist-num"><!--{$video_list.rownum}--></span>
+                                                    <img src="<!--{$video_list.pic.url}-->" width="77" height="103" alt="<!--{$video_list.title}-->">
+                                                    <div class="hotlist-info">
+                                                        <h2><!--{$video_list.title}--></h2>
+                                                        作者：<!--{$video_list.director}--><br>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <!--{else}-->
+                                        <li>
+                                            <a href="<!--{$video_list.url}-->" title="<!--{$video_list.title}-->" class="section_aside_lst_tab" target="_blank">
+                                                <!--{if $video_list.score}--><span class="section_aside_lst_tab_rgt"><em class="stress"><!--{$video_list.score}--></em></span><!--{/if}-->
+                                                <span class="section_aside_lst_tab_lft"><span class="section_aside_lst_num"><!--{$video_list.rownum}--></span><span class="section_aside_lst_txt"><!--{$video_list.title}--></span></span>
+                                            </a>
+                                        </li>
+                                        <!--{/if}-->
+                                        <!--{/iCMS}-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column_lft">
+                        <div class="sort_nav clearfix" id="subnav">
+                            <div class="sort_nav_bx">
+                                <ul class="sort_nav_lst">
+                                    <li class="top_nav_li active"><a href="javascript:;" data-toggle="tab">全部</a></li>
+                                    <li class="top_nav_li"><a href="#tab-body" data-target="#tab-story" data-toggle="tab">剧情</a></li>
+                                    <li class="top_nav_li"><a href="#tab-photo" data-target="#tab-photo" data-toggle="tab">剧照</a></li>
+                                    <li class="top_nav_li"><a href="#tab-comment" data-target="#tab-comment" data-toggle="tab">讨论</a></li>
+                                    <li class="top_nav_li"><a href="#tab-ulike" data-target="#tab-ulike" data-toggle="tab">猜你喜欢</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column_lft" id="tab-body">
+                        <a name="tab-body"></a>
+                        <h3 class="detail_tit"><i></i><!--{$video.title}-->简介</h3>
+                        <div class="video_body">
+                            <!--{$video.body}-->
+                        </div>
+                    </div>
+                    <div class="column_lft" id="tab-photo">
+                        <a name="tab-photo"></a>
+                        <h3 class="detail_tit"><i></i><!--{$video.title}-->剧照</h3>
+                        <div class="carousel-box">
+                            <ul>
+                                <!--{foreach key="key" value="photo" from="$video.photo"}-->
+                                <li>
+                                    <a href="javascript:;">
+                                       <img src="<!--{$photo}-->" title="点击查看大图" alt="<!--{$video.title}-->">
+                                    </a>
+                                </li>
+                                <!--{/foreach}-->
+                            </ul>
+                            <span id="carousel-left" class="arrow-left">左侧</span>
+                            <span id="carousel-right" class="arrow-right">右侧</span>
+                        </div>
+                    </div>
+                    <div class="column_lft" id="tab-ulike">
+                        <a name="tab-ulike"></a>
+                        <h3 class="detail_tit"><i></i>猜你喜欢</h3>
+                        <div class="sort_lst_bx">
+                            <ul id="hobby_ul" class="sort_lst lst_ulike">
+                                <!--{iCMS:video:list loop="true" sub="all" row="10" orderby="hot"}-->
+                                <!-- <li class="img-thumb hobby_li cur"> -->
+                                <li class="img-thumb hobby_li">
+                                    <a href="<!--{$video_list.url}-->" title="<!--{$video_list.title}-->" class="sort_lst_thumb" uigs="m_hobby_img_0" target="_blank">
+                                        <img src="<!--{$video_list.pic.url}-->" height="252" width="175" alt="<!--{$video_list.title}-->">
+                                        <div class="play_hv2"></div>
+                                        <div class="sort_lst_txt_btm_bg"></div>
+                                        <div class="sort_lst_thumb_txt_rgt"><em class="stress"><span><!--{$video_list.score}--></span></em></div>
+                                    </a>
+                                    <div class="sort_lst_tit"><a href="<!--{$video_list.url}-->" title="<!--{$video_list.title}-->" uigs="m_hobby_title_0"><!--{$video_list.title}--></a></div>
+                                    <p class="sort_lst_txt">
+                                        <!--{$video_list.actor}-->
+                                    </p>
+                                </li>
+                                <!--{/iCMS}-->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column_lft" id="tab-comment">
+                        <a name="tab-comment"></a>
+                        <h3 class="detail_tit"><i></i><!--{$video.title}-->讨论</h3>
+                        <div id="comment-list" class="comments_list">
+                            <!--{iCMS:comment:list display="default"}-->
+                        </div>
+                    </div>
+                    <div class="column_lft" id="tab-cmtform">
+                        <div id="comment-form">
+                            <!--{iCMS:comment:form display="default"}-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bgbanner">
+                <span class="mask"></span>
+                <img src="<!--{$video.pic.url}-->" id="blurimg" class="blurimg" style="display: none;">
+                <canvas id="canvasblur" class="canvasblur"></canvas>
+                <img src="<!--{$video.pic.url}-->" class="blurimg-normal">
+            </div>
+                <div class="clearfix mb10"></div>
+            </div>
+            <div class="clearfix mb20"></div>
+        </div>
+        <!--{include file="./footer.htm"}-->
+        <script src="<!--{$video.hits.script}-->"></script>
+</body>
+
+</html>

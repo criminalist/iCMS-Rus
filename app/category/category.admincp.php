@@ -28,7 +28,7 @@ class categoryAdmincp {
         'tag' => array(
             array('----'),
             array('{TKEY}','Идентификация тега'),
-            array('{EN_EN}','Имя тега (китайский)'),
+            array('{RUS}','Имя тега (китайский)'),
             array('{NAME}','Имя тега'),
             array('----'),
             array('{TCID}','ID категории',false),
@@ -163,7 +163,7 @@ class categoryAdmincp {
             $meta = array();
             foreach($config['meta'] AS $mk=>$meta){
                 if($meta['name']){
-                    $meta['key'] OR $meta['key'] = strtolower(iPinyin::get($meta['name']));
+                    $meta['key'] OR $meta['key'] = strtolower(iTranslit::get($meta['name']));
                     if(!preg_match("/[a-zA-Z0-9_\-]/",$meta['key'])){
                         return iUI::alert('Может состоять только из английских букв, цифр или _-. Если оставить это поле пустым, оно будет заполнено именем транслитом.');
                     }
@@ -197,10 +197,10 @@ class categoryAdmincp {
 
                 if($_count=="1"){
                     if(empty($dir) && empty($url)) {
-                        $dir = strtolower(iPinyin::get($_name));
+                        $dir = strtolower(iTranslit::get($_name));
                     }
                 }else{
-                    empty($url) && $dir = strtolower(iPinyin::get($_name));
+                    empty($url) && $dir = strtolower(iTranslit::get($_name));
                 }
                 $mode=="2" && $this->check_dir($dir,$this->appid,$url);
                 $data['name']     = $_name;
@@ -217,7 +217,7 @@ class categoryAdmincp {
             $msg = $this->category_name." успешно создан, не забудьте обновить кеш!";
         }else {
             if(empty($dir) && empty($url)) {
-                $dir = strtolower(iPinyin::get($name));
+                $dir = strtolower(iTranslit::get($name));
             }
             category::check_priv($cid,'e','alert');
             $mode=="2" && $this->check_dir($dir,$this->appid,$url,$cid);
@@ -299,7 +299,7 @@ class categoryAdmincp {
             case 'mkdir':
                 foreach($idArray as $k=>$cid){
                     $name = iSecurity::escapeStr($_POST['name'][$cid]);
-                    $dir  = iPinyin::get($name);
+                    $dir  = iTranslit::get($name);
                     $this->check_dir($dir,$this->appid,null,$cid);
                     iDB::query("UPDATE `#iCMS@__category` SET `dir` = '$dir' WHERE `cid` ='".(int)$cid."' LIMIT 1");
                 }

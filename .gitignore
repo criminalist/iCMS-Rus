@@ -4,6 +4,8 @@
 /test
 /*.bak
 /bak.*
+_notes*
+/public/font
 /cache/desktop
 /cache/mobile
 /cache/total

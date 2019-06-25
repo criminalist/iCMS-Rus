@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <!--{if $category.title}-->
+        <!--{$category.title}-->_
+        <!--{$site.title}-->
+        <!--{$category.name}-->
+        <!--{else}-->
+        <!--{$category.name}-->_
+        <!--{$site.title}-->_
+        <!--{$site.seotitle}-->
+        <!--{/if}-->
+    </title>
+    <meta name="keywords" content="<!--{$category.keywords}-->" />
+    <meta name="description" content="<!--{$category.description}-->" />
+    <meta name="mobile-agent" content="format=xhtml;url=<!--{$category.iurl.mobile.url}-->">
+    <meta name="mobile-agent" content="format=html5;url=<!--{$category.iurl.mobile.url}-->">
+    <link rel="alternate" media="only screen and(max-width: 640px)" href="<!--{$category.iurl.mobile.url}-->">
+    <!--{iCMS:public:ui}-->
+    <link rel="stylesheet" href="<!--{$site.urls.template}-->/videoApp/static/video.css" type="text/css" />
+</head>
+
+<body class="categoryApp" i="<!--{$iCMS.APP.NAME}-->">
+    <!--{include file="./header.htm"}-->
+    <div class="body clearfix ">
+        <div class="body-wrap r5">
+            <div class="focus">
+                <div class="focus-left fl">
+                    <div class="carousel-box">
+                        <ul>
+                            <!--{iCMS:video:list loop="true" pic="true" row="5"}-->
+                            <li>
+                                <a href="<!--{$video_list.url}-->">
+                                    <img src="<!--{$video_list.pic.url|thumb:300:450}-->" />
+                                </a>
+                                <div class="label_text">
+                                    <!--{$video_list.title}-->
+                                </div>
+                            </li>
+                            <!--{/iCMS}-->
+                        </ul>
+                        <span id="carousel-left" class="arrow-left">左侧</span>
+                        <span id="carousel-right" class="arrow-right">右侧</span>
+                    </div>
+                </div>
+                <div class="focus-right fr">
+                    <!--{iCMS:video:list  row="8" orderby="month"}-->
+                    <div class="topnews">
+                        <h1><a href="<!--{$video_list[0].url}-->" target="_blank"><!--{$video_list[0].title}--></a></h1>
+                        <!--{if $video_list[0].description}-->
+                        <p>
+                            <!--{$video_list[0].description|cut:100}-->...
+                            <a href="<!--{$video_list[0].url}-->" target="_blank" class="blue">[详细]</a>
+                        </p>
+                        <!--{/if}-->
+                        <p class="clearfix dotted mb10"></p>
+                        <ul>
+                            <!--{foreach value="alist" start="2" from="$video_list"}-->
+                            <li>
+                                <!--{if $category.rootid=="0"}-->
+                                <b>[<!--{$alist.category.link}-->]</b>
+                                <!--{/if}-->
+                                <a href="<!--{$alist.url}-->" target="_blank">
+                                    <!--{$alist.title}-->
+                                </a>
+                                <span class="date"><!--{$alist.pubdate|date:"m-d"}--></span>
+                            </li>
+                            <!--{/foreach}-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="body-wrap r5 filter-wrap">
+            <div class="mod_filter">
+                <div class="filter_item filter_item_v1">
+                    <h3 class="filter_title"><i></i>特色推荐</h3>
+                    <ul class="filter_list">
+                        <!--{iCMS:tag:list loop="true" row="10" sub="all" orderby="hot" cid="$category.cid" pid="1"}-->
+                        <li>
+                            <a uigs="in_movie_tag_<!--{$tag_list.name}-->" href="<!--{$tag_list.url}-->" target="_blank" title="<!--{$tag_list.name}-->">
+                                <!--{$tag_list.name}-->
+                            </a>
+                        </li>
+                        <!--{/iCMS}-->
+                    </ul>
+                </div>
+                <div class="filter_item filter_item_v2">
+                    <h3 class="filter_title"><i></i>类型</h3>
+                    <ul class="filter_list">
+                        <!--{iCMS:prop:array loop="true" field="genre" sapp="video" row="14"}-->
+                        <li>
+                            <a uigs="in_movie_tag_<!--{$prop_array.name}-->" href="<!--{$prop_array.url}-->" target="_blank" title="<!--{$prop_array.name}-->">
+                                <!--{$prop_array.name}-->
+                            </a>
+                        </li>
+                        <!--{/iCMS}-->
+                        <li>
+                            <a uigs="in_movie_tag_全部" href="/film/list/" target="_blank" title="全部">全部</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filter_item filter_item_v3">
+                    <h3 class="filter_title"><i></i>地区</h3>
+                    <ul class="filter_list">
+                        <!--{iCMS:prop:list loop="true" field="area" sapp="video"}-->
+                        <li>
+                            <a uigs="in_movie_tag_<!--{$prop_list.name}-->" href="<!--{$prop_list.url}-->" target="_blank" title="<!--{$prop_list.name}-->">
+                                <!--{$prop_list.name}-->
+                            </a>
+                        </li>
+                        <!--{/iCMS}-->
+                        <li>
+                            <a uigs="in_movie_tag_全部" href="/film/list/" target="_blank" title="全部">全部</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filter_item filter_item_v4">
+                    <h3 class="filter_title"><i></i>明星</h3>
+                    <ul class="filter_list">
+                        <!--{iCMS:tag:list loop="true" row="10" sub="all" orderby="hot" cid="$category.cid" field="actor"}-->
+                        <li>
+                            <a href="<!--{$tag_list.url}-->" target="_blank" title="<!--{$tag_list.name}-->">
+                                <!--{$tag_list.name}-->
+                            </a>
+                        </li>
+                        <!--{/iCMS}-->
+                    </ul>
+                </div>
+                <div class="filter_item filter_item_v5">
+                    <h3 class="filter_title"><i></i>年代</h3>
+                    <ul class="filter_list">
+                        <!--{iCMS:prop:list loop="true" field="year" sapp="video" }-->
+                        <li>
+                            <a href="<!--{$prop_list.url}-->" target="_blank" title="<!--{$prop_list.name}-->">
+                                <!--{$prop_list.name}-->
+                            </a>
+                        </li>
+                        <!--{/iCMS}-->
+                        <li>
+                            <a uigs="in_movie_tag_全部" href="/film/list/" target="_blank" title="全部">全部</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="body-wrap r5">
+            <div class="main-col">
+                <div class="tabs-wrap">
+                    <div class="tabs-head">
+                        <p class="tabs-title">
+                            <a href="<!--{$category.url}-->" data-target="#tabs_c0" data-toggle="tab">
+                                <!--{$category.name}-->
+                            </a>
+                        </p>
+                        <!--{iCMS:category:list stype='sub' row="8" cid="$category.cid"}-->
+                        <ul class="tabs-nav">
+                            <!--{foreach key="catkey" value="catlist" from="$category_list"}-->
+                            <li>
+                                <a href="<!--{$catlist.url}-->" target="_blank" data-target="#tabs_c<!--{$catlist.cid}-->" data-toggle="tab">
+                                    <!--{$catlist.name}-->
+                                </a>
+                            </li>
+                            <!--{/foreach}-->
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="tabs-content">
+                        <div class="tabs-pane" id="tabs_c0">
+                            <div class="kwLink">
+                                <b>相关标签：</b>
+                                <!--{iCMS:tag:list loop="true" row="20" orderby="hot" cid="$category.cid"}-->
+                                <a href="<!--{$tag_list.url}-->" target="_blank">
+                                    <!--{$tag_list.name}-->
+                                </a>
+                                <!--{/iCMS}-->
+                            </div>
+                            <ul class="media-list">
+                                <!--{iCMS:video:list loop="true" page="true" tags="true" sub="all" row="12" cid="$category.cid"}-->
+                                <li class="media">
+                                    <!--{if $video_list.pic.url}-->
+                                    <a class="media-object" href="<!--{$video_list.url}-->">
+                                        <img class="r5 lazy" data-src="<!--{$video_list.pic.url}-->" src="<!--{$site.urls.tpl}-->/static/img/loading.gif">
+                                    </a>
+                                    <!--{/if}-->
+                                    <div class="media-body">
+                                        <h4 class="media-heading">
+                                            <a href="<!--{$video_list.url}-->" target="_blank"><!--{$video_list.title}--></a>
+                                        </h4>
+                                        <!--{if $video_list.description}-->
+                                        <p class="media-text">
+                                            <!--{$video_list.description|cut:110:'...'}-->
+                                            <a href="<!--{$video_list.url}-->" target="_blank" class="blue">[详细]</a>
+                                        </p>
+                                        <!--{/if}-->
+                                        <div class="media-info">
+                                            <span class="date"><!--{$video_list.pubdate|date:'Y-m-d H:i'}--></span>
+                                            <span class="category">分类：<!--{$video_list.category.link}--></span>
+                                            <!--{if $video_list.tags_link}-->
+                                            <span class="tags"><!--{$video_list.tags_link}--></span>
+                                            <!--{/if}-->
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </li>
+                                <!--{/iCMS}-->
+                            </ul>
+                            <div class="pagination">
+                                <!--{$iCMS.PAGE.NAV}-->
+                            </div>
+                        </div>
+                        <!--{foreach value="catlist" from="$category_list"}-->
+                        <div class="tabs-pane hide" id="tabs_c<!--{$catlist.cid}-->">
+                            <div class="kwLink">
+                                <b>相关标签：</b>
+                                <!--{iCMS:tag:list loop="true" row="20" orderby="hot" cid="$catlist.cid"}-->
+                                <a href="<!--{$tag_list.url}-->" target="_blank">
+                                    <!--{$tag_list.name}-->
+                                </a>
+                                <!--{/iCMS}-->
+                            </div>
+                            <ul class="media-list">
+                                <!--{iCMS:video:list loop="true" tags="true" sub="all" row="12" cid="$catlist.cid"}-->
+                                <li class="media">
+                                    <!--{if $video_list.pic.url}-->
+                                    <a class="media-object" href="<!--{$video_list.url}-->">
+                                        <img class="r5 lazy" data-src="<!--{$video_list.pic.url}-->" src="<!--{$site.urls.tpl}-->/static/img/loading.gif">
+                                    </a>
+                                    <!--{/if}-->
+                                    <div class="media-body">
+                                        <h4 class="media-heading">
+                                        <a href="<!--{$video_list.url}-->" target="_blank"><!--{$video_list.title}--></a>
+                                        </h4>
+                                        <p class="media-text">
+                                            <!--{$video_list.description|cut:100:'......'}-->
+                                            <a href="<!--{$video_list.url}-->" target="_blank" class="blue">[详细]</a>
+                                        </p>
+                                        <div class="media-info">
+                                            <span class="date"><!--{$video_list.pubdate|date:'m月d日'}--></span>
+                                            <span class="category">[<!--{$video_list.category.link}-->]</span>
+                                            <!--{if $video_list.tags_link}-->
+                                            <span class="tags"><!--{$video_list.tags_link}--></span>
+                                            <!--{/if}-->
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </li>
+                                <!--{/iCMS}-->
+                            </ul>
+                        </div>
+                        <!--{/foreach}-->
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="side-col">
+                <div class="mod-box rank">
+                    <div class="mod-title">
+                        <ul>
+                            <li class="active">
+                                <a href="javascript:void(0);" data-target="#rank-week" data-toggle="tab">周点击榜</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" data-target="#rank-momth" data-toggle="tab">周热评榜</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mod-content">
+                        <ul class="rank-list" id="rank-week">
+                            <!--{iCMS:video:list loop="true" row="9" sub="all" orderby="week" cid="$category.cid"}-->
+                            <li>
+                                <em class="no<!--{$video_list.rownum}-->"><!--{$video_list.rownum}--></em>
+                                <a href="<!--{$video_list.url}-->" target="_blank">
+                                    <!--{$video_list.title}-->
+                                </a>
+                            </li>
+                            <!--{/iCMS}-->
+                        </ul>
+                        <ul class="rank-list hide" id="rank-momth">
+                            <!--{iCMS:video:list loop="true" row="9" sub="all" orderby="comment" startdate="-7 day" cid="$category.cid"}-->
+                            <li>
+                                <em class="no<!--{$video_list.rownum}-->"><!--{$video_list.rownum}--></em>
+                                <a href="<!--{$video_list.url}-->" target="_blank">
+                                    <!--{$video_list.title}-->
+                                </a>
+                            </li>
+                            <!--{/iCMS}-->
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="mod-box hot-tags">
+                    <div class="mod-title">
+                        <h3 class="mod-txt">标签云</h3>
+                    </div>
+                    <div class="mod-content">
+                        <ul>
+                            <!--{iCMS:tag:list loop="true" row="15" sub="all" orderby="hot" cid="$category.cid"}-->
+                            <li>
+                                <a href="<!--{$tag_list.url}-->" target="_blank" class="btn">
+                                    <!--{$tag_list.name}-->
+                                </a>
+                            </li>
+                            <!--{/iCMS}-->
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="mod-box pictxt">
+                    <div class="mod-title">
+                        <h3 class="mod-txt">图文推荐</h3>
+                    </div>
+                    <div class="mod-content">
+                        <!--{iCMS:video:list loop="true" pic="true" sub="all" row="8" cid="$category.cid"}-->
+                        <div class="pictxt-list <!--{cycle values='fl,fr'}-->">
+                            <a href="<!--{$video_list.url}-->" target="_blank">
+                                <span class="pictxt-img">
+                                        <img src="<!--{$video_list.pic.url}-->" alt="<!--{$video_list.title}-->">
+                                    </span>
+                                <p class="pictxt-text">
+                                    <!--{$video_list.title}-->
+                                </p>
+                            </a>
+                        </div>
+                        <!--{/iCMS}-->
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix mb10"></div>
+        </div>
+        <div class="clearfix mb20"></div>
+    </div>
+    <!--{include file="./footer.htm"}-->
+</body>
+
+</html>

@@ -189,7 +189,7 @@ class contentAdmincp{
      */
     public function do_baiduping($id = null,$dialog=true){
         $id===null && $id=$this->id;
-        $id OR iUI::alert('请选择要推送的文章!');
+        $id OR iUI::alert('Выберите публикацию!');
         $rs   = content::row($id);
         $C    = category::get($rs['cid']);
         $iurl = (array)iURL::get($this->app['app'],array($rs,$C));
@@ -281,7 +281,7 @@ class contentAdmincp{
         if($cp_cids) {
             if(is_array($cp_cids)){
                 if($cid){
-                    array_search($cid,$cp_cids)===false && admincp::permission_msg('栏目[cid:'.$cid.']',$ret);
+                    array_search($cid,$cp_cids)===false && admincp::permission_msg('Категория [cid:'.$cid.']',$ret);
                 }else{
                     $cids = $cp_cids;
                 }

@@ -3,7 +3,7 @@
     <div class="input-prepend input-append">
       <span class="add-on">id</span>
       <span class="input-xlarge uneditable-input">INT(10) UNSIGNED NOT NULL</span>
-      <span class="add-on" style="width:auto">主键 自增ID</span>
+      <span class="add-on" style="width:auto">ID суррогатного ключа</span>
     </div>
   </div>
   <div class="clearfloat mb10"></div>

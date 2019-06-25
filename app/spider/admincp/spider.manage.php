@@ -124,24 +124,24 @@ $(function(){
               <td><?php echo $rs[$i]['status']; ?>/<?php echo $rs[$i]['publish']; ?></td>
               <td>
 <?php if($_GET['perpage']<500){?>
-                <a href="<?php echo __ADMINCP__; ?>=files&indexid=<?php echo $rs[$i]['indexid'] ; ?>&method=database" class="tip-bottom" title="查看内容使用的图片" target="_blank"><i class="fa fa-picture-o"></i></a>
+                <a href="<?php echo __ADMINCP__; ?>=files&indexid=<?php echo $rs[$i]['indexid'] ; ?>&method=database" class="tip-bottom" title="Посмотреть изображение" target="_blank"><i class="fa fa-picture-o"></i></a>
                 <a href="<?php echo __ADMINCP__; ?>=spider_project&do=add&pid=<?php echo $rs[$i]['pid'] ; ?>" class="btn btn-small" target="_blank"><i class="fa fa-edit"></i> Редактировать схему</a>
                 <a href="<?php echo __ADMINCP__; ?>=spider_rule&do=add&rid=<?php echo $rs[$i]['rid'] ; ?>" class="btn btn-small" target="_blank"><i class="fa fa-edit"></i> Редактировать правила</a>
                 <?php if($rs[$i]['indexid']){?>
-                <a href="<?php echo __ADMINCP__; ?>=article&do=add&id=<?php echo $rs[$i]['indexid'] ; ?>" class="btn btn-small"><i class="fa fa-edit"></i> 编辑内容</a>
+                <a href="<?php echo __ADMINCP__; ?>=article&do=add&id=<?php echo $rs[$i]['indexid'] ; ?>" class="btn btn-small"><i class="fa fa-edit"></i> Редактировать контент</a>
                   <?php if(empty($rs[$i]['publish'])){?>
-                  <a href="<?php echo APP_FURI; ?>&do=update&sid=<?php echo $rs[$i]['id']; ?>&_args=publish:1" class="btn btn-small" target="iPHP_FRAME"><i class="fa fa-flag"></i> 标识发布</a>
+                  <a href="<?php echo APP_FURI; ?>&do=update&sid=<?php echo $rs[$i]['id']; ?>&_args=publish:1" class="btn btn-small" target="iPHP_FRAME"><i class="fa fa-flag"></i> Обновить и опубликовать</a>
                   <?php }else{?>
-                  <a href="<?php echo APP_FURI; ?>&do=publish&sid=<?php echo $rs[$i]['id']; ?>&pid=<?php echo $rs[$i]['pid']; ?>&indexid=<?php echo $rs[$i]['indexid'] ; ?>" class="btn btn-small" target="iPHP_FRAME"><i class="fa fa-edit"></i> 重新发布</a>
+                  <a href="<?php echo APP_FURI; ?>&do=publish&sid=<?php echo $rs[$i]['id']; ?>&pid=<?php echo $rs[$i]['pid']; ?>&indexid=<?php echo $rs[$i]['indexid'] ; ?>" class="btn btn-small" target="iPHP_FRAME"><i class="fa fa-edit"></i> Опубликовать повторно</a>
                   <?php }?>
                 <?php }else{?>
                 <a href="<?php echo APP_FURI; ?>&do=publish&sid=<?php echo $rs[$i]['id']; ?>&pid=<?php echo $rs[$i]['pid']; ?>" class="btn btn-small" target="iPHP_FRAME"><i class="fa fa-edit"></i> Опубликовать</a>
-                <a href="<?php echo APP_FURI; ?>&do=update&sid=<?php echo $rs[$i]['id']; ?>&_args=publish:1" class="btn btn-small" target="iPHP_FRAME"><i class="fa fa-flag"></i> 标识发布</a>
+                <a href="<?php echo APP_FURI; ?>&do=update&sid=<?php echo $rs[$i]['id']; ?>&_args=publish:1" class="btn btn-small" target="iPHP_FRAME"><i class="fa fa-flag"></i> Обновить и опубликовать</a>
                 <?php }?>
                 <a href="<?php echo __ADMINCP__; ?>=spider_project&do=test&rid=<?php echo $rs[$i]['rid']; ?>&url=<?php echo $rs[$i]['url']; ?>" class="btn btn-small" data-toggle="modal" title="测试内容规则"><i class="fa fa-keyboard-o"></i> Тестировать</a>
                 <a href="<?php echo APP_FURI; ?>&do=delspider&sid=<?php echo $rs[$i]['id']; ?>" target="iPHP_FRAME" class="del btn btn-small btn-danger" title='Удалить навсегда'  onclick="return confirm('Вы уверены, что хотите удалить?');"/><i class="fa fa-trash-o"></i> Удалить</a>
                 <?php if($rs[$i]['indexid']){?>
-                <a href="<?php echo APP_FURI; ?>&do=delcontent&sid=<?php echo $rs[$i]['id']; ?>&pid=<?php echo $rs[$i]['pid']; ?>&indexid=<?php echo $rs[$i]['indexid'] ; ?>" target="iPHP_FRAME" class="del btn btn-small btn-danger" title='删除采集数据和发布的内容'  onclick="return confirm('Вы уверены, что хотите удалить?');"/><i class="fa fa-trash-o"></i> удалить & 内容</a>
+                <a href="<?php echo APP_FURI; ?>&do=delcontent&sid=<?php echo $rs[$i]['id']; ?>&pid=<?php echo $rs[$i]['pid']; ?>&indexid=<?php echo $rs[$i]['indexid'] ; ?>" target="iPHP_FRAME" class="del btn btn-small btn-danger" title='Удалить собранные данные и опубликованный контент'  onclick="return confirm('Вы уверены, что хотите удалить?');"/><i class="fa fa-trash-o"></i> Удалить данные и контент</a>
                 <?php }?>
 <?php }?>
               </td>

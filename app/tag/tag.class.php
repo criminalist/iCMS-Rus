@@ -103,7 +103,7 @@ class tag {
                 WHERE `id`='$tid'
             ");
 	    }else {
-			$tkey   = iPinyin::get($name,iCMS::$config['tag']['tkey']);
+			$tkey   = iTranslit::get($name,iCMS::$config['tag']['tkey']);
             $fields = self::fields();
 			$data   = compact($fields);
             $data['title']   = $name;

@@ -43,7 +43,7 @@ $(function(){
           follow:this,height:'auto',
           content:document.getElementById('mkdir-box'),
           modal:false,
-  		    title: '创建新目录',
+  		    title: 'Создать новый каталог',
           okValue:'Создать',
           ok: function () {
               var a = $("#newdirname"),n = a.val(),d=this;

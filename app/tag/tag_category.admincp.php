@@ -17,7 +17,7 @@ class tag_categoryAdmincp extends categoryAdmincp {
 
         
         $this->category_rule+= array(
-            'tag'     => array('Тег','/tag/{TKEY}{EXT}','{ID},{0xID},{TKEY},{NAME},{EN_EN},{Hash@ID},{Hash@0xID}')
+            'tag'     => array('Тег','/tag/{TKEY}{EXT}','{ID},{0xID},{TKEY},{NAME},{RUS},{Hash@ID},{Hash@0xID}')
         );
         /**
          *  Параметры формирования URL

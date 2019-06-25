@@ -1,12 +1,5 @@
 <?php
-/**
-* iCMS - i Content Management System
-* Copyright (c) 2007-2017 iCMSdev.com. All rights reserved.
-*
-* @author icmsdev <master@icmsdev.com>
-* @site https://www.icmsdev.com
-* @licence https://www.icmsdev.com/LICENSE.html
-*/
+
 defined('iPHP') OR exit('What are you doing?');
 admincp::head();
 ?>
@@ -67,7 +60,7 @@ $(function(){
           </span>
         </div>
         <div class="clearfloat mb10"></div>
-        <div class="input-prepend input-append"><span class="add-on"><i class="fa fa-calendar"></i> 发布时间</span>
+        <div class="input-prepend input-append"><span class="add-on"><i class="fa fa-calendar"></i> Время публикации</span>
           <input type="text" class="ui-datepicker" name="starttime" value="<?php echo $_GET['starttime'] ; ?>" placeholder="开始时间" />
           <span class="add-on">-</span>
           <input type="text" class="ui-datepicker" name="endtime" value="<?php echo $_GET['endtime'] ; ?>" placeholder="结束时间" />
@@ -91,7 +84,7 @@ $(function(){
           </select>
         </div> -->
         <div class="input-prepend">
-          <span class="add-on">状 态</span>
+          <span class="add-on">Статус</span>
           <select name="status" id="status" class="chosen-select span3">
             <option value=""></option>
             <option value="all">所有状态</option>
@@ -103,7 +96,7 @@ $(function(){
             <?php echo propAdmincp::get("status") ; ?>
           </select>
         </div>
-        <div class="input-prepend"> <span class="add-on">排序</span>
+        <div class="input-prepend"> <span class="add-on">Сортировка</span>
           <select name="orderby" id="orderby" class="span3 chosen-select">
             <option value=""></option>
             <optgroup label="降序"><?php echo $orderby_option['DESC'];?></optgroup>
@@ -135,7 +128,7 @@ $(function(){
           <tr>
             <th><i class="fa fa-arrows-v"></i></th>
             <th>ID</th>
-            <th>排序</th>
+            <th>Сортировка</th>
             <th>问题</th>
             <th>栏目</th>
             <th style="width:48px;">回答</th>
@@ -242,7 +235,7 @@ $(function(){
   <div id="tplBatch">
     <div class="input-prepend input-append"> <span class="add-on">问题模板</span>
       <input type="text" name="mtpl" class="span2" id="mtpl" value=""/>
-      <?php echo filesAdmincp::modal_btn('模板','mtpl');?>
+      <?php echo filesAdmincp::modal_btn('Шаблон','mtpl');?>
     </div>
   </div>
 </div>

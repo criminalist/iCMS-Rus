@@ -124,10 +124,10 @@ var iFormer = {
                 case 'file':
                 case 'image':
                     var eText = {
-                        prop:'选择属性',
-                        image:'图片上传',
-                        multi_image:'多图上传',
-                        file:'文件上传',
+                        prop:'Выберите свойство',
+                        image:'Загрузить изображение',
+                        multi_image:'Мультизагрузка изображений',
+                        file:'Загрузка файла',
                         multi_file:'Мультизагрузка файлов',
                     }
                     if(obj_type!='prop'){
@@ -180,7 +180,7 @@ var iFormer = {
                     var div_after = function () {
                         var $span;
                         if(obj_type=="PRIMARY"){
-                            $span = iFormer.widget('span').addClass('label label-important').text('主键 自增ID');
+                            $span = iFormer.widget('span').addClass('label label-important').text('ID суррогатного ключа');
                         }
                         me.hidden($elem,$div,$span);
                     }
@@ -208,7 +208,7 @@ var iFormer = {
                     if(obj_type=='radio_prop'||obj_type=='checkbox_prop'){
                         obj['option']= 'Свойство по умолчанию=0;'
                     }
-                    //改变$div内容
+                    
                     var _div = function () {
                         var parent = iFormer.widget('span').addClass('add-on');
                         var field_option = function () {
@@ -242,8 +242,8 @@ var iFormer = {
                         var eText = {
                             prop:'Свойства',
                             multi_prop:'Свойства',
-                            category:'栏目',
-                            multi_category:'栏目',
+                            category:'Категории',
+                            multi_category:'Категории',
                         }
                         if(eText[obj_type]){
                             var $span = iFormer.widget('span').addClass('label label-info label-tip').text(eText[obj_type]);
@@ -282,7 +282,7 @@ var iFormer = {
                 break;
                 case 'currency':
                 case 'percentage':
-                    //追加$div内容
+                    
                     var div_after = function () {
                         var label2 = iFormer.widget('span').addClass('add-on');
                         label2.append(obj['label-after']);
@@ -299,15 +299,13 @@ var iFormer = {
             }
             obj['class'] = obj['class']||'span3';
 
-            //整数类型 默认无符号
+            
             if($.inArray(obj['field'], iFormer.FieldType['number'])>0){
                 if(typeof(obj['unsigned'])=="undefined"){
                     obj['unsigned'] = '1'
                 }
             }
-            /**
-             * 生成器字段样式展现
-             */
+            
             $elem.attr({
                 'id': '_field_'+obj['id'],
                 'name': '_field_'+obj['name'],
@@ -363,13 +361,7 @@ var iFormer = {
 
         return $container;
     },
-    /**
-     * 字段数据
-     * @param  {[type]} obj  [数组]
-     * @param  {[type]} data [字符串]
-     * @param  {[type]} $container
-     * @return {[type]}      [description]
-     */
+    
     fields:function(data,$container) {
         var $fields = this.widget('input').prop({'type':'hidden','name':'fields[]'});
         // if(data){
@@ -379,12 +371,7 @@ var iFormer = {
         // }
         $container.append($fields);
     },
-    /**
-     * 字段 编辑/删除 按钮
-     * @param  {[type]} $container [description]
-     * @param  {[type]} $div [description]
-     * @return {[type]}            [description]
-     */
+   
     action_btn:function($container,$div) {
         var $action    = this.widget('span').addClass('action'),
             $edit      = this.widget('a').addClass('fa fa-edit'),
@@ -466,22 +453,14 @@ var iFormer = {
             UI.alert(msg);
         }
     },
-    /**
-     * 重置表单
-     * @param  {[type]} a [description]
-     * @return {[type]}   [description]
-     */
+    
     freset: function(a) {
-        //form嵌套下出错
+        
         document.getElementById("iFormer-field-form").reset();
         $(".chosen-select", $(a)).chosen("destroy").find('option').removeAttr('selected')
         $.uniform.restore('.uniform');
     },
-    /**
-     * 编辑字段
-     * @param  {[type]} $container [description]
-     * @return {[type]}            [description]
-     */
+    
     edit: function($container) {
         // $container.dblclick(function(event) {
             // window.event.preventDefault();
@@ -499,12 +478,7 @@ var iFormer = {
         // });
     },
 
-    /**
-     * 字段编辑框
-     * @param  {[type]}   obj      [description]
-     * @param  {Function} callback [description]
-     * @return {[type]}            [description]
-     */
+    
     edit_dialog: function(obj, callback) {
         var me = this,_id = obj['id'];
         var fbox = document.getElementById("iFormer-field-editor");
@@ -527,7 +501,7 @@ var iFormer = {
             // if(typeof(obj[name])==='object'){
             if(ifn.hasClass('chosen-select')){
                 // ifn.trigger("chosen:updated");
-                // 多选排序
+               
                 // console.log(ifn);
                 if(ifn.attr('multiple')){
                     ifn.setSelectionOrder(obj[name], true);
@@ -547,7 +521,7 @@ var iFormer = {
         }
 
 
-        //整数类型 显示unsigned
+        
         if($.inArray(obj['field'], iFormer.FieldType['number'])>0){
             $('.unsigned-wrap', $fbox).show();
             $('[name="unsigned"][value="'+obj['unsigned']+'"]', $fbox).prop("checked", true);

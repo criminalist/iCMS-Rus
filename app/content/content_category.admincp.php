@@ -27,7 +27,7 @@ class content_categoryAdmincp extends categoryAdmincp {
          */
         $this->category_rule+= array(
             $app['app'] => array($app['title'],'/{CDIR}/{YYYY}/{MM}{DD}/{ID}{EXT}','{ID},{0xID},{LINK},{Hash@ID},{Hash@0xID}'),
-            'tag'       => array('Тег','/{CDIR}/t-{TKEY}{EXT}','{ID},{0xID},{TKEY},{NAME},{EN_EN},{Hash@ID},{Hash@0xID}')
+            'tag'       => array('Тег','/{CDIR}/t-{TKEY}{EXT}','{ID},{0xID},{TKEY},{NAME},{RUS},{Hash@ID},{Hash@0xID}')
         );
         /**
          *  Параметры формирования URL

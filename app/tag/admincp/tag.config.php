@@ -17,7 +17,7 @@ configAdmincp::head("Настройка тегов");
     <ul class="dropdown-menu">
       <li><a href="{ID}" data-toggle="insertContent" data-target="#rule"><span class="label label-important">{ID}</span> ID Тега</a></li>
       <li><a href="{TKEY}" data-toggle="insertContent" data-target="#rule"><span class="label label-important">{TKEY}</span> Идентификация тега</a></li>
-      <li><a href="{EN_EN}" data-toggle="insertContent" data-target="#rule"><span class="label label-important">{EN_EN}</span> Имя тега (китайский)</a></li>
+      <li><a href="{RUS}" data-toggle="insertContent" data-target="#rule"><span class="label label-important">{RUS}</span> Имя тега (китайский)</a></li>
       <li><a href="{NAME}" data-toggle="insertContent" data-target="#rule"><span class="label label-important">{NAME}</span>Имя тега</a></li>
       <li class="divider"></li>
       <li><a href="{TCID}" data-toggle="insertContent" data-target="#rule"><span class="label label-inverse">{TCID}</span> ID категории</a></li>
@@ -31,7 +31,7 @@ configAdmincp::head("Настройка тегов");
     </ul>
   </div>
 </div>
-<div class="help-inline">Правило обязательно должно включать в себя одну из переменных <span class="label label-important">{ID}</span> , <span class="label label-important">{NAME}</span> , <span class="label label-important">{EN_EN}</span> , <span class="label label-important">{TKEY}</span></div>
+<div class="help-inline">Правило обязательно должно включать в себя одну из переменных <span class="label label-important">{ID}</span> , <span class="label label-important">{NAME}</span> , <span class="label label-important">{RUS}</span> , <span class="label label-important">{TKEY}</span></div>
 <!-- <div class="clearfloat mb10"></div>
 <div class="input-prepend">
   <span class="add-on">Каталог</span>

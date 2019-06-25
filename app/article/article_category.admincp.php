@@ -19,7 +19,7 @@ class article_categoryAdmincp extends categoryAdmincp {
        
         $this->category_rule+= array(
             'article' => array('Статьи','/{CDIR}/{YYYY}/{MM}{DD}/{ID}{EXT}','{ID},{0xID},{LINK},{Hash@ID},{Hash@0xID}'),
-            'tag'     => array('Теги','/{CDIR}/t-{TKEY}{EXT}','{ID},{0xID},{TKEY},{NAME},{EN_EN},{Hash@ID},{Hash@0xID}')
+            'tag'     => array('Теги','/{CDIR}/t-{TKEY}{EXT}','{ID},{0xID},{TKEY},{NAME},{RUS},{Hash@ID},{Hash@0xID}')
         );
         
         $this->category_rule_list+= array();

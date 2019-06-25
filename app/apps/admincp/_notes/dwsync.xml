@@ -5,7 +5,8 @@
 <file name="apps.meta.php" server="unibyte.pro//www/unibyte.pro/" local="132051530791866836" remote="132051279000000000" Dst="0" />
 <file name="hooks.config.php" server="unibyte.pro//www/unibyte.pro/" local="132051969047514244" remote="132051717000000000" Dst="0" />
 <file name="apps.json.manage.php" server="unibyte.pro//www/unibyte.pro/" local="132053061693443192" remote="132052809600000000" Dst="0" />
-<file name="apps.add.php" server="unibyte.pro//www/unibyte.pro/" local="132056413377857170" remote="132056161200000000" Dst="0" />
+<file name="apps.add.php" server="unibyte.pro//www/unibyte.pro/" local="132058561081728972" remote="132058309200000000" Dst="0" />
 <file name="install.php" server="unibyte.pro//www/unibyte.pro/" local="132054684248390371" remote="132054432000000000" Dst="0" />
 <file name="apps.table.php" server="unibyte.pro//www/unibyte.pro/" local="132057209559214919" remote="132056957400000000" Dst="0" />
+<file name="apps.base.php" server="unibyte.pro//www/unibyte.pro/" local="132058162482904349" remote="132057910200000000" Dst="0" />
 </dwsync>

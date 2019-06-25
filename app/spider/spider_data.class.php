@@ -266,7 +266,6 @@ class spider_data {
 
         gc_collect_cycles();
 
-        //子采集 可独立发布
         if($subArray){
             if(spider::$dataTest){
                 $subData = array();
@@ -279,12 +278,12 @@ class spider_data {
         }
 
         if (spider::$dataTest) {
-            echo "<b>最终采集结果:</b>";
+            echo "<b>Конечный результат:</b>";
             echo "<pre style='width:99%;word-wrap: break-word;white-space: pre-wrap;'>";
             print_r(iSecurity::escapeStr($responses));
             if($subArray){
                 echo '<br /><div style="padding: 20px;background-color: #ebebeb;">';
-                echo "<b>子采集结果(只测试第一条):</b><br />";
+                echo "<b>Результаты подбора (тестирование только первого):</b><br />";
                 print_r(iSecurity::escapeStr($subData));
                 echo "</div>";
             }

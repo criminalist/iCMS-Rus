@@ -1,12 +1,5 @@
 <?php
-/**
-* iCMS - i Content Management System
-* Copyright (c) 2007-2017 iCMSdev.com. All rights reserved.
-*
-* @author icmsdev <master@icmsdev.com>
-* @site https://www.icmsdev.com
-* @licence https://www.icmsdev.com/LICENSE.html
-*/
+
 defined('iPHP') OR exit('What are you doing?');
 admincp::head();
 ?>
@@ -17,7 +10,7 @@ $(function(){
   iCMS.select('status',"<?php echo $rs['status'] ; ?>");
   $("#<?php echo APP_FORMID;?>").submit(function(){
     if($("#cid option:selected").val()=="0"){
-     iCMS.alert("请选择所属栏目");
+     iCMS.alert("Выберите категорию для привязки");
      $("#cid").focus();
      return false;
     }
@@ -34,7 +27,7 @@ $(function(){
     <div class="widget-title"> <span class="icon"> <i class="fa fa-pencil"></i> </span>
     <h5 class="brs"><?php echo ($id?'添加':'修改'); ?>问题</h5>
     <ul class="nav nav-tabs" id="tag-add-tab">
-      <li class="active"><a href="#tag-add-base" data-toggle="tab"><i class="fa fa-info-circle"></i> 基本信息</a></li>
+      <li class="active"><a href="#tag-add-base" data-toggle="tab"><i class="fa fa-info-circle"></i> Основная информация</a></li>
       <li><a href="#tag-add-custom" data-toggle="tab"><i class="fa fa-wrench"></i> 自定义</a></li>
       <li><a href="#apps-metadata" data-toggle="tab"><i class="fa fa-sitemap"></i> 动态属性</a></li>
     </ul>
@@ -51,7 +44,7 @@ $(function(){
             <span class="add-on">标题</span>
             <input type="text" name="title" class="span6" id="title" value="<?php echo $rs['title'] ; ?>"/>
           </div>
-          <div class="input-prepend input-append"> <span class="add-on">状 态</span>
+          <div class="input-prepend input-append"> <span class="add-on">Статус</span>
             <select name="status" id="status" class="chosen-select span3">
               <option value="0"> 草稿 [status='0']</option>
               <option value="1"> 正常 [status='1']</option>
@@ -60,11 +53,11 @@ $(function(){
               <option value="4"> 未通过 [status='4']</option>
               <?php echo propAdmincp::get("status") ; ?>
             </select>
-            <?php echo propAdmincp::btn_add('添加状态');?>
+            <?php echo propAdmincp::btn_add('Добавить статус');?>
           </div>
           <div class="clearfloat mb10"></div>
           <div class="input-prepend">
-            <span class="add-on">所属栏目</span>
+            <span class="add-on">Привязка к категории</span>
             <select name="cid" id="cid" class="chosen-select span6"data-placeholder="请选择栏目...">
               <option value="0"> ==== 默认栏目 ==== </option>
               <?php echo category::priv('ca')->select($rs['cid'],0,1,true);?>
@@ -177,7 +170,7 @@ $(function(){
           <div class="input-prepend input-append">
             <span class="add-on">问题模板</span>
             <input type="text" name="tpl" class="span6" id="tpl" value="<?php echo $rs['tpl'] ; ?>"/>
-            <?php echo filesAdmincp::modal_btn('模板','tpl');?>
+            <?php echo filesAdmincp::modal_btn('Шаблон','tpl');?>
           </div>
           <div class="clearfloat mb10"></div>
           <div class="input-prepend">
@@ -185,7 +178,7 @@ $(function(){
             <input id="pubdate" class="ui-datepicker" value="<?php echo get_date($rs['pubdate'],'Y-m-d H:i:s') ; ?>"  name="pubdate" type="text" style="width:230px"/>
           </div>
           <div class="input-prepend">
-            <span class="add-on">发布时间</span>
+            <span class="add-on">Время публикации</span>
             <input id="postime" class="ui-datepicker" value="<?php echo get_date($rs['postime'],'Y-m-d H:i:s') ; ?>"  name="postime" type="text" style="width:230px"/>
           </div>
           <div class="clearfloat mb10"></div>
@@ -212,7 +205,7 @@ $(function(){
         </div>
       </div>
       <div class="form-actions">
-        <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> 提交</button>
+        <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
       </div>
     </form>
   </div>

@@ -15,5 +15,5 @@ require_once __DIR__.'/core/iCMS.version.php';
 require_once __DIR__.'/core/iCMS.class.php';
 //Общие функции программы
 require_once __DIR__.'/core/iCMS.func.php';
-
+//Инициализация
 iPHP_APP_INIT && iCMS::init();

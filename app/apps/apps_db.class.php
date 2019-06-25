@@ -11,7 +11,7 @@ class apps_db {
         $comment = $vars['comment']?$vars['comment']:$label;
         $unsigned= $vars['unsigned']; //Unsigned
 
-        empty($name) && $name = iPinyin::get($label);
+        empty($name) && $name = iTranslit::get($label);
         $field = strtolower($field);
         switch ($field) {
             case 'varchar':
@@ -159,7 +159,7 @@ class apps_db {
     }
     // public static function create_table($name,$fields=null,$base_fields=true,$PRIMARY='id',$index=null,$ret=false){
     //     $fields_sql = array();
-    //     $fields_sql[$PRIMARY]= "`{$PRIMARY}` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键 自增ID'";
+    //     $fields_sql[$PRIMARY]= "`{$PRIMARY}` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID суррогатного ключа'";
     //     // $index && $fields_sql['union_addons']= "`iid` INT(10) UNSIGNED NOT NULL DEFAULT '0' COMMENT '内容ID 关联基础表'";
     //     $base_fields && $fields_sql= array_merge($fields_sql,self::base_fields_sql());
     //     if(is_array($fields))foreach ($fields as $key => $arr) {

@@ -1,12 +1,5 @@
 <?php
-/**
-* iCMS - i Content Management System
-* Copyright (c) 2007-2017 iCMSdev.com. All rights reserved.
-*
-* @author icmsdev <master@icmsdev.com>
-* @site https://www.icmsdev.com
-* @licence https://www.icmsdev.com/LICENSE.html
-*/
+
 defined('iPHP') OR exit('What are you doing?');
 admincp::head();
 ?>
@@ -15,7 +8,7 @@ admincp::head();
     <div class="widget-title"> <span class="icon"> <i class="fa fa-plus-square"></i> </span>
     <h5><?php echo empty($this->id)?'添加':'修改' ; ?>站点</b></h5>
     <ul class="nav nav-tabs" id="-add-tab">
-      <li class="active"><a href="#-add-base" data-toggle="tab"><i class="fa fa-info-circle"></i> 基本信息</a></li>
+      <li class="active"><a href="#-add-base" data-toggle="tab"><i class="fa fa-info-circle"></i> Основная информация</a></li>
       <li><a href="#-add-custom" data-toggle="tab"><i class="fa fa-wrench"></i> 自定义</a></li>
     </ul>
   </div>

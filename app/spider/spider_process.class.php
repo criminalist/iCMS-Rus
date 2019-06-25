@@ -4,13 +4,13 @@ defined('iPHP') OR exit('What are you doing?');
 
 class spider_process {
     public static $groupMaps = array(
-        '0x01' =>'Общий процесс',
+        '0x01' =>'Общее',
         '0x02' =>'转义',
         '0x03' =>'Страницы',
         '0x04' =>'Парсинг/декодирование',
-        '0x05' =>'生成/编码',
-        '0x06' =>'字符串',
-        '0x07' =>'特殊处理'
+        '0x05' =>'Генерация / кодирование',
+        '0x06' =>'Строки',
+        '0x07' =>'Спец обработки'
     );
     public static $helperMaps = array(
         'dataclean'               => array(null,'Очистка данных','Сбор данных после сбора правил'),
@@ -24,17 +24,17 @@ class spider_process {
         'download'                => array('0x01','Скачать','Загрузите и сохраните файл'),
         'filter'                  => array('0x01','Фильтрация слово','Фильтрация слово'),
         'array_filter_empty'      => array('0x01','Очистить пустой массив','Очистить пустой массив'),
-        'clean_cn_blank'          => array('0x01','清除中文空格','清除中文空格'),
-        'array_reverse'           => array('0x01','相反数组','相反数组'),
+        'clean_cn_blank'          => array('0x01','Очистка пустых китайских символов (пробелов)','Очистка пустых китайских символов (пробелов)'),
+        'array_reverse'           => array('0x01','Возвращает массив с элементами в обратном порядке','Функция array_reverse() берёт массив array и возвращает новый массив, порядок элементов в котором обратный исходному, сохраняя ключи, если параметр preserve_keys равен TRUE.'),
 
         'stripslashes'            => array('0x02','Удаляет экранирующие бэкслэши','Возвращает строку после удаления экранированной обратной косой черты'),
         'addslashes'              => array('0x02','Экранирует спецсимволы в строке','Возвращает строку с обратной косой чертой'),
         'htmlspecialchars_decode' => array('0x02','Преобразует HTML-сущности обратно','Эта функция является обратной к htmlspecialchars(). Она преобразует специальные HTML-сущности обратно в соответствующие символы.'),
         'htmlspecialchars'        => array('0x02','Преобразует символы в HTML сущности','Преобразует специальные символы в HTML сущности'),
-        'xml2array'               => array('0x02','xml转Array','xml转Array'),
+        'xml2array'               => array('0x02','XML в массив','XML переводит в массив'),
 
-        'mergepage'               => array('0x03','合并分页','合并分页'),
-        'autobreakpage'           => array('0x03','自动分页','自动分页'),
+        'mergepage'               => array('0x03','Слияние страниц','Слияние страниц'),
+        'autobreakpage'           => array('0x03','Разбивать страницу на части','Разбивать страницу на части для постраничного вывода'),
 
         'urldecode'               => array('0x04','解码 URL 字符串(urldecode)','解码 URL 字符串(urldecode)'),
         'rawurldecode'            => array('0x04','解码 URL 字符串(rawurldecode)','解码 URL 字符串(rawurldecode)'),
@@ -43,16 +43,16 @@ class spider_process {
         'base64_decode'           => array('0x04','base64 解码(base64_decode) ','base64 解码(base64_decode) '),
         'auth_decode'             => array('0x04','解密(auth_decode) ','解密(auth_decode) '),
 
-        'urlencode'               => array('0x05','编码 URL 字符串(urlencode)','编码 URL 字符串(urlencode)'),
+        'urlencode'               => array('0x05','URL-кодирует строку','URL-кодирует строку (urlencode)'),
         'rawurlencode'            => array('0x05','编码 URL 字符串(rawurlencode)','编码 URL 字符串(rawurlencode)'),
-        'http_build_query'        => array('0x05','Array转URL字符串(http_build_query)','Array转URL字符串(http_build_query)'),
+        'http_build_query'        => array('0x05','Массив в строку URL','Сформировать URL-закодированные строки запроса(http_build_query)'),
         'json_encode'             => array('0x05','JSON编码(json_encode) ','JSON编码(json_encode) '),
         'auth_encode'             => array('0x05','加密(auth_encode) ','加密(auth_encode) '),
 
-        'array_explode'           => array('0x06','字符串=>数组','字符串=>数组'),
-        'array_implode'           => array('0x06','数组=>字符串','数组=>字符串'),
+        'array_explode'           => array('0x06','Строка=>Массив','Разбивает строку на подстроки'),
+        'array_implode'           => array('0x06','Массив=>Строка','Объединяет элементы массива в строку'),
 
-        '@check_urls'             => array('0x07','链接检查','独立检查,链接保存在新表'),
+        '@check_urls'             => array('0x07','Проверка ссылок','Независимая проверка, ссылка сохранена в новой таблице'),
         '@collect_urls'           => array('0x07','收集链接','收集其它链接'),
     );
     public static function getArray(){
@@ -71,7 +71,7 @@ class spider_process {
                     continue;
                 }
                 
-                //@方法
+                
                 //@check_urls
                 if(substr($value['helper'], 0,1)=='@'){
                     $sk = substr($value['helper'],1);
@@ -201,7 +201,7 @@ class spider_process {
             $fwd = iPHP::callback(array("filterApp","run"),array(&$content),false);
             if($fwd){
                 return spider_error::msg(
-                    '中包含['.$fwd.']被系统屏蔽的字符!',
+                    'Содержит ['.$fwd.'] символы, которые маскируются системой!',
                     'content.filter',
                     $name,$rule['__url__']
                 );

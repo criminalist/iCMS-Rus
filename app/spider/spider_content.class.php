@@ -186,9 +186,9 @@ class spider_content {
                     }
                     unset($page_area);
                 }
-            }else{ // 逻辑方式
+            }else{ // Логический режим
                 if (spider::$dataTest) {
-                    echo "<b>分页规则:</b>逻辑方式<br />";
+                    echo "<b>分页规则:</b>Логический режим<br />";
                 }
                 if($rule['page_url_parse']=='<%url%>'){
                     $page_url = str_replace('<%url%>',$rule['__url__'],$rule['page_url']);
@@ -219,9 +219,9 @@ class spider_content {
             }
 
             if (spider::$dataTest) {
-                // echo "<b>分页规则:</b>逻辑方式<br />";
+                // echo "<b>分页规则:</b>Логический режим<br />";
                 echo "<b>内容页网址:</b>".$rule['__url__'] . "<br />";
-                echo "<b>分页区域规则:</b>".iSecurity::escapeStr($page_area_rule). "<br />";
+                echo "<b>ПЕЙДЖИНГ региональных правил:</b>".iSecurity::escapeStr($page_area_rule). "<br />";
                 echo "<b>分页网址提取规则:</b>".iSecurity::escapeStr($page_url_rule). "<br />";
                 echo "<b>分页合成:</b>".$rule['page_url'] . "<br />";
                 echo "<b>分页列表:</b><pre>";

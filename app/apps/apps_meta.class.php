@@ -50,7 +50,7 @@ class apps_meta {
             foreach($metadata AS $mdk=>$md){
                 if(is_array($md)){
                     if($md['name'] && empty($md['key'])){
-                        $md['key'] = strtolower(iPinyin::get($md['name']));
+                        $md['key'] = strtolower(iTranslit::get($md['name']));
                     }
                     preg_match("/^[a-zA-Z0-9_\-\.]+$/",$md['key']) OR iUI::alert('字段名不能为空,Может состоять только из английских букв, цифр или символов _-');
                     $md['key'] = trim($md['key']);

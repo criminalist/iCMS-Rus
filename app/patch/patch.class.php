@@ -120,11 +120,11 @@ class patch {
 		}
 
 		if (0 == count($archive_files)) {
-			exit("空的ZIP文件");
+			exit("Пустой файл ZIP");
 		}
 
-		$msg .= '解压完成<iCMS>';
-		$msg .= '开始测试目录权限<iCMS>';
+		$msg .= 'Распаковка заврешена<iCMS>';
+		$msg .= 'Начать тестирование прав доступа к каталогам<iCMS>';
 		$update = true;
 		if (!iFS::checkdir(iPATH)) {
 			$update = false;
@@ -149,13 +149,13 @@ class patch {
 		}
 		if (!$update) {
 			$msg .= 'Проверка прав доступа завершилась с ошибкой<iCMS>';
-			$msg .= '请设置好上面提示的文件写权限<iCMS>';
+			$msg .= 'Установите разрешение на запись <iCMS>';
 			$msg .= '然后重新更新<iCMS>';
 			self::$upgrade = false;
 			$msg = iSecurity::filter_path($msg);
 			return $msg;
 		}
-		$msg .= '权限测试通过<iCMS>';
+		$msg .= 'Тест на права доступа и записи в каталогах<iCMS>';
 		//测试通过!
 		$msg .= 'Резервное копирование каталога завершено<iCMS>';
 		$bakdir = iPATH.'.backup/patch.'.self::$release;

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title>
+        <!--{$video.title}--><!--{$story.title}-->_
+        <!--{$category.name}-->_
+        <!--{$site.title}-->_
+        <!--{$site.seotitle}-->
+    </title>
+    <meta name="keywords" content="<!--{$video.keywords}-->" />
+    <meta name="description" content="<!--{$video.description}-->" />
+    <meta name="mobile-agent" content="format=xhtml;url=<!--{$video.iurl.mobile.url}-->">
+    <meta name="mobile-agent" content="format=html5;url=<!--{$video.iurl.mobile.url}-->">
+    <link rel="alternate" media="only screen and(max-width: 640px)" href="<!--{$video.iurl.mobile.url}-->">
+    <!--{iCMS:public:ui}-->
+    <link rel="stylesheet" href="<!--{$site.urls.template}-->/videoApp/static/video.css" type="text/css" />
+</head>
+<body class="videoApp" i="<!--{$iCMS.APP.NAME}-->">
+    <!--{include file="./header.htm"}-->
+    <div class="body clearfix">
+        <div class="video-main">
+            <div class="detail_section_container">
+                <div class="player-result-wrap">
+                    <h1 class="srch-result-tit">
+                        <!--{$video.title}--> <!--{$story.title}-->
+                    </h1>
+					<div class="player_wrap">
+						<!--{$story.content}-->
+                        <div class="clearfix mt10"></div>
+					</div>
+                </div>
+                <div class="section">
+                    <div class="column_rgt">
+                        <div class="section_aside">
+                            <div id="cartoon_hot_list">
+                                <div class="section_aside_tit hotlist-tit">
+                                    <h2>热播榜</h2>
+                                </div>
+                                <div class="section_aside_hotlist">
+                                    <ul class="section_aside_lst section_aside_lst_score">
+                                        <!--{iCMS:video:list loop="true" sub="all" row="8" orderby="hot"}-->
+                                        <!--{if $video_list.rownum<3}-->
+                                        <li class="hotlist-top<!--{$video_list.rownum}-->">
+                                            <a href="<!--{$video_list.url}-->" title="<!--{$video_list.title}-->" class="section_aside_hotlist_bx" target="_blank">
+                                                <span class="section_aside_lst_tab_rgt"><em class="stress"><!--{$video_list.score}--></em></span>
+                                                <div class="section_aside_lst_tab_lft"><span class="hotlist-num"><!--{$video_list.rownum}--></span>
+                                                    <img src="<!--{$video_list.pic.url}-->" width="77" height="103" alt="<!--{$video_list.title}-->">
+                                                    <div class="hotlist-info">
+                                                        <h2><!--{$video_list.title}--></h2>
+                                                        作者：<!--{$video_list.director}--><br>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <!--{else}-->
+                                        <li>
+                                            <a href="<!--{$video_list.url}-->" title="<!--{$video_list.title}-->" class="section_aside_lst_tab" target="_blank">
+                                                <!--{if $video_list.score}--><span class="section_aside_lst_tab_rgt"><em class="stress"><!--{$video_list.score}--></em></span><!--{/if}-->
+                                                <span class="section_aside_lst_tab_lft"><span class="section_aside_lst_num"><!--{$video_list.rownum}--></span><span class="section_aside_lst_txt"><!--{$video_list.title}--></span></span>
+                                            </a>
+                                        </li>
+                                        <!--{/if}-->
+                                        <!--{/iCMS}-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column_lft">
+                        <div class="sort_nav clearfix" id="subnav">
+                            <div class="sort_nav_bx">
+                                <ul class="sort_nav_lst">
+                                    <li class="top_nav_li active"><a href="#tab-ulike" data-target="#tab-ulike" data-toggle="tab">猜你喜欢</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column_lft" id="tab-ulike">
+                        <div class="sort_lst_bx">
+                            <ul id="hobby_ul" class="sort_lst lst_ulike">
+                                <!--{iCMS:video:list loop="true" sub="all" row="10" orderby="hot"}-->
+                                <!-- <li class="img-thumb hobby_li cur"> -->
+                                <li class="img-thumb hobby_li">
+                                    <a href="<!--{$video_list.url}-->" title="<!--{$video_list.title}-->" class="sort_lst_thumb" uigs="m_hobby_img_0" target="_blank">
+                                        <img src="<!--{$video_list.pic.url}-->" height="252" width="175" alt="<!--{$video_list.title}-->">
+                                        <div class="play_hv2"></div>
+                                        <div class="sort_lst_txt_btm_bg"></div>
+                                        <div class="sort_lst_thumb_txt_rgt"><em class="stress"><span><!--{$video_list.score}--></span></em></div>
+                                    </a>
+                                    <div class="sort_lst_tit"><a href="<!--{$video_list.url}-->" title="<!--{$video_list.title}-->" uigs="m_hobby_title_0"><!--{$video_list.title}--></a></div>
+                                    <p class="sort_lst_txt"><!--{$video_list.actor}--></p>
+                                </li>
+                                <!--{/iCMS}-->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column_lft" id="tab-comment">
+                        <a name="tab-comment"></a>
+                        <h3 class="detail_tit"><i></i><!--{$video.title}-->讨论</h3>
+                        <div id="comment-list" class="comments_list">
+                            <!--{iCMS:comment:list display="default"}-->
+                        </div>
+                    </div>
+                    <div class="column_lft" id="tab-cmtform">
+                        <div id="comment-form">
+                            <!--{iCMS:comment:form display="default"}-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bgbanner">
+                <span class="mask"></span>
+                <img src="<!--{$video.pic.url}-->" id="blurimg" class="blurimg" style="display: none;">
+                <canvas id="canvasblur" class="canvasblur"></canvas>
+                <img src="<!--{$video.pic.url}-->" class="blurimg-normal">
+            </div>
+            <div class="clearfix mb10"></div>
+        </div>
+        <div class="clearfix mb20"></div>
+    </div>
+    <!--{include file="./footer.htm"}-->
+    <script src="<!--{$video.hits.script}-->"></script>
+</body>
+
+</html>

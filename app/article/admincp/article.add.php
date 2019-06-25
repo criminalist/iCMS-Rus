@@ -246,7 +246,7 @@ function modal_picture(el,a){
   imgObj._src = url;
 	ed.fireEvent('beforeInsertImage', imgObj);
 	ed.execCommand("insertImage", imgObj);
-  _modal_dialog("继续选择");
+  _modal_dialog("Продолжить выбор");
   // }else{
   //   var html = ed.getContent(),
   //   img = '<img src="'+url+'"/>';
@@ -391,7 +391,14 @@ function _modal_dialog(cancel_text){
             <div class="input-prepend"> <span class="add-on">Ключевое слово</span>
               <input type="text" name="keywords" class="span6" id="keywords" value="<?php echo $rs['keywords'] ; ?>" onkeyup="javascript:this.value=this.value.replace(/,/ig,',');"/>
             </div>
+		
             <div class="clearfloat mb10"></div>
+			 <div class="input-prepend"> <span class="add-on">Пользовательский URL</span>
+              <input type="text" name="clink" class="span6" id="clink" value="<?php echo $rs['clink'] ; ?>"/>
+            </div>
+            <span class="help-inline">Для того чтобы использовать пользовательскую ссылку необходимо в правилах формирования URL страницы включить переменную {LINK}, либо принудительно указать что URL является пользовательским с помощью квадратных скобок [], пример: [пользовательский-URL.html]</span>
+            <div class="clearfloat mb10"></div>  
+			 
             <div class="input-prepend input-append"> <span class="add-on">Теги</span>
               <input type="text" name="tags" class="span6" id="tags" value="<?php echo $rs['tags'] ; ?>" onkeyup="javascript:this.value=this.value.replace(/,/ig,',');"/>
               <button id="tag_extrac" data-target="#tags" class="btn" type="button" title="Получить теги автоматически"><i class="fa fa-magic"></i></button>
@@ -576,11 +583,7 @@ function _modal_dialog(cancel_text){
               <?php echo filesAdmincp::modal_btn('Шаблон','tpl');?>
             </div>
             <div class="clearfloat mb10"></div>
-            <div class="input-prepend"> <span class="add-on">Пользовательский URL</span>
-              <input type="text" name="clink" class="span6" id="clink" value="<?php echo $rs['clink'] ; ?>"/>
-            </div>
-            <span class="help-inline">Для того чтобы использовать пользовательскую ссылку необходимо в правилах формирования URL страницы включить переменную {LINK}, либо принудительно указать что URL является пользовательским с помощью квадратных скобок [], пример: [пользовательский-URL.html]</span>
-            <div class="clearfloat mb10"></div>
+           
             <div class="input-prepend"> <span class="add-on"> Внешняя ссылка </span>
               <input type="text" name="url" class="span6 tip" title="Примечание: содержимое в редакторе не будет сохранено после того, как установлена внешняя ссылка!" id="url" value="<?php echo $rs['url'] ; ?>"/>
                </div><span class="help-inline">Оставьте поле пустым, если не требуется редирект по внешнней ссылки</span>

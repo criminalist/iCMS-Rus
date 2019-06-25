@@ -283,7 +283,7 @@ class articleAdmincp{
      */
     public function do_baiduping($id = null,$dialog=true){
         $id===null && $id=$this->id;
-        $id OR iUI::alert('请选择要推送的文章!');
+        $id OR iUI::alert('Выберите публикацию!');
         $rs   = article::row($id);
         $C    = category::get($rs['cid']);
         $iurl = (array)iURL::get('article',array($rs,$C));
@@ -311,7 +311,7 @@ class articleAdmincp{
         $id    = (int)$_GET['id'];
         $title = $_GET['title'];
         if(self::$config['repeatitle'] && article::check($title,$id,'title')) {
-            iUI::code(0,'该标题的文章已经存在!请检查是否重复');
+            iUI::code(0,'Заголовок уже существует!');
         }else{
             iUI::code(1);
         }
@@ -319,7 +319,7 @@ class articleAdmincp{
 
     public function do_baiduping_original($id = null,$dialog=true){
         $id===null && $id=$this->id;
-        $id OR iUI::alert('请选择要推送的文章!');
+        $id OR iUI::alert('Выберите публикацию!');
         $rs   = article::row($id);
         $C    = category::get($rs['cid']);
         $iurl = (array)iURL::get('article',array($rs,$C));
@@ -341,7 +341,7 @@ class articleAdmincp{
     }
     public function do_baidu_xzh($id = null,$dialog=true){
         $id===null && $id=$this->id;
-        $id OR iUI::alert('请选择要推送的文章!');
+        $id OR iUI::alert('Выберите публикацию!');
         $rs   = article::row($id);
         $C    = category::get($rs['cid']);
         $iurl = (array)iURL::get('article',array($rs,$C));
@@ -507,7 +507,7 @@ class articleAdmincp{
         if($cp_cids) {
             if(is_array($cp_cids)){
                 if($cid){
-                    array_search($cid,$cp_cids)===false && admincp::permission_msg('栏目[cid:'.$cid.']',$ret);
+                    array_search($cid,$cp_cids)===false && admincp::permission_msg('Категория [cid:'.$cid.']',$ret);
                 }else{
                     $cids = $cp_cids;
                 }
@@ -584,7 +584,7 @@ class articleAdmincp{
             $total = iPagination::totalCache(article::count_sql($sql),"G");
         }
 
-        iUI::pagenav($total,$maxperpage,"篇文章");
+        iUI::pagenav($total,$maxperpage,"Публикации");
 
         $limit = 'LIMIT '.iPagination::$offset.','.$maxperpage;
 
@@ -685,7 +685,7 @@ class articleAdmincp{
             return iUI::alert('Выберите категорию');
         }
         if(empty($body) && empty($url)){
-            return iUI::alert('文章内容不能为空!');
+            return iUI::alert('Содержание не может быть пустым!');
         }
 
         $pubdate   = str2time($_POST['pubdate']);
@@ -703,12 +703,12 @@ class articleAdmincp{
         }
 
         if(self::$config['repeatitle'] && article::check($title,$aid,'title')) {
-            return iUI::alert('该标题的文章已经存在!请检查是否重复');
+            return iUI::alert('Заголовок уже существует!');
         }
 
         $category = category::get($cid);
         if(strstr($category->rule['article'],'{LINK}')!==false && empty($clink)){
-            $clink = iPinyin::get($title,self::$config['clink']);
+            $clink = iTranslit::get($title,self::$config['clink']);
         }
 
         if($clink && article::check($clink,$aid,'clink')){
@@ -917,7 +917,7 @@ class articleAdmincp{
         $pieces = files::delete_file($fids);
         files::delete_fdb($fids,$id,self::$appid);
         $msg.= self::del_msg(implode('<br />', $pieces).' 文件删除');
-        $msg.= self::del_msg('相关文件数据删除');
+        $msg.= self::del_msg('Удаление связанных файлов');
 
         if($art['tags']){
             tag::$remove = false;
@@ -928,7 +928,7 @@ class articleAdmincp{
         iMap::del_data($id,self::$appid,'prop');
 
         commentAdmincp::delete($id,self::$appid);
-        $msg.= self::del_msg('评论数据删除');
+        $msg.= self::del_msg('Данные комментария удалены');
         article::del($id);
 
         article::del_data($id);
@@ -975,9 +975,9 @@ class articleAdmincp{
 
             if(is_array($_data_id)){
                 $dkey = array_search($adid, $_data_id);
-                if($dkey!==false && $_chapter){//撤消章节时
+                if($dkey!==false && $_chapter){
                     unset($_data_id[$dkey]);
-                    //删除章节
+                   
                     if($_data_id)foreach ($_data_id as $_id) {
                         $_id = (int)$_id;
                         $_id && article::del_data($_id,'id');

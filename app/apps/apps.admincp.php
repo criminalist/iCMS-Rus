@@ -69,7 +69,7 @@ class appsAdmincp{
         }
         $name OR iUI::alert('Имя приложения не может быть пустым!');
         strpos($app, '..') !== false && iUI::alert('Неверный идентификатор приложения!');
-        empty($app) && $app = iPinyin::get($name);
+        empty($app) && $app = iTranslit::get($name);
         empty($title) && $title = $name;
 
         $table_array  = (array)$_POST['table'];

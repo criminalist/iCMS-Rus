@@ -144,7 +144,7 @@ class tagAdmincp{
                         continue;
                     }
 
-                    $tkey    = strtolower(iPinyin::get($name));
+                    $tkey    = strtolower(iTranslit::get($name));
                     $userid  = members::$userid;
                     $haspic  = '0';
                     $status  = '1';
@@ -233,7 +233,7 @@ class tagAdmincp{
 
         $category = category::get($cid);
         if(strstr($category->rule['topic'],'{LINK}')!==false && empty($clink)){
-            $clink = iPinyin::get($title,self::$config['clink']);
+            $clink = iTranslit::get($title,self::$config['clink']);
         }
 
         if($clink && tag::check($clink,$id,'clink')){
@@ -248,7 +248,7 @@ class tagAdmincp{
         $picdata = filesAdmincp::picdata($pic,$bpic,$mpic,$spic);
         $haspic  = empty($pic)?0:1;
 
-        $tkey OR $tkey = strtolower(iPinyin::get($name));
+        $tkey OR $tkey = strtolower(iTranslit::get($name));
 
         $fields = tag::fields($id);
         $data   = compact($fields);

@@ -175,7 +175,7 @@ class formsAdmincp{
         $create  = (int)$_POST['create']?true:false;
 
         $name OR iUI::alert('表单名称不能为空!');
-        empty($app) && $app = iPinyin::get($name);
+        empty($app) && $app = iTranslit::get($name);
         empty($title) && $title = $name;
         $app = 'forms_'.forms::short_app($app);
 

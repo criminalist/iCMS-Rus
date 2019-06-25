@@ -205,7 +205,7 @@
             <select id="iFormer-func" class="chosen-select" style="width:360px;" data-placeholder="Выберите метод обработки данных ..." multiple="multiple">
               <optgroup label="При сохранении данных">
                 <option value='input:repeat'>Проверка на уникальность (дубликат)</option>
-                <option value='input:pinyin'>Транслитерация</option>
+                <option value='input:translit'>Транслитерация</option>
                 <option value='input:cleanhtml'>Очистить HTML теги</option>
                 <option value='input:formathtml'>Форматирование HTML</option>
                 <option value='input:strtolower'>Только строчные буквы</option>

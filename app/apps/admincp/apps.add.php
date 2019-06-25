@@ -119,10 +119,10 @@ $(function(){
             </div>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend">
-              <span class="add-on">Теги шаблона</span>
+              <span class="add-on">Поддерживаемые теги шаблона</span>
               <textarea name="config[template]" id="config_template" class="span6" style="height: 150px;" readonly><?php echo $rs['config']['template'] ; ?></textarea>
             </div>
-            <span class="help-inline">Программа автоматически получает</span>
+            <span class="help-inline">Определяются автоматически, и не требуют редактирования</span>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend">
               <span class="add-on">Версия приложения</span>

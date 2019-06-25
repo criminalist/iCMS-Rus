@@ -69,5 +69,5 @@ defined('iPHP_CORE_CLASS') OR define('iPHP_CORE_CLASS',
     'iDB,iSQL,iMap,iUtils,iDefine,iVendor,'.
     'iUI,iPages,iPagination,iView,iTemplateLite,iQuery,'.
     'iSecurity,iWAF,'.
-    'iPinyin,iSeccode'
+    'iTranslit,iSeccode'
 );

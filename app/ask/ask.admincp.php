@@ -1,12 +1,5 @@
 <?php
-/**
-* iCMS - i Content Management System
-* Copyright (c) 2007-2017 iCMSdev.com. All rights reserved.
-*
-* @author icmsdev <master@icmsdev.com>
-* @site https://www.icmsdev.com
-* @licence https://www.icmsdev.com/LICENSE.html
-*/
+
 defined('iPHP') OR exit('What are you doing?');
 
 class askAdmincp{
@@ -214,7 +207,7 @@ class askAdmincp{
 
         list($orderby,$orderby_option) = get_orderby(array(
             'id'       =>"ID",
-            'pubdate'  =>"发布时间",
+            'pubdate'  =>"Время публикации",
             'lastpost' =>"最后发贴时间",
             'replies'  =>"回复数",
         ));
@@ -297,10 +290,10 @@ class askAdmincp{
 
 
         if (empty($title)) {
-            return iUI::alert('标题不能为空！');
+            return iUI::alert('Заголовок не может быть пустым！');
         }
         if (empty($cid)) {
-            return iUI::alert('请选择所属栏目');
+            return iUI::alert('Выберите категорию для привязки');
         }
         (iFS::checkHttp($pic)  && !isset($_POST['pic_http']))  && $pic  = iFS::http($pic);
         $haspic = empty($pic)?0:1;

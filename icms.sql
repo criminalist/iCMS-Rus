@@ -2333,7 +2333,7 @@ INSERT INTO `icms_apps` (`id`, `app`, `name`, `title`, `apptype`, `type`, `table
 (14, 'group', 'Группы пользователей', '角色', 0, 0, '{\"group\":[\"group\",\"gid\",\"\",\"角色\"]}', '{\"info\":\"角色权限系统\",\"version\":\"v7.0\",\"menu\":\"default\"}', '', '', '', 1488704473, 1),
 (15, 'members', '管理员系统', '管理员', 0, 0, '{\"members\":[\"members\",\"uid\",\"\",\"管理员\"]}', '{\"info\":\"管理员系统\",\"version\":\"v7.0\",\"menu\":\"default\"}', '', '[{\"id\":\"members\",\"children\":[{\"caption\":\"-\"},{\"caption\":\"管理员列表\",\"href\":\"members\",\"icon\":\"list-alt\"},{\"caption\":\"添加管理员\",\"href\":\"members&do=add\",\"icon\":\"user\"},{\"caption\":\"-\"},{\"caption\":\"角色管理\",\"href\":\"group\",\"icon\":\"list-alt\"},{\"caption\":\"添加角色\",\"href\":\"group&do=add\",\"icon\":\"group\"}]}\r\n]', '', 1488704428, 1),
 (16, 'editor', '后台编辑器', '编辑器', 0, 0, '0', '{\"info\":\"后台编辑器\",\"version\":\"v7.0\",\"menu\":\"default\"}', '', '', '', 1488704375, 1),
-(17, 'apps', '应用管理', 'Приложение', 0, 0, '{\"apps\":[\"apps\",\"id\",\"\",\"应用\"],\"apps_store\":[\"apps_store\",\"id\",\"\",\"应用市场\"]}', '{\"info\":\"应用管理\",\"template\":[\"iCMS:apps:list\",\"iCMS:apps:data\"],\"version\":\"v7.0\",\"menu\":\"default\"}', '', '[{\"id\":\"system\",\"children\":[{\"id\":\"apps\",\"caption\":\"应用管理\",\"icon\":\"code\",\"sort\":\"0\",\"children\":[{\"caption\":\"应用管理\",\"href\":\"apps\",\"icon\":\"code\"},{\"caption\":\"添加应用\",\"href\":\"apps&do=add\",\"icon\":\"pencil-square-o\"},{\"caption\":\"-\"},{\"caption\":\"钩子管理\",\"href\":\"apps&do=hooks\",\"icon\":\"plug\"},{\"caption\":\"-\"},{\"caption\":\"应用市场\",\"href\":\"apps_store&do=store\",\"icon\":\"bank\"},{\"caption\":\"-\"},{\"caption\":\"插件市场\",\"href\":\"apps_store&do=plugin\",\"icon\":\"bank\"},{\"caption\":\"-\"},{\"caption\":\"模板市场\",\"href\":\"apps_store&do=template\",\"icon\":\"bank\"}]}]}] ', '', 1543398919, 1),
+(17, 'apps', 'Управление приложениями', 'Приложение', 0, 0, '{\"apps\":[\"apps\",\"id\",\"\",\"应用\"],\"apps_store\":[\"apps_store\",\"id\",\"\",\"应用市场\"]}', '{\"info\":\"Управление приложениями\",\"template\":[\"iCMS:apps:list\",\"iCMS:apps:data\"],\"version\":\"v7.0\",\"menu\":\"default\"}', '', '[{\"id\":\"system\",\"children\":[{\"id\":\"apps\",\"caption\":\"Управление приложениями\",\"icon\":\"code\",\"sort\":\"0\",\"children\":[{\"caption\":\"Управление приложениями\",\"href\":\"apps\",\"icon\":\"code\"},{\"caption\":\"添加应用\",\"href\":\"apps&do=add\",\"icon\":\"pencil-square-o\"},{\"caption\":\"-\"},{\"caption\":\"钩子管理\",\"href\":\"apps&do=hooks\",\"icon\":\"plug\"},{\"caption\":\"-\"},{\"caption\":\"应用市场\",\"href\":\"apps_store&do=store\",\"icon\":\"bank\"},{\"caption\":\"-\"},{\"caption\":\"插件市场\",\"href\":\"apps_store&do=plugin\",\"icon\":\"bank\"},{\"caption\":\"-\"},{\"caption\":\"模板市场\",\"href\":\"apps_store&do=template\",\"icon\":\"bank\"}]}]}] ', '', 1543398919, 1),
 (18, 'former', '表单生成器', '表单', 0, 0, '0', '{\"info\":\"表单生成器\",\"version\":\"v7.0\",\"menu\":\"default\"}', '', '', '', 1490201571, 1),
 (19, 'patch', '升级程序', '升级', 0, 0, '0', '{\"info\":\"用于升级系统\",\"version\":\"v7.0\",\"menu\":\"default\"}', '', '', '', 1488704373, 1),
 (20, 'content', '内容管理', '内容', 0, 1, '0', '{\"info\":\"自定义应用内容管理\\/接口\",\"template\":[\"iCMS:content:list\",\"iCMS:content:prev\",\"iCMS:content:next\",\"$content\"],\"version\":\"v7.0\"}', '', 'null', '', 1493339370, 1),
@@ -2349,7 +2349,7 @@ INSERT INTO `icms_apps` (`id`, `app`, `name`, `title`, `apptype`, `type`, `table
 (32, 'database', '数据库管理', '数据库', 1, 1, '0', '{\"info\":\"后台简易数据库管理\",\"version\":\"v7.0\",\"menu\":\"default\"}', '', '[{\"id\":\"tools\",\"children\":[{\"caption\":\"-\"},{\"id\":\"database\",\"caption\":\"数据库管理\",\"icon\":\"database\",\"children\":[{\"caption\":\"数据库备份\",\"href\":\"database&do=backup\",\"icon\":\"cloud-download\"},{\"caption\":\"备份管理\",\"href\":\"database&do=recover\",\"icon\":\"upload\"},{\"caption\":\"-\"},{\"caption\":\"修复优化\",\"href\":\"database&do=repair\",\"icon\":\"gavel\"},{\"caption\":\"性能优化\",\"href\":\"database&do=sharding\",\"icon\":\"puzzle-piece\"},{\"caption\":\"-\"},{\"caption\":\"数据替换\",\"href\":\"database&do=replace\",\"icon\":\"retweet\"}]}]}\r\n]', '', 1488703931, 1),
 (33, 'html', 'Статические HTML файлы', '静态', 1, 1, '0', '{\"info\":\"静态文件生成程序\",\"version\":\"v7.0\",\"menu\":\"default\"}', '', '[{\"id\":\"tools\",\"children\":[{\"id\":\"html\",\"sort\":\"-992\",\"caption\":\"生成静态\",\"icon\":\"file\",\"children\":[{\"caption\":\"首页静态化\",\"href\":\"html&do=index\",\"icon\":\"refresh\"},{\"caption\":\"-\"},{\"caption\":\"栏目静态化\",\"href\":\"html&do=category\",\"icon\":\"refresh\"},{\"caption\":\"文章静态化\",\"href\":\"html&do=article\",\"icon\":\"refresh\"},{\"caption\":\"-\"},{\"caption\":\"全站生成静态\",\"href\":\"html&do=all\",\"icon\":\"refresh\"},{\"caption\":\"-\"},{\"caption\":\"静态设置\",\"href\":\"config&tab=url\",\"icon\":\"cog\"}]}]}\r\n]', '', 1488703939, 1),
 (34, 'spider', 'Парсер', 'сбор', 1, 1, '{\"spider_post\":[\"spider_post\",\"id\",\"\",\"Пост\"],\"spider_project\":[\"spider_project\",\"id\",\"\",\"Проект\"],\"spider_rule\":[\"spider_rule\",\"id\",\"\",\"Правила\"],\"spider_url\":[\"spider_url\",\"id\",\"\",\"URL\"],\"spider_url_data\":[\"spider_url_data\",\"id\",\"\",\"Дополнительные данные\"],\"spider_error\":[\"spider_error\",\"id\",\"\",\"Ошибка записи\"]}', '{\"info\":\"Парсер контента\",\"version\":\"v7.0\",\"menu\":\"default\"}', '', '[{\"id\":\"tools\",\"children\":[{\"id\":\"spider\",\"sort\":\"-994\",\"caption\":\"采集管理\",\"href\":\"spider\",\"icon\":\"magnet\",\"children\":[{\"caption\":\"错误信息\",\"href\":\"spider_error&do=manage\",\"icon\":\"info-circle\"},{\"caption\":\"-\"},{\"caption\":\"采集列表\",\"href\":\"spider&do=manage\",\"icon\":\"list-alt\"},{\"caption\":\"未发文章\",\"href\":\"spider&do=inbox\",\"icon\":\"inbox\"},{\"caption\":\"-\"},{\"caption\":\"采集方案\",\"href\":\"spider_project&do=manage\",\"icon\":\"magnet\"},{\"caption\":\"添加方案\",\"href\":\"spider_project&do=add\",\"icon\":\"edit\"},{\"caption\":\"-\"},{\"caption\":\"采集规则\",\"href\":\"spider_rule&do=manage\",\"icon\":\"magnet\"},{\"caption\":\"添加规则\",\"href\":\"spider_rule&do=add\",\"icon\":\"edit\"},{\"caption\":\"-\"},{\"caption\":\"发布模块\",\"href\":\"spider_post&do=manage\",\"icon\":\"magnet\"},{\"caption\":\"添加发布\",\"href\":\"spider_post&do=add\",\"icon\":\"edit\"}]},{\"caption\":\"-\",\"sort\":\"-993\"}]}]', '', 1560652293, 1),
-(100, 'template', '模板管理', '模板', 1, 3, '', '{\"info\":\"简易模板文件浏览,删除,不支持编辑.\",\"version\":\"v1.0.0\",\"menu\":\"tools\"}', '', 'null', '', 1560652557, 1),
+(100, 'template', '模板管理', 'Шаблон', 1, 3, '', '{\"info\":\"简易模板文件浏览,删除,不支持编辑.\",\"version\":\"v1.0.0\",\"menu\":\"tools\"}', '', 'null', '', 1560652557, 1),
 (101, 'push', 'Система рекомендаций', 'Рекомендации', 1, 3, '{\"push\":[\"push\",\"id\",\"\",\"Рекомендации\"]}', '{\"iFormer\":\"1\",\"info\":\"简易推荐程序,可用于手工推荐\",\"template\":[\"iCMS:push:list\"],\"version\":\"v1.0.2\",\"menu\":\"default\"}', '', '[{\"id\":\"assist\",\"children\":[{\"caption\":\"-\"},{\"id\":\"push\",\"caption\":\"推荐\",\"icon\":\"thumb-tack\",\"children\":[{\"caption\":\"推荐管理\",\"href\":\"push\",\"icon\":\"thumb-tack\"},{\"caption\":\"添加推荐\",\"href\":\"push&do=add\",\"icon\":\"edit\"},{\"caption\":\"-\"},{\"caption\":\"分类管理\",\"href\":\"push_category\",\"icon\":\"sitemap\"},{\"caption\":\"添加分类\",\"href\":\"push_category&do=add\",\"icon\":\"edit\"}]}]}]', '', 1560878765, 1),
 (102, '', '', '', 0, 0, '', '', '', '', '', 1560736528, 0);
 
@@ -2374,7 +2374,7 @@ CREATE TABLE `icms_apps_store` (
   `addtime` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '安装时间',
   `uptime` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Время обновления',
   `type` tinyint(1) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'app:0 tpl:1',
-  `status` tinyint(1) UNSIGNED NOT NULL DEFAULT 1 COMMENT '状态'
+  `status` tinyint(1) UNSIGNED NOT NULL DEFAULT 1 COMMENT 'Статус'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -2398,10 +2398,10 @@ CREATE TABLE `icms_article` (
   `ucid` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '用户分类',
   `pid` varchar(255) NOT NULL DEFAULT '' COMMENT 'Свойства',
   `sortnum` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '排序',
-  `title` varchar(255) NOT NULL DEFAULT '' COMMENT '标题',
+  `title` varchar(255) NOT NULL DEFAULT '' COMMENT 'Название',
   `stitle` varchar(255) NOT NULL DEFAULT '' COMMENT '短标题',
   `clink` varchar(255) NOT NULL DEFAULT '' COMMENT '自定义链接',
-  `url` varchar(255) NOT NULL DEFAULT '' COMMENT '外部链接',
+  `url` varchar(255) NOT NULL DEFAULT '' COMMENT 'Внешняя ссылка',
   `source` varchar(255) NOT NULL DEFAULT '' COMMENT '出处',
   `author` varchar(255) NOT NULL DEFAULT '' COMMENT '作者',
   `editor` varchar(255) NOT NULL DEFAULT '' COMMENT '编辑',
@@ -2413,11 +2413,11 @@ CREATE TABLE `icms_article` (
   `picdata` varchar(255) NOT NULL DEFAULT '' COMMENT '图片数据',
   `keywords` varchar(255) NOT NULL DEFAULT '' COMMENT '关键词',
   `tags` varchar(255) NOT NULL DEFAULT '' COMMENT '标签',
-  `description` varchar(5120) NOT NULL DEFAULT '' COMMENT '摘要',
+  `description` varchar(5120) NOT NULL DEFAULT '' COMMENT 'Описание',
   `related` text NOT NULL COMMENT '相关',
-  `pubdate` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '发布时间',
-  `postime` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '提交时间',
-  `tpl` varchar(255) NOT NULL DEFAULT '' COMMENT '模板',
+  `pubdate` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Время публикации',
+  `postime` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Время публикации',
+  `tpl` varchar(255) NOT NULL DEFAULT '' COMMENT 'Шаблон',
   `hits` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '总点击数',
   `hits_today` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '当天点击数',
   `hits_yday` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '昨天点击数',
@@ -3218,7 +3218,7 @@ INSERT INTO `icms_forms` (`id`, `app`, `name`, `title`, `pic`, `description`, `t
 --
 
 CREATE TABLE `icms_forms_TEST` (
-  `id` int(10) NOT NULL COMMENT '主键 自增ID'
+  `id` int(10) NOT NULL COMMENT 'ID суррогатного ключа'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -3228,7 +3228,7 @@ CREATE TABLE `icms_forms_TEST` (
 --
 
 CREATE TABLE `icms_forms_TEST_cdata` (
-  `cdata_id` int(10) NOT NULL COMMENT '主键 自增ID',
+  `cdata_id` int(10) NOT NULL COMMENT 'ID суррогатного ключа',
   `forms_TEST_id` int(10) NOT NULL DEFAULT 0 COMMENT '内容ID 关联forms_TEST表',
   `UEDITOR` mediumtext NOT NULL DEFAULT '' COMMENT 'UEDITOR'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -3726,7 +3726,7 @@ CREATE TABLE `icms_tag` (
   `tcid` varchar(255) NOT NULL DEFAULT '',
   `pid` varchar(255) NOT NULL DEFAULT '',
   `tkey` varchar(255) NOT NULL DEFAULT '',
-  `title` varchar(255) NOT NULL COMMENT '标题',
+  `title` varchar(255) NOT NULL COMMENT 'Название',
   `name` varchar(255) NOT NULL DEFAULT '',
   `field` varchar(255) NOT NULL DEFAULT '',
   `rootid` int(10) UNSIGNED NOT NULL DEFAULT 0,
@@ -3736,7 +3736,7 @@ CREATE TABLE `icms_tag` (
   `description` text NOT NULL,
   `related` varchar(1024) NOT NULL DEFAULT '',
   `editor` varchar(255) NOT NULL COMMENT '编辑或用户名',
-  `userid` int(10) UNSIGNED NOT NULL COMMENT '栏目',
+  `userid` int(10) UNSIGNED NOT NULL COMMENT 'Категории',
   `haspic` tinyint(1) UNSIGNED NOT NULL DEFAULT 0,
   `pic` varchar(255) NOT NULL DEFAULT '',
   `bpic` varchar(255) NOT NULL DEFAULT '',
@@ -4365,13 +4365,13 @@ ALTER TABLE `icms_forms`
 -- AUTO_INCREMENT для таблицы `icms_forms_TEST`
 --
 ALTER TABLE `icms_forms_TEST`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '主键 自增ID';
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'ID суррогатного ключа';
 
 --
 -- AUTO_INCREMENT для таблицы `icms_forms_TEST_cdata`
 --
 ALTER TABLE `icms_forms_TEST_cdata`
-  MODIFY `cdata_id` int(10) NOT NULL AUTO_INCREMENT COMMENT '主键 自增ID', AUTO_INCREMENT=4;
+  MODIFY `cdata_id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'ID суррогатного ключа', AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `icms_group`

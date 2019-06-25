@@ -199,7 +199,7 @@ class databaseAdmincp {
 	
 	public function do_sharding() {
 		admincp::head();
-		print("Не найдено");
+		print("Не поддерживается в бесплатной версии iCMS");
 		admincp::foot();
 	}
 	public static function bakuptable($tabledb,$exists=true) {

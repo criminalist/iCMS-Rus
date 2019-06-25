@@ -14,7 +14,7 @@ class forms_zip {
     public static function install() {
         $zipFile = self::$zipFile;
         if(!file_exists($zipFile)){
-            return self::msg("安装包不存在",false);
+            return self::msg("Установочный пакет не существует",false);
         }
 
         iPHP::vendor('PclZip'); //加载zip操作类
@@ -24,7 +24,7 @@ class forms_zip {
         }
 
         if (0 == count($archive_files)) {
-          return self::msg("空的ZIP文件",false);
+          return self::msg("Пустой файл ZIP",false);
         }
         $msg = null;
         //安装表单数据

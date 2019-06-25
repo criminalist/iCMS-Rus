@@ -292,16 +292,16 @@ function select_sort_value(a, e, p) {
               <textarea name="rule[list_urls_format]" id="list_urls_format" class="span6"><?php echo $rule['list_urls_format'] ; ?></textarea>
             </div>
             <div class="clearfloat mb10"></div>
-            <div class="input-prepend input-sp"><span class="add-on">列表区域规则</span>
+            <div class="input-prepend input-sp"><span class="add-on">Правило области списка</span>
               <textarea name="rule[list_area_rule]" id="list_area_rule" class="span6"><?php echo $rule['list_area_rule'] ; ?></textarea>
               <div class="btn-group btn-group-vertical"> <a class="btn" href="<%content%>" data-toggle="insertContent" data-target="#list_area_rule">Контент</a> <a class="btn" href="<%var%>" data-toggle="insertContent" data-target="#list_area_rule"> Идентификация переменной </a> </div>
             </div>
             <div class="clearfloat"></div>
-            <div class="input-prepend input-sp"><span class="add-on">列表区域整理</span>
+            <div class="input-prepend input-sp"><span class="add-on">Отделка области списка</span>
               <textarea name="rule[list_area_format]" id="list_area_format" class="span6"><?php echo $rule['list_area_format'] ; ?></textarea>
             </div>
             <div class="clearfloat mb10"></div>
-            <div class="input-prepend input-sp"><span class="add-on">列表链接规则</span>
+            <div class="input-prepend input-sp"><span class="add-on">Правило списока ссылок</span>
               <textarea name="rule[list_url_rule]" id="list_url_rule" class="span6"><?php echo $rule['list_url_rule'] ; ?></textarea>
               <div class="btn-group btn-group-vertical"> <a class="btn" href="<%title%>" data-toggle="insertContent" data-target="#list_url_rule">Название</a> <a class="btn" href="<%url%>" data-toggle="insertContent" data-target="#list_url_rule">URL</a> <a class="btn" href="<%var%>" data-toggle="insertContent" data-target="#list_url_rule"> Идентификация переменной </a> </div>
             </div>
@@ -479,12 +479,12 @@ function processing_item($name,$item=array(),$length=0,$title=''){
           <div id="spider-page" class="tab-pane">
             <ul class="nav nav-tabs" id="spider-tab">
               <li class="active"><a href="#spider-page-area-rule" data-toggle="tab"><i class="fa fa-wrench"></i> Метод сбора</a></li>
-              <li><a href="#spider-page-url-parse" data-toggle="tab"><i class="fa fa-random"></i> 逻辑方式</a></li>
+              <li><a href="#spider-page-url-parse" data-toggle="tab"><i class="fa fa-random"></i> Логический режим</a></li>
             </ul>
             <div class="tab-content">
               <div id="spider-page-area-rule" class="tab-pane active">
                 <div class="alert mt5" style="width:360px;">Метод сбора данных подходит для всех режимов пейджинга, перечисленных в нумерации страниц.</div>
-                <div class="input-prepend input-sp"><span class="add-on">分页区域规则</span>
+                <div class="input-prepend input-sp"><span class="add-on">ПЕЙДЖИНГ региональных правил</span>
                   <textarea name="rule[page_area_rule]" id="page_area_rule" class="span6"><?php echo $rule['page_area_rule'] ; ?></textarea>
                   <div class="btn-group btn-group-vertical"> <a class="btn" href="<%content%>" data-toggle="insertContent" data-target="#page_area_rule">Контент</a> <a class="btn" href="<%var%>" data-toggle="insertContent" data-target="#page_area_rule"> Идентификация переменной </a> </div>
                 </div>

@@ -18,7 +18,7 @@ $rs   = iDB::all("SELECT `id`,`name` FROM `#iCMS@__tag` where tkey=''");
 foreach ((array)$rs as $key => $a) {
 	$id   = $a['id'];
 	$name = $a['name'];
-	$tkey = iPinyin::get($name,iCMS::$config['tag']['tkey']);
+	$tkey = iTranslit::get($name,iCMS::$config['tag']['tkey']);
 	iDB::query("update `#iCMS@__tag` set `tkey`='$tkey' where `id`='$id';");
 	echo $id.$name.'  '.$tkey.PHP_EOL;
 }

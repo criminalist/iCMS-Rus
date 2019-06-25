@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <!--{if $category.title}-->
+        <!--{$category.title}-->_
+        <!--{$site.title}-->
+        <!--{$category.name}-->
+        <!--{else}-->
+        <!--{$category.name}-->_
+        <!--{$site.title}-->_
+        <!--{$site.seotitle}-->
+        <!--{/if}-->
+    </title>
+    <meta name="keywords" content="<!--{$category.keywords}-->" />
+    <meta name="description" content="<!--{$category.description}-->" />
+    <meta name="mobile-agent" content="format=xhtml;url=<!--{$category.iurl.mobile.url}-->">
+    <meta name="mobile-agent" content="format=html5;url=<!--{$category.iurl.mobile.url}-->">
+    <link rel="alternate" media="only screen and(max-width: 640px)" href="<!--{$category.iurl.mobile.url}-->">
+    <!--{iCMS:public:ui}-->
+    <link rel="stylesheet" href="<!--{$site.urls.template}-->/videoApp/static/video.css" type="text/css" />
+</head>
+
+<body class="categoryApp" i="<!--{$iCMS.APP.NAME}-->">
+    <!--{include file="./header.htm"}-->
+    <div class="body clearfix ">
+        <div class="body-wrap r5">
+            <div class="sort-lst-wrap">
+                <ul class="sort-lst-nav">
+                    <!--{iCMS:category:list loop="true" stype='self' cid="$category.cid"}-->
+                    <li<!--{if $category_list.cid==$category.cid}--> class="on"<!--{/if}--> id="sort_tab_cid_<!--{$category_list.cid}-->">
+                        <a href="<!--{$category_list.url}-->" class="sort-lst-tab">
+                            <!--{$category_list.name}-->
+                        </a>
+                        </li>
+                    <!--{/iCMS}-->
+                </ul>
+            </div>
+            <div class="sort-wrap2 on">
+                <div class="sort-section">
+                    <a href="javascript:void(0)" id="filter_more_0" class="btn-sort-section filter_more" style="">更多<i></i></a>
+                    <a href="javascript:void(0)" id="filter_fold_0" class="btn-sort-section on filter_fold" style="display:none">收起<i></i></a>
+                    <div class="sort-tit">类型</div>
+                    <a href="<!--{'genre=null&page=null'|url}-->" id="sort_tab_genre_" class="btn-sort-all sort-tab on">全部</a>
+                    <div id="sort_box_0" class="sort-box">
+                        <!--{iCMS:prop:array loop="true" field="genre" sapp="video"}-->
+                        <!--{array area="$prop_array.name" page="NULL" as="genre_url"}-->
+                        <a href="<!--{$genre_url|url}-->" id="sort_tab_genre_<!--{$prop_array.name}-->" class="sort-tab">
+                            <!--{$prop_array.name}-->
+                        </a>
+                        <!--{/iCMS}-->
+                    </div>
+                </div>
+                <div class="sort-section">
+                    <a href="javascript:void(0)" id="filter_more_1" class="btn-sort-section filter_more" style="display:none">更多<i></i></a>
+                    <a href="javascript:void(0)" id="filter_fold_1" class="btn-sort-section on filter_fold" style="display:none">收起<i></i></a>
+                    <div class="sort-tit">地区</div>
+                    <a href="<!--{'area=null&page=null'|url}-->" id="sort_tab_area_" class="btn-sort-all sort-tab on">全部</a>
+                    <div id="sort_box_1" class="sort-box sort-unfold">
+                        <!--{iCMS:prop:array loop="true" field="area" sapp="video"}-->
+                        <!--{array area="$prop_array.name" page="NULL" as="prop_url"}-->
+                        <a href="<!--{$prop_url|url}-->" id="sort_tab_area_<!--{$prop_array.name}-->" class="sort-tab">
+                            <!--{$prop_array.name}-->
+                        </a>
+                        <!--{/iCMS}-->
+                    </div>
+                </div>
+                <div class="sort-section">
+                    <a href="javascript:void(0)" id="filter_more_2" class="btn-sort-section filter_more" style="display:none">更多<i></i></a>
+                    <a href="javascript:void(0)" id="filter_fold_2" class="btn-sort-section on filter_fold" style="display:none">收起<i></i></a>
+                    <div class="sort-tit">年代</div>
+                    <a href="<!--{'year=null&page=null'|url}-->" id="sort_tab_year_" class="btn-sort-all sort-tab on">全部</a>
+                    <div id="sort_box_2" class="sort-box sort-unfold">
+                        <!--{iCMS:prop:array loop="true" field="year" sapp="video"}-->
+                        <!--{array year="$prop_array.name" page="NULL" as="prop_url"}-->
+                        <a href="<!--{$prop_url|url}-->" id="sort_tab_year_<!--{$prop_array.name}-->" class="sort-tab">
+                            <!--{$prop_array.name}-->
+                        </a>
+                        <!--{/iCMS}-->
+                    </div>
+                </div>
+                <div class="sort-section">
+                    <a href="javascript:void(0)" id="filter_more_3" class="btn-sort-section filter_more" style="">更多<i></i></a>
+                    <a href="javascript:void(0)" id="filter_fold_3" class="btn-sort-section on filter_fold" style="display:none">收起<i></i></a>
+                    <div class="sort-tit">明星</div>
+                    <a href="<!--{'actor=null&page=null'|url}-->" id="sort_tab_actor_" class="btn-sort-all sort-tab on">全部</a>
+                    <div id="sort_box_3" class="sort-box">
+                        <!--{iCMS:tag:list loop="true" row="50" sub="all" orderby="hot" cid="$category.cid" field="actor"}-->
+                        <!--{array actor="$tag_list.id" page="NULL" as="tag_url"}-->
+                        <a href="<!--{$tag_url|url}-->" id="sort_tab_actor_<!--{$tag_list.id}-->" class="sort-tab">
+                            <!--{$tag_list.name}-->
+                        </a>
+                        <!--{/iCMS}-->
+                    </div>
+                </div>
+            </div>
+            <div class="sort-lst-wrap">
+                <ul class="sort-lst-nav">
+                    <li class="on" id="sort_tab_orderby_hot">
+                        <a href="<!--{'orderby=month'|url}-->" class="sort-lst-tab">最近热播</a>
+                    </li>
+                    <li id="sort_tab_orderby_new">
+                        <a href="<!--{'orderby=new'|url}-->" class="sort-lst-tab">最新上架</a>
+                    </li>
+                    <li id="sort_tab_orderby_score">
+                        <a href="<!--{'orderby=score'|url}-->" class="sort-lst-tab">评分最高</a>
+                    </li>
+                </ul>
+            </div>
+            <script>
+            $(function() {
+                $("[id^='sort_tab_cid_']").removeClass('on');
+                $("#sort_tab_cid_<!--{$category.cid}-->").addClass('on');
+                <!--{foreach value="gval" key="gkey" from="$_GET"}-->
+                $("[id^='sort_tab_<!--{$gkey}-->_']").removeClass('on');
+                <!--{if $gval}-->
+                $("#sort_tab_<!--{$gkey}-->_<!--{$gval}-->").addClass('on');
+                <!--{/if}-->
+                <!--{/foreach}-->
+                $(".video_item").mouseover(function(event) {
+                    $(".video_item").removeClass('on');
+                    $(this).addClass('on');
+                }).mouseout(function(event) {
+                    $(this).removeClass('on');
+                });;
+
+            })
+            </script>
+            <div id="no-result-wrap" class="no-result-wrap" style="display:none">
+                <div class="no-result">
+                    <div class="no-result-thumb"></div>
+                    <div class="no-result-tit">抱歉！没找到任何结果，
+                        <br>请重置筛选条件!</div>
+                </div>
+            </div>
+            <div class="sort_lst_bx srch-lst-bx">
+                <ul class="sort_lst">
+                    <!--{iCMS:video:list loop="true" page="true" sub="all" row="30" orderby="month" cid="$category.cid" vars="$_GET"}-->
+                    <li class="video_item">
+                        <a href="<!--{$video_list.url}-->" title="<!--{$video_list.title}-->" class="sort_lst_thumb" target="_blank">
+                            <img class="r5 lazy" data-src="<!--{$video_list.pic.url}-->" height="233" width="175" src="<!--{$site.urls.tpl}-->/static/img/loading.gif">
+                            <div class="play_hv2"></div>
+                            <div class="sort_lst_thumb_txt_bg"></div>
+                            <div class="sort_lst_thumb_txt_rgt"><em class="stress"><!--{$video_list.score}--></em></div>
+                            <div class="sort_lst_thumb_txt_lft"><i class="ico_play_time"></i>
+                                <!--{$video_list.time|format:'time'}-->
+                            </div>
+                        </a>
+                        <div class="sort_lst_tit">
+                            <a href="<!--{$video_list.url}-->" title="<!--{$video_list.title}-->" target="_blank">
+                                <!--{$video_list.title}-->
+                            </a>
+                        </div>
+                        <p class="sort_lst_txt">主演：<!--{$video_list.actor|replace:',':'&nbsp;&nbsp;'}--></p>
+                    </li>
+                    <!--{iCMSelse}-->
+                    <script>
+                    $(function() {
+                        $(".sort_lst_bx").hide();
+                        $("#no-result-wrap").show();
+                    })
+                    </script>
+                    <!--{/iCMS}-->
+                </ul>
+            </div>
+            <!--{iCMS:pages url="self"}-->
+            <div class="pagination">
+                <!--{$iCMS.PAGE.NAV}-->
+            </div>
+        </div>
+        <div class="clearfix mb20"></div>
+    </div>
+    <!--{include file="./footer.htm"}-->
+</body>
+
+</html>

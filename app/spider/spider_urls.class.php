@@ -58,11 +58,11 @@ class spider_urls {
         $urlsArray = self::make_list_urls($urls,$work);
         if(empty($urlsArray)){
             if($work=='shell'){
-                spider_error::log("采集列表为空!请填写!",$url,'urls.empty',self::$ids);
+                spider_error::log("Список коллекции пуст! Пожалуйста, заполните!!",$url,'urls.empty',self::$ids);
                 echo PHP_EOL;
                 return false;
             }
-            iUI::alert('采集列表为空!请填写!', 'js:parent.window.iCMS_MODAL.destroy();');
+            iUI::alert('Список коллекции пуст! Пожалуйста, заполните!!', 'js:parent.window.iCMS_MODAL.destroy();');
         }
 
 //      if(spider::$ruleTest){
@@ -86,15 +86,15 @@ class spider_urls {
         spider::$urlslast   = null;
 
         if (spider::$ruleTest) {
-            echo '<b>最终需抓取列表总共:</b>'.$urlsAllCount. "条<br />";
+            echo '<b>Общий итоговый список сканирования:</b>'.$urlsAllCount. "条<br />";
             echo '<pre>';
             print_r($urlsArray);
             echo '</pre>';
             $urlsArray = array(reset($urlsArray));
-            echo '<b>测试第一条</b><br />';
+            echo '<b>Первый тест</b><br />';
         }
         if($work=='shell'){
-            echo date("Y-m-d H:i:s ")."\033[36m最终需抓取列表总共(".$urlsAllCount.")条\033[0m\n";
+            echo date("Y-m-d H:i:s ")."\033[36mОбщий итоговый список сканирования(".$urlsAllCount.")条\033[0m\n";
         }
 
         $lastkey_file = iPHP_APP_CACHE."/spider.{$pid}.lastkey.pid";
@@ -108,7 +108,7 @@ class spider_urls {
                     $lastkey     = file_get_contents($lastkey_file);
                     $lastkeytime = filemtime($lastkey_file);
                     if(trim($lastkey)>$key && time()-$lastkeytime < $project['psleep']){
-                        iPHP_SHELL && print date("Y-m-d H:i:s ")."\033[32m[".$key.'] '.$url." 该列表已经抓取过...\033[0m\n";
+                        iPHP_SHELL && print date("Y-m-d H:i:s ")."\033[32m[".$key.'] '.$url." Этот список был просканирован ...\033[0m\n";
                         continue;
                     }
                 }
@@ -121,7 +121,7 @@ class spider_urls {
             }
 
             if (spider::$ruleTest) {
-                echo '<b>抓取列表:</b>'.$url . "<br />";
+                echo '<b>Список сканирования:</b>'.$url . "<br />";
             }
             $html = spider_tools::remote($url,'spider_urls::crawl');
             if(empty($html)){
@@ -212,9 +212,9 @@ class spider_urls {
             unset($html);
 
             if (spider::$ruleTest) {
-                echo '<b>列表区域规则:</b>'.iSecurity::escapeStr($rule['list_area_rule']);
+                echo '<b>Правило области списка:</b>'.iSecurity::escapeStr($rule['list_area_rule']);
                 echo "<hr />";
-                echo '<b>列表区域抓取结果:</b><div style="max-height:300px;overflow-y: scroll;">';
+                echo '<b>Результаты сканирования на спискок URL:</b><div style="max-height:300px;overflow-y: scroll;">';
                 if(is_array($list_area)){
                     echo "<pre>";var_dump($list_area);echo "</pre>";
                 }else{
@@ -222,12 +222,12 @@ class spider_urls {
                 }
                 echo '</div>';
                 echo "<hr />";
-                echo '<b>列表链接规则:</b>'.iSecurity::escapeStr($rule['list_url_rule']);
+                echo '<b>Правило списока ссылок:</b>'.iSecurity::escapeStr($rule['list_url_rule']);
                 echo "<hr />";
                 if($prule_list_url){
-                    echo '<b>方案网址合成规则:</b>'.iSecurity::escapeStr($prule_list_url);
+                    echo '<b>Правило синтеза URL схемы:</b>'.iSecurity::escapeStr($prule_list_url);
                 }else{
-                    echo '<b>规则网址合成规则:</b>'.iSecurity::escapeStr($rule['list_url']);
+                    echo '<b>Правило синтеза URL-адреса:</b>'.iSecurity::escapeStr($rule['list_url']);
                 }
                 echo "<hr />";
             }
@@ -510,7 +510,7 @@ class spider_urls {
         return $urlsArray;
     }
     /**
-     * 列表链接规则
+     * Правило списока ссылок
      * @param  [type] $lists [description]
      * @param  [type] $rule  [description]
      * @param  [type] $url   [description]

@@ -1,12 +1,5 @@
 <?php
-/**
-* iCMS - i Content Management System
-* Copyright (c) 2007-2017 iCMSdev.com. All rights reserved.
-*
-* @author icmsdev <master@icmsdev.com>
-* @site https://www.icmsdev.com
-* @licence https://www.icmsdev.com/LICENSE.html
-*/
+
 defined('iPHP') OR exit('What are you doing?');
 admincp::head();
 ?>
@@ -20,7 +13,7 @@ $(function(){
     <div class="widget-title"> <span class="icon"> <i class="fa fa-pencil"></i> </span>
     <h5 class="brs"><?php echo ($id?'添加':'修改'); ?>回复</h5>
     <ul class="nav nav-tabs" id="tag-add-tab">
-      <li class="active"><a href="#tag-add-base" data-toggle="tab"><i class="fa fa-info-circle"></i> 基本信息</a></li>
+      <li class="active"><a href="#tag-add-base" data-toggle="tab"><i class="fa fa-info-circle"></i> Основная информация</a></li>
     </ul>
   </div>
   <div class="widget-content nopadding">
@@ -34,7 +27,7 @@ $(function(){
             <span class="add-on">标题</span>
             <input type="text" name="title" class="span6" id="title" value="<?php echo $rs['title'] ; ?>"/>
           </div>
-          <div class="input-prepend input-append"> <span class="add-on">状 态</span>
+          <div class="input-prepend input-append"> <span class="add-on">Статус</span>
             <select name="status" id="status" class="chosen-select span3">
               <option value="0"> 草稿 [status='0']</option>
               <option value="1"> 正常 [status='1']</option>
@@ -43,7 +36,7 @@ $(function(){
               <option value="4"> 未通过 [status='4']</option>
               <?php echo propAdmincp::get("status") ; ?>
             </select>
-            <?php echo propAdmincp::btn_add('添加状态');?>
+            <?php echo propAdmincp::btn_add('Добавить статус');?>
           </div>
           <div class="clearfloat mb10"></div>
           <div class="clearfloat mb10"></div>
@@ -78,13 +71,13 @@ $(function(){
             <input id="pubdate" class="ui-datepicker" value="<?php echo get_date($rs['pubdate'],'Y-m-d H:i:s') ; ?>"  name="pubdate" type="text" style="width:230px"/>
           </div>
           <div class="input-prepend">
-            <span class="add-on">发布时间</span>
+            <span class="add-on">Время публикации</span>
             <input id="postime" class="ui-datepicker" value="<?php echo get_date($rs['postime'],'Y-m-d H:i:s') ; ?>"  name="postime" type="text" style="width:230px"/>
           </div>
         </div>
       </div>
       <div class="form-actions">
-        <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> 提交</button>
+        <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> Сохранить</button>
       </div>
     </form>
   </div>

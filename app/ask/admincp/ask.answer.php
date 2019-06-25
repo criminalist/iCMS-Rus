@@ -1,12 +1,5 @@
 <?php
-/**
-* iCMS - i Content Management System
-* Copyright (c) 2007-2017 iCMSdev.com. All rights reserved.
-*
-* @author icmsdev <master@icmsdev.com>
-* @site https://www.icmsdev.com
-* @licence https://www.icmsdev.com/LICENSE.html
-*/
+
 defined('iPHP') OR exit('What are you doing?');
 admincp::head();
 ?>
@@ -74,7 +67,7 @@ $("#<?php echo APP_FORMID;?>").batch();
             <div class="claerfix"></div>
             <span class="label">ID:<?php echo $value['id'];?></span>
             <span class="label label-info tip" title="更新时间"><?php echo get_date($value['pubdate'],'Y-m-d H:i:s');?></span>
-            <span class="label label-info tip" title="提交时间"><?php echo get_date($value['postime'],'Y-m-d H:i:s');?></span>
+            <span class="label label-info tip" title="Время публикации"><?php echo get_date($value['postime'],'Y-m-d H:i:s');?></span>
             <span class="label label-info"><i class="fa fa-thumbs-o-up"></i> <?php echo $value['good'] ; ?></span>
             <span class="label label-info"><i class="fa fa-thumbs-o-down"></i> <?php echo $value['bad'] ; ?></span>
             <?php if(!$value['status']){?>

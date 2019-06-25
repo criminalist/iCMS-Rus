@@ -34,7 +34,7 @@ class iView {
         $tpl->register_modifier("random", "random");
         $tpl->register_modifier("fields", "select_fields");
         $tpl->register_modifier("html_decode",array("iSecurity", "html_decode"));
-        $tpl->register_modifier("pinyin",array("iPinyin", "get"));
+        $tpl->register_modifier("translit",array("iTranslit", "get"));
         $tpl->register_modifier("thumb", array("files", "thumb"));
         $tpl->register_block("cache", array(__CLASS__, "block_cache"));
         $tpl->template_callback = array(

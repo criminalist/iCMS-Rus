@@ -9176,7 +9176,7 @@ var filterWord = UE.filterWord = function () {
          * @return { * } 返回attrs对象下的属性值
          * @example
          * ```javascript
-         * node.setAttr('title','标题');
+         * node.setAttr('title','Название');
          * ```
          */
         setAttr:function (attrName, attrVal) {

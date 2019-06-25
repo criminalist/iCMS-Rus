@@ -455,7 +455,7 @@ CodeMirror.defineMode("perl",function(){
                 tied                            :1,     // - get a reference to the object underlying a tied variable
                 time                            :1,     // - return number of seconds since 1970
                 times                           :1,     // - return elapsed time for self and child processes
-                tr                              :null,  // - transliterate a string
+                tr                              :null,  // - translitrate a string
                 truncate                        :1,     // - shorten a file
                 uc                              :1,     // - return upper-case version of a string
                 ucfirst                         :1,     // - return a string with just the next letter in upper case
@@ -475,7 +475,7 @@ CodeMirror.defineMode("perl",function(){
                 warn                            :1,     // - print debugging info
                 when                            :1,     //
                 write                           :1,     // - print a picture record
-                y                               :null}; // - transliterate a string
+                y                               :null}; // - translitrate a string
 
         var RXstyle="string-2";
         var RXmodifiers=/[goseximacplud]/;              // NOTE: "m", "s", "y" and "tr" need to correct real modifiers for each regexp type
