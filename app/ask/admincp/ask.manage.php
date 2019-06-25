@@ -133,7 +133,7 @@ $(function(){
             <th>栏目</th>
             <th style="width:48px;">回答</th>
             <th class="span2">发布/更新/回复时间</th>
-            <th>操作</th>
+            <th> Операция </th>
           </tr>
         </thead>
         <tbody>
@@ -220,7 +220,7 @@ $(function(){
                     <li><a data-toggle="batch" data-action="tpl"><i class="fa fa-tags"></i> 设置模板</a></li>
                     <li class="divider"></li>
                     <li><a data-toggle="batch" data-action="status:2"><i class="fa fa-trash-o"></i> 移入回收站</a></li>
-                    <li><a data-toggle="batch" data-action="dels"><i class="fa fa-trash-o"></i> 删除</a></li>
+                    <li><a data-toggle="batch" data-action="dels"><i class="fa fa-trash-o"></i> Удалить</a></li>
                   </ul>
                 </div>
               </div></td>

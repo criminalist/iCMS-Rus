@@ -5,7 +5,7 @@ admincp::head(false);
 ?>
 <div class="widget-box widget-plain" id="<?php echo APP_BOXID;?>">
     <div class="widget-title"> <span class="icon"> <i class="fa fa-plus-square"></i> </span>
-    <h5><?php echo empty($this->id)?'添加':'修改' ; ?> 《 <?php echo $video['title'];?> 》</b></h5>
+    <h5><?php echo empty($this->id)?'Добавить':'Редактировать' ; ?> 《 <?php echo $video['title'];?> 》</b></h5>
     <ul class="nav nav-tabs" id="-add-tab">
         <li class="active">
             <a href="#-add-base" data-toggle="tab">
@@ -22,7 +22,7 @@ admincp::head(false);
                 <button class="btn btn-primary" type="submit"><i class="fa fa-check"></i> 添加</button>
                 <div class="clearfloat mb10"></div>
                 <div class="input-prepend">
-                    <span class="add-on">标题</span>
+                    <span class="add-on"> Название </span>
                     <input type="text" name="title" class="span6" id="title" value="<?php echo $rs['title'];?>"/>
                 </div>
                 <div class="clearfloat mb10"></div>

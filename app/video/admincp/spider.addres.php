@@ -8,11 +8,11 @@ admincp::head();
 <div class="iCMS-container">
   <div class="widget-box">
     <div class="widget-title"> <span class="icon"> <i class="fa fa-cubes"></i> </span>
-      <h5><?php echo empty($rs)?'添加':'修改' ; ?>资源库</h5>
+      <h5><?php echo empty($rs)?'Добавить':'Редактировать' ; ?>资源库</h5>
     </div>
     <div class="widget-content">
       <form action="<?php echo APP_FURI; ?>&do=saveres" method="post" class="form-inline" id="iCMS-video" target="iPHP_FRAME">
-        <div class="input-prepend"> <span class="add-on">资源库名称</span>
+        <div class="input-prepend"> <span class="add-on">Имя библиотеки ресурсов</span>
           <input type="text" name="name" class="span3" id="name" value="<?php echo $rs['name']; ?>"/>
         </div>
         <div class="clearfloat mb10"></div>

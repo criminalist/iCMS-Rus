@@ -1,7 +1,7 @@
 <?php defined('iPHP') OR exit('What are you doing?');?>
 CREATE TABLE `#iCMS@__topic` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '文章ID',
-  `cid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '栏目id',
+  `cid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'ID категории',
   `scid` varchar(255) NOT NULL DEFAULT '' COMMENT '副栏目',
   `tcid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '分类',
   `pid` varchar(255) NOT NULL DEFAULT '' COMMENT '属性',
@@ -15,7 +15,7 @@ CREATE TABLE `#iCMS@__topic` (
   `editor` varchar(255) NOT NULL DEFAULT '' COMMENT '编辑',
   `userid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '用户ID',
   `haspic` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否有缩略图',
-  `pic` varchar(255) NOT NULL DEFAULT '' COMMENT '缩略图',
+  `pic` varchar(255) NOT NULL DEFAULT '' COMMENT 'Эскиз',
   `bpic` varchar(255) NOT NULL DEFAULT '' COMMENT '大图',
   `mpic` varchar(255) NOT NULL DEFAULT '' COMMENT '中图',
   `spic` varchar(255) NOT NULL DEFAULT '' COMMENT '小图',

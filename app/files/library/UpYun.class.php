@@ -80,7 +80,7 @@ class UpYun
     }
 
     /**
-     * 删除目录和文件
+     * Удалить目录和文件
      * @param string $path 路径
      *
      * @return boolean

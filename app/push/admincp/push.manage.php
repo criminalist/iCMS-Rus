@@ -93,7 +93,7 @@ hr { border-bottom:none; margin:4px 0px; }
             <tr>
               <th><i class="fa fa-arrows-v"></i></th>
               <th> Сортировка </th>
-              <th class="span6">标题</th>
+              <th class="span6"> Название </th>
               <th>Категории</th>
               <th>Категории</th>
               <th> Редактировать </th>

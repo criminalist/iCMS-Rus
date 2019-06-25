@@ -668,10 +668,10 @@ var utils = UE.utils = {
     },
 
     /**
-     * 删除字符串str的首尾空格
+     * Удалить字符串str的首尾空格
      * @method trim
      * @param { String } str 需要删除首尾空格的字符串
-     * @return { String } 删除了首尾的空格后的字符串
+     * @return { String } Удалить了首尾的空格后的字符串
      * @example
      * ```javascript
      *
@@ -2223,7 +2223,7 @@ var domUtils = dom.domUtils = {
     },
 
     /**
-     * 删除节点node及其下属的所有节点
+     * Удалить节点node及其下属的所有节点
      * @method remove
      * @param { Node } node 需要删除的节点对象
      * @return { Node } 返回刚删除的节点对象
@@ -2241,7 +2241,7 @@ var domUtils = dom.domUtils = {
      */
 
     /**
-     * 删除节点node,并根据keepChildren的值决定是否保留子节点
+     * Удалить节点node,并根据keepChildren的值决定是否保留子节点
      * @method remove
      * @param { Node } node 需要删除的节点对象
      * @param { Boolean } keepChildren 是否需要保留子节点
@@ -2920,7 +2920,7 @@ var domUtils = dom.domUtils = {
     },
 
     /**
-     * 删除node节点下首尾两端的空白文本子节点
+     * Удалитьnode节点下首尾两端的空白文本子节点
      * @method trimWhiteTextNode
      * @param { Element } node 需要执行删除操作的元素对象
      * @example
@@ -3190,7 +3190,7 @@ var domUtils = dom.domUtils = {
                     node.style.KhtmlUserSelect = 'none';
     },
     /**
-     * 删除节点node上的指定属性名称的属性
+     * Удалить节点node上的指定属性名称的属性
      * @method  removeAttributes
      * @param { Node } node 需要删除属性的节点对象
      * @param { String } attrNames 可以是空格隔开的多个属性名称,该操作将会依次删除相应的属性
@@ -3212,7 +3212,7 @@ var domUtils = dom.domUtils = {
      */
 
     /**
-     * 删除节点node上的指定属性名称的属性
+     * Удалить节点node上的指定属性名称的属性
      * @method  removeAttributes
      * @param { Node } node 需要删除属性的节点对象
      * @param { Array } attrNames 需要删除的属性名数组
@@ -3376,7 +3376,7 @@ var domUtils = dom.domUtils = {
         return utils.transUnitToPx(utils.fixColor(styleName, value));
     },
     /**
-     * 删除元素element指定的className
+     * Удалить元素element指定的className
      * @method removeClasses
      * @param { Element } ele 需要删除class的元素节点
      * @param { String } classNames 需要删除的className, 多个className之间以空格分开
@@ -3397,7 +3397,7 @@ var domUtils = dom.domUtils = {
      */
 
     /**
-     * 删除元素element指定的className
+     * Удалить元素element指定的className
      * @method removeClasses
      * @param { Element } ele 需要删除class的元素节点
      * @param { Array } classNames 需要删除的className数组
@@ -3551,7 +3551,7 @@ var domUtils = dom.domUtils = {
         evt.preventDefault ? evt.preventDefault() : (evt.returnValue = false);
     },
     /**
-     * 删除元素element指定的样式
+     * Удалить元素element指定的样式
      * @method removeStyle
      * @param { Element } element 需要删除样式的元素
      * @param { String } styleName 需要删除的样式名
@@ -3682,7 +3682,7 @@ var domUtils = dom.domUtils = {
         }
     },
     /**
-     * 删除_moz_dirty属性
+     * Удалить_moz_dirty属性
      * @private
      * @method removeDirtyAttr
      */
@@ -4458,7 +4458,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, 'g');
     };
 
     /**
-     * 删除fillData
+     * УдалитьfillData
      * @param doc
      * @param excludeNode
      */
@@ -4529,7 +4529,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, 'g');
         },
 
         /**
-         * 删除当前选区范围中的所有内容
+         * Удалить当前选区范围中的所有内容
          * @method deleteContents
          * @remind 执行完该操作后, 当前Range对象变成了闭合状态
          * @return { UE.dom.Range } 当前操作的Range对象
@@ -15807,7 +15807,7 @@ UE.plugins['list'] = function () {
                         if (startParent.tagName.toLowerCase() == tag && nodeStyle == style) {
                             for (var i = 0, ci, tmpFrag = me.document.createDocumentFragment(); ci = frag.firstChild;) {
                                 if(domUtils.isTagNode(ci,'ol ul')){
-//                                  删除时,子列表不处理
+//                                  Удалить时,子列表不处理
 //                                  utils.each(domUtils.getElementsByTagName(ci,'li'),function(li){
 //                                        while(li.firstChild){
 //                                            tmpFrag.appendChild(li.firstChild);
@@ -18130,7 +18130,7 @@ UE.plugins['video'] = function (){
             return rowIndex < this.rowsNum && this.table.rows[rowIndex].cells[cellIndex] || null;
         },
         /**
-         * 删除单元格
+         * Удалить单元格
          */
         deleteCell:function (cell, rowIndex) {
             rowIndex = typeof rowIndex == 'number' ? rowIndex : cell.parentNode.rowIndex;
@@ -18385,7 +18385,7 @@ UE.plugins['video'] = function (){
                 range = this.getCellsRange(leftTopCell, this.getCell(index[this.rowsNum - 1][info.colIndex].rowIndex, index[this.rowsNum - 1][info.colIndex].cellIndex));
             }
 
-            // 删除剩余的Cells
+            // Удалить剩余的Cells
             var cells = this.getCells(range);
             for(var i= 0,ci;ci=cells[i++];){
                 if (ci !== leftTopCell) {
@@ -18485,7 +18485,7 @@ UE.plugins['video'] = function (){
             return row;
         },
         /**
-         * 删除一行单元格
+         * Удалить一行单元格
          * @param rowIndex
          */
         deleteRow:function (rowIndex) {
@@ -20459,7 +20459,7 @@ UE.plugins['table'] = function () {
 
     });
     /**
-     * 删除obj的宽高style,改成属性宽高
+     * Удалитьobj的宽高style,改成属性宽高
      * @param obj
      * @param replaceToProperty
      */

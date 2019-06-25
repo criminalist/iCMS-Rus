@@ -6,7 +6,7 @@ admincp::head();
 <div class="iCMS-container">
   <div class="widget-box" id="<?php echo APP_BOXID;?>">
     <div class="widget-title"> <span class="icon"> <i class="fa fa-plus-square"></i> </span>
-    <h5><?php echo empty($this->id)?'添加':'修改' ; ?>站点</b></h5>
+    <h5><?php echo empty($this->id)?'Добавить':'Редактировать' ; ?>站点</b></h5>
     <ul class="nav nav-tabs" id="-add-tab">
       <li class="active"><a href="#-add-base" data-toggle="tab"><i class="fa fa-info-circle"></i> Основная информация</a></li>
       <li><a href="#-add-custom" data-toggle="tab"><i class="fa fa-wrench"></i> 自定义</a></li>

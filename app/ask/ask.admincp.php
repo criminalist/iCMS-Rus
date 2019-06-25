@@ -102,7 +102,7 @@ class askAdmincp{
         iUI::success($msg,'js:1');
     }
     /**
-     * 删除回复
+     * Удалить回复
      */
     public function do_delete(){
         $id     = (int) $_GET['id'];

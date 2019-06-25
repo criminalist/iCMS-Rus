@@ -9,7 +9,7 @@ class Auth
 
     /**
      * 支持自定义fileid签名函数
-     * 复制, 删除操作,fileid必须指定,且expired为0
+     * 复制, Удалить操作,fileid必须指定,且expired为0
      * @param  string $bucket  空间名称
      * @param  string $fileid  自定义fileid,无需urlencode
      * @param  int $expired    过期时间,单次签名请传0并指定fileid
@@ -159,7 +159,7 @@ class Auth
     }
 
 	 /**
-     * 生成单次有效签名函数(用于复制, 删除和下载指定fileid资源,使用一次即失效)
+     * 生成单次有效签名函数(用于复制, Удалить和下载指定fileid资源,使用一次即失效)
      * @param  string $fileid     文件唯一标识符
 	 * @param  string $userid  开发者账号体系下的userid,没有请使用默认值0
      * @return string          签名

@@ -2288,7 +2288,7 @@ class ALIOSS{
 	}
 
 	/**
-	 * 删除object
+	 * Удалитьobject
 	 * @param string $bucket(Required)
 	 * @param string $object (Required)
 	 * @param array $options (Optional)
@@ -3129,7 +3129,7 @@ class ALIOSS{
 	}
 
 	/**
-	 * 删除Object Group
+	 * УдалитьObject Group
 	 * @param string $bucket(Required)
 	 * @param string $object_group (Required)
 	 * @param array $options (Optional)

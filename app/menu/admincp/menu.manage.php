@@ -12,7 +12,7 @@ admincp::head();
 {{if caption=='-'}}
 <span class="operation">
     <a href="<?php echo APP_FURI;?>&do=del&id={{id}}" class="btn btn-danger btn-small" onClick="return confirm('确定要删除此菜单?');" target="iPHP_FRAME">
-      <i class="fa fa-trash-o"></i> 删除
+      <i class="fa fa-trash-o"></i> Удалить
     </a>
 </span>
 <div class="separator">

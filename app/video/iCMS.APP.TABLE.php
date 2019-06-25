@@ -1,7 +1,7 @@
 <?php defined('iPHP') OR exit('What are you doing?');?>
 CREATE TABLE `#iCMS@__video` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `cid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '栏目id',
+  `cid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'ID категории',
   `scid` varchar(255) NOT NULL DEFAULT '' COMMENT '副栏目',
   `ucid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '用户分类',
   `pid` varchar(255) NOT NULL DEFAULT '' COMMENT '属性',
@@ -13,7 +13,7 @@ CREATE TABLE `#iCMS@__video` (
   `description` varchar(5120) NOT NULL DEFAULT '' COMMENT 'Описание',
   `clink` varchar(255) NOT NULL DEFAULT '' COMMENT 'Пользовательская ссылка',
   `alias` varchar(255) NOT NULL DEFAULT '' COMMENT '别名',
-  `enname` varchar(255) NOT NULL DEFAULT '' COMMENT '拼音/英文名',
+  `enname` varchar(255) NOT NULL DEFAULT '' COMMENT 'Транслит',
   `star` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '星级',
   `remark` varchar(255) NOT NULL DEFAULT '' COMMENT '备注',
   `genre` varchar(255) NOT NULL DEFAULT '' COMMENT '类型',
@@ -26,7 +26,7 @@ CREATE TABLE `#iCMS@__video` (
   `area` varchar(255) NOT NULL DEFAULT '' COMMENT '地区',
   `cycle` varchar(255) NOT NULL DEFAULT '' COMMENT '更新周期',
   `ser` smallint(6) unsigned NOT NULL DEFAULT '0' COMMENT '连载集',
-  `release` varchar(512) NOT NULL DEFAULT '' COMMENT '上映日期',
+  `release` varchar(512) NOT NULL DEFAULT '' COMMENT 'Дата выхода',
   `time` smallint(6) unsigned NOT NULL DEFAULT '0' COMMENT '片长',
   `total` smallint(6) unsigned NOT NULL DEFAULT '0' COMMENT '总集数',
   `company` varchar(255) NOT NULL DEFAULT '' COMMENT '发行公司',

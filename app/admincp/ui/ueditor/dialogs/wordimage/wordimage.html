@@ -80,7 +80,7 @@
                     if(selectedImageCount) baidu.g("upload").style.display = "";
                     dialog.buttons[0].setDisabled(true); //初始化时置灰确定按钮
                 },
-                deleteFileCallback: function(delFiles){                 // 删除文件的回调
+                deleteFileCallback: function(delFiles){                 // Удалить文件的回调
                     selectedImageCount -= delFiles.length;
                     if (!selectedImageCount) {
                         baidu.g("upload").style.display = "none";

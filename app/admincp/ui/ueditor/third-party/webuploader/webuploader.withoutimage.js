@@ -2743,7 +2743,7 @@
              * @property {Boolean} [chunkSize=5242880]
              * @namespace options
              * @for Uploader
-             * @description 如果要分片，分多大一片？ 默认大小为5M.
+             * @description 如果要分片，分多大一片? 默认大小为5M.
              */
             chunkSize: 5 * 1024 * 1024,
     
@@ -2751,7 +2751,7 @@
              * @property {Boolean} [chunkRetry=2]
              * @namespace options
              * @for Uploader
-             * @description 如果某个分片由于网络问题出错，允许自动重传多少次？
+             * @description 如果某个分片由于网络问题出错，允许自动重传多少次?
              */
             chunkRetry: 2,
     
@@ -3645,7 +3645,7 @@
             };
     
             me.destory = function() {
-                // @todo 删除池子中的所有实例
+                // @todo Удалить池子中的所有实例
                 return destory && destory.apply( this, arguments );
             };
         }
@@ -4315,7 +4315,7 @@
             this.jsreciver = jsreciver;
     
             this.destory = function() {
-                // @todo 删除池子中的所有实例
+                // @todo Удалить池子中的所有实例
                 return destory && destory.apply( this, arguments );
             };
     

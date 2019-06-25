@@ -5,7 +5,7 @@ admincp::head(!isset($_GET['modal']));
 ?>
 <div class="widget-box widget-plain" id="<?php echo APP_BOXID;?>">
     <div class="widget-title">
-        <h5 class="brs">资源列表</h5>
+        <h5 class="brs">Список ресурсов</h5>
         <span class="icon">
             <a href="<?php echo APP_URI; ?>&do=add&video_id=<?php echo $video_id; ?>">
                 <i class="fa fa-plus-square"></i> 添加新资源
@@ -29,11 +29,11 @@ admincp::head(!isset($_GET['modal']));
                         <th><i class="fa fa-arrows-v"></i></th>
                         <th class="span1">ID</th>
                         <th style="width:80px;">来源</th>
-                        <th>标题</th>
+                        <th> Название </th>
                         <th class="span2">添加日期</th>
                         <th class="span2">更新日期</th>
                         <th style="width:80px;">VIP</th>
-                        <th style="width:120px;">操作</th>
+                        <th style="width:120px;"> Операция </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,7 +55,7 @@ admincp::head(!isset($_GET['modal']));
                             <a href="<?php echo $value['url']; ?>" class="btn btn-success btn-mini" target="_blank">查看</a>
                             <?php } ?>
                             <a href="<?php echo APP_URI; ?>&do=add&id=<?php echo $id ; ?>&video_id=<?php echo $video_id; ?>" class="btn btn-primary btn-mini">编辑</a>
-                            <a href="<?php echo APP_FURI; ?>&do=del&id=<?php echo $id ; ?>&video_id=<?php echo $video_id; ?>" target="iPHP_FRAME" class="del btn btn-danger btn-mini" onclick="return confirm('确定要删除?');"/>删除</a>
+                            <a href="<?php echo APP_FURI; ?>&do=del&id=<?php echo $id ; ?>&video_id=<?php echo $video_id; ?>" target="iPHP_FRAME" class="del btn btn-danger btn-mini" onclick="return confirm('确定要删除?');"/> Удалить</a>
                         </td>
                     </tr>
                     <?php }  ?>

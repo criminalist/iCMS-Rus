@@ -11,7 +11,7 @@ $(function(){
 <div class="iCMS-container">
   <div class="widget-box">
     <div class="widget-title"> <span class="icon"> <i class="fa fa-pencil"></i> </span>
-    <h5 class="brs"><?php echo ($id?'添加':'修改'); ?>回复</h5>
+    <h5 class="brs"><?php echo ($id?'Добавить':'Редактировать'); ?>回复</h5>
     <ul class="nav nav-tabs" id="tag-add-tab">
       <li class="active"><a href="#tag-add-base" data-toggle="tab"><i class="fa fa-info-circle"></i> Основная информация</a></li>
     </ul>
@@ -24,7 +24,7 @@ $(function(){
       <div id="tags-add" class="tab-content">
         <div id="tag-add-base" class="tab-pane active">
           <div class="input-prepend">
-            <span class="add-on">标题</span>
+            <span class="add-on"> Название </span>
             <input type="text" name="title" class="span6" id="title" value="<?php echo $rs['title'] ; ?>"/>
           </div>
           <div class="input-prepend input-append"> <span class="add-on">Статус</span>

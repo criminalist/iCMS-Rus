@@ -660,7 +660,7 @@ class videoAdmincp{
                 return;
             }
             if(isset($_GET['keyCode'])){
-                iUI::success('视频保存成功','url:'.APP_URI."&do=add&id=".$video_id);
+                iUI::success('Видео успешно сохранено','url:'.APP_URI."&do=add&id=".$video_id);
             }
 
             $moreBtn = array(
@@ -671,7 +671,7 @@ class videoAdmincp{
                     array("text" =>"查看网站首页","url"=>iCMS_URL,"target"=>'_blank')
             );
             iUI::$dialog['modal'] = true;
-            iUI::dialog('success:#:check:#:视频添加完成!<br />10秒后返回视频列表'.$msg,'url:'.$REFERER_URL,10,$moreBtn);
+            iUI::dialog('success:#:check:#:Видео успешно добавлено!<br /> Вернуться к списку видео через 10 секунд'.$msg,'url:'.$REFERER_URL,10,$moreBtn);
         }else{
 
             ($tags||$_tags)        && tag::field('tags')->diff($tags,$_tags,members::$userid,$video_id,$cid);

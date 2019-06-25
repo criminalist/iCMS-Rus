@@ -160,7 +160,7 @@ $(function(){
           <span class="add-on">条记录</span> </div>
         <div class="input-prepend"> <span class="add-on">查找方式</span>
           <select name="st" id="st" class="chosen-select" style="width:120px;">
-            <option value="title">标题</option>
+            <option value="title"> Название </option>
             <option value="tag">标签</option>
             <option value="source">出处</option>
             <option value="id">ID</option>
@@ -190,14 +190,14 @@ $(function(){
             <tr>
               <th><i class="fa fa-arrows-v"></i></th>
               <th class="span1">ID</th>
-              <th>标题</th>
+              <th> Название </th>
               <th class="span2">日期</th>
               <th style="width:80px;">栏目</th>
               <th style="width:60px;">编辑</th>
               <th class="span1">点/评</th>
               <th style="width:120px;">分集剧情</th>
               <th style="width:120px;">资源</th>
-              <th style="width:120px;">操作</th>
+              <th style="width:120px;"> Операция </th>
             </tr>
           </thead>
           <tbody>
@@ -313,7 +313,7 @@ $(function(){
                 <a href="<?php echo APP_URI; ?>&do=add&id=<?php echo $value['id'] ; ?>" class="btn btn-primary btn-mini">编辑</a>
                 <?php } ?>
                 <?php if(in_array($value['status'],array("1","0")) && category::check_priv($value['cid'],'cd')){ ?>
-                <a href="<?php echo APP_FURI; ?>&do=update&id=<?php echo $value['id'] ; ?>&_args=status:2" target="iPHP_FRAME" class="del btn btn-danger btn-mini" title="移动此视频到回收站" />删除</a>
+                <a href="<?php echo APP_FURI; ?>&do=update&id=<?php echo $value['id'] ; ?>&_args=status:2" target="iPHP_FRAME" class="del btn btn-danger btn-mini" title="移动此视频到回收站" /> Удалить</a>
                 <?php } ?>
                 <?php if($value['status']=="2"){ ?>
                 <a href="<?php echo APP_FURI; ?>&do=del&id=<?php echo $value['id'] ; ?>" target="iPHP_FRAME" class="del btn btn-danger btn-mini" onclick="return confirm('确定要删除?');"/>永久删除</a>

@@ -89,7 +89,7 @@ CREATE TABLE `icms_article` (
   `editor` varchar(255) NOT NULL DEFAULT '' COMMENT '编辑',
   `userid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '用户ID',
   `haspic` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否有缩略图',
-  `pic` varchar(255) NOT NULL DEFAULT '' COMMENT '缩略图',
+  `pic` varchar(255) NOT NULL DEFAULT '' COMMENT 'Эскиз',
   `mpic` varchar(255) NOT NULL DEFAULT '' COMMENT 'Иконка 2',
   `spic` varchar(255) NOT NULL DEFAULT '' COMMENT 'Иконка 3',
   `picdata` varchar(255) NOT NULL DEFAULT '' COMMENT '图片数据',

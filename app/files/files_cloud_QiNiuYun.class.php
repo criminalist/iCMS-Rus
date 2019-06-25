@@ -26,7 +26,7 @@ class files_cloud_QiNiuYun extends QiniuClient{
         ));
     }
    /**
-     * [_delete_file 删除文件接口]
+     * [_delete_file Удалить文件接口]
      * @param  [type] $filePath [Путь к файлу]
      * @return [type]           [description]
      */

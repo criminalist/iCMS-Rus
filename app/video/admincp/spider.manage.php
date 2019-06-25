@@ -14,9 +14,9 @@ $(function(){
       <span class="icon">
         <input type="checkbox" class="checkAll" data-target="#<?php echo APP_BOXID;?>" />
       </span>
-      <h5 class="brs">资源列表</h5>
+      <h5 class="brs">Список ресурсов</h5>
       <span class="icon">
-        <a class="add_hooks" href="<?php echo APP_URI; ?>&do=addres" title="添加资源"><i class="fa fa-plus-square"></i> 添加资源</a>
+        <a class="add_hooks" href="<?php echo APP_URI; ?>&do=addres" title="Добавить ресурсы"><i class="fa fa-plus-square"></i> Добавить ресурсы</a>
       </span>
     </div>
     <div class="widget-content nopadding">
@@ -25,11 +25,11 @@ $(function(){
           <thead>
             <tr>
               <th><i class="fa fa-arrows-v"></i></th>
-              <th>资源库名称</th>
+              <th>Имя библиотеки ресурсов</th>
               <th>资源库标识</th>
               <th>资源库地址</th>
               <th>资源库介绍</th>
-              <th class="span6">操作</th>
+              <th class="span6"> Операция </th>
             </tr>
           </thead>
           <tbody>
@@ -49,7 +49,7 @@ $(function(){
                 <a href="<?php echo APP_URI; ?>&do=crawl&dt=week&rid=<?php echo $value['id']; ?>" class="btn btn-info btn-mini"><i class="fa fa-play"></i> 采集本周</a>
                 <a href="<?php echo APP_URI; ?>&do=crawl&dt=month&rid=<?php echo $value['id']; ?>" class="btn btn-warning btn-mini"><i class="fa fa-play"></i> 采集本月</a>
                 <a href="<?php echo APP_URI; ?>&do=crawl&dt=all&rid=<?php echo $value['id']; ?>" class="btn btn-primary btn-mini"><i class="fa fa-play"></i> 采集全部</a>
-                <a href="<?php echo APP_URI; ?>&do=delres&rid=<?php echo $value['id']; ?>" class="btn btn-danger btn-mini" target="iPHP_FRAME"><i class="fa fa-trash-o"></i> 删除</a>
+                <a href="<?php echo APP_URI; ?>&do=delres&rid=<?php echo $value['id']; ?>" class="btn btn-danger btn-mini" target="iPHP_FRAME"><i class="fa fa-trash-o"></i> Удалить</a>
               </td>
             </tr>
             <?php }  ?>

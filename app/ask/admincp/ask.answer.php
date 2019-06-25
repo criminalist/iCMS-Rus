@@ -78,7 +78,7 @@ $("#<?php echo APP_FORMID;?>").batch();
             <?php }else{ ?>
             <a href="<?php echo APP_FURI; ?>&do=add&id=<?php echo $value['iid'] ; ?>" class="btn btn-primary btn-mini">编辑</a>
             <?php } ?>
-            <a href="<?php echo APP_FURI; ?>&do=delete&id=<?php echo $value['id'] ; ?>&rootid=<?php echo $value['rootid'] ; ?>&iid=<?php echo $que['id'] ; ?>" class="btn btn-danger btn-mini" target="iPHP_FRAME" onclick="return confirm('确定要删除?');">删除</a>
+            <a href="<?php echo APP_FURI; ?>&do=delete&id=<?php echo $value['id'] ; ?>&rootid=<?php echo $value['rootid'] ; ?>&iid=<?php echo $que['id'] ; ?>" class="btn btn-danger btn-mini" target="iPHP_FRAME" onclick="return confirm('确定要删除?');"> Удалить</a>
           </div>
           <div class="claerfix mb10"></div>
         </li>
@@ -94,7 +94,7 @@ $("#<?php echo APP_FORMID;?>").batch();
           </span>
           <div class="btn-group dropup" id="iCMS-batch"> <a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"><i class="fa fa-wrench"></i> 批 量 操 作 </a><a class="btn dropdown-toggle" data-toggle="dropdown" tabindex="-1"> <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a data-toggle="batch" data-action="dels"><i class="fa fa-trash-o"></i> 删除</a></li>
+            <li><a data-toggle="batch" data-action="dels"><i class="fa fa-trash-o"></i> Удалить</a></li>
           </ul>
         </div>
       </div></td>

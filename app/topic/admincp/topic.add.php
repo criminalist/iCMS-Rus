@@ -61,11 +61,11 @@ $(function(){
   <div class="widget-box">
     <div class="widget-title">
       <span class="icon"> <i class="fa fa-pencil"></i> </span>
-      <h5 class="brs"><?php echo empty($this->id)?'添加':'修改' ; ?>专题</h5>
+      <h5 class="brs"><?php echo empty($this->id)?'Добавить':'Редактировать' ; ?>专题</h5>
       <ul class="nav nav-tabs" id="topic-add-tab">
-        <li class="active"><a href="#topic-add-base" data-toggle="tab"><i class="fa fa-info-circle"></i> 基本信息</a></li>
+        <li class="active"><a href="#topic-add-base" data-toggle="tab"><i class="fa fa-info-circle"></i> Основная информация</a></li>
         <li><a href="#topic-add-data" data-toggle="tab"><i class="fa fa-tasks"></i> 专题数据</a></li>
-        <li><a href="#topic-add-publish" data-toggle="tab"><i class="fa fa-rocket"></i> 发布设置</a></li>
+        <li><a href="#topic-add-publish" data-toggle="tab"><i class="fa fa-rocket"></i> Настройки публикации</a></li>
         <li><a href="#former-layout" data-toggle="tab"><i class="fa fa-wrench"></i> 自定义</a></li>
         <li><a href="#apps-metadata" data-toggle="tab"><i class="fa fa-sitemap"></i> 动态属性</a></li>
       </ul>
@@ -134,7 +134,7 @@ $(function(){
             </div>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend">
-              <span class="add-on">短标题</span>
+              <span class="add-on"> Краткое название </span>
               <input type="text" name="stitle" class="span6" id="stitle" value="<?php echo $rs['stitle'] ; ?>"/>
             </div>
             <div class="clearfloat mb10"></div>
@@ -237,7 +237,7 @@ $(function(){
                     <input class="app" name="body[<?php echo $data_index;?>][app]" type="hidden" value="<?php echo $value['app'];?>" />
                     <input class="app_id" name="body[<?php echo $data_index;?>][app_id]" type="hidden" value="<?php echo $value['app_id'];?>" />
                     <div class="input-prepend input-append">
-                      <span class="add-on">名称</span>
+                      <span class="add-on">Заголовок</span>
                       <input name="body[<?php echo $data_index;?>][name]" type="text" class="span2" value="<?php echo $value['name'];?>" />
                       <span class="add-on">字段名</span>
                       <input name="body[<?php echo $data_index;?>][key]" type="text" class="span2 tip" value="<?php echo $value['key'];?>" title="只能由英文字母、数字或_-组成,不支持中文"/>
@@ -248,7 +248,7 @@ $(function(){
                       <i class="fa fa-plus"></i>
                       选择<span class="app_name"><?php echo $info['name'];?>数据</span>
                       </a>
-                      <button class="btn btn-danger del_body_data" type="button"><i class="fa fa-trash-o"></i> 删除</button>
+                      <button class="btn btn-danger del_body_data" type="button"><i class="fa fa-trash-o"></i> Удалить</button>
                     </div>
                     <div class="clearfloat mb5"></div>
                     <div class="input-prepend input-append input-sp">
@@ -271,11 +271,11 @@ $(function(){
                 <?php }else{ ?>
                   <div class="body_data">
                     <div class="input-prepend input-append">
-                      <span class="add-on">名称</span>
+                      <span class="add-on">Заголовок</span>
                       <input name="body[<?php echo $data_index;?>][name]" type="text" class="span2" value="<?php echo $value['name'];?>"/>
                       <span class="add-on">字段名</span>
                       <input name="body[<?php echo $data_index;?>][key]" type="text" class="span2 tip" title="只能由英文字母、数字或_-组成,不支持中文" value="<?php echo $value['key'];?>"/>
-                      <button class="btn btn-danger del_body_data" type="button"><i class="fa fa-trash-o"></i> 删除</button>
+                      <button class="btn btn-danger del_body_data" type="button"><i class="fa fa-trash-o"></i> Удалить</button>
                     </div>
                     <div class="clearfloat mb5"></div>
                     <div class="input-prepend">
@@ -289,11 +289,11 @@ $(function(){
             <div id="body-clone-wrap">
               <div class="hide body_data body_field_clone">
                 <div class="input-prepend input-append">
-                  <span class="add-on">名称</span>
+                  <span class="add-on">Заголовок</span>
                   <input name="body[{key}][name]" type="text" disabled="disabled" class="span2" />
                   <span class="add-on">字段名</span>
                   <input name="body[{key}][key]" type="text" disabled="disabled" class="span2 tip" title="只能由英文字母、数字或_-组成,不支持中文"/>
-                  <button class="btn btn-danger del_body_data" type="button"><i class="fa fa-trash-o"></i> 删除</button>
+                  <button class="btn btn-danger del_body_data" type="button"><i class="fa fa-trash-o"></i> Удалить</button>
                 </div>
                 <div class="clearfloat mb5"></div>
                 <div class="input-prepend">
@@ -305,7 +305,7 @@ $(function(){
                 <input class="app" name="body[{key}][app]" disabled="disabled" type="hidden" value="" />
                 <input class="app_id" name="body[{key}][app_id]" disabled="disabled" type="hidden" value="" />
                 <div class="input-prepend input-append">
-                  <span class="add-on">名称</span>
+                  <span class="add-on">Заголовок</span>
                   <input name="body[{key}][name]" type="text" disabled="disabled" class="span2" />
                   <span class="add-on">字段名</span>
                   <input name="body[{key}][key]" type="text" disabled="disabled" class="span2 tip" title="只能由英文字母、数字或_-组成,不支持中文"/>
@@ -316,7 +316,7 @@ $(function(){
                   <i class="fa fa-plus"></i>
                   选择<span class="app_name">{app_name}数据</span>
                   </a>
-                  <button class="btn btn-danger del_body_data" type="button"><i class="fa fa-trash-o"></i> 删除</button>
+                  <button class="btn btn-danger del_body_data" type="button"><i class="fa fa-trash-o"></i> Удалить</button>
                 </div>
                 <div class="clearfloat mb5"></div>
                 <div class="input-prepend input-append input-sp">

@@ -47,7 +47,7 @@ $(function(){
               <th>IP</th>
               <th>管理网址</th>
               <th>数据统计</th>
-              <th>操作</th>
+              <th> Операция </th>
             </tr>
           </thead>
           <tbody>
@@ -77,7 +77,7 @@ $(function(){
                 <a href="<?php echo APP_URI; ?>&do=upgrade&id=<?php echo $rs[$i]['id'] ; ?>" class="btn btn-small btn-success" target="iPHP_FRAME"><i class="fa fa-level-up"></i> 升级程序</a>
                 <a href="<?php echo APP_URI; ?>&do=clean&id=<?php echo $rs[$i]['id'] ; ?>" class="btn btn-small btn-info" target="iPHP_FRAME"><i class="fa fa-refresh"></i> 更新缓存</a>
                 <a href="<?php echo APP_URI; ?>&do=add&id=<?php echo $rs[$i]['id'] ; ?>" class="btn btn-small"><i class="fa fa-edit"></i> 编辑</a>
-                <a href="<?php echo APP_FURI; ?>&do=del&id=<?php echo $rs[$i]['id'] ; ?>" target="iPHP_FRAME" class="del btn btn-small" title='永久删除'  onclick="return confirm('确定要删除?');"/><i class="fa fa-trash-o"></i> 删除</a></td>
+                <a href="<?php echo APP_FURI; ?>&do=del&id=<?php echo $rs[$i]['id'] ; ?>" target="iPHP_FRAME" class="del btn btn-small" title='永久删除'  onclick="return confirm('确定要删除?');"/><i class="fa fa-trash-o"></i> Удалить</a></td>
             </tr>
             <?php }  ?>
           </tbody>
@@ -91,7 +91,7 @@ $(function(){
                     <ul class="dropdown-menu">
                       <li><a data-toggle="batch" data-action="refresh"><i class="fa fa-refresh"></i> 更新缓存</a></li>
               		  <li class="divider"></li>
-                      <li><a data-toggle="batch" data-action="dels"><i class="fa fa-trash-o"></i> 删除</a></li>
+                      <li><a data-toggle="batch" data-action="dels"><i class="fa fa-trash-o"></i> Удалить</a></li>
                     </ul>
                   </div>
                 </div></td>

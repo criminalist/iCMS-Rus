@@ -101,12 +101,12 @@ function _modal_dialog(cancel_text){
 <div class="iCMS-container">
   <div class="widget-box">
     <div class="widget-title"> <span class="icon"> <i class="fa fa-pencil"></i> </span>
-      <h5 class="brs"><?php echo empty($this->id)?'添加':'修改' ; ?>视频</h5>
+      <h5 class="brs"><?php echo empty($this->id)?'Добавить':'Редактировать' ; ?> видео</h5>
       <ul class="nav nav-tabs" id="video-add-tab">
-        <li class="active"><a href="#video-add-base" data-toggle="tab"><i class="fa fa-info-circle"></i> 基本信息</a></li>
-        <li><a href="#video-add-photo" data-toggle="tab"><i class="fa fa-rocket"></i> 剧照</a></li>
-        <li><a href="#video-add-story" data-toggle="tab"><i class="fa fa-rocket"></i> 剧情介绍</a></li>
-        <li><a href="#video-add-publish" data-toggle="tab"><i class="fa fa-rocket"></i> 发布设置</a></li>
+        <li class="active"><a href="#video-add-base" data-toggle="tab"><i class="fa fa-info-circle"></i> Основная информация</a></li>
+        <li><a href="#video-add-photo" data-toggle="tab"><i class="fa fa-rocket"></i> Скриншоты</a></li>
+        <li><a href="#video-add-story" data-toggle="tab"><i class="fa fa-rocket"></i> Описание</a></li>
+        <li><a href="#video-add-publish" data-toggle="tab"><i class="fa fa-rocket"></i> Настройки публикации</a></li>
 	      <li><a href="#apps-custom" data-toggle="tab"><i class="fa fa-wrench"></i> 自定义</a></li>
         <li><a href="#apps-metadata" data-toggle="tab"><i class="fa fa-sitemap"></i> 动态属性</a></li>
       </ul>
@@ -159,23 +159,23 @@ function _modal_dialog(cancel_text){
             </div>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend">
-              <span class="add-on">名称</span>
+              <span class="add-on">Заголовок</span>
               <input type="text" name="title" class="span6" id="title" value="<?php echo $rs['title'] ; ?>"/>
             </div>
             <div class="clearfloat mb10"></div>
-            <div class="input-prepend"> <span class="add-on">短标题</span>
+            <div class="input-prepend"> <span class="add-on"> Краткое название </span>
               <input type="text" name="stitle" class="span6" id="stitle" value="<?php echo $rs['stitle'] ; ?>"/>
             </div>
             <hr />
-            <div class="input-prepend"> <span class="add-on">别名</span>
+            <div class="input-prepend"> <span class="add-on">Псевдоним</span>
               <input type="text" name="alias" class="span6" id="alias" value="<?php echo $rs['alias'] ; ?>"/>
             </div>
             <div class="clearfloat mb10"></div>
-            <div class="input-prepend"> <span class="add-on">拼音/英文名</span>
+            <div class="input-prepend"> <span class="add-on">Транслит</span>
               <input type="text" name="enname" class="span6" id="enname" value="<?php echo $rs['enname'] ; ?>"/>
             </div>
             <div class="clearfloat mb10"></div>
-            <div class="input-prepend"> <span class="add-on">星级</span>
+            <div class="input-prepend"> <span class="add-on">Рейтинг</span>
               <select name="star" id="star" class="chosen-select span3" data-placeholder="请选择星级">
                 <option></option>
                 <option value="1">★</option>
@@ -187,7 +187,7 @@ function _modal_dialog(cancel_text){
               <script>$(function(){iCMS.select('star',"<?php echo $rs['star'];?>");})</script>
             </div>
             <div class="input-prepend">
-              <span class="add-on">备注</span>
+              <span class="add-on"> Примечание </span>
               <input type="text" name="remark" class="span3" id="remark" value="<?php echo $rs['remark'] ; ?>"/>
             </div>
             <span class="help-inline">如：高清,无水印 (配合标题一起显示)</span>
@@ -197,7 +197,7 @@ function _modal_dialog(cancel_text){
                 <option></option>
                 <?php echo propAdmincp::get("genre") ; ?>
               </select>
-              <?php echo propAdmincp::btn_add('添加类型');?>
+              <?php echo propAdmincp::btn_add('Добавить жанр');?>
             </div>
             <script>$(function(){iCMS.select('genre',"<?php echo $rs['genre'];?>");})</script>
             <input name="_genre" type="hidden" value="<?php echo $rs['genre']; ?>" />
@@ -206,19 +206,19 @@ function _modal_dialog(cancel_text){
               <input type="text" name="actor" class="span6" id="actor" value="<?php echo $rs['actor'] ; ?>" onkeyup="javascript:this.value=this.value.replace(/，/ig,',');"/>
             </div>
             <input name="_actor" type="hidden" value="<?php echo $rs['actor']; ?>" />
-            <span class="help-inline">多个用逗号,隔开</span>
+            <span class="help-inline">Множественное кол-во, разделяйте запятой ","</span>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend"> <span class="add-on">导演</span>
               <input type="text" name="director" class="span6" id="director" value="<?php echo $rs['director'] ; ?>" onkeyup="javascript:this.value=this.value.replace(/，/ig,',');"/>
             </div>
             <input name="_director" type="hidden" value="<?php echo $rs['director']; ?>" />
-            <span class="help-inline">多个用逗号,隔开</span>
+            <span class="help-inline">Множественное кол-во, разделяйте запятой ","</span>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend"> <span class="add-on">编剧</span>
               <input type="text" name="attrs" class="span6" id="attrs" value="<?php echo $rs['attrs'] ; ?>" onkeyup="javascript:this.value=this.value.replace(/，/ig,',');"/>
             </div>
             <input name="_attrs" type="hidden" value="<?php echo $rs['attrs']; ?>" />
-            <span class="help-inline">多个用逗号,隔开</span>
+            <span class="help-inline">Множественное кол-во, разделяйте запятой ","</span>
             <div class="clearfloat mb10"></div>
             <div class="input-prepend input-append"> <span class="add-on">发行年份</span>
               <input type="text" name="year" class="span1" id="year" value="<?php echo $rs['year'] ; ?>"/>
@@ -254,7 +254,7 @@ function _modal_dialog(cancel_text){
                 <option></option>
                 <?php echo propAdmincp::get("area") ; ?>
               </select>
-              <?php echo propAdmincp::btn_add('添加地区');?>
+              <?php echo propAdmincp::btn_add('Добавить регион');?>
             </div>
             <script>$(function(){iCMS.select('_area',"<?php echo $rs['area'];?>");})</script>
             <div class="clearfloat mb10"></div>
@@ -269,7 +269,7 @@ function _modal_dialog(cancel_text){
             </div>
             <script>$(function(){iCMS.checked('.cycle',<?php echo $rs['cycle']?$rs['cycle']:'""';?>);})</script>
             <div class="input-prepend input-append">
-              <span class="add-on">连载？
+              <span class="add-on">Несколько серий?
                 <input id="isSer" type="checkbox" value="1" <?php if($rs['ser']) echo 'checked="checked"'  ?>/>
               </span>
               <span class="add-on">到第</span>
@@ -277,16 +277,16 @@ function _modal_dialog(cancel_text){
               <span class="add-on">集</span>
             </div>
             <div class="clearfloat mb10"></div>
-            <div class="input-prepend"> <span class="add-on">上映日期</span>
+            <div class="input-prepend"> <span class="add-on">Дата выхода</span>
               <input type="text" name="release" class="span3" id="release" value="<?php echo $rs['release'] ; ?>" />
             </div>
             <div class="input-prepend input-append">
-              <span class="add-on">片长</span>
+              <span class="add-on"> Продолжительность </span>
               <input type="text" name="time" class="span1" id="time" value="<?php echo $rs['time'] ; ?>"/>
-              <span class="add-on">分钟</span>
+              <span class="add-on">Продолжительность видео в минутах</span>
             </div>
             <div class="input-prepend input-append">
-              <span class="add-on">总集数</span>
+              <span class="add-on">Кол-во эпизодов</span>
               <input type="text" name="total" class="span1" id="total" value="<?php echo $rs['total'] ; ?>"/>
               <span class="add-on">集</span>
             </div>
@@ -412,7 +412,7 @@ function _modal_dialog(cancel_text){
               <button type="button" class="btn" onclick="javascript:photo_cleanup();"><i class="fa fa-magic"></i> 自动排版</button>
               <span class="add-on wauto">
               <input name="photo_remote" type="checkbox" id="photo_remote" value="1" <?php if(self::$config['remote']=="1")echo 'checked="checked"'  ?>/>
-              下载远程图片</span>
+              Скачать удаленные изображения</span>
               <span class="add-on wauto">
               <input name="photo_autopic" type="checkbox" id="photo_autopic" value="1" <?php if(self::$config['autopic']=="1")echo 'checked="checked"'  ?>/>
               提取缩略图 </span>
@@ -448,7 +448,7 @@ function _modal_dialog(cancel_text){
               <button type="button" class="btn" onclick="javascript:body_cleanup();"><i class="fa fa-magic"></i> 自动排版</button>
               <span class="add-on wauto">
               <input name="body_remote" type="checkbox" id="body_remote" value="1" <?php if(self::$config['remote']=="1")echo 'checked="checked"'  ?>/>
-              下载远程图片</span>
+              Скачать удаленные изображения</span>
               <span class="add-on wauto">
               <input name="body_autopic" type="checkbox" id="body_autopic" value="1" <?php if(self::$config['autopic']=="1")echo 'checked="checked"'  ?>/>
               提取缩略图 </span>
